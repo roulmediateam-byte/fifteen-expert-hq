@@ -15,8 +15,9 @@ Melvin. He writes agent:sales Issues, reviews every sales pull request and makes
 ## When it runs
 
 - Not at all until phase 5 of the playbook (practice calls). Then every weekday at 4:00 am Sydney, so drafts are ready before Melvin's calls from 7:00 to 9:00 am Sydney (3:00 to 5:00 pm US Eastern): the Claude Code scheduled task "sales" on Adam's Claude account. Runs can start up to about 30 minutes late.
-- Switching it on, at the start of phase 5: a founder changes "Status: OFF until phase 5" above to "Status: on" in a reviewed pull request, and Adam creates the task after checking usage (it adds about 5 runs a week).
-- Task prompt: "Read CLAUDE.md and agents/sales.md and do one run on the top Issue labelled agent:sales. If PAUSE exists, stop."
+- Switching it on, at the start of phase 5: a founder changes "Status: OFF until phase 5" above to "Status: on" and sets "enabled" to true for sales in agents/schedule.json, in one reviewed pull request, and Adam creates the task after checking usage (it adds about 5 runs a week).
+- Task prompt: "Read CLAUDE.md and agents/sales.md and do one run on the top Issue labelled agent:sales. If PAUSE exists, post the paused heartbeat and stop."
+- Heartbeats: at the very start and the very end of every run, one line on Status Issue #9, exactly as agents/README.md, section "Heartbeat", says. If PAUSE exists, it posts state=paused and stops.
 - One run is one Issue and one pull request. First it checks its own open pull requests: if one has a "[reviewer] Changes needed" comment or a founder asking for a change, it fixes that one (on the same branch), and that is the run. Otherwise it takes the top Issue: the highest agent:sales card in the Ready for AI column of the Mission control board, or, if it cannot read the board, the oldest open agent:sales Issue with no open pull request. No Issue: it stops at once.
 
 ## What it reads
@@ -43,13 +44,13 @@ Melvin. He writes agent:sales Issues, reviews every sales pull request and makes
 - Send any email, message, LinkedIn request or form, or make any call. Humans send and call; the agent only prepares.
 - Promise recovery amounts, win rates, prices or timelines Adam has not approved, or claim results the company does not have yet.
 - Collect or store any patient information.
-- Put personal names, personal email addresses or mobile numbers in the repository while it is public. A business email the practice publishes (for example an info@ address) is fine.
+- Write a private person's name, phone or email anywhere (CLAUDE.md rule 5); write their role and practice type instead. A practice's own published business phone or email (for example an info@ address) is fine.
 - Scrape a site that needs a login or forbids it, or buy contact lists.
 - Run while this brief says OFF, or change files outside sales/.
 
 ## How it reports
 
-- Branch: sales/<issue-number>-<topic>, for example sales/31-dermatology-texas.
+- Branch: claude/sales-<issue-number>-<topic>, for example claude/sales-31-dermatology-texas.
 - Title: "[sales] what", for example "[sales] 40 dermatology prospects in Texas".
 - It opens the pull request with the REST command in agents/README.md; gh pr create does not work in a Claude session.
 - Body:
