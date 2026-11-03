@@ -15,6 +15,7 @@ Marvin. He reads its comments at the start of his day in Singapore and approves 
 - Once for each pull request, when the pull request is opened, at any hour: the Claude Code scheduled task "reviewer" on Adam's Claude account, started by the GitHub event. Runs can start up to about 30 minutes late.
 - Task prompt: "Read CLAUDE.md and agents/reviewer.md and review this pull request. If PAUSE exists, stop."
 - It reviews every pull request, from agents and founders alike.
+- Started without a pull request (for example by Run now, or by a daily 5:00 am Sydney schedule if GitHub events cannot start the task), it reviews every open pull request that has no "[reviewer]" comment yet, oldest first, within its 30 minutes.
 
 ## What it reads
 
@@ -22,6 +23,7 @@ Marvin. He reads its comments at the start of his day in Singapore and approves 
 - The pull request: title, body, every changed file, and the linked Issue.
 - The brief of the agent in the title tag, for example agents/design.md for "[design] ...".
 - The README.md of each folder the pull request changes.
+- agents/README.md, section "GitHub from a Claude session" (the commands that work in a Claude session).
 
 ## Folders it may change
 
@@ -30,7 +32,7 @@ Marvin. He reads its comments at the start of his day in Singapore and approves 
 
 ## What it produces
 
-One comment on the pull request. The first line is the verdict: "[reviewer] Pass", "[reviewer] Changes needed" or "[reviewer] Stop: possible patient data or secret". Then three sections: **Done** (what it checked, and at which commit), **Evidence** (the checklist below, each line marked pass, fail or not checked, with the file and line of every fail) and **Needs a human**.
+One comment on the pull request. The first line is the verdict: "[reviewer] Pass", "[reviewer] Changes needed" or "[reviewer] Stop: possible patient data or secret". Then three sections: **Done** (what it checked, at which commit, and its start and finish time in Sydney), **Evidence** (the checklist below, each line marked pass, fail or not checked, with the file and line of every fail) and **Needs a human**.
 
 The checklist:
 
@@ -40,7 +42,7 @@ The checklist:
 4. Sending (rule 4): nothing sends or schedules a message, email or post outside the company.
 5. Issue (rule 6): an agent pull request names its Issue ("Closes #12"), and that Issue has the agent's label. The chief of staff's digest needs no Issue; its filed items name their File: Issues.
 6. Folders: every changed file is in a folder the agent's brief allows.
-7. Format (rule 7): the title reads "[agent] what" and the body has Done, Evidence and Needs a human. Evidence gives the time used, 30 minutes or less.
+7. Format (rule 7): the title reads "[agent] what" and the body has Done, Evidence and Needs a human. Evidence gives the start and finish time and the minutes used, 30 or less.
 8. Labels (rule 8 and Also): estimates say "our estimate"; legal points say "general information, not legal advice".
 9. Long dash (rule 9): none in the title, the body or the changed lines.
 10. Names (README.md): new files are lower case with hyphens, dated files start YYYY-MM-DD, and there are no copies like final-v2. Code in prototype/ follows its language's rules.
@@ -60,10 +62,10 @@ For a founder's pull request it checks lines 1 to 4 and 8 to 10, and marks the a
 
 ## How it reports
 
-- Through its one comment on each pull request: the verdict line, then Done, Evidence and Needs a human.
+- Through its one comment on each pull request: the verdict line, then Done, Evidence and Needs a human. It posts the comment with the REST command in agents/README.md.
 - Needs a human names who should act: the pull request's owner (human:adam, human:melvin or human:marvin), or "Nothing".
 - If this brief seems wrong, it says so under Needs a human for human:marvin.
 
 ## Time box
 
-30 minutes of work per run. On a large pull request it checks the riskiest lines first (patient data, secrets, folders), then the rest, and marks anything it did not reach "not checked".
+30 minutes of work per run, timed from the start time it notes first (`TZ=Australia/Sydney date`). On a large pull request it checks the riskiest lines first (patient data, secrets, folders), then the rest, and marks anything it did not reach "not checked".

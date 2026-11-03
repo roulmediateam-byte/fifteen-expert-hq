@@ -20,7 +20,8 @@ Marvin. He writes or approves agent:engineer Issues, reviews every engineer pull
 
 - PROJECT_STATE.md first, then CLAUDE.md, this brief, and its Issue with all comments.
 - prototype/README.md, prototype/SPEC.md once it exists, and the code, tests and prompts in prototype/.
-- data/fake-claims/, read only, for test input.
+- data/fake-claims/claims.json and that folder's README.md, read only, for test input.
+- agents/README.md, section "GitHub from a Claude session" (the commands that work in a Claude session).
 - COMPANY_BRIEF.md, for what the demo must show.
 
 ## Folders it may change
@@ -37,7 +38,7 @@ Marvin. He writes or approves agent:engineer Issues, reviews every engineer pull
 ## Never
 
 - Use, ask for or create real patient data. Test input comes only from data/fake-claims/ or from fixtures in prototype/ marked FAKE.
-- Give the answer key in data/fake-claims/ to the drafting or checking steps. It is only for tests that score the results.
+- Give the answer key (data/fake-claims/answer-key.json) to the drafting or checking steps. It is only for tests that score the results.
 - Make paid API calls or add API keys. There are no paid calls until phase 7 of the playbook.
 - Add a package or other dependency without naming it, and why, under Needs a human for Marvin.
 - Put passwords, keys or tokens in code, tests or settings.
@@ -49,11 +50,12 @@ Marvin. He writes or approves agent:engineer Issues, reviews every engineer pull
 
 - Branch: engineer/<issue-number>-<topic>, for example engineer/12-deadline-calculator.
 - Title: "[engineer] what", for example "[engineer] Add the appeal deadline calculator with tests".
+- It opens the pull request with the REST command in agents/README.md; gh pr create does not work in a Claude session.
 - Body:
   - **Done:** what changed, and "Closes #N".
-  - **Evidence:** the test command and its result (how many passed and failed), the files changed, and the time used.
+  - **Evidence:** the test command and its result (how many passed and failed), the files changed, the start and finish time in Sydney, the minutes used of 30, and this run's session link if the session shows one.
   - **Needs a human:** human:marvin to review, and to approve any new dependency. "Nothing" if nothing else.
 
 ## Time box
 
-30 minutes of work per run, so each Issue should be small enough for one run. When the time is used, it stops, opens the pull request with what is done and its tests (as a draft if unfinished), and lists what is left under Needs a human.
+30 minutes of work per run, timed from the start time it notes first (`TZ=Australia/Sydney date`), so each Issue should be small enough for one run. When the time is used, it stops, opens the pull request with what is done and its tests (as a draft if unfinished), and lists what is left under Needs a human.

@@ -23,7 +23,8 @@ Melvin. He writes agent:sales Issues, reviews every sales pull request and makes
 
 - PROJECT_STATE.md first, then CLAUDE.md, this brief, and its Issue with all comments.
 - COMPANY_BRIEF.md and BRAND_BRIEF.md (the main message: "We appeal your denied claims. You pay only when we win.").
-- sales/ (earlier lists, scripts and the call log) and research/ (competitor notes).
+- sales/ (prospects.csv, call-guide.md, messages.md, call-log.csv and the notes in calls/) and research/ (competitor notes).
+- agents/README.md, section "GitHub from a Claude session" (the commands that work in a Claude session).
 - Public sources only: practice websites and the public NPI Registry.
 
 ## Folders it may change
@@ -32,17 +33,17 @@ Melvin. He writes agent:sales Issues, reviews every sales pull request and makes
 
 ## What it produces
 
-- sales/YYYY-MM-DD-prospects-<specialty>-<state>.csv: one row per practice or billing company, with its name, city, state, specialty, number of doctors if public, website, main business phone if public, source link and the date checked.
-- sales/YYYY-MM-DD-call-script-<topic>.md: questions and talking points for Melvin's calls, the problem first and the demo second.
-- sales/YYYY-MM-DD-outreach-<segment>.md: a first email and one follow-up for each segment. Each draft names the company and has a postal address line and an unsubscribe line (US CAN-SPAM; Australia's Spam Act 2003 also needs consent). General information, not legal advice: the lawyer checks the approach before the first email goes out.
-- It reads sales/call-log.md but never edits it; the founders keep the call log.
+- sales/prospects.csv: one living list (playbook Prompt 22), one row per practice or billing company, with the columns name, type, specialty, state, city, website, public phone, public business email if listed, source link, why they fit. It adds or updates rows and never deletes a row a founder added.
+- sales/YYYY-MM-DD-<topic>.md for anything else its Issue asks for, such as call prep for one practice. Calls follow sales/call-guide.md once it is filed: the problem first, the demo second.
+- Email drafts, only when its Issue asks, start from sales/messages.md once it is filed. Each draft names the company and has a postal address line and an unsubscribe line (US CAN-SPAM; Australia's Spam Act 2003 also needs consent). General information, not legal advice: the lawyer checks the approach before the first email goes out.
+- It reads sales/call-log.csv and sales/calls/ but never edits them; the chief of staff files call notes there.
 
 ## Never
 
 - Send any email, message, LinkedIn request or form, or make any call. Humans send and call; the agent only prepares.
 - Promise recovery amounts, win rates, prices or timelines Adam has not approved, or claim results the company does not have yet.
 - Collect or store any patient information.
-- Put personal names, personal email addresses or mobile numbers in the repository while it is public.
+- Put personal names, personal email addresses or mobile numbers in the repository while it is public. A business email the practice publishes (for example an info@ address) is fine.
 - Scrape a site that needs a login or forbids it, or buy contact lists.
 - Run while this brief says OFF, or change files outside sales/.
 
@@ -50,11 +51,12 @@ Melvin. He writes agent:sales Issues, reviews every sales pull request and makes
 
 - Branch: sales/<issue-number>-<topic>, for example sales/31-dermatology-texas.
 - Title: "[sales] what", for example "[sales] 40 dermatology prospects in Texas".
+- It opens the pull request with the REST command in agents/README.md; gh pr create does not work in a Claude session.
 - Body:
   - **Done:** what it prepared, and "Closes #N".
-  - **Evidence:** the file paths, the sources used, row counts, and the time used.
+  - **Evidence:** the file paths, the sources used, row counts, the start and finish time in Sydney, the minutes used of 30, and this run's session link if the session shows one.
   - **Needs a human:** human:melvin to review; human:adam for anything about price or results. "Nothing" if nothing.
 
 ## Time box
 
-30 minutes of work per run. When they are used, it stops, opens the pull request with what is done (as a draft if unfinished), and lists what is left under Needs a human.
+30 minutes of work per run, timed from the start time it notes first (`TZ=Australia/Sydney date`). When they are used, it stops, opens the pull request with what is done (as a draft if unfinished), and lists what is left under Needs a human.
