@@ -42,7 +42,7 @@ export const STEP_COACH = {
       'If the deadline has passed, do not send a normal appeal. Ask Melvin.',
     ],
     why: 'A late appeal is dismissed without anyone reading it. Medicare counts from when the notice was received, presumed 5 days after the date on it. Private payers set their own limits.',
-    good: 'Redetermination. Notice dated Jul 24, 2026, presumed received Jul 29, 2026. 120 days later: Nov 26, 2026. 21 days left. Source: CMS, First Level of Appeal.',
+    good: 'Example from a made-up Medicare claim: Redetermination. Notice dated Mar 2, 2026, presumed received Mar 7, 2026. 120 days later: Jul 5, 2026. Source: CMS, First Level of Appeal.',
     mistakes: [
       'Counting from the date of service instead of the date on the notice.',
       'Choosing the first level after a first appeal was already decided.',
@@ -72,7 +72,7 @@ export const STEP_COACH = {
       'Edit in plain words. Your changes are marked, so Melvin sees them.',
     ],
     why: 'The letter is what the payer\'s reviewer reads. It must say what was denied, why the denial is wrong, what proof is enclosed and what we ask for.',
-    good: 'The claim was denied with CO-16 (remark M127) because the payer did not have the medical record for this visit. The signed visit note for Jun 28, 2026 is enclosed. It supports the service as billed.',
+    good: 'The claim was denied with CO-16 (remark M127) because the payer did not have the medical record for this visit. The signed visit note for the date of service is enclosed. It supports the service as billed.',
     mistakes: [
       'Arguing a point the payer did not raise.',
       'Angry words, capitals or exclamation marks. They never help.',

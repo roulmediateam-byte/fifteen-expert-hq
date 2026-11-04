@@ -3,7 +3,7 @@
 
 import { esc, when, list } from '../ui/dom.js';
 import { icon } from '../ui/icons.js';
-import { fmtDate, fmtMoney, addDays } from '../lib/dates.js';
+import { fmtDate, fmtMoney, addYears } from '../lib/dates.js';
 import { getPayer, levelForRound, carcText, rarcText, representationNeeded, suggestCategory } from '../lib/rules.js';
 
 function src(key, html, hl) {
@@ -47,7 +47,7 @@ function noticeDoc(c, ctx, hl) {
     const code = `${l.cpt}${l.modifier ? `-${l.modifier}` : ''}`;
     return `<tr>
       <td>${i === 0 ? src('dos', esc(fmtDate(c.dos)), hl) : esc(fmtDate(c.dos))}</td>
-      <td>${src('codes', esc(code), hl)}</td>
+      <td class="nowrap">${src('codes', esc(code), hl)}</td>
       <td class="num">${esc(fmtMoney(l.billed))}</td>
       <td class="num">${esc(fmtMoney(l.paid))}</td>
       <td>${denied ? src('denial_codes', esc(`${c.group}-${c.carc}${c.rarc ? `, ${c.rarc}` : ''}`), hl) : 'None'}</td>
@@ -66,7 +66,7 @@ function noticeDoc(c, ctx, hl) {
     <div class="table-wrap">
       <table class="doc-table">
         <caption class="sr-only">Service lines on the notice</caption>
-        <thead><tr><th scope="col">Date of service</th><th scope="col">Code</th><th scope="col" class="num">Billed</th><th scope="col" class="num">Paid</th><th scope="col">Adjustment</th></tr></thead>
+        <thead><tr><th scope="col">Date of service</th><th scope="col">Code</th><th scope="col" class="num">Billed</th><th scope="col" class="num">Paid</th><th scope="col">Reason</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>
     </div>
@@ -97,7 +97,7 @@ function decisionDoc(c, ctx, hl) {
 
 function claimDoc(c, ctx, hl) {
   const practice = ctx.practices[c.practice];
-  const rows = c.lines.map((l) => `<tr><td>${esc(l.cpt)}</td><td>${esc(l.modifier || 'None')}</td><td>${esc(l.desc)}</td><td class="num">${esc(fmtMoney(l.billed))}</td></tr>`).join('');
+  const rows = c.lines.map((l) => `<tr><td class="nowrap">${esc(l.cpt)}</td><td>${esc(l.modifier || 'None')}</td><td>${esc(l.desc)}</td><td class="num">${esc(fmtMoney(l.billed))}</td></tr>`).join('');
   const body = `
     <p class="doc-fake">FAKE: made-up document for the demo.</p>
     <dl class="doc-grid">
@@ -125,7 +125,7 @@ function practiceDocs(c, ctx) {
   const cs = c.case || {};
   const noteParts = [];
   if (cs.note_quote) noteParts.push(cs.note_quote);
-  else if (cs.note_summary) noteParts.push(`Visit for ${cs.note_summary}.`);
+  else if (cs.note_summary) noteParts.push(`The note shows ${cs.note_summary}.`);
   if (cs.modifier_explain) noteParts.push(cs.modifier_explain);
   if (cs.duplicate_explain) noteParts.push(cs.duplicate_explain);
   if (noteParts.length && c.on_file && c.on_file.visit_note) {
@@ -137,7 +137,7 @@ function practiceDocs(c, ctx) {
   if (cs.old_dx) items.push(`<li><strong>Coding note (fake):</strong> the visit note documents ${esc(cs.new_dx_desc)} (${esc(cs.new_dx)}); the claim listed ${esc(cs.old_dx)}.</li>`);
   if (representationNeeded(c, ctx.rules, ctx.practices)) {
     const p = ctx.practices[c.practice];
-    items.push(`<li><strong>CMS-1696 on file:</strong> signed by ${esc(p.name)} and our representative on ${esc(fmtDate(p.cms1696_signed))}; valid until ${esc(fmtDate(addDays(p.cms1696_signed, 365)))} (one year, CMS).</li>`);
+    items.push(`<li><strong>CMS-1696 on file:</strong> signed by ${esc(p.name)} and our representative on ${esc(fmtDate(p.cms1696_signed))}; valid until ${esc(fmtDate(addYears(p.cms1696_signed, 1)))} (one year, CMS).</li>`);
   }
   if (cat === 'medical_necessity') {
     items.push(c.on_file && c.on_file.lmn

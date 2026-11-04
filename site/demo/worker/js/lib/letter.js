@@ -225,7 +225,9 @@ export function splitSentences(text) {
   const out = [];
   for (const line of String(text).split('\n')) {
     if (!line.trim()) { out.push({ text: line, newline: true }); continue; }
-    const parts = line.match(/[^.?!]+(?:[.?!]+(?=\s|$)|$)\s*/g) || [line];
+    // A sentence ends at . ? or ! followed by a space or the end of the line, so "$620.00" stays whole.
+    // Every character lands in exactly one part.
+    const parts = line.match(/(?:[^.?!]|[.?!](?!\s|$))+(?:[.?!]+(?=\s|$))?\s*|[.?!]+\s*/g) || [line];
     parts.forEach((p, i) => out.push({ text: p, newline: false, lineEnd: i === parts.length - 1 }));
   }
   return out;
