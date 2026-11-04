@@ -59,7 +59,7 @@ For every open Issue whose title starts with "File:", oldest first:
    - Any other text: a new file <folder>/YYYY-MM-DD-<topic>.md, where the topic is 2 to 5 words from the Issue title, lower case with hyphens (for example legal/2026-11-09-lawyer-quote-request.md).
    - In a .md file, the first line says "Filed from Issue #N (opened by @user) on YYYY-MM-DD." Then the text as pasted, except that each long dash becomes a comma or a colon. Any other file type (.css, .csv, .json) holds exactly the pasted text, and the "Filed from" note goes in the pull request instead.
    - Not sure where it goes, or it belongs somewhere this brief may not change: ask on the Issue, add the human: label of that folder's owner, and leave it open.
-4. Never file patient data or a secret. Patient data: do not copy it; open an Issue labelled human:marvin and human:melvin that points to the Issue and says it must be deleted fast, because this repository is public. A password, key or token: tell human:marvin to change it.
+4. Never file patient data or a secret. Patient data: do not copy it; open an Issue labelled human:adam and human:melvin that points to the Issue and says it must be deleted fast, because this repository is public. A password, key or token: tell human:adam to change it.
 5. While this repository is public, do not file personal phone numbers, personal email addresses or home addresses. Ask on the Issue instead.
 6. Comment "[chief-of-staff] Filed in <path>, pull request #M." on the Issue, then close it.
 
