@@ -129,7 +129,11 @@ test('an out-of-date CMS-1696 fails the representation check', () => {
   assert.deepEqual(failedIds(c, draftFor(c)), []);
   const practices = structuredClone(ctx.practices);
   practices[c.practice].cms1696_signed = addDays(ctx.today, -400);
-  assert.ok(failedIds(c, draftFor(c), { ...ctx, practices }).includes('representation'));
+  assert.ok(failedIds(c, draftFor(c), { ...ctx, practices }).includes('representation'), 'a new appeal needs a form signed in the last year');
+  // CMS: unless revoked, the form stays valid for the rest of the appeal it was filed with.
+  const laterLevel = { ...c, round: 2, prior_decision: { date: addDays(ctx.today, -20), level: 'medicare_redetermination', result: 'unfavorable' } };
+  const laterWork = defaultWork(laterLevel, ctx);
+  assert.ok(!failedIds(laterLevel, laterWork, { ...ctx, practices }).includes('representation'), 'a later level of the same appeal is fine');
 });
 
 test('the whole flow for tour claim C-1012: new, with Melvin, approved, sent, won, fee 20%', () => {

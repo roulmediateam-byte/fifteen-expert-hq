@@ -185,19 +185,24 @@ export function runChecks(claim, work, ctx) {
   } else {
     const attached = state.cms1696 === 'attached';
     const noted = /CMS-1696/.test(text);
-    // CMS: the form is valid for one year from the date both the party and the representative sign it.
+    // CMS: the form is valid for one year from the date both the party and the representative sign it,
+    // and, unless revoked, for the rest of the appeal it was filed with (so a later level of that appeal is fine).
     const signed = ((ctx.practices || {})[claim.practice] || {}).cms1696_signed;
     const validUntil = signed ? addYears(signed, 1) : null;
     const signedFirst = Boolean(signed) && daysBetween(signed, asOf) >= 0;
-    const current = signedFirst && daysBetween(asOf, validUntil) >= 0;
+    const withinYear = signedFirst && daysBetween(asOf, validUntil) >= 0;
+    const laterLevel = (claim.round || 1) > 1;
+    const current = withinYear || (signedFirst && laterLevel);
     if (attached && noted && current) {
-      add('representation', true, `Signed CMS-1696 attached (valid until ${fmtDate(validUntil)}), and the letter says we file as the appointed representative.`);
+      add('representation', true, withinYear
+        ? `Signed CMS-1696 attached (valid until ${fmtDate(validUntil)}), and the letter says we file as the appointed representative.`
+        : 'Signed CMS-1696 attached; it stays valid for the rest of this appeal (CMS). The letter says we file as the appointed representative.');
     } else {
       const parts = [];
       const when = work.submission ? 'the send date' : 'today';
       if (!signed) parts.push('there is no signed CMS-1696 on file');
       else if (!signedFirst) parts.push(`the CMS-1696 was signed on ${fmtDate(signed)}, after ${when}`);
-      else if (!current) parts.push(`the CMS-1696 ran out on ${fmtDate(validUntil)}, one year after both signed it (CMS), so the practice must sign a new one`);
+      else if (!current) parts.push(`the CMS-1696 ran out on ${fmtDate(validUntil)}, one year after both signed it (CMS), so this new appeal needs a newly signed one`);
       if (!attached) parts.push('the signed CMS-1696 is not attached');
       if (!noted) parts.push('the letter does not say we file as the appointed representative (CMS-1696)');
       add('representation', false, `We file this Medicare appeal as the practice's representative, but ${parts.join(' and ')}.`,
