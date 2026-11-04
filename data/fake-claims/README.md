@@ -1,6 +1,6 @@
 # data/fake-claims
 
-Owner: Melvin, with Marvin (file format and tests).
+Owner: Melvin, with Adam (file format and tests).
 
 What goes here: made-up claims for testing the appeal pipeline and the review screen, including the 50-claim week 3 test set with planted errors (wrong code, missing record, unsupported clinical statement, missed deadline).
 
