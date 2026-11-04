@@ -28,9 +28,8 @@ gh label create "agent:engineer" -R $R --color 1D76DB --description "Engineer ag
 gh label create "agent:reviewer" -R $R --color 1D76DB --description "Reviewer agent: code and security review of every pull request" --force
 gh label create "agent:research" -R $R --color 1D76DB --description "Research agent: appeal rules, payer policy, competitors" --force
 gh label create "agent:sales" -R $R --color 1D76DB --description "Sales agent: target lists, outreach drafts" --force
-gh label create "human:adam" -R $R --color D93F0B --description "Needs Adam: money, contracts, sales, design approval" --force
-gh label create "human:melvin" -R $R --color D93F0B --description "Needs Melvin: claims, appeal rules, HIPAA privacy" --force
-gh label create "human:marvin" -R $R --color D93F0B --description "Needs Marvin: tech, agents, security" --force
+gh label create "human:adam" -R $R --color D93F0B --description "Needs Adam: money, contracts, sales, design approval, tech, agents, security" --force
+gh label create "human:melvin" -R $R --color D93F0B --description "Needs Melvin: claims, appeal rules, HIPAA privacy, reviewing and merging pull requests" --force
 ```
 
 A new agent gets a new agent: label, a row here, and a file in agents/.

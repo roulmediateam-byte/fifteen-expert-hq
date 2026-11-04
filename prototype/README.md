@@ -1,6 +1,6 @@
 # prototype
 
-Owner: Marvin. The engineer agent (label agent:engineer) builds here. The reviewer agent (label agent:reviewer) reviews every pull request.
+Owner: Adam. The engineer agent (label agent:engineer) builds here. The reviewer agent (label agent:reviewer) reviews every pull request.
 
 What goes here: the demo and its tests, laid out as prototype/SPEC.md says once it exists: the code, the drafting and checking instructions in prompts/, and the results saved from runs on fake claims.
 
