@@ -36,7 +36,7 @@ Every write says who pressed the button in the Issue or the commit message. HQ m
 
 - index.html, app.css, app.js: the page. assets/: the two fonts and their licence. sample/: made-up data, shown with ?sample=1 (for screenshots and trying the page before setup).
 - functions/api/: status.js, folders.js, issue.js, pause.js, run.js.
-- lib/: shared code, used by the functions (and time.js and config.js by the page too).
+- lib/: shared code, used by the functions (and time.js and config.js by the page too). The Company view (company/) runs exact copies of some of these files and of assets/, in company/lib/hq/ and company/assets/, so the two always agree: after changing one, run `node tests/copy-hq.mjs` in company/. Both test suites fail until the copies match.
 - _headers and _routes.json: Cloudflare settings (security headers; only /api/* runs a function).
 - tests/: run `npm test` in hq/ (Node.js 20 or newer). They use made-up GitHub responses and need no network. crosscheck-mission-control.py checks that HQ and Mission control agree; make-sample.mjs rebuilds sample/.
 - screenshots/: each tab at phone and desktop width, made with tests/screenshots.mjs.

@@ -1,0 +1,1297 @@
+{
+  "version": 1,
+  "generated_at": "2026-11-04T23:00:00.000Z",
+  "repo": {
+    "full_name": "roulmediateam-byte/fifteen-expert-hq",
+    "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq"
+  },
+  "running": true,
+  "paused_roles": [],
+  "numbers": {
+    "working_now": 1,
+    "runs_24h": 5,
+    "prs_waiting": 3,
+    "done_7d": 5
+  },
+  "founders": [
+    {
+      "name": "Adam",
+      "full_name": "Yee Lok Adam Lam",
+      "lead_founder": true,
+      "role": "Co-founder and CEO (internal title: CEO and Head of Revenue)",
+      "leads": [
+        "Operations",
+        "Engineering",
+        "Brand and Marketing",
+        "Sales and Customers",
+        "Research and Insights",
+        "Finance and Legal"
+      ],
+      "also": []
+    },
+    {
+      "name": "Melvin",
+      "full_name": "Melvin To",
+      "lead_founder": false,
+      "role": "Co-founder and Head of Claims Operations; HIPAA privacy contact",
+      "leads": [
+        "Claims Operations"
+      ],
+      "also": [
+        "privacy in Finance and Legal"
+      ]
+    }
+  ],
+  "departments": [
+    {
+      "id": "operations",
+      "name": "Operations",
+      "lead": "Adam",
+      "lead_note": "",
+      "mission": "Keep the company running and both founders informed.",
+      "kpis": [
+        {
+          "id": "digests_7d",
+          "label": "Digests in the last 7 days",
+          "source": "Files added in ops/digest/",
+          "out_of": null,
+          "value": 3,
+          "as_of": "2026-11-05",
+          "note": ""
+        },
+        {
+          "id": "issues_waiting_on_founder",
+          "label": "Issues waiting on a founder",
+          "source": "Open Issues with a human: label",
+          "out_of": null,
+          "value": 1,
+          "as_of": "2026-11-05",
+          "note": ""
+        }
+      ],
+      "roles": [
+        {
+          "id": "chief-of-staff",
+          "title": "Chief of staff",
+          "kind": "agent",
+          "owner": "Adam",
+          "job": "Daily digest, filing and the work board.",
+          "state": "waiting on human",
+          "reason": "open pull request with no human review",
+          "in_schedule": true,
+          "enabled": true,
+          "next_run": "2026-11-05T19:30:00.000Z",
+          "next_run_note": "",
+          "last_run": {
+            "start": "2026-11-04T19:32:00.000Z",
+            "end": "2026-11-04T19:45:00.000Z",
+            "outcome": "done",
+            "minutes": 13
+          },
+          "switch_on_when": ""
+        }
+      ],
+      "counts": {
+        "roles": 1,
+        "working": 0,
+        "planned": 0
+      },
+      "open_issues": [],
+      "merged_prs": [
+        {
+          "number": 26,
+          "title": "[chief-of-staff] Digest 2026-10-28",
+          "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26",
+          "merged_at": "2026-10-27T22:00:00.000Z",
+          "agent": "chief-of-staff"
+        }
+      ],
+      "strip_days": [
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01",
+        "2026-11-02",
+        "2026-11-03",
+        "2026-11-04",
+        "2026-11-05"
+      ],
+      "strip": [
+        {
+          "id": "chief-of-staff",
+          "title": "Chief of staff",
+          "state": "waiting on human",
+          "counts": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engineering",
+      "name": "Engineering",
+      "lead": "Adam",
+      "lead_note": "",
+      "mission": "Build the claims software and keep every change safe.",
+      "kpis": [
+        {
+          "id": "fake_claims_score",
+          "label": "Score on the 50 made-up claims",
+          "source": "ops/kpis.json key fake_claims_score, from the engineer's test report",
+          "out_of": 50,
+          "value": 41,
+          "as_of": "2026-11-04",
+          "note": ""
+        },
+        {
+          "id": "engineer_merged_7d",
+          "label": "Pull requests merged in the last 7 days by the engineer",
+          "source": "Pull requests tagged [engineer], merged on GitHub",
+          "out_of": null,
+          "value": 2,
+          "as_of": "2026-11-05",
+          "note": ""
+        }
+      ],
+      "roles": [
+        {
+          "id": "engineer",
+          "title": "Engineer",
+          "kind": "agent",
+          "owner": "Adam",
+          "job": "Builds and tests the demo on made-up claims.",
+          "state": "working",
+          "reason": "",
+          "in_schedule": true,
+          "enabled": true,
+          "next_run": "2026-11-05T15:00:00.000Z",
+          "next_run_note": "",
+          "last_run": {
+            "start": "2026-11-04T22:30:00.000Z",
+            "end": null,
+            "outcome": null,
+            "minutes": 30
+          },
+          "switch_on_when": ""
+        },
+        {
+          "id": "reviewer",
+          "title": "Reviewer",
+          "kind": "agent",
+          "owner": "Adam",
+          "job": "Checks every pull request against CLAUDE.md and never merges.",
+          "state": "done",
+          "reason": "pass",
+          "in_schedule": true,
+          "enabled": true,
+          "next_run": "2026-11-05T18:00:00.000Z",
+          "next_run_note": "daily sweep; also runs on every new pull request",
+          "last_run": {
+            "start": "2026-11-04T19:52:00.000Z",
+            "end": "2026-11-04T19:58:00.000Z",
+            "outcome": "done",
+            "minutes": 6
+          },
+          "switch_on_when": ""
+        }
+      ],
+      "counts": {
+        "roles": 2,
+        "working": 1,
+        "planned": 0
+      },
+      "open_issues": [
+        {
+          "number": 15,
+          "title": "Appeal deadline calculator",
+          "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/15",
+          "labels": [
+            "agent:engineer"
+          ],
+          "created_at": "2026-11-03T22:00:00.000Z",
+          "high": false
+        }
+      ],
+      "merged_prs": [
+        {
+          "number": 16,
+          "title": "[engineer] Add the fake claims loader",
+          "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/16",
+          "merged_at": "2026-11-03T21:00:00.000Z",
+          "agent": "engineer"
+        },
+        {
+          "number": 25,
+          "title": "[engineer] Deadline calculator tests",
+          "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25",
+          "merged_at": "2026-10-31T23:00:00.000Z",
+          "agent": "engineer"
+        }
+      ],
+      "strip_days": [
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01",
+        "2026-11-02",
+        "2026-11-03",
+        "2026-11-04",
+        "2026-11-05"
+      ],
+      "strip": [
+        {
+          "id": "engineer",
+          "title": "Engineer",
+          "state": "working",
+          "counts": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "reviewer",
+          "title": "Reviewer",
+          "state": "done",
+          "counts": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brand",
+      "name": "Brand and Marketing",
+      "lead": "Adam",
+      "lead_note": "",
+      "mission": "Make the company look trustworthy to small US practices.",
+      "kpis": [
+        {
+          "id": "design_merged_7d",
+          "label": "Design pieces merged in the last 7 days",
+          "source": "Pull requests tagged [design], merged on GitHub",
+          "out_of": null,
+          "value": 1,
+          "as_of": "2026-11-05",
+          "note": ""
+        }
+      ],
+      "roles": [
+        {
+          "id": "design",
+          "title": "Design",
+          "kind": "agent",
+          "owner": "Adam",
+          "job": "Pages and design pieces from the design system.",
+          "state": "failed",
+          "reason": "could not read the tokens",
+          "in_schedule": true,
+          "enabled": true,
+          "next_run": "2026-11-05T14:00:00.000Z",
+          "next_run_note": "",
+          "last_run": {
+            "start": "2026-11-04T14:05:00.000Z",
+            "end": "2026-11-04T14:20:00.000Z",
+            "outcome": "failed",
+            "minutes": 15
+          },
+          "switch_on_when": ""
+        },
+        {
+          "id": "marketing",
+          "title": "Marketing",
+          "kind": "agent",
+          "owner": "Adam",
+          "job": "Drafts LinkedIn posts and pages on common denial codes for a founder to publish.",
+          "state": "planned",
+          "reason": "",
+          "in_schedule": false,
+          "enabled": false,
+          "next_run": null,
+          "next_run_note": "",
+          "last_run": null,
+          "switch_on_when": "When the domain is bought and the website is live."
+        }
+      ],
+      "counts": {
+        "roles": 2,
+        "working": 0,
+        "planned": 1
+      },
+      "open_issues": [
+        {
+          "number": 33,
+          "title": "Export the logo at 16 px",
+          "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/33",
+          "labels": [
+            "agent:design",
+            "priority:high"
+          ],
+          "created_at": "2026-11-04T02:00:00.000Z",
+          "high": true
+        },
+        {
+          "number": 14,
+          "title": "Hero section",
+          "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/14",
+          "labels": [
+            "agent:design"
+          ],
+          "created_at": "2026-11-02T22:00:00.000Z",
+          "high": false
+        }
+      ],
+      "merged_prs": [
+        {
+          "number": 23,
+          "title": "[design] Placeholder homepage",
+          "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23",
+          "merged_at": "2026-11-02T22:00:00.000Z",
+          "agent": "design"
+        }
+      ],
+      "strip_days": [
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01",
+        "2026-11-02",
+        "2026-11-03",
+        "2026-11-04",
+        "2026-11-05"
+      ],
+      "strip": [
+        {
+          "id": "design",
+          "title": "Design",
+          "state": "failed",
+          "counts": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "marketing",
+          "title": "Marketing",
+          "state": "planned",
+          "counts": null
+        }
+      ]
+    },
+    {
+      "id": "sales",
+      "name": "Sales and Customers",
+      "lead": "Adam",
+      "lead_note": "",
+      "mission": "Find practices, win pilots and keep them happy.",
+      "kpis": [
+        {
+          "id": "calls_booked",
+          "label": "Calls booked",
+          "source": "ops/kpis.json key calls_booked, filed by a founder",
+          "out_of": null,
+          "value": 3,
+          "as_of": "2026-11-04",
+          "note": ""
+        },
+        {
+          "id": "pilots_signed",
+          "label": "Pilot practices signed",
+          "source": "ops/kpis.json key pilots_signed, filed by a founder",
+          "out_of": null,
+          "value": 0,
+          "as_of": "2026-11-04",
+          "note": ""
+        }
+      ],
+      "roles": [
+        {
+          "id": "sales",
+          "title": "Sales",
+          "kind": "agent",
+          "owner": "Melvin",
+          "job": "Prospect lists, call scripts and email drafts.",
+          "state": "off",
+          "reason": "off until phase 5",
+          "in_schedule": true,
+          "enabled": false,
+          "next_run": null,
+          "next_run_note": "",
+          "last_run": null,
+          "switch_on_when": ""
+        },
+        {
+          "id": "customer-success",
+          "title": "Customer success",
+          "kind": "agent",
+          "owner": "Melvin",
+          "job": "Each practice's onboarding checklist and monthly report from totals.",
+          "state": "planned",
+          "reason": "",
+          "in_schedule": false,
+          "enabled": false,
+          "next_run": null,
+          "next_run_note": "",
+          "last_run": null,
+          "switch_on_when": "When the first pilot practice signs."
+        }
+      ],
+      "counts": {
+        "roles": 2,
+        "working": 0,
+        "planned": 1
+      },
+      "open_issues": [
+        {
+          "number": 34,
+          "title": "Draft the call guide",
+          "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/34",
+          "labels": [
+            "agent:sales",
+            "priority:normal"
+          ],
+          "created_at": "2026-11-04T03:00:00.000Z",
+          "high": false
+        }
+      ],
+      "merged_prs": [],
+      "strip_days": [
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01",
+        "2026-11-02",
+        "2026-11-03",
+        "2026-11-04",
+        "2026-11-05"
+      ],
+      "strip": [
+        {
+          "id": "sales",
+          "title": "Sales",
+          "state": "off",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "customer-success",
+          "title": "Customer success",
+          "state": "planned",
+          "counts": null
+        }
+      ]
+    },
+    {
+      "id": "claims",
+      "name": "Claims Operations",
+      "lead": "Melvin",
+      "lead_note": "",
+      "mission": "Turn denials into won appeals, each checked by a trained person.",
+      "kpis": [
+        {
+          "id": "appeals_sent",
+          "label": "Appeals sent",
+          "source": "ops/kpis.json key appeals_sent, filed by a founder (from phase 7)",
+          "out_of": null,
+          "value": null,
+          "as_of": "2026-11-04",
+          "note": "Not filed yet. A founder files it with a \"File: ops/kpis.json\" Issue."
+        },
+        {
+          "id": "appeals_won",
+          "label": "Appeals won",
+          "source": "ops/kpis.json key appeals_won, filed by a founder (from phase 7)",
+          "out_of": null,
+          "value": null,
+          "as_of": "2026-11-04",
+          "note": "Not filed yet. A founder files it with a \"File: ops/kpis.json\" Issue."
+        }
+      ],
+      "roles": [
+        {
+          "id": "appeal-drafter",
+          "title": "Appeal drafter",
+          "kind": "product",
+          "owner": "Melvin",
+          "job": "Drafts each appeal inside the claims system under BAAs, never in this repository.",
+          "state": "planned",
+          "reason": "",
+          "in_schedule": false,
+          "enabled": false,
+          "next_run": null,
+          "next_run_note": "",
+          "last_run": null,
+          "switch_on_when": "Phase 7, after the security check."
+        },
+        {
+          "id": "trained-reviewers",
+          "title": "Trained reviewers",
+          "kind": "people",
+          "owner": "Melvin",
+          "job": "Check and send every appeal.",
+          "state": "planned",
+          "reason": "",
+          "in_schedule": false,
+          "enabled": false,
+          "next_run": null,
+          "next_run_note": "",
+          "last_run": null,
+          "switch_on_when": "When the pilot proves the process."
+        }
+      ],
+      "counts": {
+        "roles": 2,
+        "working": 0,
+        "planned": 2
+      },
+      "open_issues": [],
+      "merged_prs": [],
+      "strip_days": [
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01",
+        "2026-11-02",
+        "2026-11-03",
+        "2026-11-04",
+        "2026-11-05"
+      ],
+      "strip": []
+    },
+    {
+      "id": "research",
+      "name": "Research and Insights",
+      "lead": "Adam",
+      "lead_note": "",
+      "mission": "Know the rules, the insurers and the market.",
+      "kpis": [
+        {
+          "id": "research_notes_30d",
+          "label": "Research notes in the last 30 days",
+          "source": "Files added in research/",
+          "out_of": null,
+          "value": 3,
+          "as_of": "2026-11-05",
+          "note": ""
+        }
+      ],
+      "roles": [
+        {
+          "id": "research",
+          "title": "Research",
+          "kind": "agent",
+          "owner": "Adam",
+          "job": "Weekly watch on rules, insurers, the market and competitors.",
+          "state": "done",
+          "reason": "two payer bulletins changed",
+          "in_schedule": true,
+          "enabled": true,
+          "next_run": "2026-11-08T16:00:00.000Z",
+          "next_run_note": "",
+          "last_run": {
+            "start": "2026-11-01T16:06:00.000Z",
+            "end": "2026-11-01T16:30:00.000Z",
+            "outcome": "done",
+            "minutes": 24
+          },
+          "switch_on_when": ""
+        },
+        {
+          "id": "data-analyst",
+          "title": "Data analyst",
+          "kind": "agent",
+          "owner": "Adam",
+          "job": "Weekly numbers, as counts only.",
+          "state": "planned",
+          "reason": "",
+          "in_schedule": false,
+          "enabled": false,
+          "next_run": null,
+          "next_run_note": "",
+          "last_run": null,
+          "switch_on_when": "When the first 10 appeal decisions are back."
+        }
+      ],
+      "counts": {
+        "roles": 2,
+        "working": 0,
+        "planned": 1
+      },
+      "open_issues": [],
+      "merged_prs": [
+        {
+          "number": 24,
+          "title": "[research] Weekly watch 2026-11-02",
+          "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/24",
+          "merged_at": "2026-11-02T00:00:00.000Z",
+          "agent": "research"
+        }
+      ],
+      "strip_days": [
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01",
+        "2026-11-02",
+        "2026-11-03",
+        "2026-11-04",
+        "2026-11-05"
+      ],
+      "strip": [
+        {
+          "id": "research",
+          "title": "Research",
+          "state": "done",
+          "counts": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "data-analyst",
+          "title": "Data analyst",
+          "state": "planned",
+          "counts": null
+        }
+      ]
+    },
+    {
+      "id": "finance-legal",
+      "name": "Finance and Legal",
+      "lead": "Adam",
+      "lead_note": "Melvin for privacy",
+      "mission": "Keep the money, the contracts and HIPAA in order.",
+      "kpis": [
+        {
+          "id": "lawyer_questions_open",
+          "label": "Open questions for the lawyer",
+          "source": "ops/kpis.json key lawyer_questions_open, filed by a founder",
+          "out_of": null,
+          "value": 4,
+          "as_of": "2026-11-04",
+          "note": ""
+        }
+      ],
+      "roles": [
+        {
+          "id": "finance",
+          "title": "Finance",
+          "kind": "agent",
+          "owner": "Adam",
+          "job": "Invoice drafts and a 13-week cash forecast, never moves money.",
+          "state": "planned",
+          "reason": "",
+          "in_schedule": false,
+          "enabled": false,
+          "next_run": null,
+          "next_run_note": "",
+          "last_run": null,
+          "switch_on_when": "When the US company and its bank account exist."
+        },
+        {
+          "id": "legal-contracts",
+          "title": "Legal and contracts",
+          "kind": "agent",
+          "owner": "Adam",
+          "job": "Fills practice agreements and BAAs and tracks renewal dates, never signs or sends.",
+          "state": "planned",
+          "reason": "",
+          "in_schedule": false,
+          "enabled": false,
+          "next_run": null,
+          "next_run_note": "",
+          "last_run": null,
+          "switch_on_when": "When the lawyer approves the templates."
+        },
+        {
+          "id": "compliance-monitor",
+          "title": "Compliance monitor",
+          "kind": "agent",
+          "owner": "Melvin",
+          "job": "The BAA register, training reminders and a monthly report, never opens claims data.",
+          "state": "planned",
+          "reason": "",
+          "in_schedule": false,
+          "enabled": false,
+          "next_run": null,
+          "next_run_note": "",
+          "last_run": null,
+          "switch_on_when": "Before the first real claim."
+        }
+      ],
+      "counts": {
+        "roles": 3,
+        "working": 0,
+        "planned": 3
+      },
+      "open_issues": [],
+      "merged_prs": [],
+      "strip_days": [
+        "2026-10-30",
+        "2026-10-31",
+        "2026-11-01",
+        "2026-11-02",
+        "2026-11-03",
+        "2026-11-04",
+        "2026-11-05"
+      ],
+      "strip": [
+        {
+          "id": "finance",
+          "title": "Finance",
+          "state": "planned",
+          "counts": null
+        },
+        {
+          "id": "legal-contracts",
+          "title": "Legal and contracts",
+          "state": "planned",
+          "counts": null
+        },
+        {
+          "id": "compliance-monitor",
+          "title": "Compliance monitor",
+          "state": "planned",
+          "counts": null
+        }
+      ]
+    }
+  ],
+  "feed": [
+    {
+      "at": "2026-11-04T22:30:00.000Z",
+      "kind": "run-start",
+      "state": "working",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Engineer started a run on #15",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/15"
+    },
+    {
+      "at": "2026-11-04T19:58:00.000Z",
+      "kind": "run-end",
+      "state": "done",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Reviewer finished a run on #20: done. Pass.",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20"
+    },
+    {
+      "at": "2026-11-04T19:52:00.000Z",
+      "kind": "run-start",
+      "state": "working",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Reviewer started a run on #20",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20"
+    },
+    {
+      "at": "2026-11-04T19:45:00.000Z",
+      "kind": "run-end",
+      "state": "done",
+      "department": {
+        "id": "operations",
+        "name": "Operations"
+      },
+      "text": "Chief of staff finished a run (digest): done. Digest and one filed item.",
+      "url": ""
+    },
+    {
+      "at": "2026-11-04T19:45:00.000Z",
+      "kind": "pr-opened",
+      "state": "",
+      "department": {
+        "id": "operations",
+        "name": "Operations"
+      },
+      "text": "Pull request #20 opened: [chief-of-staff] Digest 2026-11-05",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/20"
+    },
+    {
+      "at": "2026-11-04T19:32:00.000Z",
+      "kind": "run-start",
+      "state": "working",
+      "department": {
+        "id": "operations",
+        "name": "Operations"
+      },
+      "text": "Chief of staff started a run (digest)",
+      "url": ""
+    },
+    {
+      "at": "2026-11-04T18:05:00.000Z",
+      "kind": "run-end",
+      "state": "idle",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Reviewer finished a run: nothing to do. Nothing new.",
+      "url": ""
+    },
+    {
+      "at": "2026-11-04T18:02:00.000Z",
+      "kind": "run-start",
+      "state": "working",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Reviewer started a run (sweep)",
+      "url": ""
+    },
+    {
+      "at": "2026-11-04T14:20:00.000Z",
+      "kind": "run-end",
+      "state": "failed",
+      "department": {
+        "id": "brand",
+        "name": "Brand and Marketing"
+      },
+      "text": "Design finished a run on #14: failed. Could not read the tokens.",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/14"
+    },
+    {
+      "at": "2026-11-04T14:05:00.000Z",
+      "kind": "run-start",
+      "state": "working",
+      "department": {
+        "id": "brand",
+        "name": "Brand and Marketing"
+      },
+      "text": "Design started a run on #14",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/14"
+    },
+    {
+      "at": "2026-11-03T21:00:00.000Z",
+      "kind": "pr-merged",
+      "state": "",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Pull request #16 merged: [engineer] Add the fake claims loader",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/16"
+    },
+    {
+      "at": "2026-11-03T19:45:00.000Z",
+      "kind": "run-end",
+      "state": "done",
+      "department": {
+        "id": "operations",
+        "name": "Operations"
+      },
+      "text": "Chief of staff finished a run (digest): done. Digest.",
+      "url": ""
+    },
+    {
+      "at": "2026-11-03T19:34:00.000Z",
+      "kind": "run-start",
+      "state": "working",
+      "department": {
+        "id": "operations",
+        "name": "Operations"
+      },
+      "text": "Chief of staff started a run (digest)",
+      "url": ""
+    },
+    {
+      "at": "2026-11-03T18:03:00.000Z",
+      "kind": "run-end",
+      "state": "idle",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Reviewer finished a run: nothing to do. Nothing new.",
+      "url": ""
+    },
+    {
+      "at": "2026-11-03T18:01:00.000Z",
+      "kind": "run-start",
+      "state": "working",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Reviewer started a run (sweep)",
+      "url": ""
+    },
+    {
+      "at": "2026-11-03T15:16:00.000Z",
+      "kind": "run-end",
+      "state": "blocked",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Engineer finished a run on #15: blocked. Needs the answer key format from Melvin.",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/15"
+    },
+    {
+      "at": "2026-11-03T15:04:00.000Z",
+      "kind": "run-start",
+      "state": "working",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Engineer started a run on #15",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/15"
+    },
+    {
+      "at": "2026-11-03T14:30:00.000Z",
+      "kind": "run-end",
+      "state": "done",
+      "department": {
+        "id": "brand",
+        "name": "Brand and Marketing"
+      },
+      "text": "Design finished a run on #14: done. Hero section drafted.",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/14"
+    },
+    {
+      "at": "2026-11-03T14:30:00.000Z",
+      "kind": "pr-opened",
+      "state": "",
+      "department": {
+        "id": "brand",
+        "name": "Brand and Marketing"
+      },
+      "text": "Pull request #21 opened: [design] Hero section",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/21"
+    },
+    {
+      "at": "2026-11-03T14:03:00.000Z",
+      "kind": "run-start",
+      "state": "working",
+      "department": {
+        "id": "brand",
+        "name": "Brand and Marketing"
+      },
+      "text": "Design started a run on #14",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/14"
+    },
+    {
+      "at": "2026-11-03T01:00:00.000Z",
+      "kind": "issue-closed",
+      "state": "",
+      "department": {
+        "id": "brand",
+        "name": "Brand and Marketing"
+      },
+      "text": "Issue #12 closed: Placeholder homepage",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12"
+    },
+    {
+      "at": "2026-11-02T22:00:00.000Z",
+      "kind": "pr-merged",
+      "state": "",
+      "department": {
+        "id": "brand",
+        "name": "Brand and Marketing"
+      },
+      "text": "Pull request #23 merged: [design] Placeholder homepage",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23"
+    },
+    {
+      "at": "2026-11-02T20:00:00.000Z",
+      "kind": "pr-merged",
+      "state": "",
+      "department": {
+        "id": "founders",
+        "name": "Founders"
+      },
+      "text": "Pull request #17 merged: Set up the filing cabinet",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/17"
+    },
+    {
+      "at": "2026-11-02T19:43:00.000Z",
+      "kind": "run-end",
+      "state": "done",
+      "department": {
+        "id": "operations",
+        "name": "Operations"
+      },
+      "text": "Chief of staff finished a run (digest): done. Digest.",
+      "url": ""
+    },
+    {
+      "at": "2026-11-02T19:31:00.000Z",
+      "kind": "run-start",
+      "state": "working",
+      "department": {
+        "id": "operations",
+        "name": "Operations"
+      },
+      "text": "Chief of staff started a run (digest)",
+      "url": ""
+    },
+    {
+      "at": "2026-11-02T18:11:00.000Z",
+      "kind": "run-end",
+      "state": "done",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Reviewer finished a run (sweep): done. Two reviews.",
+      "url": ""
+    },
+    {
+      "at": "2026-11-02T18:02:00.000Z",
+      "kind": "run-start",
+      "state": "working",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Reviewer started a run (sweep)",
+      "url": ""
+    },
+    {
+      "at": "2026-11-02T15:30:00.000Z",
+      "kind": "pr-opened",
+      "state": "",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Pull request #16 opened: [engineer] Add the fake claims loader",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/16"
+    },
+    {
+      "at": "2026-11-02T15:29:00.000Z",
+      "kind": "run-end",
+      "state": "done",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Engineer finished a run on #16: done. Loader and tests.",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/16"
+    },
+    {
+      "at": "2026-11-02T15:03:00.000Z",
+      "kind": "run-start",
+      "state": "working",
+      "department": {
+        "id": "engineering",
+        "name": "Engineering"
+      },
+      "text": "Engineer started a run on #16",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/16"
+    }
+  ],
+  "heatmap": {
+    "days": [
+      "2026-10-23",
+      "2026-10-24",
+      "2026-10-25",
+      "2026-10-26",
+      "2026-10-27",
+      "2026-10-28",
+      "2026-10-29",
+      "2026-10-30",
+      "2026-10-31",
+      "2026-11-01",
+      "2026-11-02",
+      "2026-11-03",
+      "2026-11-04",
+      "2026-11-05"
+    ],
+    "rows": [
+      {
+        "id": "operations",
+        "name": "Operations",
+        "agents": 1,
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "total": 5
+      },
+      {
+        "id": "engineering",
+        "name": "Engineering",
+        "agents": 2,
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          2,
+          2,
+          3
+        ],
+        "total": 10
+      },
+      {
+        "id": "brand",
+        "name": "Brand and Marketing",
+        "agents": 1,
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "total": 5
+      },
+      {
+        "id": "sales",
+        "name": "Sales and Customers",
+        "agents": 1,
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0
+      },
+      {
+        "id": "claims",
+        "name": "Claims Operations",
+        "agents": 0,
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0
+      },
+      {
+        "id": "research",
+        "name": "Research and Insights",
+        "agents": 1,
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "total": 1
+      },
+      {
+        "id": "finance-legal",
+        "name": "Finance and Legal",
+        "agents": 0,
+        "counts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "total": 0
+      }
+    ]
+  },
+  "notes": [],
+  "github_calls": 25,
+  "company": "",
+  "sample": true
+}
