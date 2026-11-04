@@ -13,8 +13,7 @@
   },
   "founders": [
     "Adam",
-    "Melvin",
-    "Marvin"
+    "Melvin"
   ],
   "agents": [
     {
@@ -112,7 +111,7 @@
     {
       "name": "engineer",
       "label": "agent:engineer",
-      "owner": "Marvin",
+      "owner": "Adam",
       "enabled": true,
       "enabled_note": "",
       "state": "working",
@@ -151,7 +150,7 @@
     {
       "name": "reviewer",
       "label": "agent:reviewer",
-      "owner": "Marvin",
+      "owner": "Adam",
       "enabled": true,
       "enabled_note": "",
       "state": "done",
@@ -260,6 +259,24 @@
   "waiting": {
     "Adam": [
       {
+        "kind": "Issue",
+        "number": 30,
+        "title": "Check the lawyer quote",
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30",
+        "created_at": "2026-11-03T22:00:00.000Z",
+        "hours": 25
+      }
+    ],
+    "Melvin": [
+      {
+        "kind": "pull request",
+        "number": 22,
+        "title": "Founder notes",
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/22",
+        "created_at": "2026-11-01T22:00:00.000Z",
+        "hours": 73
+      },
+      {
         "kind": "pull request",
         "number": 21,
         "title": "[design] Hero section",
@@ -274,26 +291,6 @@
         "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/20",
         "created_at": "2026-11-04T19:45:00.000Z",
         "hours": 3
-      }
-    ],
-    "Melvin": [
-      {
-        "kind": "pull request",
-        "number": 22,
-        "title": "Founder notes",
-        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/22",
-        "created_at": "2026-11-01T22:00:00.000Z",
-        "hours": 73
-      }
-    ],
-    "Marvin": [
-      {
-        "kind": "Issue",
-        "number": 30,
-        "title": "Check the lawyer quote",
-        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30",
-        "created_at": "2026-11-03T22:00:00.000Z",
-        "hours": 25
       }
     ]
   },
@@ -324,7 +321,7 @@
       "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/21"
     }
   ],
-  "mission_control_note": "Changes to main and agent folders were last checked by Mission control on Thu 5 Nov, 9:07 am (6:07 am Singapore).",
+  "mission_control_note": "Changes to main and agent folders were last checked by Mission control on Thu 5 Nov, 9:07 am.",
   "next_runs": [
     {
       "agent": "design",
@@ -335,14 +332,14 @@
     },
     {
       "agent": "engineer",
-      "owner": "Marvin",
+      "owner": "Adam",
       "at": "2026-11-05T15:00:00.000Z",
       "note": "",
       "paused": false
     },
     {
       "agent": "reviewer",
-      "owner": "Marvin",
+      "owner": "Adam",
       "at": "2026-11-05T18:00:00.000Z",
       "note": "daily sweep",
       "paused": false
@@ -546,7 +543,7 @@
       "title": "Check the lawyer quote",
       "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30",
       "labels": [
-        "human:marvin"
+        "human:adam"
       ],
       "column": "Needs human",
       "priority": "",
@@ -618,7 +615,7 @@
       "type": "GitHub Issue #10: the dashboard of every agent, rewritten by GitHub Actions",
       "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/10",
       "link_text": "",
-      "owner": "Marvin",
+      "owner": "Adam",
       "area": "Ops",
       "status": "active",
       "added": "2026-11-04"
@@ -628,7 +625,7 @@
       "type": "GitHub Issues: one heartbeat log per agent",
       "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues?q=label%3Astatus-board",
       "link_text": "",
-      "owner": "Marvin",
+      "owner": "Adam",
       "area": "Ops",
       "status": "active",
       "added": "2026-11-04"
@@ -638,7 +635,7 @@
       "type": "Web app: the founders' private dashboard of everything and every agent (hq/, set up with hq/SETUP.md)",
       "link": "https://fifteen-expert-hq.pages.dev/",
       "link_text": "",
-      "owner": "Marvin",
+      "owner": "Adam",
       "area": "Ops",
       "status": "planned",
       "added": "2026-11-04"
@@ -688,7 +685,7 @@
       "type": "File: the rules every agent follows",
       "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq/blob/main/CLAUDE.md",
       "link_text": "",
-      "owner": "Marvin",
+      "owner": "Adam",
       "area": "Product and engineering",
       "status": "active",
       "added": "2026-11-04"
@@ -698,7 +695,7 @@
       "type": "Folder: one brief per agent, and agents/schedule.json",
       "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/agents",
       "link_text": "",
-      "owner": "Marvin",
+      "owner": "Adam",
       "area": "Product and engineering",
       "status": "active",
       "added": "2026-11-04"
@@ -734,13 +731,13 @@
       "added": "2026-11-04"
     },
     {
-      "name": "Design system, first version",
-      "type": "Claude Design System artifact: colours, type, spacing, components, icons, 3 logo directions",
+      "name": "Design system",
+      "type": "Claude Design System artifact: colours, type, spacing, components, icons and the logo; the theme both founders confirmed on 4 Nov 2026",
       "link": "https://claude.ai/artifact/WY7ikfEYykLdkh5TqMa2No",
       "link_text": "",
       "owner": "Adam",
       "area": "Brand and design",
-      "status": "draft",
+      "status": "active",
       "added": "2026-11-04"
     },
     {
@@ -755,12 +752,12 @@
     },
     {
       "name": "Logo directions in use",
-      "type": "Claude Design canvas: logo directions A, B and C tested on real uses",
+      "type": "Claude Design canvas: logo directions A, B and C tested on real uses; both founders chose B, Tick dot, on 4 Nov 2026",
       "link": "https://claude.ai/artifact/VVqoGgRxoPUBJ6SbVFurv2",
       "link_text": "",
       "owner": "Adam",
       "area": "Brand and design",
-      "status": "draft",
+      "status": "active",
       "added": "2026-11-04"
     },
     {
@@ -824,11 +821,21 @@
       "added": "2026-11-04"
     },
     {
+      "name": "Logo B files and design tokens",
+      "type": "Files in the Claude Project's brand/ folder: logo B (logo, white logo, icon, small-size icon, as SVG) and design-tokens.json; kept out of this public repository until the domain is bought",
+      "link": "",
+      "link_text": "In the Claude Project \"claims-expert\"",
+      "owner": "Adam",
+      "area": "Brand and design",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
       "name": "Starter kit claims-expert-ai-env.zip",
       "type": "File in the Claude Project: the 12-agent kit and the Zone 1 claims design; waits for revenue",
       "link": "",
       "link_text": "In the Claude Project \"claims-expert\"",
-      "owner": "Marvin",
+      "owner": "Adam",
       "area": "Product and engineering",
       "status": "planned",
       "added": "2026-11-04"
@@ -838,7 +845,7 @@
       "type": "Web page: hosting for HQ and the website, and the Zero Trust login",
       "link": "https://dash.cloudflare.com/",
       "link_text": "",
-      "owner": "Marvin",
+      "owner": "Adam",
       "area": "Product and engineering",
       "status": "planned",
       "added": "2026-11-04"
@@ -849,6 +856,18 @@
       "date": "2026-11-04",
       "decision": "HQ: one private web app for the founders (hq/), on Cloudflare Pages with Cloudflare Access in front, both on free plans; ops/links.md becomes the single list of everything; a PAUSE-<name> file stops one agent.",
       "why": "Playbook Prompt 8c: one place to see everything and every agent and to give an agent work, at no cost.",
+      "by": "Adam"
+    },
+    {
+      "date": "2026-11-04",
+      "decision": "Marvin's duties move to Adam: building the software, HIPAA security official (45 CFR 164.308(a)(2)) and owner of the engineer and reviewer agents. Melvin reviews and merges the pull requests that Adam's Claude sessions and agents open, because nobody merges their own pull request.",
+      "why": "Adam already writes all the code.",
+      "by": "Adam"
+    },
+    {
+      "date": "2026-11-04",
+      "decision": "Marvin Seng is no longer a founder and has no role in the company. The founders are Adam Lam and Melvin To.",
+      "why": "Not recorded.",
       "by": "Adam"
     },
     {

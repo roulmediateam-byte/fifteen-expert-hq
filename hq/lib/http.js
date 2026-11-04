@@ -41,7 +41,7 @@ export function handle(fn) {
     } catch (error) {
       if (error instanceof HttpError) return fail(error.status, error.message, error.extra);
       console.error('HQ error:', error && error.stack ? error.stack : error);
-      return fail(500, 'Something went wrong in HQ. Try again; if it keeps happening, tell Marvin.');
+      return fail(500, 'Something went wrong in HQ. Try again; if it keeps happening, tell Adam.');
     }
   };
 }

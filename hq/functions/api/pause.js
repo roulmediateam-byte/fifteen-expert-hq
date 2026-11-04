@@ -16,7 +16,7 @@ import { repoFacts } from '../../lib/facts.js';
 import { cacheClear } from '../../lib/cache.js';
 import { oneOf } from '../../lib/validate.js';
 import { PAUSE_ALL, PAUSE_PREFIX } from '../../lib/config.js';
-import { bothZones } from '../../lib/time.js';
+import { sydneyTime } from '../../lib/time.js';
 
 function base64(text) {
   const bytes = new TextEncoder().encode(text);
@@ -48,7 +48,7 @@ export const onRequestPost = handle(async ({ request, env }) => {
   let commitUrl = '';
   if (plan.action === 'pause' && !sha) {
     const content = [
-      `Paused from HQ by ${who} on ${bothZones(now, { withYear: true })}.`,
+      `Paused from HQ by ${who} on ${sydneyTime(now, { withYear: true })} Sydney time.`,
       `While this file is on main, ${plan.whom} posts a paused heartbeat and stops (CLAUDE.md rule 3).`,
       'To resume: press Resume in HQ, or delete this file on GitHub.',
       '',

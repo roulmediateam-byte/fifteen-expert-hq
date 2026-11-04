@@ -11,7 +11,7 @@ import { collectStatus, collectFolders } from '../lib/collect.js';
 import { buildStatus } from '../lib/build.js';
 import { parseHeartbeat } from '../lib/heartbeats.js';
 import { parseLinks, parseDecisions, readmeSummary } from '../lib/markdown.js';
-import { slots, zonedToDate, bothZones, age, sydneyOffsetMs, intlOffsetMs, sydneyIsoDate } from '../lib/time.js';
+import { slots, zonedToDate, sydneyTime, age, sydneyOffsetMs, intlOffsetMs, sydneyIsoDate } from '../lib/time.js';
 import { DEFAULT_SCHEDULE, AREAS, STATUSES } from '../lib/config.js';
 import { fakeGitHub, normalRepo, emptyRepo, NOW, at, beat, issue, pull, repoFile, ROOT } from './helpers.js';
 
@@ -42,7 +42,7 @@ test('a busy morning: every agent gets the state Mission control would give it',
   assert.equal(byName(status, 'engineer').colour, 'green');
   assert.equal(byName(status, 'sales').colour, 'grey');
   assert.equal(byName(status, 'reviewer').reason, 'no review yet of #22, #20');
-  assert.match(byName(status, 'research').reason, /^no heartbeat since the Mon 2 Nov, 3:00 am \(12:00 am Singapore\) run$/);
+  assert.match(byName(status, 'research').reason, /^no heartbeat since the Mon 2 Nov, 3:00 am run$/);
 });
 
 test('cards carry the task, the last run, the next run and open pull requests', async () => {
@@ -72,11 +72,22 @@ test('only trusted heartbeats on the agent\'s own Status Issue count', async () 
 
 test('waiting on you: oldest first, per founder, as Mission control', async () => {
   const { status } = await statusOf(normalRepo());
-  assert.deepEqual(status.waiting.Adam.map((item) => item.number), [21, 20]);
-  assert.deepEqual(status.waiting.Melvin.map((item) => item.number), [22]);
-  assert.deepEqual(status.waiting.Marvin.map((item) => item.number), [30]);
+  // Melvin reviews and merges every pull request (merges_pull_requests in
+  // agents/schedule.json); Issues wait for their human: label.
+  assert.deepEqual(Object.keys(status.waiting), ['Adam', 'Melvin']);
+  assert.deepEqual(status.waiting.Melvin.map((item) => item.number), [22, 21, 20]);
+  assert.deepEqual(status.waiting.Adam.map((item) => item.number), [30]);
   assert.equal(status.waiting.Melvin[0].hours, 73);
-  assert.equal(status.waiting.Marvin[0].kind, 'Issue');
+  assert.equal(status.waiting.Adam[0].kind, 'Issue');
+
+  // Without merges_pull_requests: an agent's pull request waits for its owner.
+  const repo = normalRepo();
+  const schedule = JSON.parse(repo.files['agents/schedule.json']);
+  delete schedule.merges_pull_requests;
+  repo.files['agents/schedule.json'] = JSON.stringify(schedule);
+  const before = (await statusOf(repo)).status;
+  assert.deepEqual(before.waiting.Adam.map((item) => item.number), [21, 30, 20]);
+  assert.deepEqual(before.waiting.Melvin.map((item) => item.number), [22]);
 });
 
 test('alerts: failed and overdue agents, an old pull request, and Mission control\'s checks of main', async () => {
@@ -181,7 +192,7 @@ test('an agent with no heartbeats: overdue once a run is due, otherwise "no runs
 
   const repo = normalRepo();
   const schedule = JSON.parse(repo.files['agents/schedule.json']);
-  schedule.agents.push({ name: 'helper', label: 'agent:helper', owner: 'Marvin', status_issue: 40, enabled: true, schedule: {} });
+  schedule.agents.push({ name: 'helper', label: 'agent:helper', owner: 'Adam', status_issue: 40, enabled: true, schedule: {} });
   repo.files['agents/schedule.json'] = JSON.stringify(schedule);
   repo.openIssues.push(issue(40, 'Status: helper', at(4, 3, 0), ['status-board']));
   const helper = byName((await statusOf(repo)).status, 'helper');
@@ -237,7 +248,7 @@ test('the folder list for Everything, with README one-liners', async () => {
   const { folders } = await collectFolders(github);
   assert.deepEqual(folders.map((folder) => folder.path), ['agents/', 'hq/', 'ops/', 'ops/dashboard/', 'site/']);
   const agents = folders.find((folder) => folder.path === 'agents/');
-  assert.equal(agents.owner, 'Marvin');
+  assert.equal(agents.owner, 'Adam');
   assert.match(agents.what, /^One brief per agent/);
   const before = github.calls;
   await collectFolders(github);
@@ -275,7 +286,7 @@ test('Markdown readers: links in both layouts, decisions as a table or a list, R
   assert.deepEqual(readmeSummary('# ops\n\nOwner: Adam.\n\nHow the company runs: decisions and links.\n'), { owner: 'Adam', what: 'How the company runs: decisions and links' });
 });
 
-test('Sydney times work across daylight saving, with Singapore in brackets', () => {
+test('Sydney times work across daylight saving', () => {
   // Daylight saving in Sydney ends at 3:00 am on Sun 4 Apr 2027.
   const runs = slots({ days: 'daily', time: '06:30' }, new Date('2027-04-02T00:00:00Z'), new Date('2027-04-06T00:00:00Z'));
   assert.deepEqual(runs.map((date) => date.toISOString()), [
@@ -285,8 +296,9 @@ test('Sydney times work across daylight saving, with Singapore in brackets', () 
     '2027-04-05T20:30:00.000Z',
   ]);
   assert.equal(zonedToDate(2026, 11, 5, 10, 0).toISOString(), '2026-11-04T23:00:00.000Z');
-  assert.equal(bothZones('2026-11-04T23:00:00Z'), 'Thu 5 Nov, 10:00 am (7:00 am Singapore)');
-  assert.equal(bothZones('2026-11-05T14:00:00Z'), 'Fri 6 Nov, 1:00 am (Thu 5 Nov, 10:00 pm Singapore)');
+  assert.equal(sydneyTime('2026-11-04T23:00:00Z'), 'Thu 5 Nov, 10:00 am');
+  assert.equal(sydneyTime('2026-11-05T14:00:00Z'), 'Fri 6 Nov, 1:00 am');
+  assert.equal(sydneyTime('2026-11-05T14:00:00Z', { withYear: true }), 'Fri 6 Nov 2026, 1:00 am');
   assert.equal(age('2026-11-04T20:00:00Z', NOW), '3 hours');
   assert.equal(age('2026-11-01T20:00:00Z', NOW), '3 days');
 });
@@ -310,14 +322,13 @@ test('cross-check: Mission control (ops/dashboard/build.py) gives the same state
   }
 });
 
-test('Sydney and Singapore arithmetic matches the real time zone data, every half hour for 9 years', () => {
+test('Sydney arithmetic matches the real time zone data, every half hour for 9 years', () => {
   const start = Date.UTC(2024, 0, 1);
   const end = Date.UTC(2033, 0, 1);
   let checked = 0;
   for (let time = start; time < end; time += 30 * 60 * 1000) {
     const date = new Date(time);
     if (sydneyOffsetMs(time) !== intlOffsetMs(date, 'Australia/Sydney')) assert.fail(`Sydney offset wrong at ${date.toISOString()}`);
-    if (intlOffsetMs(date, 'Asia/Singapore') !== 8 * 3600 * 1000) assert.fail(`Singapore offset wrong at ${date.toISOString()}`);
     checked += 1;
   }
   assert.ok(checked > 150000);
@@ -335,9 +346,7 @@ test('the time text matches what the browser would print', () => {
   for (let time = Date.UTC(2026, 0, 1); time < Date.UTC(2028, 0, 1); time += 7 * 3600 * 1000 + 13 * 60 * 1000) {
     const date = new Date(time);
     const sydneyDate = new Intl.DateTimeFormat('en-CA', { timeZone: 'Australia/Sydney' }).format(date);
-    const singaporeDate = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Singapore' }).format(date);
-    const expected = `${reference(date, 'Australia/Sydney', true)} (${reference(date, 'Asia/Singapore', sydneyDate !== singaporeDate)} Singapore)`;
-    assert.equal(bothZones(date), expected);
+    assert.equal(sydneyTime(date), reference(date, 'Australia/Sydney', true));
     assert.equal(sydneyIsoDate(date), sydneyDate);
   }
 });

@@ -61,7 +61,7 @@ async function publicKeys(url, fetchImpl, refresh) {
   return keys;
 }
 
-// "Adam:adam@example.com, Melvin = melvin@example.com; Marvin <m@example.com>".
+// "Adam:adam@example.com, Melvin = melvin@example.com" or "Melvin <melvin@example.com>".
 // Every entry must parse, or HQ stays locked: a typo must never switch the
 // second lock off.
 export function parseFounders(value) {

@@ -192,7 +192,7 @@ export function normalRepo({ pauseFiles = [] } = {}) {
       issue(10, 'Mission control', at(4, 3, 0), ['mission-control']),
       issue(14, 'Hero section', at(3, 9, 0), ['agent:design']),
       issue(15, 'Appeal deadline calculator', at(4, 9, 0), ['agent:engineer']),
-      issue(30, 'Check the lawyer quote', at(4, 9, 0), ['human:marvin']),
+      issue(30, 'Check the lawyer quote', at(4, 9, 0), ['human:adam']),
       issue(32, 'Idea: a FAQ page for practices', at(4, 12, 0), []),
       issue(33, 'Export the logo at 16 px', at(4, 13, 0), ['agent:design', 'priority:high']),
       issue(34, 'Draft the call guide', at(4, 14, 0), ['agent:sales', 'priority:normal']),
@@ -303,7 +303,7 @@ export const BASE_ENV = {
   GITHUB_TOKEN: 'test-github-token',
   ACCESS_TEAM_DOMAIN: TEAM,
   ACCESS_AUD: AUD,
-  HQ_FOUNDERS: 'Adam:adam@example.com, Melvin:melvin@example.com, Marvin:marvin@example.com',
+  HQ_FOUNDERS: 'Adam:adam@example.com, Melvin:melvin@example.com',
 };
 
 export function request(url, { method = 'GET', token, body, headers = {} } = {}) {

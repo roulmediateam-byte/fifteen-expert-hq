@@ -11,7 +11,6 @@ export const ROUTINES_URL = 'https://claude.ai/code/routines';
 export const USAGE_URL = 'https://claude.ai/settings/usage';
 
 export const SYDNEY = 'Australia/Sydney';
-export const SINGAPORE = 'Asia/Singapore';
 
 export const MAX_FIELD = 2000; // characters in any one form field
 export const MAX_TITLE = 120; // characters in a GitHub Issue title made by HQ
@@ -58,17 +57,17 @@ export const DEFAULT_SCHEDULE = {
   founders: [
     { name: 'Adam', label: 'human:adam' },
     { name: 'Melvin', label: 'human:melvin' },
-    { name: 'Marvin', label: 'human:marvin' },
   ],
+  merges_pull_requests: 'Melvin',
   agents: [
     { name: 'chief-of-staff', label: 'agent:chief-of-staff', owner: 'Adam', brief: 'agents/chief-of-staff.md', status_issue: 4, enabled: true,
       schedule: { days: 'daily', time: '06:30' },
       allowed_folders: ['ops/digest/', 'ops/links.md', 'ops/decisions.md', 'yc/', 'brand/', 'design/', 'research/', 'sales/', 'finance/', 'legal/'], excluded_folders: [] },
     { name: 'design', label: 'agent:design', owner: 'Adam', brief: 'agents/design.md', status_issue: 5, enabled: true,
       schedule: { days: 'daily', time: '01:00' }, allowed_folders: ['site/', 'design/', 'brand/'], excluded_folders: ['site/demo/'] },
-    { name: 'engineer', label: 'agent:engineer', owner: 'Marvin', brief: 'agents/engineer.md', status_issue: 6, enabled: true,
+    { name: 'engineer', label: 'agent:engineer', owner: 'Adam', brief: 'agents/engineer.md', status_issue: 6, enabled: true,
       schedule: { days: 'daily', time: '02:00' }, allowed_folders: ['prototype/', 'site/demo/'], excluded_folders: [] },
-    { name: 'reviewer', label: 'agent:reviewer', owner: 'Marvin', brief: 'agents/reviewer.md', status_issue: 7, enabled: true,
+    { name: 'reviewer', label: 'agent:reviewer', owner: 'Adam', brief: 'agents/reviewer.md', status_issue: 7, enabled: true,
       schedule: { days: 'daily', time: '05:00', on_pull_request: true }, allowed_folders: [], excluded_folders: [] },
     { name: 'research', label: 'agent:research', owner: 'Adam', brief: 'agents/research.md', status_issue: 8, enabled: true,
       schedule: { days: ['mon'], time: '03:00' }, allowed_folders: ['research/'], excluded_folders: [] },
@@ -76,6 +75,14 @@ export const DEFAULT_SCHEDULE = {
       enabled_note: 'off until phase 5', schedule: { days: 'weekdays', time: '04:00' }, allowed_folders: ['sales/'], excluded_folders: [] },
   ],
 };
+
+// The company name HQ shows in its header, from the Cloudflare setting
+// COMPANY_NAME. The name stays out of this public repository until the domain
+// is bought. Letters, digits, spaces and & . ' - only; at most 40 characters.
+export function companyName(value) {
+  const text = String(value || '').trim();
+  return /^[\p{L}\p{N}][\p{L}\p{N} &.'-]{0,39}$/u.test(text) ? text : '';
+}
 
 // Secret names for Run now: ROUTINE_<NAME>_URL and ROUTINE_<NAME>_TOKEN,
 // where <NAME> is the agent name in capitals with _ for -, for example

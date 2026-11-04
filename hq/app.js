@@ -2,7 +2,7 @@
 // drawn with DOM text nodes, never innerHTML, so nothing from GitHub can run
 // as code here. Data comes from /api/status (or sample/ with ?sample=1).
 
-import { bothZones, sydneyDay, age, toDate, zonedParts, zonedToDate } from './lib/time.js';
+import { sydneyTime, sydneyDay, age, toDate, zonedParts, zonedToDate } from './lib/time.js';
 import { AREAS, STATUSES, ROUTINES_URL, PLAYBOOK_URL, USAGE_URL, MAX_FIELD } from './lib/config.js';
 
 const SAMPLE = new URLSearchParams(location.search).has('sample');
@@ -146,14 +146,19 @@ function renderChrome() {
   const status = state.status;
   if (state.loading && !status) updated.textContent = 'Loading...';
   else if (status) {
-    const full = bothZones(status.generated_at);
-    const clock = full.split(', ')[1].split(' (')[0];
+    const full = sydneyTime(status.generated_at);
+    const clock = full.split(', ')[1];
     append(updated,
       h('span', { class: 'updated-short' }, `Updated ${clock}`),
-      h('span', { class: 'updated-long' }, `Updated ${full}`),
+      h('span', { class: 'updated-long' }, `Updated ${full} Sydney time`),
       state.loading ? h('span', {}, ', refreshing...') : null);
-    updated.title = `Updated ${full}`;
+    updated.title = `Updated ${full} Sydney time`;
   }
+  // The company name comes from the Cloudflare setting COMPANY_NAME, so it
+  // stays out of the public repository until the domain is bought.
+  const company = document.getElementById('company');
+  if (company) company.textContent = (status && status.company) || 'Founders only';
+  document.title = status && status.company ? `HQ: ${status.company}` : 'HQ';
 
   const banner = clear(document.getElementById('banner'));
   const notes = [];
@@ -249,7 +254,8 @@ function renderToday() {
 
   append(panel, h('h2', {}, 'Waiting on you'));
   const founders = status.founders || Object.keys(status.waiting || {});
-  append(panel, h('div', { class: 'grid three' }, founders.map((founder) => {
+  // One column per founder, up to three across (two founders since 4 Nov 2026).
+  append(panel, h('div', { class: `grid ${founders.length >= 3 ? 'three' : 'two'}` }, founders.map((founder) => {
     const items = (status.waiting && status.waiting[founder]) || [];
     return h('section', { class: 'card', 'aria-label': `Waiting on ${founder}` },
       h('h3', {}, founder, h('span', { class: 'count' }, String(items.length))),
@@ -277,9 +283,9 @@ function renderToday() {
     runs.length
       ? h('ol', { class: 'runs-list' }, runs.map((run) => h('li', {},
         h('span', { class: 'agent-name' }, run.agent),
-        h('span', {}, bothZones(run.at), run.note ? `, ${run.note}` : '', run.paused ? ', paused: it will stop at once' : ''))))
+        h('span', {}, sydneyTime(run.at), run.note ? `, ${run.note}` : '', run.paused ? ', paused: it will stop at once' : ''))))
       : h('p', { class: 'empty' }, 'No runs scheduled.'),
-    h('p', { class: 'note' }, 'Sydney time, with Singapore in brackets. Runs can start up to about 30 minutes late.'))));
+    h('p', { class: 'note' }, 'Sydney time. Runs can start up to about 30 minutes late.'))));
 }
 
 // ------------------------------------------------------------ Agents
@@ -287,7 +293,7 @@ function renderToday() {
 function lastRunText(run) {
   if (!run) return 'Never';
   const minutes = run.minutes === null || run.minutes === undefined ? '' : `, ${plural(run.minutes, 'minute', 'minutes')}${run.so_far ? ' so far' : ''}`;
-  return `${bothZones(run.start)}${minutes}`;
+  return `${sydneyTime(run.start)}${minutes}`;
 }
 
 function renderAgents() {
@@ -307,7 +313,7 @@ function renderAgents() {
       : 'None';
     const offNote = agent.enabled_note || '';
     const next = !agent.enabled ? (/^off\b/i.test(offNote) ? offNote.charAt(0).toUpperCase() + offNote.slice(1) : `Off${offNote ? `: ${offNote}` : ''}`)
-      : agent.next_run ? `${bothZones(agent.next_run)}${agent.next_run_note ? `; ${agent.next_run_note}` : ''}` : 'On ticket';
+      : agent.next_run ? `${sydneyTime(agent.next_run)}${agent.next_run_note ? `; ${agent.next_run_note}` : ''}` : 'On ticket';
     const runNow = !agent.enabled
       ? h('button', { class: 'button', type: 'button', disabled: true, title: `${agent.name} is switched off, so it has no runs` }, 'Run now')
       : agent.run_now
@@ -366,7 +372,7 @@ function timeline(status) {
           const runEnd = run.end || (run.outcome === 'working' ? status.generated_at : new Date(toDate(run.start).getTime() + 60 * 60 * 1000).toISOString());
           const left = position(run.start);
           const width = Math.max(0.6, position(runEnd) - left);
-          const label = `${agent.name} ${run.outcome}${run.task ? `, ${run.task}` : ''}, ${bothZones(run.start)}${run.minutes !== null && run.minutes !== undefined ? `, ${plural(run.minutes, 'minute', 'minutes')}` : ''}`;
+          const label = `${agent.name} ${run.outcome}${run.task ? `, ${run.task}` : ''}, ${sydneyTime(run.start)}${run.minutes !== null && run.minutes !== undefined ? `, ${plural(run.minutes, 'minute', 'minutes')}` : ''}`;
           return h('span', {
             class: `tl-bar ${String(run.outcome).replace(/\s+/g, '-')}`, role: 'listitem', title: label, 'aria-label': label,
             style: { left: `${left}%`, width: `${width}%` },
@@ -434,7 +440,7 @@ function drawBoard(results) {
           h('div', {}, card.labels.map((label) => h('span', {
             class: `tag ${label.startsWith('agent:') ? 'agent' : label.startsWith('human:') ? 'human' : label === 'priority:high' ? 'high' : ''}`,
           }, label))),
-          h('span', { class: 'meta' }, column === 'Done' ? `Closed ${bothZones(card.closed_at)}` : `Opened ${age(card.created_at, now())} ago`),
+          h('span', { class: 'meta' }, column === 'Done' ? `Closed ${sydneyTime(card.closed_at)}` : `Opened ${age(card.created_at, now())} ago`),
           card.prs.length ? h('span', { class: 'meta' }, 'Pull request: ', card.prs.map((pr, index) => [index ? ', ' : '', outside(pr.url, `#${pr.number}${pr.draft ? ' (draft)' : ' (ready for review)'}`)])) : null)))
         : h('p', { class: 'empty' }, 'Nothing here.'));
   }));
@@ -483,7 +489,7 @@ function renderEverything() {
   append(panel, h('section', { class: 'card' }, merged.length
     ? h('ol', { class: 'merged-list' }, merged.map((pr) => h('li', {},
       outside(pr.url, `#${pr.number} ${pr.title}`, { class: 'item-title' }),
-      h('span', { class: 'meta' }, `Merged ${bothZones(pr.merged_at)}`))))
+      h('span', { class: 'meta' }, `Merged ${sydneyTime(pr.merged_at)}`))))
     : h('p', { class: 'empty' }, 'No merged pull requests yet.')));
 }
 
@@ -649,7 +655,7 @@ function doneView(title, ...lines) {
 
 function giveWork(agent) {
   const status = state.status;
-  const founders = status.founders || ['Adam', 'Melvin', 'Marvin'];
+  const founders = status.founders || ['Adam', 'Melvin'];
   const form = h('form', { novalidate: true },
     privacyNote(),
     agent.enabled ? null : box('warn', `${agent.name} is switched off${agent.enabled_note ? ` (${agent.enabled_note})` : ''}, so it will not pick this up yet.`),
@@ -683,7 +689,7 @@ function giveWork(agent) {
       }
       doneView(`Issue #${result.number} created`,
         h('p', {}, outside(result.url, `#${result.number} ${result.title}`)),
-        h('p', {}, `${agent.name} picks it up on its next run${agent.next_run ? `: ${bothZones(agent.next_run)}` : ''}.`),
+        h('p', {}, `${agent.name} picks it up on its next run${agent.next_run ? `: ${sydneyTime(agent.next_run)}` : ''}.`),
         result.warning ? box('warn', result.warning) : null);
     });
   });
@@ -691,7 +697,7 @@ function giveWork(agent) {
 }
 
 function addSomething() {
-  const founders = state.status.founders || ['Adam', 'Melvin', 'Marvin'];
+  const founders = state.status.founders || ['Adam', 'Melvin'];
   const form = h('form', { novalidate: true },
     privacyNote(),
     textField('name', 'Name', { required: true, multiline: false, max: 200 }),

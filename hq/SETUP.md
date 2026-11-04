@@ -1,6 +1,6 @@
 # HQ setup: the manual steps
 
-Who: one founder with admin rights on the GitHub repository (Adam), about 30 minutes. A second founder then checks the last step on their own phone.
+Who: Adam, who has admin rights on the GitHub repository, about 30 minutes. Melvin then checks the last step on his own phone.
 
 Do the steps in order. Nothing here costs money (see "What it costs" at the end), but Cloudflare asks for payment details once, in step 5, even for its free plan. A founder decides before entering them.
 
@@ -8,7 +8,7 @@ Never paste the GitHub token or a Run now token into GitHub, Slack, an email or 
 
 ## 1. Merge first
 
-HQ is served from main. Merge pull requests #1, #2, #3, #11 and the HQ pull request, in that order, checking after each merge that the next one's base is main.
+HQ is served from main. Melvin merges pull requests #1, #2, #3, #11 and the HQ pull request, in that order, checking after each merge that the next one's base is main. (Claude sessions opened them for Adam, and nobody merges their own.) Pull request #12, the website, does not need to come first.
 
 ## 2. Make the GitHub token
 
@@ -39,12 +39,15 @@ In the project, go to Settings, Variables and Secrets (older screens call it Env
 |---|---|---|
 | `GITHUB_TOKEN` | Secret | the token from step 2 |
 | `HQ_FOUNDERS` | Secret | each founder as Name:email, with a comma between founders |
+| `COMPANY_NAME` | Text | optional: the company name HQ shows in its header (letters, digits and spaces, at most 40 characters) |
 
-HQ_FOUNDERS looks like this, with the real addresses the founders sign in with: `Adam:adam@example.com, Melvin:melvin@example.com, Marvin:marvin@example.com`.
+HQ_FOUNDERS looks like this, with the real addresses the founders sign in with: `Adam:adam@example.com, Melvin:melvin@example.com`.
 
 - HQ needs it. Without it, or if HQ cannot read any one entry, HQ stays locked. A typo never lets more people in.
 - It is a second lock: HQ refuses any other email, even if the login in step 5 lets it through.
 - It gives the name HQ writes into Issues and commit messages. HQ writes the name only, never the email, so no email address reaches GitHub.
+
+COMPANY_NAME keeps the company name out of the public repository: HQ shows it from this setting, and shows "Founders only" without it.
 
 ## 5. Turn on the login (Cloudflare Zero Trust)
 
@@ -52,7 +55,7 @@ HQ_FOUNDERS looks like this, with the real addresses the founders sign in with: 
 2. Back in Workers & Pages, open the HQ project, then Settings, General, and press Enable access policy. Cloudflare makes an Access application for the project.
 3. Press Manage next to it (or go to Zero Trust, Access, Applications, and open that application, then Configure).
 4. Under Public hostname, keep the row with `*` in the Subdomain box. It covers each deployment's own address, such as `1a2b3c4d.fifteen-expert-hq.pages.dev`, which runs HQ with the same secrets. Press Add public hostname (older screens: Add domain) and add a second row: Subdomain empty, Domain `fifteen-expert-hq.pages.dev`. Save. If saving gives an error, change the application name a little and save again.
-5. Open the application's policy and set: Action Allow; Include, Emails: the three founders' emails (the same as in HQ_FOUNDERS). Save. One-time PIN (a code sent by email) is the login method unless you add another.
+5. Open the application's policy and set: Action Allow; Include, Emails: Adam's and Melvin's emails (the same as in HQ_FOUNDERS). Save. One-time PIN (a code sent by email) is the login method unless you add another.
 6. In the same application, find the Application Audience (AUD) Tag (under Overview or Additional settings) and copy it.
 
 ## 6. Unlock HQ
@@ -84,7 +87,7 @@ Give work labels each Issue priority:high or priority:normal. Create them once o
 
 ## 9. Test each button once
 
-1. On your phone, open https://fifteen-expert-hq.pages.dev. Cloudflare asks for your email and sends a code. HQ opens on Today.
+1. On your phone, open https://fifteen-expert-hq.pages.dev. Cloudflare asks for your email and sends a code. HQ opens on Today. Melvin does the same on his phone.
 2. In a private window, try an email that is not a founder's. Cloudflare must not let it in: no code arrives, or it says the email has no access. (This is the playbook's "nobody else can".)
 3. In a private window, open a deployment's own address: in the Pages project, Deployments, open the latest one and copy its address (it looks like `https://1a2b3c4d.fifteen-expert-hq.pages.dev`). Cloudflare must ask for the email login there too. If the page opens without asking, redo step 5, part 4.
 4. Agents, design, Give work: What to do `Make a placeholder homepage in site/ using plain colours`, Done when `site/index.html exists`, priority Normal, owner Adam. HQ shows the new Issue number. On GitHub it has the labels agent:design and priority:normal, and its last line names you. On HQ's Work board (press Refresh) it is in Ready for AI.
@@ -101,13 +104,13 @@ Move on when the founders can open HQ, nobody else can (at either address), and 
 | Service | Plan | Limit | HQ's use (our estimate) | Cost |
 |---|---|---|---|---|
 | Cloudflare Pages | Free | Static pages free and unlimited; Functions share the Workers free quota of 100,000 requests a day; 500 builds a month | A few hundred function requests a day; one build per merge to main | US$0 |
-| Cloudflare Zero Trust | Free | Up to 50 users | 3 founders | US$0 |
+| Cloudflare Zero Trust | Free | Up to 50 users | 2 founders | US$0 |
 | GitHub | Free | 5,000 API calls an hour for the token | About 15 to 35 calls per refresh, at most one refresh a minute per open page | US$0 |
 | Claude | Adam's Max plan | 30 Run now starts an hour per task | Only when a founder presses Run now | US$0 extra |
 
 Expected total: US$0 a month.
 
-Cloudflare's free plan also allows 50 outside calls and 10 ms of CPU time per request. HQ counts its GitHub calls to stay under 50. CPU, our estimate from tests on a computer: a normal refresh uses about 2 ms; the first refresh after a quiet spell uses about 10 to 14 ms, because the code starts cold. Cloudflare says it allows a Worker to run over the limit now and then, and stops it only when it goes over again and again. Before go-live, and again after a month, Marvin checks Workers & Pages, the HQ project, Functions Metrics: the "CPU time per execution" chart, and "Exceeded resources" under Invocation statuses. If HQ keeps showing Cloudflare's Error 1102 ("Worker exceeded resource limits"), the fix is Workers Paid (US$5 a month): the founders decide before anyone changes plans.
+Cloudflare's free plan also allows 50 outside calls and 10 ms of CPU time per request. HQ counts its GitHub calls to stay under 50. CPU, our estimate from tests on a computer: a normal refresh uses about 2 ms; the first refresh after a quiet spell uses about 10 to 14 ms, because the code starts cold. Cloudflare says it allows a Worker to run over the limit now and then, and stops it only when it goes over again and again. Before go-live, and again after a month, Adam checks Workers & Pages, the HQ project, Functions Metrics: the "CPU time per execution" chart, and "Exceeded resources" under Invocation statuses. If HQ keeps showing Cloudflare's Error 1102 ("Worker exceeded resource limits"), the fix is Workers Paid (US$5 a month): the founders decide before anyone changes plans.
 
 ## If something goes wrong
 
@@ -131,7 +134,7 @@ Cloudflare's free plan also allows 50 outside calls and 10 ms of CPU time per re
 - When a founder leaves, remove their email from the Access policy and from HQ_FOUNDERS, remove them from the Cloudflare account, and make a new GitHub token.
 - While the repository is public, everything HQ writes is public too. The playbook's Step 5a says to keep the repository private. Making it private changes nothing in HQ: the token keeps working.
 
-## For Marvin: running HQ on a computer
+## Running HQ on a computer (Adam)
 
 - Tests, no network needed: in hq/, run `npm test`. They include a cross-check that HQ and Mission control (ops/dashboard/build.py) agree.
 - The page with made-up data: serve hq/ with any static server and open `/?sample=1`. To refresh the sample, run `node tests/make-sample.mjs`; to retake the screenshots, `node tests/screenshots.mjs <address>` (needs Playwright).

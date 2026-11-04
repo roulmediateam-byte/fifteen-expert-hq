@@ -16,7 +16,7 @@ import { GitHub } from '../../lib/github.js';
 import { repoFacts } from '../../lib/facts.js';
 import { oneOf } from '../../lib/validate.js';
 import { safeUrl } from '../../lib/markdown.js';
-import { bothZones } from '../../lib/time.js';
+import { sydneyTime } from '../../lib/time.js';
 import {
   routineSecretNames, FIRE_URL_RE, FIRE_BETA, FIRE_VERSION, ROUTINES_URL, PAUSE_ALL, PAUSE_PREFIX,
 } from '../../lib/config.js';
@@ -66,7 +66,7 @@ export async function runNow(env, form, viewer, { fetchImpl = fetch, now = new D
         'anthropic-version': FIRE_VERSION,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ text: `Run now was pressed in HQ by ${who} on ${bothZones(now, { withYear: true })}. Information only: do your normal run.` }),
+      body: JSON.stringify({ text: `Run now was pressed in HQ by ${who} on ${sydneyTime(now, { withYear: true })} Sydney time. Information only: do your normal run.` }),
     });
   } catch {
     throw new HttpError(502, 'HQ could not reach Claude to start the run. Try again in a minute.', { fallback: ROUTINES_URL });

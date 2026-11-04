@@ -17,10 +17,10 @@ import { repoFacts } from '../../lib/facts.js';
 import { cacheClear } from '../../lib/cache.js';
 import { cleanText, oneOf, httpsLink, escapeHtml, tableCell, titleFrom } from '../../lib/validate.js';
 import { AREAS, STATUSES, PRIORITIES, MAX_TITLE } from '../../lib/config.js';
-import { bothZones, sydneyIsoDate } from '../../lib/time.js';
+import { sydneyTime, sydneyIsoDate } from '../../lib/time.js';
 
 function footer(who, what, now) {
-  return `---\n${what} in HQ by ${escapeHtml(who)} on ${bothZones(now, { withYear: true })}. No patient data.`;
+  return `---\n${what} in HQ by ${escapeHtml(who)} on ${sydneyTime(now, { withYear: true })} Sydney time. No patient data.`;
 }
 
 export function workIssue(form, facts, who, now) {

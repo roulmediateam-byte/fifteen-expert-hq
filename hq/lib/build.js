@@ -11,7 +11,7 @@ import {
   OLD_PULL_REQUEST_MS, TIMELINE_MS, WEEK_MS, DAY_MS, DEFAULT_SCHEDULE, PLAYBOOK_URL, ROUTINES_URL, USAGE_URL,
 } from './config.js';
 import { heartbeatsFor, runsFrom } from './heartbeats.js';
-import { slots, lastDueRun, bothZones, toDate, hoursSince } from './time.js';
+import { slots, lastDueRun, sydneyTime, toDate, hoursSince } from './time.js';
 import { parseLinks, parseDecisions, safeUrl } from './markdown.js';
 
 export const COLOUR = {
@@ -87,7 +87,7 @@ function linkedIssues(pr, names) {
 function overdueReason(agent, beats, openPrs, commentsOf, now) {
   const schedule = agent.schedule || {};
   const due = lastDueRun(schedule, now, OVERDUE_AFTER_MS);
-  if (due && !beats.some((beat) => beat.seen >= due)) return `no heartbeat since the ${bothZones(due)} run`;
+  if (due && !beats.some((beat) => beat.seen >= due)) return `no heartbeat since the ${sydneyTime(due)} run`;
   if (schedule.on_pull_request) {
     const missed = [];
     for (const pr of openPrs) {
@@ -108,7 +108,7 @@ function agentState(agent, runs, beats, context) {
   const last = runs.length ? runs[runs.length - 1] : null;
   if (last && last.outcome === null) {
     if (now - last.seen < STUCK_AFTER_MS) return ['working', ''];
-    return ['stuck?', `working since ${bothZones(last.seen)} with no end heartbeat`];
+    return ['stuck?', `working since ${sydneyTime(last.seen)} with no end heartbeat`];
   }
   const late = overdueReason(agent, beats, openPrs, commentsOf, now);
   if (late) return ['overdue', late];
@@ -222,13 +222,16 @@ export function buildStatus(raw, nowValue) {
     });
   }
 
-  // Waiting on you: the same rule as Mission control. An agent's pull request
-  // waits for that agent's owner, any other for the first founder (Adam),
-  // unless a human: label names someone. Issues wait for their human: labels.
+  // Waiting on you: the same rule as Mission control. A pull request waits for
+  // the founder who reviews and merges them all (merges_pull_requests in
+  // agents/schedule.json, Melvin since 4 Nov 2026), unless a human: label
+  // names someone. Without that setting: the agent's owner, else the first
+  // founder. Issues wait for their human: labels.
   const founders = (schedule.founders && schedule.founders.length ? schedule.founders : DEFAULT_SCHEDULE.founders);
   const founderNames = founders.map((founder) => founder.name);
   const byLabel = new Map(founders.map((founder) => [founder.label || `human:${founder.name.toLowerCase()}`, founder.name]));
   const owners = new Map(agents.map((agent) => [agent.name, agent.owner]));
+  const merger = founderNames.includes(schedule.merges_pull_requests) ? schedule.merges_pull_requests : null;
   const waiting = Object.fromEntries(founderNames.map((name) => [name, []]));
   const addWaiting = (founder, item, kind) => {
     if (!waiting[founder]) waiting[founder] = [];
@@ -245,7 +248,7 @@ export function buildStatus(raw, nowValue) {
     if (pr.draft) continue;
     const named = labelsOf(pr).filter((label) => byLabel.has(label)).map((label) => byLabel.get(label));
     const agent = prAgent(pr, names);
-    const targets = named.length ? named : [(agent && owners.get(agent)) || founderNames[0]];
+    const targets = named.length ? named : [merger || (agent && owners.get(agent)) || founderNames[0]];
     for (const founder of targets) addWaiting(founder, pr, 'pull request');
   }
   for (const issue of openIssues) {
@@ -343,9 +346,9 @@ export function buildStatus(raw, nowValue) {
     }
     const checked = toDate(mission.updated_utc);
     if (checked && now - checked > 3 * 60 * 60 * 1000) {
-      missionNote = `Mission control last checked main on ${bothZones(checked)}, more than 3 hours ago.`;
+      missionNote = `Mission control last checked main on ${sydneyTime(checked)}, more than 3 hours ago.`;
     } else if (checked) {
-      missionNote = `Changes to main and agent folders were last checked by Mission control on ${bothZones(checked)}.`;
+      missionNote = `Changes to main and agent folders were last checked by Mission control on ${sydneyTime(checked)}.`;
     }
   } else {
     missionNote = 'Mission control (Issue #10) has not saved status.json yet, so changes to main without a pull request are not checked here. It starts once pull request #11 and this one are merged.';

@@ -4,7 +4,8 @@
 import { test, beforeEach, afterEach } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { onRequestGet as statusGet } from '../functions/api/status.js';
+import { onRequestGet as statusGet, statusFor } from '../functions/api/status.js';
+import { companyName } from '../lib/config.js';
 import { onRequestGet as foldersGet } from '../functions/api/folders.js';
 import { onRequestPost as issuePost } from '../functions/api/issue.js';
 import { onRequestPost as pausePost } from '../functions/api/pause.js';
@@ -97,8 +98,8 @@ test('small helpers: team domain and the founder list', () => {
   assert.equal(teamDomain('myteam'), 'https://myteam.cloudflareaccess.com');
   assert.equal(teamDomain('https://myteam.cloudflareaccess.com/'), 'https://myteam.cloudflareaccess.com');
   assert.equal(teamDomain('https://evil.example.com'), '');
-  assert.deepEqual(parseFounders('Adam:a@x.com; Marvin=<m@y.com>, Melvin <mel@z.org>'), {
-    founders: [{ name: 'Adam', email: 'a@x.com' }, { name: 'Marvin', email: 'm@y.com' }, { name: 'Melvin', email: 'mel@z.org' }],
+  assert.deepEqual(parseFounders('Adam:a@x.com; Sam=<s@y.com>, Melvin <mel@z.org>'), {
+    founders: [{ name: 'Adam', email: 'a@x.com' }, { name: 'Sam', email: 's@y.com' }, { name: 'Melvin', email: 'mel@z.org' }],
     bad: [],
   });
   assert.deepEqual(parseFounders('a@x.com').bad, ['a@x.com']);
@@ -152,7 +153,7 @@ test('/api/folders lists folders with their README one-liners', async () => {
   await setUp();
   const { status, body } = await call(foldersGet, `${HQ}/api/folders`, { token: await access.token() });
   assert.equal(status, 200);
-  assert.ok(body.folders.some((folder) => folder.path === 'hq/' && folder.owner === 'Marvin'));
+  assert.ok(body.folders.some((folder) => folder.path === 'hq/' && folder.owner === 'Adam'));
 });
 
 // ------------------------------------------------------------ Give work and Add something
@@ -177,12 +178,12 @@ test('Give work opens an Issue for that agent, with the priority label and who a
 });
 
 test('the log names the founder and never writes an email, whether the repository is public or private', async () => {
-  const form = { kind: 'work', agent: 'engineer', what: 'Add a test', done_when: 'It passes', priority: 'normal', owner: 'Marvin' };
+  const form = { kind: 'work', agent: 'engineer', what: 'Add a test', done_when: 'It passes', priority: 'normal', owner: 'Melvin' };
   for (const isPrivate of [false, true]) {
     cacheClear();
     const { github } = await setUp({ ...normalRepo(), info: { ...normalRepo().info, private: isPrivate } });
-    await call(issuePost, `${HQ}/api/issue`, { ...post(form), token: await access.token({ email: 'marvin@example.com' }) });
-    assert.match(github.created[0].body, /Given in HQ by Marvin on /);
+    await call(issuePost, `${HQ}/api/issue`, { ...post(form), token: await access.token({ email: 'melvin@example.com' }) });
+    assert.match(github.created[0].body, /Given in HQ by Melvin on .* Sydney time\. No patient data\./);
     assert.ok(!github.created[0].body.includes('@example.com'));
   }
 });
@@ -197,7 +198,7 @@ test('the forms are checked on the server', async () => {
     [{ ...good, done_when: '' }, /Done when is needed/],
     [{ ...good, agent: 'hacker' }, /Agent must be one of/],
     [{ ...good, priority: 'urgent' }, /Priority must be one of: high, normal/],
-    [{ ...good, owner: 'Bob' }, /Owner must be one of: Adam, Melvin, Marvin/],
+    [{ ...good, owner: 'Bob' }, /Owner must be one of: Adam, Melvin/],
     [{ ...good, why: 'Patient DOB 1/2/1960' }, /looks like it has patient data/],
     [{ ...good, why: 'member ID W123456789' }, /looks like it has patient data/],
     [{ ...good, why: 'Subscriber ID: W123456789' }, /looks like it has patient data/],
@@ -226,11 +227,23 @@ test('the forms are checked on the server', async () => {
   assert.equal(crossSite.status, 403);
 });
 
+test('the company name comes from the Cloudflare setting COMPANY_NAME, never from the repository', async () => {
+  assert.equal(companyName(' Example Co '), 'Example Co');
+  assert.equal(companyName(''), '');
+  assert.equal(companyName(undefined), '');
+  assert.equal(companyName('<b>Bad</b>'), '');
+  assert.equal(companyName('x'.repeat(41)), '');
+  const named = await statusFor({ ...BASE_ENV, COMPANY_NAME: 'Example Co' }, { fresh: true, fetchImpl: fakeGitHub(normalRepo()).handler });
+  assert.equal(named.company, 'Example Co');
+  const unnamed = await statusFor(BASE_ENV, { fresh: true, fetchImpl: fakeGitHub(normalRepo()).handler });
+  assert.equal(unnamed.company, '');
+});
+
 test('made-up data marked FAKE, and words like "date of birth" alone, are fine', async () => {
   const { github } = await setUp();
   const token = await access.token();
   for (const what of ['Add a date of birth field to the FAKE claim form', 'Load member ID FAKE-0001 from data/fake-claims/', 'Parse the MRN from FAKE claim files']) {
-    const { status } = await call(issuePost, `${HQ}/api/issue`, { ...post({ kind: 'work', agent: 'engineer', what, done_when: 'Tests pass', priority: 'normal', owner: 'Marvin' }), token });
+    const { status } = await call(issuePost, `${HQ}/api/issue`, { ...post({ kind: 'work', agent: 'engineer', what, done_when: 'Tests pass', priority: 'normal', owner: 'Adam' }), token });
     assert.equal(status, 201, what);
   }
   assert.equal(github.created.length, 3);

@@ -1,13 +1,12 @@
 // Time helpers for HQ, used by the page and the functions. All schedules are
-// Sydney time (agents/schedule.json); HQ shows Sydney time with Singapore in
-// brackets, because Marvin works from Singapore.
+// Sydney time (agents/schedule.json), and HQ shows Sydney time.
 //
-// Sydney and Singapore times are worked out with plain arithmetic, not with
+// Sydney time is worked out with plain arithmetic, not with
 // Intl.DateTimeFormat: the first Intl formatter costs about 16 ms of CPU,
 // and Cloudflare's free plan allows 10 ms per request. hq/tests/ checks the
 // arithmetic against the real time zone data for every half hour of 9 years.
 
-import { SYDNEY, SINGAPORE, DAY_MS } from './config.js';
+import { SYDNEY, DAY_MS } from './config.js';
 
 export const DAY_NAMES = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -53,7 +52,6 @@ export function intlOffsetMs(date, timeZone) {
 
 function offsetMs(date, timeZone) {
   if (timeZone === SYDNEY) return sydneyOffsetMs(date.getTime());
-  if (timeZone === SINGAPORE) return 8 * HOUR; // no daylight saving since 1982
   return intlOffsetMs(date, timeZone);
 }
 
@@ -134,16 +132,12 @@ function dayText(parts, withYear) {
   return `${WEEKDAYS[parts.weekdayIndex]} ${parts.day} ${MONTHS[parts.month - 1]}${withYear ? ` ${parts.year}` : ''}`;
 }
 
-// "Thu 5 Nov, 10:00 am (7:00 am Singapore)", or with Singapore's date when it
-// is a different day there: "Thu 5 Nov, 1:00 am (Wed 4 Nov, 10:00 pm Singapore)".
-export function bothZones(value, { withYear = false } = {}) {
+// "Thu 5 Nov, 10:00 am" in Sydney, or "Thu 5 Nov 2026, 10:00 am" with the year.
+export function sydneyTime(value, { withYear = false } = {}) {
   const date = toDate(value);
   if (!date) return '';
   const sydney = wall(date, SYDNEY);
-  const singapore = wall(date, SINGAPORE);
-  const sameDay = sydney.day === singapore.day && sydney.month === singapore.month;
-  const there = sameDay ? clock(singapore) : `${dayText(singapore, false)}, ${clock(singapore)}`;
-  return `${dayText(sydney, withYear)}, ${clock(sydney)} (${there} Singapore)`;
+  return `${dayText(sydney, withYear)}, ${clock(sydney)}`;
 }
 
 // "Thu 5 Nov 2026" in Sydney.

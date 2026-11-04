@@ -3,7 +3,7 @@
     {
       "path": "agents/",
       "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/agents",
-      "owner": "Marvin",
+      "owner": "Adam",
       "what": "One brief per agent, named after its label without \"agent:\""
     },
     {
@@ -15,13 +15,13 @@
     {
       "path": "data/",
       "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/data",
-      "owner": "Marvin",
+      "owner": "Adam",
       "what": "Made-up data only, in one subfolder per kind"
     },
     {
       "path": "data/fake-claims/",
       "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/data/fake-claims",
-      "owner": "Melvin, with Marvin (file format and tests)",
+      "owner": "Melvin, with Adam (file format and tests)",
       "what": "Made-up claims for testing the appeal pipeline and the review screen, including the 50-claim week 3 test set with planted errors (wrong code, missing record, unsupported clinical statement, missed deadline), and its a..."
     },
     {
@@ -39,7 +39,7 @@
     {
       "path": "hq/",
       "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/hq",
-      "owner": "Marvin",
+      "owner": "Adam",
       "what": "HQ, the founders' private web page that shows everything the company has and what every AI agent is doing, and lets a founder give an agent work"
     },
     {
@@ -57,7 +57,7 @@
     {
       "path": "ops/dashboard/",
       "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/ops/dashboard",
-      "owner": "Marvin",
+      "owner": "Adam",
       "what": "build.py, which rewrites Issue #10, \"Mission control\", and selftest.py, its offline checks with made-up data"
     },
     {
@@ -69,7 +69,7 @@
     {
       "path": "prototype/",
       "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/prototype",
-      "owner": "Marvin",
+      "owner": "Adam",
       "what": "The demo and its tests, laid out as prototype/SPEC.md says once it exists: the code, the drafting and checking instructions in prompts/, and the results saved from runs on fake claims"
     },
     {
@@ -93,7 +93,7 @@
     {
       "path": "site/demo/",
       "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/site/demo",
-      "owner": "Marvin",
+      "owner": "Adam",
       "what": "The static demo page, site/demo/index.html, showing results saved in prototype/results/ from runs on made-up claims"
     },
     {

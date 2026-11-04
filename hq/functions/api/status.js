@@ -10,7 +10,7 @@ import { GitHub } from '../../lib/github.js';
 import { collectStatus } from '../../lib/collect.js';
 import { buildStatus } from '../../lib/build.js';
 import { cacheGet, cachePut } from '../../lib/cache.js';
-import { STATUS_TTL_MS, routineSecretNames } from '../../lib/config.js';
+import { STATUS_TTL_MS, routineSecretNames, companyName } from '../../lib/config.js';
 
 export async function statusFor(env, { fresh = false, fetchImpl = fetch } = {}) {
   let status = fresh ? null : cacheGet('status', STATUS_TTL_MS);
@@ -30,7 +30,7 @@ export async function statusFor(env, { fresh = false, fetchImpl = fetch } = {}) 
     const names = routineSecretNames(agent.name);
     return { ...agent, run_now: Boolean(env[names.url] && env[names.token]) };
   });
-  return { ...status, agents, from_cache: fromCache };
+  return { ...status, agents, company: companyName(env.COMPANY_NAME), from_cache: fromCache };
 }
 
 export const onRequestGet = handle(async ({ request, env }) => {
