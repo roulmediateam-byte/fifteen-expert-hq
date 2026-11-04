@@ -98,7 +98,7 @@ const L = (cpt, billed, paid = 0, modifier = '') => ({ cpt, modifier, billed, pa
 
 // The 50 claims. dl: days left to the appeal deadline on the demo date (Nov 5, 2026).
 const SPECS = [
-  { id: 'C-1001', p: 'DFM', payer: 'medicare_sample', g: 'CO', carc: '16', rarc: 'M127', lines: [L('99214', 210)], icd: ['I10', 'E11.9'], dl: 9, stage: 'new',
+  { id: 'C-1001', p: 'DFM', payer: 'medicare_sample', g: 'CO', carc: '16', rarc: 'M127', lines: [L('99214', 210)], icd: ['I10', 'E11.9'], dl: 4, stage: 'new',
     case: { note_summary: 'the visit for high blood pressure and type 2 diabetes: the exam, the home readings reviewed and the medicine change' } },
   { id: 'C-1002', p: 'DOR', payer: 'demo_health_plan', g: 'CO', carc: '197', rarc: 'N54', lines: [L('73721', 1450)], icd: ['M25.561'], dl: 41, stage: 'new', auth: true,
     case: { service_plain: 'an MRI of the right knee' } },
@@ -118,7 +118,7 @@ const SPECS = [
     case: { coverage_checked_on: 'dos' } },
   { id: 'C-1009', p: 'DCA', payer: 'medicare_sample', g: 'CO', carc: '16', rarc: 'M127', lines: [L('99214', 245), L('93000', 65)], icd: ['R00.2'], dl: 47, stage: 'new',
     case: { note_summary: 'the visit for palpitations: the exam, the ECG reading and the plan' } },
-  { id: 'C-1010', p: 'DOR', payer: 'demo_mutual_plan', g: 'CO', carc: '4', rarc: '', lines: [L('99214', 245, 0, '25'), L('20610', 180, 96.4)], icd: ['M17.11', 'M25.561'], dl: 12, stage: 'new',
+  { id: 'C-1010', p: 'DOR', payer: 'demo_mutual_plan', g: 'CO', carc: '4', rarc: '', lines: [L('99214', 245, 0, '25'), L('20610', 180, 96.4)], icd: ['M17.11', 'M25.561'], dl: 6, stage: 'new',
     case: { modifier_explain: 'The visit treated a separate problem, a new shoulder injury, examined and treated apart from the knee injection. Modifier 25 is the right modifier for a separate visit on the same day as a procedure.' } },
   { id: 'C-1011', p: 'DFM', payer: 'medicare_sample', g: 'OA', carc: '18', rarc: 'M86', lines: [L('93000', 65, 18.9), L('93000', 65, 0, '76')], icd: ['R07.9'], dl: 71, stage: 'new',
     case: { duplicate_explain: 'The patient\'s chest pain came back later the same day, so the ECG was repeated to compare with the first. Modifier 76 marks the repeat test.' } },
