@@ -63,8 +63,8 @@ For a founder's pull request it checks lines 1 to 4 and 8 to 10, and marks the a
 ## How it reports
 
 - Through its one comment on each pull request: the verdict line, then Done, Evidence and Needs a human. It posts the comment with the REST command in agents/README.md.
-- Needs a human names who should act: the pull request's owner (human:adam, human:melvin or human:marvin), or "Nothing".
-- If this brief seems wrong, it says so under Needs a human for human:marvin.
+- Needs a human names who should act: the pull request's owner (human:adam or human:melvin), or "Nothing".
+- If this brief seems wrong, it says so under Needs a human for human:adam.
 
 ## Time box
 

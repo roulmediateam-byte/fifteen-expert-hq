@@ -54,7 +54,7 @@ Adam. He writes or approves agent:engineer Issues, checks every engineer pull re
 - Body:
   - **Done:** what changed, and "Closes #N".
   - **Evidence:** the test command and its result (how many passed and failed), the files changed, the start and finish time in Sydney, the minutes used of 30, and this run's session link if the session shows one.
-  - **Needs a human:** human:marvin to review, and to approve any new dependency. "Nothing" if nothing else.
+  - **Needs a human:** human:adam to approve any new dependency, and human:melvin to review and merge. "Nothing" if nothing else.
 
 ## Time box
 
