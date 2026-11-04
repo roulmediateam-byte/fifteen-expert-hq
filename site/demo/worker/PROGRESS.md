@@ -74,6 +74,15 @@ Walkthrough (`node site/demo/worker/tests/walkthrough.mjs`), tour claim 1 (C-101
 - The coach examples for steps c and e showed one claim's dates on every claim. They are now clearly general examples.
 - Smaller: the visit note summary read "Visit for the visit for"; the CARC 16 and 252 usage notes are marked shortened; the "start": null fields are gone from the rules file.
 
+## Rules fact check (5 Nov 2026)
+
+A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.json and confirmed 90 items (level numbers, quotes, rule texts, code texts, CARC 15's stop date) with no mismatch. It found four things to add, all done:
+
+- The CMS-1696 page also says the representation is valid, unless revoked, for the duration of the claim or appeal it was filed with. The representation check now accepts a form older than a year on a later level of the same appeal.
+- The good cause text no longer says a late appeal is accepted "only" with good cause; CMS says it evaluates each request.
+- The 2027 amounts in controversy are noted: $200 for the ALJ hearing (unchanged) and $2,000 for court (up from $1,960). The demo date stays in 2026.
+- CARC 96 is marked shortened and RARC MA04 has its full text.
+
 ## Half finished
 
 - Step 12: the branch is committed locally but not pushed. The session's safety check refused push access, so Adam must approve it. After that: push, open the pull request "Worker console demo (made-up claims)" for Melvin, and file Issues for anything unfinished.
