@@ -1,0 +1,111 @@
+/*
+  Design tokens: colours, type, spacing, radius, shadows and sizes.
+
+  Copied exactly from the company design system (a Claude Design System artifact,
+  tokens.json version 1, made 4 Nov 2026), in the same shape as the system's own
+  compiled CSS. Change the design system first, then this file, so the two never differ.
+
+  One light theme. Every text colour passes WCAG AA (at least 4.5 to 1) on the grounds
+  named in its comment. Control edges, icons and the focus ring reach at least 3 to 1.
+  Check any new pair before using it.
+
+  Cloudflare serves only site/, so each page copies the values it needs into its own
+  styles and its pull request says which values it used.
+
+  Fonts: Source Serif 4 and Source Sans 3 (SIL Open Font License 1.1). The website uses
+  cut-down copies in site/assets/, renamed Site Serif and Site Sans, because that licence
+  reserves the name "Source" for the original fonts.
+*/
+
+:root, [data-theme="light"] {
+  /* Grounds */
+  --paper: #f7f6f2;          /* page background */
+  --surface: #ffffff;        /* cards, inputs, menus, table rows */
+  --surface-muted: #eeece6;  /* quiet panels, table headers, secondary hover, disabled fill */
+  --line: #dedbd2;           /* hairlines, dividers, card edges; decorative only */
+  --line-strong: #7b7f84;    /* edges of inputs, selects, checkboxes, uploads, secondary buttons */
+
+  /* Text */
+  --ink: #16232f;            /* headings and body; on paper, surface, surface-muted and every wash and tint */
+  --ink-soft: #3b4a58;       /* secondary text; on paper, surface, surface-muted, evergreen-wash, evergreen-tint */
+  --ink-muted: #55636f;      /* hints, captions, source lines; the lightest text allowed */
+
+  /* Brand */
+  --evergreen: #0e6650;      /* primary button, links, key figures, logo; as text on paper, surface, surface-muted, evergreen-wash */
+  --evergreen-dark: #0b5040; /* hover on evergreen, dark bands, Won badge text */
+  --evergreen-deep: #0a3d30; /* pressed evergreen, footer band */
+  --evergreen-tint: #d3ebe1; /* selected rows, highlight chips */
+  --evergreen-wash: #edf6f1; /* success panels, the promise band, Won badge */
+  --on-dark: #ffffff;        /* text, icons and focus ring on evergreen, evergreen-dark, evergreen-deep, ink, danger fills */
+  --on-dark-muted: var(--evergreen-tint); /* secondary text on evergreen-dark, evergreen-deep, ink */
+
+  /* Status: only for status, always with a word and an icon */
+  --danger: #a4281f;         /* errors and Denied only */
+  --danger-dark: #86201a;    /* hover on the destructive button */
+  --danger-wash: #fceeec;    /* error panels, Denied badge */
+  --warning: #8a4b0a;        /* close deadlines and cautions */
+  --warning-wash: #fdf4e4;   /* deadline panels, Due soon badge */
+  --info: #1f5a9e;           /* neutral notices, In review */
+  --info-wash: #ebf2fa;      /* info panels, In review badge */
+
+  /* Roles */
+  --focus: var(--info);      /* keyboard focus ring on light grounds: 3px solid, 2px gap */
+  --link: var(--evergreen);  /* links in running text, always underlined */
+
+  /* Shadows: borders first */
+  --shadow-sm: 0 1px 2px #16232f14;  /* cards at rest, always with a line edge */
+  --shadow-md: 0 6px 16px #16232f1f; /* menus and popovers only */
+}
+
+:root {
+  /* Spacing: 4px steps; the number in the name times 4 is the size in px */
+  --space-1: 4px;    /* icon to word inside badges */
+  --space-2: 8px;    /* icon to label in buttons; label to its field */
+  --space-3: 12px;   /* padding inside inputs; between list rows */
+  --space-4: 16px;   /* page side gutter on phones; between items in a row */
+  --space-6: 24px;   /* card padding; between form fields; button side padding */
+  --space-8: 32px;   /* between cards; page side gutter on desktop */
+  --space-12: 48px;  /* between page sections on phones */
+  --space-16: 64px;  /* between page sections on desktop */
+  --space-24: 96px;  /* above and below the home page headline */
+
+  /* Radius: soft, never round, except badges */
+  --radius-xs: 4px;      /* checkboxes */
+  --radius-sm: 8px;      /* buttons, inputs, selects */
+  --radius-md: 12px;     /* cards, upload areas */
+  --radius-full: 9999px; /* badges, step numbers */
+
+  /* Sizes */
+  --control-md: 44px;   /* height of buttons, inputs and selects */
+  --control-lg: 52px;   /* height of the one large hero button */
+  --focus-width: 3px;   /* thickness of the focus outline */
+  --focus-offset: 2px;  /* gap between a control and its focus outline */
+  --field-max: 480px;   /* widest a single text field gets */
+  --measure: 68ch;      /* longest line of body text */
+  --container: 1120px;  /* widest page content */
+
+  /* Font families */
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Type styles: headings and numbers in the serif at 600; text in the sans at 400 and 600.
+   Nothing smaller than 14px. */
+.display { font-family: var(--font-serif); font-size: 48px; line-height: 56px; font-weight: 600; letter-spacing: -0.01em; } /* the home page headline, once */
+.h1      { font-family: var(--font-serif); font-size: 40px; line-height: 48px; font-weight: 600; } /* page title, once per page */
+.h2      { font-family: var(--font-serif); font-size: 32px; line-height: 40px; font-weight: 600; } /* section titles */
+.h3      { font-family: var(--font-serif); font-size: 24px; line-height: 32px; font-weight: 600; } /* card titles, sub-sections */
+.stat    { font-family: var(--font-serif); font-size: 40px; line-height: 48px; font-weight: 600; } /* big numbers in evergreen; real results only, with a source line */
+.lead    { font-family: var(--font-sans); font-size: 20px; line-height: 30px; font-weight: 400; } /* first paragraph under a page title */
+.body    { font-family: var(--font-sans); font-size: 18px; line-height: 28px; font-weight: 400; } /* website body text, lines of at most 68 characters */
+.body-ui { font-family: var(--font-sans); font-size: 16px; line-height: 24px; font-weight: 400; } /* forms, tables, app screens */
+.label   { font-family: var(--font-sans); font-size: 16px; line-height: 24px; font-weight: 600; } /* form labels, button text, table headers */
+.small   { font-family: var(--font-sans); font-size: 14px; line-height: 20px; font-weight: 400; } /* hints, captions, footnotes, source lines */
+.eyebrow { font-family: var(--font-sans); font-size: 14px; line-height: 20px; font-weight: 600; letter-spacing: 0.02em; } /* short label above a heading, in evergreen, sentence case */
+
+/* Under 640px wide (from the design system's type notes) */
+@media (max-width: 639px) {
+  .display { font-size: 36px; line-height: 44px; }
+  .h1      { font-size: 32px; line-height: 40px; }
+  .h2      { font-size: 28px; line-height: 36px; }
+}

@@ -9,3 +9,5 @@ One row per link the team uses, newest at the bottom. Never add a link that open
 | AI-Native Company Setup: $15-an-Hour Expert | https://claude.ai/artifact/TQAWm7wprrHy7nYyPuSDQR | Full company design and setup runbook | Adam | 2026-11-04 |
 | fifteen-expert-hq | https://github.com/roulmediateam-byte/fifteen-expert-hq | This repository: the company filing cabinet | Adam | 2026-11-04 |
 | Mission control | https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/10 | Issue #10: the dashboard of every agent, rewritten by GitHub Actions | Marvin | 2026-11-04 |
+| Design system | https://claude.ai/artifact/WY7ikfEYykLdkh5TqMa2No | Claude Design System artifact (private): colours, type, spacing, components, icons, logo directions. brand/design-tokens.css is copied from it | Adam | 2026-11-04 |
+| One-page website preview | https://claude.ai/artifact/21BXp6BpPjsWs17MBf3bse | Claude artifact copy (private) of site/index.html, for review until Cloudflare Pages gives preview links | Adam | 2026-11-04 |
