@@ -1,0 +1,113 @@
+{
+  "FAKE": "FAKE: the answer key for the demo. Only scripts/score_demo.mjs reads it; the checker never does.",
+  "count": 15,
+  "tour_claims": [
+    {
+      "tour": 1,
+      "claim_id": "C-1012",
+      "what": "Clean, easy win (Medicare, missing record)"
+    },
+    {
+      "tour": 2,
+      "claim_id": "C-1027",
+      "what": "Planted error the checker catches (member ID misread)"
+    },
+    {
+      "tour": 3,
+      "claim_id": "C-1033",
+      "what": "Sent back by the reviewer (quote the visit note)"
+    }
+  ],
+  "errors": [
+    {
+      "claim_id": "C-1003",
+      "field": "Denial notice date (appeal window)",
+      "error": "The 120-day redetermination window closed 4 days before the demo date. The checker must stop it from going out as a normal appeal.",
+      "check": "deadline"
+    },
+    {
+      "claim_id": "C-1004",
+      "field": "Denial notice date (appeal window)",
+      "error": "Demo Mutual Plan's 90-day appeal window (sample payer rule) closed 5 days before the demo date.",
+      "check": "deadline"
+    },
+    {
+      "claim_id": "C-1023",
+      "field": "Appeal level",
+      "error": "The redetermination was already decided, so this claim is due for a reconsideration, but the draft asks for a redetermination.",
+      "check": "level"
+    },
+    {
+      "claim_id": "C-1024",
+      "field": "Appeal level",
+      "error": "No first appeal has been decided, but the draft is a second level provider appeal.",
+      "check": "level"
+    },
+    {
+      "claim_id": "C-1025",
+      "field": "Payer address",
+      "error": "This is a reconsideration, but the draft is addressed to the MAC's redetermination address (PO Box 1001) instead of the QIC (PO Box 2002).",
+      "check": "address"
+    },
+    {
+      "claim_id": "C-1026",
+      "field": "Payer address",
+      "error": "The draft is addressed to Demo Health Plan's claims department (PO Box 0003), not the provider appeals unit (PO Box 0001).",
+      "check": "address"
+    },
+    {
+      "claim_id": "C-1027",
+      "field": "Member ID in the letter",
+      "error": "The Simulated AI misread the member ID (two digits swapped) and the draft letter uses the wrong ID.",
+      "check": "ids"
+    },
+    {
+      "claim_id": "C-1028",
+      "field": "Claim number in the letter",
+      "error": "The draft letter gives a claim number with one wrong digit.",
+      "check": "ids"
+    },
+    {
+      "claim_id": "C-1029",
+      "field": "Date of service in the letter",
+      "error": "The Simulated AI misread the date of service (an amber field) and the draft letter uses the wrong date.",
+      "check": "dos"
+    },
+    {
+      "claim_id": "C-1030",
+      "field": "Evidence: authorization number",
+      "error": "The prior authorization approval letter is on file but not attached, and the draft does not quote the authorization number.",
+      "check": "evidence"
+    },
+    {
+      "claim_id": "C-1031",
+      "field": "Evidence: letter of medical necessity",
+      "error": "The letter of medical necessity is not on file and not attached, yet the draft says it is enclosed.",
+      "check": "evidence"
+    },
+    {
+      "claim_id": "C-1032",
+      "field": "Why the denial is wrong",
+      "error": "The denial is CO-151 (frequency, a medical necessity point), but the draft argues timely filing.",
+      "check": "reason"
+    },
+    {
+      "claim_id": "C-1034",
+      "field": "Letter text",
+      "error": "The draft copies a sentence that names another test patient (from claim C-1040).",
+      "check": "other_patient"
+    },
+    {
+      "claim_id": "C-1035",
+      "field": "Representation form (CMS-1696)",
+      "error": "We file for Demo Family Medicine as its appointed representative, but the draft has no CMS-1696 note and the signed form is not attached.",
+      "check": "representation"
+    },
+    {
+      "claim_id": "C-1036",
+      "field": "Letter tone",
+      "error": "The draft ends with an angry line in capitals with an exclamation mark.",
+      "check": "tone"
+    }
+  ]
+}
