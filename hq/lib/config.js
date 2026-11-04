@@ -62,7 +62,7 @@ export const DEFAULT_SCHEDULE = {
   agents: [
     { name: 'chief-of-staff', label: 'agent:chief-of-staff', owner: 'Adam', brief: 'agents/chief-of-staff.md', status_issue: 4, enabled: true,
       schedule: { days: 'daily', time: '06:30' },
-      allowed_folders: ['ops/digest/', 'ops/links.md', 'ops/decisions.md', 'yc/', 'brand/', 'design/', 'research/', 'sales/', 'finance/', 'legal/'], excluded_folders: [] },
+      allowed_folders: ['ops/digest/', 'ops/links.md', 'ops/decisions.md', 'ops/kpis.json', 'yc/', 'brand/', 'design/', 'research/', 'sales/', 'finance/', 'legal/'], excluded_folders: [] },
     { name: 'design', label: 'agent:design', owner: 'Adam', brief: 'agents/design.md', status_issue: 5, enabled: true,
       schedule: { days: 'daily', time: '01:00' }, allowed_folders: ['site/', 'design/', 'brand/'], excluded_folders: ['site/demo/'] },
     { name: 'engineer', label: 'agent:engineer', owner: 'Adam', brief: 'agents/engineer.md', status_issue: 6, enabled: true,
