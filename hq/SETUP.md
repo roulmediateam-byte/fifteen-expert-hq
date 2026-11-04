@@ -81,9 +81,9 @@ Without these, Run now opens claude.ai/code/routines in a new tab, and you press
 
 Each task allows 30 starts an hour, and every run uses the Max plan's allowance like a scheduled run. To switch a button off again, delete its token on claude.ai/code/routines (Delete token).
 
-## 8. Create the two priority labels
+## 8. Check the two priority labels
 
-Give work labels each Issue priority:high or priority:normal. Create them once on github.com: Issues, Labels, New label: `priority:high` (colour B60205) and `priority:normal` (colour C5DEF5). ops/setup-labels.md has the same as commands.
+Give work labels each Issue priority:high or priority:normal. Claude created both on GitHub on 4 Nov 2026. Check they are there: Issues, Labels. If one is missing, add it there: New label, `priority:high` (colour B60205) or `priority:normal` (colour C5DEF5). ops/setup-labels.md has the same as commands.
 
 ## 9. Test each button once
 

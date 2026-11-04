@@ -2,7 +2,7 @@
 
 Agent labels say which agent does the work. Human labels say which human must act: decide, approve or answer. An Issue can carry both kinds. Agents work only on Issues with their own agent label (CLAUDE.md, rule 8).
 
-Status: the first 11 were created on GitHub on 2026-11-04 by Claude through the GitHub API. priority:high and priority:normal (added for HQ's Give work button, 2026-11-04) are not created yet: run their two commands below, or GitHub makes them grey the first time HQ uses them. The labels already on the repository (bug, documentation and the rest) were left as they are. status-board and mission-control mark the Status Issues (#4 to #9) and the Mission control Issue (#10); they are not work labels.
+Status: the first 11 were created on GitHub on 2026-11-04 by Claude through the GitHub API. priority:high and priority:normal (added for HQ's Give work button) were created the same way later on 2026-11-04. The labels already on the repository (bug, documentation and the rest) were left as they are. status-board and mission-control mark the Status Issues (#4 to #9) and the Mission control Issue (#10); they are not work labels.
 
 | Label | Colour | Meaning | Owner |
 |---|---|---|---|
