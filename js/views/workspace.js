@@ -3,7 +3,7 @@
 
 import { esc, when, list } from '../ui/dom.js';
 import { icon } from '../ui/icons.js';
-import { fmtDate, fmtMoney, addDays } from '../lib/dates.js';
+import { fmtDate, fmtMoney, addDays, addYears } from '../lib/dates.js';
 import { STEP_IDS, STEP_TITLES, lowConfidenceFields } from '../lib/work.js';
 import { computeDeadline, dueLevel, getPayer, getLevel, carcText, rarcText, representationNeeded, suggestCategory, plainReason, sourceFor } from '../lib/rules.js';
 import { evidenceRows, evidenceLabel, onFile } from '../lib/evidence.js';
@@ -179,7 +179,7 @@ function stepD(c, w, locked) {
       ${list(rows, (r) => {
         const s = w.evidence[r.id] || (onFile(c, r.id) ? 'on_file' : 'missing');
         const kind = r.representation ? 'Representation' : r.required ? 'Required' : 'Optional';
-        const extra = r.representation ? `<p class="small">Signed ${esc(fmtDate(practice.cms1696_signed))}; valid until ${esc(fmtDate(addDays(practice.cms1696_signed, 365)))}, one year from both signatures (CMS). Checked by the representation check.</p>` : '';
+        const extra = r.representation ? `<p class="small">Signed ${esc(fmtDate(practice.cms1696_signed))}; valid until ${esc(fmtDate(addYears(practice.cms1696_signed, 1)))}, one year from both signatures (CMS). Checked by the representation check.</p>` : '';
         let actions = '';
         if (!locked) {
           if (s === 'attached') actions = `<button type="button" class="btn btn-quiet btn-small" data-action="detach" data-id="${esc(c.id)}" data-item="${esc(r.id)}">${icon('x')}<span>Remove</span></button>`;
@@ -371,9 +371,13 @@ export function workspaceView(id, stepParam) {
   const next = STEP_IDS[stepIndex + 1];
   const prev = STEP_IDS[stepIndex - 1];
   const body = { a: stepA, b: stepB, c: stepC, d: stepD, e: letterEditor, f: checkerPanel, g: stepG }[step](c, w, locked);
-  const doneBtn = !locked && step !== 'f' && step !== 'g'
-    ? `<button type="button" class="btn btn-primary" data-action="mark-step" data-id="${esc(id)}" data-step="${esc(step)}">${icon('check')}<span>${w.stepsDone[step] ? 'Done. Go to the next step' : `Mark step ${step} done`}</span></button>`
-    : '';
+  const fReady = step === 'f' && !locked && checksCurrent(w) && checksAllPass(w);
+  let doneBtn = '';
+  if (!locked && step !== 'f' && step !== 'g') {
+    doneBtn = `<button type="button" class="btn btn-primary" data-action="mark-step" data-id="${esc(id)}" data-step="${esc(step)}">${icon('check')}<span>${w.stepsDone[step] ? 'Done. Go to the next step' : `Mark step ${step} done`}</span></button>`;
+  } else if (fReady) {
+    doneBtn = `<a class="btn btn-primary" id="go-step-g" href="#/claim/${esc(id)}/g">${icon('check')}<span>All 10 passed. Go to step g</span></a>`;
+  }
   const sb = w.sentBack;
   const tabs = [['docs', 'Documents', 'file-text'], ['steps', 'Steps', 'list-ordered'], ['coach', 'Coach', 'graduation-cap']];
   return `<section class="page ws" aria-labelledby="page-title">
@@ -410,7 +414,7 @@ export function workspaceView(id, stepParam) {
           <div class="step-nav">
             ${doneBtn}
             ${prev ? `<a class="btn btn-quiet" href="#/claim/${esc(id)}/${prev}">${icon('arrow-left')}<span>Step ${prev}</span></a>` : ''}
-            ${next ? `<a class="btn btn-quiet" href="#/claim/${esc(id)}/${next}"><span>Step ${next}</span>${icon('chevron-right')}</a>` : ''}
+            ${next && !fReady ? `<a class="btn btn-quiet" href="#/claim/${esc(id)}/${next}"><span>Step ${next}</span>${icon('chevron-right')}</a>` : ''}
           </div>
         </div>
       </section>

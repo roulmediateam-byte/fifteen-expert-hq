@@ -22,6 +22,13 @@ export function addDays(iso, days) {
   return toISO(new Date(toDate(iso).getTime() + days * MS_PER_DAY));
 }
 
+// The same calendar date some years later (Feb 29 becomes Feb 28 in a year without it).
+export function addYears(iso, years) {
+  const [y, m, d] = String(iso).split('-').map(Number);
+  const lastDay = new Date(Date.UTC(y + years, m, 0)).getUTCDate();
+  return toISO(new Date(Date.UTC(y + years, m - 1, Math.min(d, lastDay))));
+}
+
 // Whole days from a to b (positive when b is later).
 export function daysBetween(a, b) {
   return Math.round((toDate(b).getTime() - toDate(a).getTime()) / MS_PER_DAY);

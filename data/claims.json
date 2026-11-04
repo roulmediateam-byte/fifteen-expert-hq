@@ -5609,7 +5609,7 @@
               "id": "representation",
               "label": "Representation form present when needed",
               "pass": true,
-              "detail": "Signed CMS-1696 attached, and the letter says we file as the appointed representative.",
+              "detail": "Signed CMS-1696 attached (valid until Aug 20, 2027), and the letter says we file as the appointed representative.",
               "fix": null
             },
             {
@@ -7228,7 +7228,7 @@
               "id": "representation",
               "label": "Representation form present when needed",
               "pass": true,
-              "detail": "Signed CMS-1696 attached, and the letter says we file as the appointed representative.",
+              "detail": "Signed CMS-1696 attached (valid until Sep 1, 2027), and the letter says we file as the appointed representative.",
               "fix": null
             },
             {
@@ -8095,7 +8095,7 @@
               "id": "representation",
               "label": "Representation form present when needed",
               "pass": true,
-              "detail": "Signed CMS-1696 attached, and the letter says we file as the appointed representative.",
+              "detail": "Signed CMS-1696 attached (valid until Aug 20, 2027), and the letter says we file as the appointed representative.",
               "fix": null
             },
             {
@@ -9264,7 +9264,7 @@
               "id": "representation",
               "label": "Representation form present when needed",
               "pass": true,
-              "detail": "Signed CMS-1696 attached, and the letter says we file as the appointed representative.",
+              "detail": "Signed CMS-1696 attached (valid until Sep 1, 2027), and the letter says we file as the appointed representative.",
               "fix": null
             },
             {
@@ -10193,7 +10193,7 @@
               "id": "representation",
               "label": "Representation form present when needed",
               "pass": true,
-              "detail": "Signed CMS-1696 attached, and the letter says we file as the appointed representative.",
+              "detail": "Signed CMS-1696 attached (valid until Aug 20, 2027), and the letter says we file as the appointed representative.",
               "fix": null
             },
             {

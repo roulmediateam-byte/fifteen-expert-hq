@@ -53,7 +53,7 @@ h1[tabindex="-1"]:focus-visible, h2[tabindex="-1"]:focus-visible, h3[tabindex="-
 .eyebrow { font-size: 14px; line-height: 20px; font-weight: 600; letter-spacing: 0.02em; color: var(--evergreen); margin: 0 0 var(--space-1); }
 .small { font-size: 14px; line-height: 20px; }
 .muted { color: var(--ink-muted); font-weight: 400; }
-.code { font-weight: 600; font-variant-numeric: tabular-nums; }
+.code { font-weight: 600; font-variant-numeric: tabular-nums; overflow-wrap: normal; white-space: nowrap; }
 .sim { font-size: 14px; font-weight: 400; color: var(--ink-muted); }
 .h4 .icon, .h3 .icon, .col-title .icon, .doc-title .icon { color: var(--evergreen); }
 .h4, .h3, .col-title, .doc-title { display: flex; align-items: center; gap: var(--space-2); }
@@ -189,7 +189,8 @@ fieldset legend { padding: 0 var(--space-1); }
 .empty { display: flex; gap: var(--space-2); align-items: center; color: var(--ink-soft); background: var(--surface); border: 1px dashed var(--line-strong); border-radius: var(--radius-md); padding: var(--space-4); }
 
 /* Today */
-.stats { list-style: none; padding: 0; margin: 0 0 var(--space-6); display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: var(--space-4); }
+.stats { list-style: none; padding: 0; margin: 0 0 var(--space-6); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: var(--space-3); }
+@media (max-width: 479px) { .stat { padding: var(--space-3); } .stat-num { font-size: 30px; line-height: 38px; } }
 .stat { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-4); box-shadow: var(--shadow-sm); border-top: 4px solid var(--line-strong); }
 .stat > .icon { color: var(--evergreen); }
 .stat-warning { border-top-color: var(--warning); }
@@ -202,7 +203,8 @@ fieldset legend { padding: 0 var(--space-1); }
 .filters .field { flex: 1 1 180px; }
 .count { color: var(--ink-soft); font-size: 14px; line-height: 20px; }
 
-.queue-wrap { width: 100%; }
+/* The table turns into cards when its own box is narrow (a phone, or beside the presenter panel). */
+.queue-wrap { width: 100%; container-type: inline-size; }
 .queue { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); }
 .queue th { text-align: left; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--ink-soft); background: var(--surface-muted); padding: var(--space-3); border-bottom: 1px solid var(--line); vertical-align: bottom; }
 .queue th:first-child { border-top-left-radius: var(--radius-md); }
@@ -215,19 +217,21 @@ fieldset legend { padding: 0 var(--space-1); }
 .queue .plain { display: block; color: var(--ink-soft); font-size: 14px; line-height: 20px; }
 .claim-link { font-weight: 600; font-size: 17px; }
 .queue tr.is-live td { background: var(--evergreen-wash); }
-@media (max-width: 899px) {
+@container (max-width: 899px) {
   .queue, .queue tbody, .queue tr, .queue td { display: block; width: 100%; }
   .queue thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .queue { border: 0; background: transparent; }
   .queue tr { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); margin-bottom: var(--space-3); padding: var(--space-2) var(--space-3); }
-  .queue td { border: 0; padding: var(--space-1) 0; display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: var(--space-2); }
+  .queue td { border: 0; padding: var(--space-1) 0; display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 2px var(--space-2); justify-items: start; }
+  .queue td > * { grid-column: 2; }
   .queue td::before { content: attr(data-label); font-size: 14px; line-height: 20px; font-weight: 600; color: var(--ink-muted); padding-top: 2px; }
   .queue .num { text-align: left; }
   .queue td[colspan] { display: block; }
   .queue td[colspan]::before { content: none; }
 }
-@media (max-width: 359px) {
+@container (max-width: 330px) {
   .queue td { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .queue td > * { grid-column: 1; }
 }
 
 /* Workspace */
@@ -242,6 +246,8 @@ fieldset legend { padding: 0 var(--space-1); }
   background: transparent; border: 0; border-bottom: 3px solid transparent; cursor: pointer;
 }
 .ws-tabs [role="tab"][aria-selected="true"] { color: var(--evergreen); border-bottom-color: var(--evergreen); background: var(--surface); }
+.ws-tabs [role="tab"] span { overflow-wrap: normal; white-space: nowrap; }
+@media (max-width: 400px) { .ws-tabs [role="tab"] svg { display: none; } }
 .ws-grid { display: block; }
 .ws-col { min-width: 0; }
 .ws-grid[data-tab="docs"] .col-steps, .ws-grid[data-tab="docs"] .col-coach,
@@ -281,7 +287,9 @@ fieldset legend { padding: 0 var(--space-1); }
 .doc-grid dd { margin: 0; font-weight: 600; }
 .table-wrap { overflow-x: auto; margin-bottom: var(--space-3); }
 .doc-table { border-collapse: collapse; width: 100%; font-size: 14px; line-height: 20px; }
-.doc-table th, .doc-table td { border-bottom: 1px solid var(--line); padding: var(--space-1) var(--space-2); text-align: left; vertical-align: top; }
+.doc-table th, .doc-table td { border-bottom: 1px solid var(--line); padding: var(--space-1) 6px; text-align: left; vertical-align: top; overflow-wrap: normal; word-break: normal; }
+.doc-table th:first-child, .doc-table td:first-child { padding-left: 0; }
+.doc-table .nowrap { white-space: nowrap; }
 .doc-table th { color: var(--ink-soft); }
 .doc-remark, .doc-totals { font-size: 15px; }
 .doc-rights { background: var(--surface-muted); border-radius: var(--radius-sm); padding: var(--space-3); font-size: 15px; }
@@ -391,12 +399,13 @@ blockquote.good { margin: 0 0 var(--space-3); padding: var(--space-3); backgroun
 .learned { display: flex; gap: var(--space-2); align-items: center; font-weight: 600; color: var(--evergreen-dark); }
 
 /* Review */
-.review-grid { display: grid; gap: var(--space-6); }
+.review-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
 @media (min-width: 1100px) { .review-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); align-items: start; } }
+@media (min-width: 1100px) and (max-width: 1399px) { .with-presenter .review-grid { grid-template-columns: minmax(0, 1fr); } }
 .review-side, .decide { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-4); margin-top: var(--space-6); }
 .decide { border-top: 4px solid var(--evergreen); }
-.decide-grid { display: grid; gap: var(--space-6); }
-@media (min-width: 900px) { .decide-grid { grid-template-columns: 1fr 1fr; } }
+.decide-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+@media (min-width: 900px) { .decide-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
 .cards { list-style: none; padding: 0; margin: 0 0 var(--space-8); display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: var(--space-4); }
 .card { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-md); padding: var(--space-4); box-shadow: var(--shadow-sm); min-width: 0; }
 .card-title { font-weight: 600; }
@@ -431,6 +440,8 @@ blockquote.good { margin: 0 0 var(--space-3); padding: var(--space-3); backgroun
 .seg-btn { display: inline-flex; align-items: center; gap: var(--space-1); min-height: 40px; padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); font: inherit; font-weight: 600; cursor: pointer; }
 .seg-btn[aria-pressed="true"] { background: var(--evergreen); color: var(--on-dark); border-color: var(--evergreen); }
 .tour { list-style: none; padding: 0; margin: var(--space-4) 0; display: grid; gap: var(--space-3); }
+/* Single-column grids never grow wider than their box, so long words and selects cannot cause sideways scroll. */
+.docs, .kv, .letter-editor, .letter, .checks, .col-coach, .bars, .training, .tour { grid-template-columns: minmax(0, 1fr); }
 .tour-step { margin: 0; padding-bottom: var(--space-3); border-bottom: 1px solid var(--line); }
 .tour-title { display: flex; gap: var(--space-2); align-items: center; font-weight: 600; margin-bottom: var(--space-1); }
 .tour-num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: var(--radius-full); background: var(--info-wash); color: var(--info); font-size: 14px; flex: none; }

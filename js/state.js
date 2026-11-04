@@ -509,7 +509,7 @@ export function logOutcome(id, result, amountText) {
     } else {
       let why = 'there is no further appeal level in the demo for this payer';
       if (next && next.minimum_amount_usd != null && disputed < next.minimum_amount_usd) why = `the amount in dispute (${fmtMoney(disputed)}) is under the ${next.minimum_amount_year} minimum of ${fmtMoney(next.minimum_amount_usd)} for ${next.name} (CMS)`;
-      else if (next && next.order > 3) why = `the next level (${next.name}) is for a lawyer, not a worker`;
+      else if (next && next.order > 3) why = `the next level (${next.name}) is past what a worker files in this demo, so Melvin decides whether to go on (our playbook)`;
       r.stage = 'lost';
       w.outcome = { result: 'lost', amount: 0, fee: 0, date: store.ctx.today, why };
       log(id, `Logged outcome: lost. No new task: ${why}`);

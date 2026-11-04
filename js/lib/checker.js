@@ -2,7 +2,7 @@
 // It reads the claim (the source documents), the worker's choices and the letter.
 // It never reads data/planted_errors.json (that file is only for scoring).
 
-import { daysBetween, fmtDate } from './dates.js';
+import { addYears, daysBetween, fmtDate } from './dates.js';
 import { computeDeadline, dueLevel, getLevel, getPayer, representationNeeded, suggestCategory } from './rules.js';
 import { evidenceLabel, evidenceShort, requiredEvidence } from './evidence.js';
 import { getBlock, letterText, wordCount } from './letter.js';
@@ -185,14 +185,23 @@ export function runChecks(claim, work, ctx) {
   } else {
     const attached = state.cms1696 === 'attached';
     const noted = /CMS-1696/.test(text);
-    if (attached && noted) {
-      add('representation', true, 'Signed CMS-1696 attached, and the letter says we file as the appointed representative.');
+    // CMS: the form is valid for one year from the date both the party and the representative sign it.
+    const signed = ((ctx.practices || {})[claim.practice] || {}).cms1696_signed;
+    const validUntil = signed ? addYears(signed, 1) : null;
+    const signedFirst = Boolean(signed) && daysBetween(signed, asOf) >= 0;
+    const current = signedFirst && daysBetween(asOf, validUntil) >= 0;
+    if (attached && noted && current) {
+      add('representation', true, `Signed CMS-1696 attached (valid until ${fmtDate(validUntil)}), and the letter says we file as the appointed representative.`);
     } else {
       const parts = [];
+      const when = work.submission ? 'the send date' : 'today';
+      if (!signed) parts.push('there is no signed CMS-1696 on file');
+      else if (!signedFirst) parts.push(`the CMS-1696 was signed on ${fmtDate(signed)}, after ${when}`);
+      else if (!current) parts.push(`the CMS-1696 ran out on ${fmtDate(validUntil)}, one year after both signed it (CMS), so the practice must sign a new one`);
       if (!attached) parts.push('the signed CMS-1696 is not attached');
       if (!noted) parts.push('the letter does not say we file as the appointed representative (CMS-1696)');
       add('representation', false, `We file this Medicare appeal as the practice's representative, but ${parts.join(' and ')}.`,
-        !attached ? { step: 'd', focus: 'ev-cms1696' } : { step: 'e', block: 'representation', action: 'addRepresentation', select: '' });
+        !attached || !current ? { step: 'd', focus: 'ev-cms1696' } : { step: 'e', block: 'representation', action: 'addRepresentation', select: '' });
     }
   }
 
