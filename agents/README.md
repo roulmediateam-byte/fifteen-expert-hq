@@ -1,6 +1,6 @@
 # agents
 
-Owner: Marvin. Each brief also names its agent's human owner.
+Owner: Adam. Each brief also names its agent's human owner.
 
 What goes here: one brief per agent, named after its label without "agent:". Every brief has the same parts, in this order: Job, Human owner, When it runs, What it reads, Folders it may change, What it produces, Never, How it reports, Time box.
 
@@ -8,8 +8,8 @@ What goes here: one brief per agent, named after its label without "agent:". Eve
 |---|---|---|---|---|
 | chief-of-staff.md | agent:chief-of-staff | Adam | Every day 6:30 am | On |
 | design.md | agent:design | Adam | Every day 1:00 am | On |
-| engineer.md | agent:engineer | Marvin | Every day 2:00 am | On |
-| reviewer.md | agent:reviewer | Marvin | When a pull request is opened | On |
+| engineer.md | agent:engineer | Adam | Every day 2:00 am | On |
+| reviewer.md | agent:reviewer | Adam | When a pull request is opened | On |
 | research.md | agent:research | Adam | Mondays 3:00 am | On |
 | sales.md | agent:sales | Melvin | Weekdays 4:00 am, from phase 5 | Off until phase 5 |
 

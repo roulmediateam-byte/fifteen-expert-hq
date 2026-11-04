@@ -32,5 +32,5 @@ What you did, in one to three lines, and the Issue (for example: Closes #12).
 Test results, links, screenshots or file paths, and the time used (for example: Time used: 22 of 30 minutes).
 
 ## Needs a human
-The exact decision or action, and who: human:adam, human:melvin or human:marvin. Write "Nothing" if nothing.
+The exact decision or action, and who: human:adam or human:melvin. Write "Nothing" if nothing.
 ```

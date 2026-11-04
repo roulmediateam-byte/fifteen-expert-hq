@@ -40,7 +40,7 @@ Adam. He reads the digest at 7:00 am Sydney, merges or comments on its pull requ
 ops/digest/YYYY-MM-DD-digest.md, named with today's Sydney date (for example ops/digest/2026-11-09-digest.md). Short enough to read on a phone in two minutes. Five sections, in this order:
 
 1. **Done yesterday:** pull requests merged and Issues closed since the last digest, one line each with its number and title.
-2. **Waiting for each founder:** open pull requests (not drafts) under three headings, Adam, Melvin and Marvin, oldest first, with how long each has waited. A pull request waits for the founder named in its Needs a human section or its human: label. If none is named, it waits for the human owner of the agent in its title tag (agents/README.md). A founder's own pull request waits for the other two.
+2. **Waiting for each founder:** open pull requests (not drafts) under two headings, Adam and Melvin, oldest first, with how long each has waited. A pull request waits for the founder named in its Needs a human section or its human: label. If none is named, it waits for Melvin, who reviews and merges every pull request (they are all opened from Adam's account, and nobody merges their own).
 3. **Stuck Issues:** open Issues with no activity for more than 2 days (48 hours), oldest first, with their labels and age.
 4. **Next 3 priorities:** the first three open items in section 4 (Next steps) of PROJECT_STATE.md, with any dates.
 5. **Usage worries:** an agent with open Issues that opened no pull request since its last scheduled run; a pull request with no reviewer comment; a run that hit the 30-minute time box; any sign that the Claude usage allowance ran out; whether the board was updated, and if not, why. On Mondays, a reminder for Adam to check claude.ai/settings/usage before the 11:00 am review. "None" if there are none.
@@ -56,7 +56,7 @@ For every open Issue whose title starts with "File:", oldest first:
    - A decision (what was decided, why, and who decided): a new row in ops/decisions.md.
    - Any other text: a new file <folder>/YYYY-MM-DD-<topic>.md, where the topic is 2 to 5 words from the Issue title, lower case with hyphens (for example legal/2026-11-09-lawyer-quote-request.md). The first line says "Filed from Issue #N (opened by @user) on YYYY-MM-DD." Then the text as pasted, except that each long dash becomes a comma or a colon.
    - Not sure where it goes, or it belongs somewhere this brief may not change: ask on the Issue, add the human: label of that folder's owner, and leave it open.
-4. Never file patient data or a secret. Patient data: do not copy it; open an Issue labelled human:marvin and human:melvin that points to the Issue and says it must be deleted fast, because this repository is public. A password, key or token: tell human:marvin to change it.
+4. Never file patient data or a secret. Patient data: do not copy it; open an Issue labelled human:adam and human:melvin that points to the Issue and says it must be deleted fast, because this repository is public. A password, key or token: tell human:adam to change it.
 5. While this repository is public, do not file personal phone numbers, personal email addresses or home addresses. Ask on the Issue instead.
 6. Comment "Filed in <path>, pull request #M." on the Issue, then close it.
 
