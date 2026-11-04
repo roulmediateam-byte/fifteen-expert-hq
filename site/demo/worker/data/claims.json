@@ -60,8 +60,8 @@
       "stage": "new",
       "patient": "Test Patient 001",
       "member_id": "ZZ-TEST-1100-A",
-      "claim_number": "ZZ-CLM-26071200",
-      "dos": "2026-06-17",
+      "claim_number": "ZZ-CLM-26070700",
+      "dos": "2026-06-12",
       "lines": [
         {
           "cpt": "99214",
@@ -88,9 +88,9 @@
       "group": "CO",
       "carc": "16",
       "rarc": "M127",
-      "notice_date": "2026-07-12",
+      "notice_date": "2026-07-07",
       "prior_decision": null,
-      "claim_submitted": "2026-06-23",
+      "claim_submitted": "2026-06-18",
       "clearinghouse_accepted": null,
       "payer_received": null,
       "auth": null,
@@ -129,14 +129,14 @@
         {
           "key": "claim_number",
           "label": "Claim number",
-          "value": "ZZ-CLM-26071200",
+          "value": "ZZ-CLM-26070700",
           "confidence": 0.95,
           "src": "claim_number"
         },
         {
           "key": "dos",
           "label": "Date of service",
-          "value": "2026-06-17",
+          "value": "2026-06-12",
           "confidence": 0.96,
           "src": "dos"
         },
@@ -178,14 +178,14 @@
         {
           "key": "notice_date",
           "label": "Notice date",
-          "value": "2026-07-12",
+          "value": "2026-07-07",
           "confidence": 0.94,
           "src": "notice_date"
         },
         {
           "key": "deadline",
           "label": "Appeal deadline",
-          "value": "2026-11-14",
+          "value": "2026-11-09",
           "confidence": 0.92,
           "src": "deadline"
         }
@@ -1340,8 +1340,8 @@
       "stage": "new",
       "patient": "Test Patient 004",
       "member_id": "ZZ-TEST-2657-K",
-      "claim_number": "ZZ-CLM-26081909",
-      "dos": "2026-07-14",
+      "claim_number": "ZZ-CLM-26081309",
+      "dos": "2026-07-08",
       "lines": [
         {
           "cpt": "99214",
@@ -1376,9 +1376,9 @@
       "group": "CO",
       "carc": "4",
       "rarc": "",
-      "notice_date": "2026-08-19",
+      "notice_date": "2026-08-13",
       "prior_decision": null,
-      "claim_submitted": "2026-07-19",
+      "claim_submitted": "2026-07-13",
       "clearinghouse_accepted": null,
       "payer_received": null,
       "auth": null,
@@ -1417,14 +1417,14 @@
         {
           "key": "claim_number",
           "label": "Claim number",
-          "value": "ZZ-CLM-26081909",
+          "value": "ZZ-CLM-26081309",
           "confidence": 0.95,
           "src": "claim_number"
         },
         {
           "key": "dos",
           "label": "Date of service",
-          "value": "2026-07-14",
+          "value": "2026-07-08",
           "confidence": 0.82,
           "src": "dos"
         },
@@ -1466,14 +1466,14 @@
         {
           "key": "notice_date",
           "label": "Notice date",
-          "value": "2026-08-19",
+          "value": "2026-08-13",
           "confidence": 0.98,
           "src": "notice_date"
         },
         {
           "key": "deadline",
           "label": "Appeal deadline",
-          "value": "2026-11-17",
+          "value": "2026-11-11",
           "confidence": 0.9,
           "src": "deadline"
         }
@@ -10927,13 +10927,6 @@
       "at": "2026-08-22T09:05",
       "who": "Simulated AI",
       "role": "system",
-      "claim": "C-1010",
-      "what": "Read the denial notice and the original claim"
-    },
-    {
-      "at": "2026-08-22T09:05",
-      "who": "Simulated AI",
-      "role": "system",
       "claim": "C-1009",
       "what": "Read the denial notice and the original claim"
     },
@@ -10942,6 +10935,13 @@
       "who": "Simulated AI",
       "role": "system",
       "claim": "C-1035",
+      "what": "Read the denial notice and the original claim"
+    },
+    {
+      "at": "2026-08-16T09:05",
+      "who": "Simulated AI",
+      "role": "system",
+      "claim": "C-1010",
       "what": "Read the denial notice and the original claim"
     },
     {
@@ -11043,13 +11043,6 @@
       "what": "Read the denial notice and the original claim"
     },
     {
-      "at": "2026-07-15T09:05",
-      "who": "Simulated AI",
-      "role": "system",
-      "claim": "C-1001",
-      "what": "Read the denial notice and the original claim"
-    },
-    {
       "at": "2026-07-14T09:05",
       "who": "Simulated AI",
       "role": "system",
@@ -11061,6 +11054,13 @@
       "who": "Simulated AI",
       "role": "system",
       "claim": "C-1036",
+      "what": "Read the denial notice and the original claim"
+    },
+    {
+      "at": "2026-07-10T09:05",
+      "who": "Simulated AI",
+      "role": "system",
+      "claim": "C-1001",
       "what": "Read the denial notice and the original claim"
     },
     {
