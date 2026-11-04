@@ -8,8 +8,8 @@ Status: all 11 created on GitHub on 2026-11-04 by Claude through the GitHub API.
 |---|---|---|---|
 | agent:chief-of-staff | 1D76DB (blue) | Chief of staff agent: daily digest, chasing stuck Issues | Adam |
 | agent:design | 1D76DB (blue) | Design agent: website, deck, flyer, brand assets | Adam |
-| agent:engineer | 1D76DB (blue) | Engineer agent: prototype code and tests | Marvin |
-| agent:reviewer | 1D76DB (blue) | Reviewer agent: code and security review of every pull request | Marvin |
+| agent:engineer | 1D76DB (blue) | Engineer agent: prototype code and tests | Adam |
+| agent:reviewer | 1D76DB (blue) | Reviewer agent: code and security review of every pull request | Adam |
 | agent:research | 1D76DB (blue) | Research agent: appeal rules, payer policy, competitors | Adam |
 | agent:sales | 1D76DB (blue) | Sales agent: target lists, outreach drafts | Melvin (off until phase 5) |
 | human:adam | D93F0B (orange) | Needs Adam: money, contracts, sales, design approval | Adam |

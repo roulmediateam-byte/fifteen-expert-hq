@@ -18,7 +18,7 @@ This repository is the filing cabinet of The $15-an-Hour Expert. We appeal denie
 
 ## Also
 
-- If you see patient data anywhere (a patient name, date of birth, member ID, medical record or real claim file): stop, do not copy it, and open an Issue labelled human:marvin and human:melvin that says where it is, without the data.
+- If you see patient data anywhere (a patient name, date of birth, member ID, medical record or real claim file): stop, do not copy it, and open an Issue labelled human:adam and human:melvin that says where it is, without the data.
 - Label legal points "general information, not legal advice".
 - Never commit passwords, API keys, tokens or bank details.
 
@@ -34,5 +34,5 @@ What you did, in one to three lines, and the Issue (for example: Closes #12).
 Test results, links, screenshots or file paths, then the start and finish time in Sydney, the minutes used of 30, and this run's session link (for example: Started 01:04, finished 01:26 Sydney, 22 of 30 minutes).
 
 ## Needs a human
-The exact decision or action, and who: human:adam, human:melvin or human:marvin. Write "Nothing" if nothing.
+The exact decision or action, and who: human:adam or human:melvin. Write "Nothing" if nothing.
 ```

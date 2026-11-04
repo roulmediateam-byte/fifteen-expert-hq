@@ -1,6 +1,6 @@
 # data/fake-claims
 
-Owner: Melvin, with Marvin (file format and tests).
+Owner: Melvin, with Adam (file format and tests).
 
 What goes here: made-up claims for testing the appeal pipeline and the review screen, including the 50-claim week 3 test set with planted errors (wrong code, missing record, unsupported clinical statement, missed deadline), and its answer key, answer-key.json. The answer key is only for scoring results; the drafting and checking steps never see it. The playbook (Prompt 16) keeps all 50 claims in claims.json.
 

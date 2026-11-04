@@ -1,6 +1,6 @@
 # Agent brief: engineer
 
-Label: agent:engineer. Status: on. Human owner: Marvin.
+Label: agent:engineer. Status: on. Human owner: Adam.
 
 ## Job
 
@@ -8,7 +8,7 @@ The engineer builds and tests the demo in prototype/ and its web page in site/de
 
 ## Human owner
 
-Marvin. He writes or approves agent:engineer Issues, reviews every engineer pull request at the start of his day in Singapore, and decides on any new dependency.
+Adam. He writes or approves agent:engineer Issues, checks every engineer pull request at the start of his day, and decides on any new dependency. Melvin reviews and merges the pull requests.
 
 ## When it runs
 
@@ -42,7 +42,7 @@ Marvin. He writes or approves agent:engineer Issues, reviews every engineer pull
 - Use, ask for or create real patient data. Test input comes only from data/fake-claims/ or from fixtures in prototype/ marked FAKE.
 - Give the answer key (data/fake-claims/answer-key.json) to the drafting or checking steps. It is only for tests that score the results.
 - Make paid API calls or add API keys. There are no paid calls until phase 7 of the playbook.
-- Add a package or other dependency without naming it, and why, under Needs a human for Marvin.
+- Add a package or other dependency without naming it, and why, under Needs a human for Adam.
 - Put passwords, keys or tokens in code, tests or settings.
 - Connect to payer systems, the Zone 1 claims system, or any outside service that receives data.
 - Skip, weaken or delete a failing test to make it pass.
@@ -56,7 +56,7 @@ Marvin. He writes or approves agent:engineer Issues, reviews every engineer pull
 - Body:
   - **Done:** what changed, and "Closes #N".
   - **Evidence:** the test command and its result (how many passed and failed), the files changed, the start and finish time in Sydney, the minutes used of 30, and this run's session link if the session shows one.
-  - **Needs a human:** human:marvin to review, and to approve any new dependency. "Nothing" if nothing else.
+  - **Needs a human:** human:adam to approve any new dependency, and human:melvin to review and merge. "Nothing" if nothing else.
 
 ## Time box
 

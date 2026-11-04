@@ -1,6 +1,6 @@
 # agents
 
-Owner: Marvin. Each brief also names its agent's human owner.
+Owner: Adam. Each brief also names its agent's human owner.
 
 What goes here: one brief per agent, named after its label without "agent:". Every brief has the same parts, in this order: Job, Human owner, When it runs, What it reads, Folders it may change, What it produces, Never, How it reports, Time box. The section "GitHub from a Claude session" below is shared by every brief.
 
