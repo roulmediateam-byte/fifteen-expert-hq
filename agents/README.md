@@ -1,6 +1,6 @@
 # agents
 
-Owner: Marvin. Each brief also names its agent's human owner.
+Owner: Adam. Each brief also names its agent's human owner.
 
 What goes here: one brief per agent, named after its label without "agent:". Every brief has the same parts, in this order: Job, Human owner, When it runs, What it reads, Folders it may change, What it produces, Never, How it reports, Time box. The section "GitHub from a Claude session" below is shared by every brief.
 
@@ -8,12 +8,12 @@ What goes here: one brief per agent, named after its label without "agent:". Eve
 |---|---|---|---|---|---|---|
 | chief-of-staff.md | agent:chief-of-staff | Adam | Every day 6:30 am | On | #4 | ops/digest/, new rows in ops/links.md and ops/decisions.md, filed items in yc/, brand/, design/, research/, sales/, finance/, legal/ |
 | design.md | agent:design | Adam | Every day 1:00 am | On | #5 | site/ (not site/demo/), design/, brand/ |
-| engineer.md | agent:engineer | Marvin | Every day 2:00 am | On | #6 | prototype/, site/demo/ |
-| reviewer.md | agent:reviewer | Marvin | When a pull request is opened, and every day 5:00 am | On | #7 | nothing (comments only) |
+| engineer.md | agent:engineer | Adam | Every day 2:00 am | On | #6 | prototype/, site/demo/ |
+| reviewer.md | agent:reviewer | Adam | When a pull request is opened, and every day 5:00 am | On | #7 | nothing (comments only) |
 | research.md | agent:research | Adam | Mondays 3:00 am | On | #8 | research/ |
 | sales.md | agent:sales | Melvin | Weekdays 4:00 am, from phase 5 | Off until phase 5 | #9 | sales/ |
 
-How they run: each agent is a Claude Code scheduled task on Adam's Claude account (claude.ai/code/routines), so everything it does on GitHub appears as Adam. The tag at the start of a pull request title, for example [design], says which agent opened it. Runs can start up to about 30 minutes late. Each brief holds its task's schedule and prompt, so a lost task can be recreated in minutes. agents/schedule.json holds the same schedules, owners, labels and folders for the dashboard in Issue #10, Mission control: change it together with the brief.
+How they run: each agent is a Claude Code scheduled task on Adam's Claude account (claude.ai/code/routines), so everything it does on GitHub appears as Adam. The tag at the start of a pull request title, for example [design], says which agent opened it. Runs can start up to about 30 minutes late. Each brief holds its task's schedule and prompt, so a lost task can be recreated in minutes. agents/schedule.json holds the same schedules, owners, labels and folders for the dashboard in Issue #10, Mission control: change it together with the brief. Melvin reviews and merges every pull request, because they all appear as Adam and nobody merges their own; the dashboard lists an open pull request under Melvin unless a human: label names someone else (merges_pull_requests in agents/schedule.json).
 
 Every agent follows CLAUDE.md first. A brief can add limits but never remove a CLAUDE.md rule. A brief changes only through a reviewed pull request.
 

@@ -1,6 +1,6 @@
 # Agent brief: engineer
 
-Label: agent:engineer. Status: on. Human owner: Marvin.
+Label: agent:engineer. Status: on. Human owner: Adam.
 
 ## Job
 
@@ -8,11 +8,11 @@ The engineer builds and tests the demo in prototype/ and its web page in site/de
 
 ## Human owner
 
-Marvin. He writes or approves agent:engineer Issues, reviews every engineer pull request at the start of his day in Singapore, and decides on any new dependency.
+Adam. He writes or approves agent:engineer Issues, checks every engineer pull request at the start of his day, and decides on any new dependency. Melvin reviews and merges the pull requests.
 
 ## When it runs
 
-- Every day at 2:00 am Sydney (11:00 pm Singapore, the evening before): the Claude Code scheduled task "engineer" on Adam's Claude account. Runs can start up to about 30 minutes late.
+- Every day at 2:00 am Sydney: the Claude Code scheduled task "engineer" on Adam's Claude account. Runs can start up to about 30 minutes late.
 - Task prompt: "Read CLAUDE.md and agents/engineer.md and do one run on the top Issue labelled agent:engineer. If PAUSE exists, post the paused heartbeat and stop."
 - Heartbeats: at the very start and the very end of every run, one line on Status Issue #6, exactly as agents/README.md, section "Heartbeat", says. If PAUSE exists, it posts state=paused and stops.
 - One run is one Issue and one pull request. First it checks its own open pull requests: if one has a "[reviewer] Changes needed" comment or a founder asking for a change, it fixes that one (on the same branch), and that is the run. Otherwise it takes the top Issue: the highest agent:engineer card in the Ready for AI column of the Mission control board, or, if it cannot read the board, the oldest open agent:engineer Issue with no open pull request. No Issue: it stops at once.
@@ -42,7 +42,7 @@ Marvin. He writes or approves agent:engineer Issues, reviews every engineer pull
 - Use, ask for or create real patient data. Test input comes only from data/fake-claims/ or from fixtures in prototype/ marked FAKE.
 - Give the answer key (data/fake-claims/answer-key.json) to the drafting or checking steps. It is only for tests that score the results.
 - Make paid API calls or add API keys. There are no paid calls until phase 7 of the playbook.
-- Add a package or other dependency without naming it, and why, under Needs a human for Marvin.
+- Add a package or other dependency without naming it, and why, under Needs a human for Adam.
 - Put passwords, keys or tokens in code, tests or settings.
 - Connect to payer systems, the Zone 1 claims system, or any outside service that receives data.
 - Skip, weaken or delete a failing test to make it pass.
@@ -56,7 +56,7 @@ Marvin. He writes or approves agent:engineer Issues, reviews every engineer pull
 - Body:
   - **Done:** what changed, and "Closes #N".
   - **Evidence:** the test command and its result (how many passed and failed), the files changed, the start and finish time in Sydney, the minutes used of 30, and this run's session link if the session shows one.
-  - **Needs a human:** human:marvin to review, and to approve any new dependency. "Nothing" if nothing else.
+  - **Needs a human:** human:adam to approve any new dependency, and human:melvin to review and merge. "Nothing" if nothing else.
 
 ## Time box
 

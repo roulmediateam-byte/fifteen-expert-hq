@@ -59,7 +59,7 @@ Adam. He writes agent:design Issues, reviews every design pull request, and make
 - It opens the pull request with the REST command in agents/README.md; gh pr create does not work in a Claude session.
 - Body:
   - **Done:** what it made or changed, and "Closes #N".
-  - **Evidence:** the file paths; the branch's Cloudflare preview link, once Marvin has connected Cloudflare Pages; the contrast ratio of each text and background colour pair (at least 4.5 to 1 for normal text); that headings, labels and image descriptions are present; the phone width it checked; the start and finish time in Sydney, the minutes used of 30, and this run's session link if the session shows one.
+  - **Evidence:** the file paths; the branch's Cloudflare preview link, once Adam has connected Cloudflare Pages; the contrast ratio of each text and background colour pair (at least 4.5 to 1 for normal text); that headings, labels and image descriptions are present; the phone width it checked; the start and finish time in Sydney, the minutes used of 30, and this run's session link if the session shows one.
   - **Needs a human:** human:adam for each choice he must make. "Nothing" if nothing.
 
 ## Time box

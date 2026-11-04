@@ -59,7 +59,7 @@ def data_with(paused=False, engineer_start=at(5, 9, 30)):
         "merged_prs": [],
         "pr_files": {20: ["ops/digest/2026-11-05-digest.md"], 21: ["site/index.html", "site/demo/index.html"]},
         "open_issues": [
-            {"number": 30, "title": "Check the lawyer quote", "created_at": at(4, 9, 0), "labels": [{"name": "human:marvin"}]},
+            {"number": 30, "title": "Check the lawyer quote", "created_at": at(4, 9, 0), "labels": [{"name": "human:adam"}]},
             {"number": 14, "title": "Hero section", "created_at": at(3, 9, 0), "labels": [{"name": "agent:design"}]},
             {"number": 4, "title": "Status: chief-of-staff", "created_at": at(4, 3, 0), "labels": [{"name": "status-board"}]},
         ],
@@ -98,7 +98,7 @@ check(rows["engineer"]["minutes"] == "30 so far", f"engineer minutes: {rows['eng
 check(rows["chief-of-staff"]["dot"] == build.DOTS["yellow"] and rows["design"]["dot"] == build.DOTS["red"]
       and rows["engineer"]["dot"] == build.DOTS["green"] and rows["sales"]["dot"] == build.DOTS["grey"], "dot colours")
 
-check(body.startswith("Updated Thu 5 Nov 2026 10:00 Sydney (07:00 Singapore)"), body.splitlines()[0])
+check(body.splitlines()[0] == "Updated Thu 5 Nov 2026 10:00 Sydney", body.splitlines()[0])
 check("# RUNNING" in body, "status line")
 check("section design" in body and "failed task 14 :crit, 2026-11-05 01:05, 2026-11-05 01:20" in body, "failed run is crit")
 check("working task 15 :active, " in body, "working run is active")
@@ -110,10 +110,11 @@ check("open 73 hours" in alerts and "#22" in alerts, "old pull request alert")
 check("research is overdue" in alerts and "reviewer is overdue" in alerts and "design is failed" in alerts, "agent alerts")
 check("no review yet of #20, #22" in alerts, "reviewer misses #20 and #22, not #21")
 waiting = model["waiting"]
-check([item["number"] for item in waiting["Adam"]] == [21, 20], f"Adam: {waiting['Adam']}")
-check([item["number"] for item in waiting["Melvin"]] == [22], f"Melvin: {waiting['Melvin']}")
-check([item["number"] for item in waiting["Marvin"]] == [30], f"Marvin: {waiting['Marvin']}")
-check(model["board"]["agent:design"] == 1 and model["board"]["human:marvin"] == 1, f"board: {model['board']}")
+# Melvin reviews and merges every pull request (agents/schedule.json, merges_pull_requests).
+check([item["number"] for item in waiting["Adam"]] == [30], f"Adam: {waiting['Adam']}")
+check([item["number"] for item in waiting["Melvin"]] == [22, 21, 20], f"Melvin: {waiting['Melvin']}")
+check(set(waiting) == {"Adam", "Melvin"}, f"founders: {list(waiting)}")
+check(model["board"]["agent:design"] == 1 and model["board"]["human:adam"] == 1, f"board: {model['board']}")
 check(model["closed_last_7_days"] == 1, "closed count")
 
 stuck = states(build.build_model(SCHEDULE, data_with(engineer_start=at(5, 8, 30)), NOW))

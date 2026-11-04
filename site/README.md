@@ -1,6 +1,6 @@
 # site
 
-Owner: Adam. The design agent (label agent:design, human owner Adam) owns everything here except site/demo/, which the engineer agent (label agent:engineer, human owner Marvin) owns.
+Owner: Adam. The design agent (label agent:design, human owner Adam) owns everything here except site/demo/, which the engineer agent (label agent:engineer, human owner Adam) owns.
 
 What goes here: the website. Cloudflare Pages serves this folder, and every branch gets its own preview link. The home page is site/index.html. Pages are self-contained HTML, readable on a phone, with the values they need copied from brand/design-tokens.css.
 
