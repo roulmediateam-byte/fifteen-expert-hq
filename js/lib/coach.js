@@ -127,14 +127,14 @@ export const CARDS = {
   },
   representation: {
     title: 'CMS-1696: when we file for a practice',
-    meaning: 'Form CMS-1696 appoints a representative for a claim or appeal. It is valid for one year from the date both people sign it (CMS).',
+    meaning: 'Form CMS-1696 appoints a representative for a claim or appeal. It is valid for one year from the date both people sign it, and for the rest of an appeal it was filed with (CMS).',
     win: [
       'Our demo rule: when we file a Medicare appeal as the practice\'s appointed representative, attach the signed form and say so in the letter.',
       'When the practice signs and files its own appeal, no form is needed.',
     ],
     watch: [
       'A MAC may dismiss a request when the representative is not appointed properly (CMS).',
-      'A form signed more than a year ago.',
+      'A form signed more than a year ago, on a new appeal.',
     ],
     sources: ['cms_1696', 'cms_level1'],
   },

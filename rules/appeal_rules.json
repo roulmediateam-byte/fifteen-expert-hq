@@ -159,6 +159,7 @@
           "decision_days": 90,
           "minimum_amount_usd": 200,
           "minimum_amount_year": 2026,
+          "minimum_next_year": { "year": 2027, "usd": 200, "quote": "For calendar year 2027 the amount in controversy will remain at $200." },
           "how_to_file": "By mail or through the OMHA e-Appeal Portal. The QIC's reconsideration decision letter gives full details.",
           "rule": {
             "kind": "official",
@@ -214,6 +215,7 @@
           "decision_days": null,
           "minimum_amount_usd": 1960,
           "minimum_amount_year": 2026,
+          "minimum_next_year": { "year": 2027, "usd": 2000, "quote": "For calendar year 2027, the amount in controversy threshold is $2,000." },
           "how_to_file": "Our policy in the demo: a lawyer files in court, never a worker (general information, not legal advice).",
           "rule": {
             "kind": "official",
@@ -378,10 +380,11 @@
       "id": "medicare_representative",
       "kind": "official",
       "title": "Appointing a representative (CMS-1696)",
-      "text": "Form CMS-1696 appoints a representative to act for a party on a claim or appeal. It is valid for one year from the date both the party and the representative sign it. Fee approval is not required when the party being represented is a provider or supplier. A MAC may dismiss a redetermination request when the representative is not appointed properly.",
+      "text": "Form CMS-1696 appoints a representative to act for a party on a claim or appeal. It is valid for one year from the date both the party and the representative sign it, and, unless revoked, for the duration of the claim or appeal it was filed with. Fee approval is not required when the party being represented is a provider or supplier. A MAC may dismiss a redetermination request when the representative is not appointed properly.",
       "quotes": [
         "Use this form to appoint a representative to act on your behalf for your claim, appeal, grievance or request.",
         "considered valid for one year from the date this form is signed by both.",
+        "Unless revoked, the representation is valid for the duration of the claim, appeal, grievance, or request for which it was filed.",
         "the appellant being represented is a provider or supplier.",
         "The representative is not appointed properly"
       ],
@@ -395,7 +398,7 @@
       "id": "medicare_good_cause",
       "kind": "official",
       "title": "Good cause for late filing",
-      "text": "A late appeal can be accepted only with good cause, for example: a serious illness, a death or serious illness in the immediate family, records destroyed by a fire or other disaster, wrong or incomplete information from the contractor about when and how to appeal, or never receiving the notice. To ask, explain why the appeal is late, send that explanation with the appeal, and include any evidence.",
+      "text": "A late appeal can be dismissed unless there is good cause for filing late, and CMS looks at each request to decide whether there is. Examples of good cause: a serious illness, a death or serious illness in the immediate family, records destroyed by a fire or other disaster, wrong or incomplete information from the contractor about when and how to appeal, or never receiving the notice. To ask, explain why the appeal is late, send that explanation with the appeal, and include any evidence.",
       "quotes": [
         "Important records were destroyed or damaged by fire or other event, like a hurricane, earthquake or flood",
         "The contractor or appeals reviewer gave you incorrect or incomplete information about when and how to file an appeal",
@@ -431,7 +434,7 @@
     "29": { "text": "The time limit for filing has expired.", "stop": null },
     "31": { "text": "Patient cannot be identified as our insured.", "stop": null },
     "50": { "text": "These are non-covered services because this is not deemed a 'medical necessity' by the payer.", "stop": null },
-    "96": { "text": "Non-covered charge(s).", "stop": null },
+    "96": { "text": "Non-covered charge(s).", "shortened": true, "rest": "The X12 text goes on: at least one remark code must be given, and the payer's policy may be named in the remittance.", "stop": null },
     "97": { "text": "The benefit for this service is included in the payment/allowance for another service/procedure that has already been adjudicated.", "stop": null },
     "151": { "text": "Payment adjusted because the payer deems the information submitted does not support this many/frequency of services.", "stop": null },
     "167": { "text": "This (these) diagnosis(es) is (are) not covered.", "stop": null },
@@ -448,7 +451,7 @@
     "M51": { "text": "Missing/incomplete/invalid procedure code(s)." },
     "M80": { "text": "Not covered when performed during the same session/date as a previously processed service for the patient." },
     "M86": { "text": "Service denied because payment already made for same/similar procedure within set time frame." },
-    "MA04": { "text": "Secondary payment cannot be considered without the identity of or payment information from the primary payer." },
+    "MA04": { "text": "Secondary payment cannot be considered without the identity of or payment information from the primary payer. The information was either not reported or was illegible." },
     "MA130": { "text": "Your claim contains incomplete and/or invalid information, and no appeal rights are afforded...", "shortened": true, "plain": "The claim could not be processed, so there are no appeal rights: send a new claim with complete and correct information." },
     "N4": { "text": "Missing/Incomplete/Invalid prior Insurance Carrier(s) EOB." },
     "N30": { "text": "Patient ineligible for this service." },
