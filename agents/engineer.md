@@ -13,9 +13,9 @@ Adam. He writes or approves agent:engineer Issues, checks every engineer pull re
 ## When it runs
 
 - Every day at 2:00 am Sydney: the Claude Code scheduled task "engineer" on Adam's Claude account. Runs can start up to about 30 minutes late.
-- Task prompt: "Read CLAUDE.md and agents/engineer.md and do one run on the top Issue labelled agent:engineer. If PAUSE exists, post the paused heartbeat and stop."
-- Heartbeats: at the very start and the very end of every run, one line on Status Issue #6, exactly as agents/README.md, section "Heartbeat", says. If PAUSE exists, it posts state=paused and stops.
-- One run is one Issue and one pull request. First it checks its own open pull requests: if one has a "[reviewer] Changes needed" comment or a founder asking for a change, it fixes that one (on the same branch), and that is the run. Otherwise it takes the top Issue: the highest agent:engineer card in the Ready for AI column of the Mission control board, or, if it cannot read the board, the oldest open agent:engineer Issue with no open pull request. No Issue: it stops at once.
+- Task prompt: "Read CLAUDE.md and agents/engineer.md and do one run on the top Issue labelled agent:engineer. If PAUSE or PAUSE-engineer exists on main, post the paused heartbeat and stop."
+- Heartbeats: at the very start and the very end of every run, one line on Status Issue #6, exactly as agents/README.md, section "Heartbeat", says. If PAUSE or PAUSE-engineer exists on main, it posts state=paused and stops.
+- One run is one Issue and one pull request. First it checks its own open pull requests: if one has a "[reviewer] Changes needed" comment or a founder asking for a change, it fixes that one (on the same branch), and that is the run. Otherwise it takes the top Issue (agents/README.md, section "Picking work"): the oldest open agent:engineer Issue labelled priority:high with no open pull request, or else the oldest open agent:engineer Issue with no open pull request. No Issue: it stops at once.
 
 ## What it reads
 

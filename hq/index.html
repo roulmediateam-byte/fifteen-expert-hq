@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>HQ: The $15-an-Hour Expert</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="app.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the content</a>
+  <header class="top">
+    <div class="top-inner">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">HQ</span>
+        <span class="brand-text"><strong>HQ</strong><span class="sub">The $15-an-Hour Expert</span></span>
+      </div>
+      <div class="top-actions">
+        <span id="updated" class="updated" aria-live="polite"></span>
+        <button id="refresh" class="button quiet small" type="button">Refresh</button>
+      </div>
+    </div>
+    <nav class="tabs" aria-label="HQ sections">
+      <div class="tabs-inner" role="tablist">
+        <button role="tab" type="button" id="tab-today" aria-controls="panel-today" data-tab="today">Today</button>
+        <button role="tab" type="button" id="tab-agents" aria-controls="panel-agents" data-tab="agents">Agents</button>
+        <button role="tab" type="button" id="tab-board" aria-controls="panel-board" data-tab="board">Work board</button>
+        <button role="tab" type="button" id="tab-everything" aria-controls="panel-everything" data-tab="everything">Everything</button>
+        <button role="tab" type="button" id="tab-decisions" aria-controls="panel-decisions" data-tab="decisions">Decisions</button>
+        <button role="tab" type="button" id="tab-help" aria-controls="panel-help" data-tab="help">Help</button>
+      </div>
+    </nav>
+  </header>
+
+  <div id="banner" class="banner" role="status" hidden></div>
+
+  <main id="main" tabindex="-1">
+    <section id="panel-today" class="panel" role="tabpanel" aria-labelledby="tab-today" hidden></section>
+    <section id="panel-agents" class="panel" role="tabpanel" aria-labelledby="tab-agents" hidden></section>
+    <section id="panel-board" class="panel" role="tabpanel" aria-labelledby="tab-board" hidden></section>
+    <section id="panel-everything" class="panel" role="tabpanel" aria-labelledby="tab-everything" hidden></section>
+    <section id="panel-decisions" class="panel" role="tabpanel" aria-labelledby="tab-decisions" hidden></section>
+    <section id="panel-help" class="panel" role="tabpanel" aria-labelledby="tab-help" hidden></section>
+    <noscript><p class="panel">HQ needs JavaScript switched on.</p></noscript>
+  </main>
+
+  <footer class="foot">
+    <p class="foot-main"><strong>No patient data in HQ.</strong> Made-up examples only, everywhere.</p>
+    <p id="foot-meta" class="foot-meta"></p>
+  </footer>
+
+  <dialog id="dialog" class="dialog" aria-labelledby="dialog-title"></dialog>
+</body>
+</html>

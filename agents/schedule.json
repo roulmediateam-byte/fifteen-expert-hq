@@ -1,5 +1,5 @@
 {
-  "_note": "Read by ops/dashboard/build.py for Issue #10, Mission control. Times are Sydney time. merges_pull_requests is the founder who reviews and merges every pull request (they are all opened from Adam's account): an open pull request waits for that founder unless a human: label names someone else. When a schedule changes, change it here, in the agent's brief and in its scheduled task together.",
+  "_note": "Read by ops/dashboard/build.py for Issue #10, Mission control, and by HQ (hq/). Times are Sydney time. When a schedule changes, change it here, in the agent's brief, in its scheduled task and in hq/lib/config.js (DEFAULT_SCHEDULE) together. merges_pull_requests is the founder who reviews and merges every pull request (they are all opened from Adam's account): an open pull request waits for that founder unless a human: label names someone else.",
   "timezone": "Australia/Sydney",
   "founders": [
     {"name": "Adam", "label": "human:adam"},

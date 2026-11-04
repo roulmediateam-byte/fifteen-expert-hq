@@ -13,9 +13,9 @@ Adam. He writes agent:research Issues and reviews every research pull request. F
 ## When it runs
 
 - Mondays at 3:00 am Sydney, before the 11:00 am weekly review: the Claude Code scheduled task "research" on Adam's Claude account. Runs can start up to about 30 minutes late.
-- Task prompt: "Read CLAUDE.md and agents/research.md and do one run. If PAUSE exists, post the paused heartbeat and stop."
-- Heartbeats: at the very start and the very end of every run, one line on Status Issue #8, exactly as agents/README.md, section "Heartbeat", says. If PAUSE exists, it posts state=paused and stops.
-- One run: first the weekly watch (aim for 10 minutes or less), then the top agent:research Issue with the time left. The top Issue is the highest agent:research card in the Ready for AI column of the Mission control board, or, if it cannot read the board, the oldest open agent:research Issue with no open pull request.
+- Task prompt: "Read CLAUDE.md and agents/research.md and do one run. If PAUSE or PAUSE-research exists on main, post the paused heartbeat and stop."
+- Heartbeats: at the very start and the very end of every run, one line on Status Issue #8, exactly as agents/README.md, section "Heartbeat", says. If PAUSE or PAUSE-research exists on main, it posts state=paused and stops.
+- One run: first the weekly watch (aim for 10 minutes or less), then the top agent:research Issue with the time left. The top Issue (agents/README.md, section "Picking work") is the oldest open agent:research Issue labelled priority:high with no open pull request, or else the oldest open agent:research Issue with no open pull request.
 
 ## What it reads
 

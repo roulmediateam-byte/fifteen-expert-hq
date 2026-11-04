@@ -9,7 +9,13 @@ mission-control) from:
 - the heartbeat lines agents post on their Status Issues (label
   status-board), as agents/README.md, section "Heartbeat", describes;
 - open pull requests and their reviews, open Issues, Issues closed in the
-  last 7 days, commits on main in the last 7 days, and the PAUSE file.
+  last 7 days, commits on main in the last 7 days, and the PAUSE files
+  (PAUSE stops every agent; PAUSE-<name> stops one agent).
+
+Each run also writes dashboard.md and status.json (the same data as JSON),
+which the workflow saves on the dashboard branch. HQ (hq/) reads status.json
+for the checks that are too slow to run live: commits on main that did not
+come from a pull request, and agent pull requests outside their folders.
 
 It uses the GitHub REST API (plus one GraphQL call to pin the Issue, which
 REST cannot do) and Python's standard library only. GitHub Actions runs it
@@ -43,6 +49,7 @@ STUCK_AFTER = timedelta(minutes=60)
 OVERDUE_AFTER = timedelta(minutes=90)
 OLD_PULL_REQUEST = timedelta(hours=48)
 TIMELINE_SPAN = timedelta(days=3)
+PAUSE_FILE = re.compile(r"PAUSE(-[a-z0-9-]+)?")  # the stop files HQ writes on main
 WEEK = timedelta(days=7)
 DAY_NAMES = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 MAX_BODY = 64000  # GitHub allows 65,536 characters in an Issue body
@@ -54,7 +61,8 @@ COLOUR = {
     "failed": "red", "blocked": "red", "overdue": "red", "stuck?": "red",
     "paused": "grey", "off": "grey", "no runs yet": "grey",
 }
-FOOTER = ("Built by .github/workflows/mission-control.yml. Do not edit this Issue by hand: "
+FOOTER = ("Built by .github/workflows/mission-control.yml. Usage of the Max plan is not visible here: "
+          "check claude.ai/settings/usage on Mondays. Do not edit this Issue by hand: "
           "it is rewritten every hour and after every heartbeat.")
 
 
@@ -319,7 +327,10 @@ def collect(github, schedule, now):
     since = iso(now - WEEK)
     data = {"notes": []}
 
-    data["paused"] = github.get(github.path("/contents/PAUSE?ref=main"), allow_404=True) is not None
+    root = github.get(github.path("/contents?ref=main"), allow_404=True) or []
+    data["pause_files"] = sorted(entry["name"] for entry in root
+                                 if isinstance(entry, dict) and PAUSE_FILE.fullmatch(entry.get("name", "")))
+    data["paused"] = "PAUSE" in data["pause_files"]
 
     items = github.get_all(github.path("/issues?state=open&per_page=100"))
     data["open_issues"] = [item for item in items if "pull_request" not in item]
@@ -364,11 +375,23 @@ def collect(github, schedule, now):
             if not commit.get("parents"):
                 continue  # the repository's first commit
             pulls = github.get(github.path(f"/commits/{commit['sha']}/pulls")) or []
-            data["main_commits"].append({
+            entry = {
                 "sha": commit["sha"], "url": commit.get("html_url", ""),
                 "message": (commit["commit"]["message"].splitlines() or [""])[0],
                 "from_pr": any(pull.get("merged_at") for pull in pulls),
-            })
+                "hq_pause": False,
+            }
+            if not entry["from_pr"] and entry["message"].startswith("[hq] "):
+                # HQ's stop switch commits straight to main: one PAUSE file
+                # added or deleted, nothing else. Anyone who can push could
+                # copy the message, so such a commit is still listed (as a
+                # notice, not an alert) rather than hidden.
+                detail = github.get(github.path(f"/commits/{commit['sha']}")) or {}
+                files = detail.get("files", [])
+                entry["hq_pause"] = (len(files) == 1 and files[0].get("status") in ("added", "removed")
+                                     and not files[0].get("previous_filename")
+                                     and bool(PAUSE_FILE.fullmatch(files[0].get("filename", ""))))
+            data["main_commits"].append(entry)
     except RuntimeError as error:
         data["notes"].append(f"Could not check the commits on main: {error}")
     return data
@@ -400,6 +423,8 @@ def agent_state(agent, runs, beats, data, names, now):
         return "off", agent.get("enabled_note", "")
     if data["paused"]:
         return "paused", "PAUSE file on main"
+    if f"PAUSE-{agent['name']}" in data.get("pause_files", []):
+        return "paused", f"PAUSE-{agent['name']} file on main"
     last = runs[-1] if runs else None
     if last and last["outcome"] is None:
         if now - last["seen"] < STUCK_AFTER:
@@ -532,10 +557,17 @@ def build_model(schedule, data, now):
         opened = parse_time(pr.get("created_at"))
         if opened and now - opened > OLD_PULL_REQUEST:
             alerts.append(f"{link(pr['number'])} has been open {hours_since(opened, now)} hours: {cell(pr.get('title'))}")
+    direct_commits, outside_folders, pause_commits, notices = [], [], [], []
     for commit in data["main_commits"]:
-        if not commit["from_pr"]:
-            alerts.append(f"Commit [{commit['sha'][:7]}]({commit['url']}) on main did not come from a merged "
-                          f"pull request: {cell(commit['message'])}")
+        if commit["from_pr"]:
+            continue
+        if commit.get("hq_pause"):
+            pause_commits.append({"sha": commit["sha"], "url": commit["url"], "message": commit["message"]})
+            notices.append(f"Stop switch on main: [{commit['sha'][:7]}]({commit['url']}) {cell(commit['message'])}")
+            continue
+        direct_commits.append({"sha": commit["sha"], "url": commit["url"], "message": commit["message"]})
+        alerts.append(f"Commit [{commit['sha'][:7]}]({commit['url']}) on main did not come from a merged "
+                      f"pull request: {cell(commit['message'])}")
     by_name = {agent["name"]: agent for agent in agents}
     for pr in data["open_prs"] + data["merged_prs"]:
         agent = pr_agent(pr, names)
@@ -543,6 +575,7 @@ def build_model(schedule, data, now):
             continue
         outside = [path for path in data["pr_files"].get(pr["number"], []) if not allowed(path, by_name[agent])]
         if outside:
+            outside_folders.append({"pr": pr["number"], "agent": agent, "files": outside})
             more = f" and {len(outside) - 5} more" if len(outside) > 5 else ""
             alerts.append(f"{link(pr['number'])} from {agent} changes files outside its folders: "
                           f"{', '.join(outside[:5])}{more}")
@@ -551,7 +584,9 @@ def build_model(schedule, data, now):
     local = now.astimezone(SYDNEY)
     return {
         "updated": f"{sydney(now, with_year=True)} Sydney",
-        "updated_utc": iso(now), "paused": data["paused"], "agents": rows, "waiting": waiting,
+        "updated_utc": iso(now), "paused": data["paused"], "pause_files": data.get("pause_files", []),
+        "direct_commits": direct_commits, "outside_folders": outside_folders, "pause_commits": pause_commits,
+        "notices": notices, "agents": rows, "waiting": waiting,
         "timeline": timeline(schedule, runs_by_agent, now), "board": board,
         "closed_last_7_days": closed, "alerts": alerts, "sydney_date": f"{local:%Y-%m-%d}",
     }
@@ -562,6 +597,9 @@ def build_model(schedule, data, now):
 def render(model):
     out = [f"Updated {model['updated']}", ""]
     out.append("# PAUSED (PAUSE file on main)" if model["paused"] else "# RUNNING")
+    alone = [name for name in model.get("pause_files", []) if name != "PAUSE"]
+    if alone:
+        out += ["", "Paused one by one: " + ", ".join(alone) + " (each of these agents posts a paused heartbeat and stops)."]
     out += ["", "## Agents", "",
             "| | Agent | Owner | State | Current or last task | Last run start (Sydney) | Minutes | "
             "Next run (Sydney) | Open pull requests |",
@@ -580,6 +618,7 @@ def render(model):
     out += [f"| {label} | {count} |" for label, count in model["board"].items()]
     out += ["", f"Issues closed in the last 7 days: {model['closed_last_7_days']}.", "", "## Alerts", ""]
     out += [f"- {DOTS['red']} {alert}" for alert in model["alerts"]] or ["- None."]
+    out += [f"- {DOTS['grey']} {notice}" for notice in model.get("notices", [])]
     out += ["", "---", FOOTER]
     body = "\n".join(out)
     if len(body) > MAX_BODY:
@@ -632,7 +671,7 @@ def main(argv=None):
     here = Path(__file__).resolve()
     parser = argparse.ArgumentParser(description="Build the Mission control Issue.")
     parser.add_argument("--schedule", default=str(here.parents[2] / "agents" / "schedule.json"))
-    parser.add_argument("--out", default="", help="folder for dashboard.md and state.json")
+    parser.add_argument("--out", default="", help="folder for dashboard.md and status.json")
     parser.add_argument("--dry-run", action="store_true", help="print the dashboard and change nothing")
     args = parser.parse_args(argv)
 
@@ -645,7 +684,7 @@ def main(argv=None):
         folder = Path(args.out)
         folder.mkdir(parents=True, exist_ok=True)
         (folder / "dashboard.md").write_text(body + "\n", encoding="utf-8")
-        (folder / "state.json").write_text(json.dumps(model, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        (folder / "status.json").write_text(json.dumps(model, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     if args.dry_run:
         print(body)
         print(f"\n(dry run: {github.calls} API calls, nothing changed on GitHub)", file=sys.stderr)

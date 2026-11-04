@@ -10,6 +10,9 @@ on:
     types: [created]      # only Status Issues get through the job's if
   pull_request:
     types: [opened, closed]
+  push:
+    branches: [main]
+    paths: ["PAUSE", "PAUSE-*"]   # HQ's stop switch: show the pause at once
   workflow_dispatch:
 
 permissions:
@@ -51,7 +54,7 @@ jobs:
 
       - name: Save a copy on the dashboard branch
         run: |
-          [ -f "$RUNNER_TEMP/dashboard/state.json" ] || exit 0
+          [ -f "$RUNNER_TEMP/dashboard/status.json" ] || exit 0
           mkdir -p "$RUNNER_TEMP/branch" && cd "$RUNNER_TEMP/branch"
           git init --quiet
           git config user.name "github-actions[bot]"
@@ -62,8 +65,8 @@ jobs:
           else
             git symbolic-ref HEAD refs/heads/dashboard
           fi
-          cp "$RUNNER_TEMP/dashboard/dashboard.md" "$RUNNER_TEMP/dashboard/state.json" .
-          git add dashboard.md state.json
+          cp "$RUNNER_TEMP/dashboard/dashboard.md" "$RUNNER_TEMP/dashboard/status.json" .
+          git add dashboard.md status.json
           if git diff --cached --quiet; then
             echo "No change to save."
           else
