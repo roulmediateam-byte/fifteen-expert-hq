@@ -12,11 +12,12 @@ Status: all 11 created on GitHub on 2026-11-04 by Claude through the GitHub API.
 | agent:reviewer | 1D76DB (blue) | Reviewer agent: code and security review of every pull request | Adam |
 | agent:research | 1D76DB (blue) | Research agent: appeal rules, payer policy, competitors | Adam |
 | agent:sales | 1D76DB (blue) | Sales agent: target lists, outreach drafts | Melvin (off until phase 5) |
-| human:adam | D93F0B (orange) | Needs Adam: money, contracts, sales, design approval | Adam |
-| human:melvin | D93F0B (orange) | Needs Melvin: claims, appeal rules, HIPAA privacy | Melvin |
-| human:marvin | D93F0B (orange) | Needs Marvin: tech, agents, security | Marvin |
-| status-board | 5319E7 (purple) | Status Issues for agent heartbeats; not work | Marvin |
-| mission-control | 0E8A16 (green) | The pinned Mission control dashboard Issue | Marvin |
+| human:adam | D93F0B (orange) | Needs Adam: money, contracts, sales, design approval, tech, agents, security | Adam |
+| human:melvin | D93F0B (orange) | Needs Melvin: claims, appeal rules, HIPAA privacy, reviewing and merging pull requests | Melvin |
+| status-board | 5319E7 (purple) | Status Issues for agent heartbeats; not work | Adam |
+| mission-control | 0E8A16 (green) | The pinned Mission control dashboard Issue | Adam |
+
+human:marvin was created on 4 Nov 2026 and is no longer used, because Marvin left the founders that day. Delete it on github.com (Issues, Labels), or leave it unused.
 
 ## Recreate or repair them
 
@@ -30,9 +31,8 @@ gh label create "agent:engineer" -R $R --color 1D76DB --description "Engineer ag
 gh label create "agent:reviewer" -R $R --color 1D76DB --description "Reviewer agent: code and security review of every pull request" --force
 gh label create "agent:research" -R $R --color 1D76DB --description "Research agent: appeal rules, payer policy, competitors" --force
 gh label create "agent:sales" -R $R --color 1D76DB --description "Sales agent: target lists, outreach drafts" --force
-gh label create "human:adam" -R $R --color D93F0B --description "Needs Adam: money, contracts, sales, design approval" --force
-gh label create "human:melvin" -R $R --color D93F0B --description "Needs Melvin: claims, appeal rules, HIPAA privacy" --force
-gh label create "human:marvin" -R $R --color D93F0B --description "Needs Marvin: tech, agents, security" --force
+gh label create "human:adam" -R $R --color D93F0B --description "Needs Adam: money, contracts, sales, design approval, tech, agents, security" --force
+gh label create "human:melvin" -R $R --color D93F0B --description "Needs Melvin: claims, appeal rules, HIPAA privacy, reviewing and merging pull requests" --force
 gh label create "status-board" -R $R --color 5319E7 --description "Status Issues for agent heartbeats; not work" --force
 gh label create "mission-control" -R $R --color 0E8A16 --description "The pinned Mission control dashboard Issue" --force
 ```

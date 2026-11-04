@@ -1,6 +1,6 @@
 # ops/dashboard
 
-Owner: Marvin.
+Owner: Adam.
 
 What goes here: build.py, which rewrites Issue #10, "Mission control", and selftest.py, its offline checks with made-up data. Python standard library only.
 

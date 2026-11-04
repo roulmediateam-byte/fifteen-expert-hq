@@ -1,11 +1,11 @@
 {
-  "_note": "Read by ops/dashboard/build.py for Issue #10, Mission control. Times are Sydney time. When a schedule changes, change it here, in the agent's brief and in its scheduled task together.",
+  "_note": "Read by ops/dashboard/build.py for Issue #10, Mission control. Times are Sydney time. merges_pull_requests is the founder who reviews and merges every pull request (they are all opened from Adam's account): an open pull request waits for that founder unless a human: label names someone else. When a schedule changes, change it here, in the agent's brief and in its scheduled task together.",
   "timezone": "Australia/Sydney",
   "founders": [
     {"name": "Adam", "label": "human:adam"},
-    {"name": "Melvin", "label": "human:melvin"},
-    {"name": "Marvin", "label": "human:marvin"}
+    {"name": "Melvin", "label": "human:melvin"}
   ],
+  "merges_pull_requests": "Melvin",
   "agents": [
     {
       "name": "chief-of-staff",
@@ -32,7 +32,7 @@
     {
       "name": "engineer",
       "label": "agent:engineer",
-      "owner": "Marvin",
+      "owner": "Adam",
       "brief": "agents/engineer.md",
       "status_issue": 6,
       "enabled": true,
@@ -43,7 +43,7 @@
     {
       "name": "reviewer",
       "label": "agent:reviewer",
-      "owner": "Marvin",
+      "owner": "Adam",
       "brief": "agents/reviewer.md",
       "status_issue": 7,
       "enabled": true,

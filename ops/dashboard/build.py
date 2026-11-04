@@ -35,7 +35,6 @@ from zoneinfo import ZoneInfo
 REPO = os.environ.get("REPO") or os.environ.get("GITHUB_REPOSITORY") or "roulmediateam-byte/fifteen-expert-hq"
 API = "https://api.github.com"
 SYDNEY = ZoneInfo("Australia/Sydney")
-SINGAPORE = ZoneInfo("Asia/Singapore")
 
 TRUSTED = {"OWNER", "MEMBER", "COLLABORATOR"}  # only these authors count
 INFRA_LABELS = {"status-board", "mission-control"}  # Issues that are not work
@@ -486,10 +485,12 @@ def build_model(schedule, data, now):
             "open_prs": [pr["number"] for pr in data["open_prs"] if pr_agent(pr, names) == agent["name"]],
         })
 
-    founders = [founder["name"] for founder in schedule.get("founders", [])] or ["Adam", "Melvin", "Marvin"]
+    founders = [founder["name"] for founder in schedule.get("founders", [])] or ["Adam", "Melvin"]
     by_label = {founder.get("label", "human:" + founder["name"].lower()): founder["name"]
                 for founder in schedule.get("founders", [])}
     owners = {agent["name"]: agent["owner"] for agent in agents}
+    # The founder who reviews and merges every pull request (agents/schedule.json).
+    merger = schedule.get("merges_pull_requests") if schedule.get("merges_pull_requests") in founders else None
     waiting = {founder: [] for founder in founders}
 
     def add(founder, item, kind):
@@ -503,7 +504,7 @@ def build_model(schedule, data, now):
             continue
         named = [by_label[label["name"]] for label in pr.get("labels", []) if label["name"] in by_label]
         agent = pr_agent(pr, names)
-        for founder in named or [owners[agent] if agent else founders[0]]:
+        for founder in named or [merger or (owners[agent] if agent else founders[0])]:
             add(founder, pr, "pull request")
     for issue in data["open_issues"]:
         for label in issue.get("labels", []):
@@ -547,9 +548,9 @@ def build_model(schedule, data, now):
                           f"{', '.join(outside[:5])}{more}")
     alerts += [cell(note) for note in data.get("notes", [])]
 
-    local, singapore = now.astimezone(SYDNEY), now.astimezone(SINGAPORE)
+    local = now.astimezone(SYDNEY)
     return {
-        "updated": f"{sydney(now, with_year=True)} Sydney ({singapore:%H:%M} Singapore)",
+        "updated": f"{sydney(now, with_year=True)} Sydney",
         "updated_utc": iso(now), "paused": data["paused"], "agents": rows, "waiting": waiting,
         "timeline": timeline(schedule, runs_by_agent, now), "board": board,
         "closed_last_7_days": closed, "alerts": alerts, "sydney_date": f"{local:%Y-%m-%d}",
