@@ -2,7 +2,7 @@
 
 FAKE: everything in this folder uses made-up claims. No real patient data.
 
-Last updated: 5 Nov 2026, 12:15 Sydney, by a Claude session working for Adam.
+Last updated: 5 Nov 2026, 12:25 Sydney, by a Claude session working for Adam.
 Branch: claude/worker-console-demo. It started on pull request #11's branch; on 5 Nov 2026 it was moved onto main, which now holds #11.
 How to run and test: [README.md](README.md).
 
@@ -22,7 +22,7 @@ How to run and test: [README.md](README.md).
 | 9 | My progress and audit log | Done |
 | 10 | Presenter panel and tour | Done |
 | 11 | Browser tests, screenshots, fixes | Done |
-| 12 | Pull request and hand-off | Waiting: the session may not push yet (see Half finished) |
+| 12 | Pull request and hand-off | Done: pull request #21, and a heartbeat on Status Issue #6 |
 
 ## Step 0: what demo code existed (checked 5 Nov 2026, every branch)
 
@@ -86,14 +86,13 @@ A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.jso
 ## Hosted copies (5 Nov 2026)
 
 - A private Claude artifact: one self-contained page (code, data and fonts inside it, so the host loads nothing else) that opens on the guided tour. Its link is in the private project notes, not in this public repository. Rebuild and republish it after any change to the demo.
-- GitHub Pages, for a plain public link (planned, not live yet): branch claude/worker-demo-pages holds only this folder, so GitHub can serve it at https://roulmediateam-byte.github.io/fifteen-expert-hq/. It was checked locally under that /fifteen-expert-hq/ path. README.md, section "Hosted copy (GitHub Pages)", has the steps and the refresh command.
+- A plain public link (planned, not live yet): branch claude/worker-demo-pages, on GitHub since 5 Nov 2026, holds only this folder, so a static host can serve it. GitHub Pages would serve it at https://roulmediateam-byte.github.io/fifteen-expert-hq/. Adam is choosing the address; an address that shows the company name stays out of this repository. It was checked locally under that /fifteen-expert-hq/ path. README.md, section "Hosted copy (GitHub Pages)", has the steps and the refresh command.
 - Both open on the tour without a second copy of the code: ?role=presenter in the address does it (START_ROLE in js/brand.js stays 'worker').
 - A Claude session cannot turn Pages on itself: the GitHub API path for Pages is blocked through the session's proxy (checked 5 Nov 2026). The repository owner does it once in Settings.
 
 ## Half finished
 
-- Step 12: the branch is committed locally, on top of main, but not pushed. The session's safety check refused push access twice, so Adam must approve it in the chat or push the branches himself. After that: push, open the pull request "[engineer] Worker console demo (made-up claims)" for Melvin, and file Issues for anything unfinished.
-- GitHub Pages: branch claude/worker-demo-pages is made locally (git subtree split). It waits on the same push, then on Adam turning Pages on.
+- The public copy: both branches are on GitHub (pushed 5 Nov 2026, after Adam approved it in the chat). It waits for Adam to choose the address and switch the host on. No Issues were filed: no step is unfinished.
 - agents/engineer.md: the paragraph for the nightly engineer run is added on this branch (end of the file). The engineer's scheduled task itself is created in Prompt 5.
 
 ## Known limits
@@ -105,6 +104,6 @@ A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.jso
 
 ## Next three actions
 
-1. Adam approves push access (or pushes both branches himself), then turns GitHub Pages on. The public demo link then works.
+1. Adam chooses the public address and switches the host on. The public demo link then works.
 2. Melvin reviews the coach panel advice, the ten checks and what he would send back (checklist in the pull request).
 3. After Melvin's notes: fix what he sends back, rerun score_demo.mjs and the browser tests, and refresh the Pages branch.
