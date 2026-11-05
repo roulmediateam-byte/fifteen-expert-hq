@@ -2,7 +2,7 @@
 
 FAKE: everything in this folder uses made-up claims. No real patient data.
 
-Last updated: 5 Nov 2026, 12:26 Sydney, by a Claude session working for Adam.
+Last updated: 5 Nov 2026, 12:55 Sydney, by a Claude session working for Adam.
 Branch: claude/worker-console-demo. It started on pull request #11's branch; on 5 Nov 2026 it was moved onto main, which now holds #11.
 How to run and test: [README.md](README.md).
 
@@ -86,13 +86,13 @@ A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.jso
 ## Hosted copies (5 Nov 2026)
 
 - A private Claude artifact: one self-contained page (code, data and fonts inside it, so the host loads nothing else) that opens on the guided tour. Its link is in the private project notes, not in this public repository. Rebuild and republish it after any change to the demo.
-- The public link (5 Nov 2026; live once Adam creates the project): Adam chose a Cloudflare Pages project that serves branch claude/worker-demo-pages. Its address shows the company name, so it is in the private project notes, not here. At build time scripts/hosted_settings.mjs fills the name and the starting view from the project's settings (with a logic test), and _headers asks search engines not to index the copy. Checked locally the way Cloudflare builds and serves it (the build step with both settings, then the files at the top of an address), at 1280 and 390 px. README.md, section "Hosted copy", has the settings and the refresh command. The live copy changes only when someone refreshes that branch; the nightly engineer works on claude/worker-console-demo and does not touch it.
+- The public link (live since 5 Nov 2026, 12:52 Sydney): a Cloudflare Pages project, created in Adam's Cloudflare account with the settings in README.md, serves branch claude/worker-demo-pages. Its first build ran the build step ("Hosted settings: company name ...; opens as presenter."), and the live page was checked: the name shows, it opens on the guided tour, and tour claim 1 opens. Preview branches are off. Its address shows the company name, so it is in the private project notes, not here. At build time scripts/hosted_settings.mjs fills the name and the starting view from the project's settings (with a logic test), and _headers asks search engines not to index the copy. Checked locally the way Cloudflare builds and serves it (the build step with both settings, then the files at the top of an address), at 1280 and 390 px. README.md, section "Hosted copy", has the settings and the refresh command. The live copy changes only when someone refreshes that branch; the nightly engineer works on claude/worker-console-demo and does not touch it.
 - Both open on the tour without a second copy of the code: the host's DEMO_START_ROLE setting does it, or ?role=presenter in the address (START_ROLE in js/brand.js stays 'worker').
 - A Claude session cannot create the host itself: the Cloudflare project needs Adam's own account, and the GitHub API path for Pages is blocked through the session's proxy (checked 5 Nov 2026).
 
 ## Half finished
 
-- The public copy: both branches are on GitHub (pushed 5 Nov 2026, after Adam approved it in the chat). It waits for Adam to create the Cloudflare Pages project (README.md, section "Hosted copy"). No Issues were filed: no step is unfinished.
+- The public copy: both branches are on GitHub (pushed 5 Nov 2026, after Adam approved it in the chat). The Cloudflare Pages project serves it (live since 5 Nov 2026). No Issues were filed: no step is unfinished.
 - agents/engineer.md: the paragraph for the nightly engineer run is added on this branch (end of the file). The engineer's scheduled task exists since 5 Nov 2026 (daily, 2:11 am Sydney), but it reads its brief from main, so the paragraph takes effect only once this pull request is merged.
 
 ## Known limits
@@ -104,6 +104,6 @@ A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.jso
 
 ## Next three actions
 
-1. Adam creates the Cloudflare Pages project (README.md, section "Hosted copy"). The public demo link then works.
+1. Adam pastes the public demo link (in the private project notes) into the YC form, after opening it once in a private window.
 2. Melvin reviews the coach panel advice, the ten checks and what he would send back (checklist in the pull request).
 3. After Melvin's notes: fix what he sends back, rerun score_demo.mjs and the browser tests, and refresh the Pages branch.
