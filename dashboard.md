@@ -1,4 +1,4 @@
-Updated Fri 6 Nov 2026 01:14 Sydney
+Updated Fri 6 Nov 2026 01:15 Sydney
 
 # RUNNING
 
@@ -7,7 +7,7 @@ Updated Fri 6 Nov 2026 01:14 Sydney
 | | Agent | Owner | State | Current or last task | Last run start (Sydney) | Minutes | Next run (Sydney) | Open pull requests |
 |---|---|---|---|---|---|---|---|---|
 | 🟡 | chief-of-staff | Adam | waiting on human | daily-digest | Thu 5 Nov 11:33 | 2 | Fri 6 Nov 06:30 | [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
-| 🟢 | design | Adam | working | [#16](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/16) | Fri 6 Nov 01:14 | 0 so far | Sat 7 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
+| 🟡 | design | Adam | waiting on human | [#16](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/16) | Fri 6 Nov 01:14 | 3 | Sat 7 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🟡 | engineer | Adam | waiting on human | client-portal-demo | Thu 5 Nov 12:59 | 45 | Fri 6 Nov 02:00 | [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22), [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21), [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
 | 🔴 | reviewer | Adam | overdue | sweep | Thu 5 Nov 11:37 | 4 | Fri 6 Nov 05:00 sweep, and on every pull request | none |
 | 🔴 | research | Adam | overdue | none | never |  | Mon 9 Nov 03:00 | none |
@@ -41,7 +41,7 @@ gantt
     section design
     done picking :done, 2026-11-05 11:31, 2026-11-05 11:32
     idle picking :done, 2026-11-05 11:33, 2026-11-05 11:33
-    working task 16 :active, 2026-11-06 01:14, 2026-11-06 01:14
+    idle task 16 :done, 2026-11-06 01:14, 2026-11-06 01:15
     section engineer
     done task 17 :done, 2026-11-05 11:31, 2026-11-05 11:32
     idle pick-work :done, 2026-11-05 11:32, 2026-11-05 11:32
