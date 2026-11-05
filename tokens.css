@@ -1,0 +1,98 @@
+/*
+  Client portal demo: design tokens. This is the one file to swap.
+  The same file as site/demo/worker/tokens.css.
+
+  Copied from brand/design-tokens.css on branch claude/design-one-page-website
+  (pull request #12, not merged on 5 Nov 2026), which copies the company design
+  system's tokens.json version 1 exactly. Same names, same values.
+
+  To change the look, change the design system first, then brand/design-tokens.css,
+  then this file. Every text colour below passes WCAG AA (4.5 to 1) on the grounds
+  named in its comment; control edges, icons and the focus ring reach 3 to 1.
+
+  Fonts: cut-down copies of Source Sans 3 and Source Serif 4, renamed Site Sans and
+  Site Serif (the SIL Open Font License reserves the name "Source"), copied from
+  site/assets/ on the same branch. Licences are next to them in assets/.
+*/
+
+@font-face {
+  font-family: "Site Sans";
+  src: url("assets/site-sans-latin.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Site Serif";
+  src: url("assets/site-serif-semibold-latin.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Grounds */
+  --paper: #f7f6f2;          /* page background */
+  --surface: #ffffff;        /* cards, inputs, menus, table rows */
+  --surface-muted: #eeece6;  /* quiet panels, table headers */
+  --line: #dedbd2;           /* hairlines, dividers, card edges; decorative only */
+  --line-strong: #7b7f84;    /* edges of inputs, selects, checkboxes, secondary buttons */
+
+  /* Text */
+  --ink: #16232f;            /* headings and body; on paper, surface, surface-muted and every wash and tint */
+  --ink-soft: #3b4a58;       /* secondary text; on paper, surface, surface-muted, evergreen-wash, evergreen-tint */
+  --ink-muted: #55636f;      /* hints, captions, source lines; the lightest text allowed */
+
+  /* Brand */
+  --evergreen: #0e6650;      /* primary button, links, key figures; as text on paper, surface, surface-muted, evergreen-wash */
+  --evergreen-dark: #0b5040; /* hover on evergreen, dark bands, Won badge text */
+  --evergreen-deep: #0a3d30; /* pressed evergreen, footer band */
+  --evergreen-tint: #d3ebe1; /* selected rows, highlight chips */
+  --evergreen-wash: #edf6f1; /* success panels, Won badge */
+  --on-dark: #ffffff;        /* text and icons on evergreen, evergreen-dark, evergreen-deep, ink, danger fills */
+  --on-dark-muted: #d3ebe1;  /* secondary text on evergreen-dark, evergreen-deep, ink */
+
+  /* Status: only for status, always with a word and an icon */
+  --danger: #a4281f;         /* errors and Denied only */
+  --danger-dark: #86201a;    /* hover on the destructive button */
+  --danger-wash: #fceeec;    /* error panels, Denied badge */
+  --warning: #8a4b0a;        /* close deadlines and cautions */
+  --warning-wash: #fdf4e4;   /* deadline panels, Due soon badge */
+  --info: #1f5a9e;           /* neutral notices, In review */
+  --info-wash: #ebf2fa;      /* info panels, In review badge */
+
+  /* Roles */
+  --focus: #1f5a9e;          /* keyboard focus ring on light grounds: 3px solid, 2px gap */
+  --link: #0e6650;           /* links in running text, always underlined */
+
+  /* Shadows: borders first */
+  --shadow-sm: 0 1px 2px #16232f14;
+  --shadow-md: 0 6px 16px #16232f1f;
+
+  /* Spacing: 4px steps */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-full: 9999px;
+
+  /* Sizes */
+  --control-md: 44px;
+  --focus-width: 3px;
+  --focus-offset: 2px;
+  --measure: 68ch;
+
+  /* Font families: the cut-down copies first, then the design system's own stacks */
+  --font-serif: "Site Serif", "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: "Site Sans", "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
