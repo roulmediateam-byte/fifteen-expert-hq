@@ -2,7 +2,7 @@
 
 Owner: Melvin, with Adam (file format and tests).
 
-What goes here: made-up claims for testing the appeal pipeline and the review screen, including the 50-claim week 3 test set with planted errors (wrong code, missing record, unsupported clinical statement, missed deadline).
+What goes here: made-up claims for testing the appeal pipeline and the review screen, including the 50-claim week 3 test set with planted errors (wrong code, missing record, unsupported clinical statement, missed deadline), and its answer key, fake-claims-answer-key.md. The answer key is only for scoring results; the drafting and checking steps never see it.
 
 Every file is marked FAKE:
 - the file name starts with fake-, for example fake-claim-001.json;
