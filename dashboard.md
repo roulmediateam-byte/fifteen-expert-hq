@@ -6,9 +6,9 @@ Updated Thu 5 Nov 2026 11:32 Sydney
 
 | | Agent | Owner | State | Current or last task | Last run start (Sydney) | Minutes | Next run (Sydney) | Open pull requests |
 |---|---|---|---|---|---|---|---|---|
-| 🟢 | chief-of-staff | Adam | working | daily-digest | Thu 5 Nov 11:31 | 0 so far | Fri 6 Nov 06:30 | none |
-| 🟢 | design | Adam | working | picking | Thu 5 Nov 11:31 | 1 so far | Fri 6 Nov 01:00 | [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
-| 🟡 | engineer | Adam | waiting on human | [#17](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/17) | Thu 5 Nov 11:31 | 2 | Fri 6 Nov 02:00 | [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
+| 🟡 | chief-of-staff | Adam | waiting on human | daily-digest | Thu 5 Nov 11:31 | 2 | Fri 6 Nov 06:30 | [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
+| 🟡 | design | Adam | waiting on human | picking | Thu 5 Nov 11:31 | 3 | Fri 6 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
+| 🟡 | engineer | Adam | waiting on human | pick-work | Thu 5 Nov 11:32 | 1 | Fri 6 Nov 02:00 | [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
 | 🔴 | reviewer | Adam | overdue | none | never |  | Fri 6 Nov 05:00 sweep, and on every pull request | none |
 | 🔴 | research | Adam | overdue | none | never |  | Mon 9 Nov 03:00 | none |
 | ⚪ | sales | Melvin | off | none | never |  | off (off until phase 5) | none |
@@ -22,6 +22,8 @@ Updated Thu 5 Nov 2026 11:32 Sydney
 **Melvin**
 
 - [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) [design] Build the one-page website (pull request, 16 hours)
+- [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) [chief-of-staff] Digest 2026-11-05 (pull request, 0 hours)
+- [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19) [design] Add the page checklist (pull request, 0 hours)
 - [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) [engineer] Add a first passing smoke test in prototype/ (pull request, 0 hours)
 
 ## Timeline
@@ -32,11 +34,12 @@ gantt
     dateFormat YYYY-MM-DD HH:mm
     axisFormat %a %H:%M
     section chief-of-staff
-    working daily-digest :active, 2026-11-05 11:31, 2026-11-05 11:32
+    done daily-digest :done, 2026-11-05 11:31, 2026-11-05 11:32
     section design
-    working picking :active, 2026-11-05 11:31, 2026-11-05 11:32
+    done picking :done, 2026-11-05 11:31, 2026-11-05 11:32
     section engineer
     done task 17 :done, 2026-11-05 11:31, 2026-11-05 11:32
+    idle pick-work :done, 2026-11-05 11:32, 2026-11-05 11:32
 ```
 
 ## Board

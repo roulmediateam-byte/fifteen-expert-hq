@@ -1,6 +1,6 @@
 {
   "updated": "Thu 5 Nov 2026 11:32 Sydney",
-  "updated_utc": "2026-11-05T00:32:30Z",
+  "updated_utc": "2026-11-05T00:32:58Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -20,26 +20,29 @@
     {
       "name": "chief-of-staff",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
-      "dot": "🟢",
+      "state": "waiting on human",
+      "reason": "open pull request with no human review",
+      "dot": "🟡",
       "task": "daily-digest",
       "last_start": "Thu 5 Nov 11:31",
-      "minutes": "0 so far",
+      "minutes": "2",
       "next_run": "Fri 6 Nov 06:30",
-      "open_prs": []
+      "open_prs": [
+        20
+      ]
     },
     {
       "name": "design",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
-      "dot": "🟢",
+      "state": "waiting on human",
+      "reason": "open pull request with no human review",
+      "dot": "🟡",
       "task": "picking",
       "last_start": "Thu 5 Nov 11:31",
-      "minutes": "1 so far",
+      "minutes": "3",
       "next_run": "Fri 6 Nov 01:00",
       "open_prs": [
+        19,
         12
       ]
     },
@@ -49,9 +52,9 @@
       "state": "waiting on human",
       "reason": "open pull request with no human review",
       "dot": "🟡",
-      "task": "[#17](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/17)",
-      "last_start": "Thu 5 Nov 11:31",
-      "minutes": "2",
+      "task": "pick-work",
+      "last_start": "Thu 5 Nov 11:32",
+      "minutes": "1",
       "next_run": "Fri 6 Nov 02:00",
       "open_prs": [
         18
@@ -104,6 +107,18 @@
         "hours": 16
       },
       {
+        "number": 20,
+        "title": "[chief-of-staff] Digest 2026-11-05",
+        "kind": "pull request",
+        "hours": 0
+      },
+      {
+        "number": 19,
+        "title": "[design] Add the page checklist",
+        "kind": "pull request",
+        "hours": 0
+      },
+      {
         "number": 18,
         "title": "[engineer] Add a first passing smoke test in prototype/",
         "kind": "pull request",
@@ -118,11 +133,12 @@
     "    dateFormat YYYY-MM-DD HH:mm",
     "    axisFormat %a %H:%M",
     "    section chief-of-staff",
-    "    working daily-digest :active, 2026-11-05 11:31, 2026-11-05 11:32",
+    "    done daily-digest :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    section design",
-    "    working picking :active, 2026-11-05 11:31, 2026-11-05 11:32",
+    "    done picking :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    section engineer",
     "    done task 17 :done, 2026-11-05 11:31, 2026-11-05 11:32",
+    "    idle pick-work :done, 2026-11-05 11:32, 2026-11-05 11:32",
     "```"
   ],
   "board": {
