@@ -4,7 +4,7 @@ Label: agent:engineer. Status: on. Human owner: Adam.
 
 ## Job
 
-The engineer builds and tests the demo in prototype/, one small Issue per run, using made-up claims only.
+The engineer builds and tests the demo in prototype/ and its web page in site/demo/, one small Issue per run, using made-up claims only.
 
 ## Human owner
 
@@ -13,26 +13,28 @@ Adam. He writes or approves agent:engineer Issues, checks every engineer pull re
 ## When it runs
 
 - Every day at 2:00 am Sydney: the Claude Code scheduled task "engineer" on Adam's Claude account. Runs can start up to about 30 minutes late.
-- Task prompt: "Read CLAUDE.md and agents/engineer.md and do one run on the top Issue labelled agent:engineer. If PAUSE exists, stop."
+- Task prompt: "Read CLAUDE.md and agents/engineer.md and do one run on the top Issue labelled agent:engineer. If PAUSE exists, post the paused heartbeat and stop."
+- Heartbeats: at the very start and the very end of every run, one line on Status Issue #6, exactly as agents/README.md, section "Heartbeat", says. If PAUSE exists, it posts state=paused and stops.
 - One run is one Issue and one pull request. First it checks its own open pull requests: if one has a "[reviewer] Changes needed" comment or a founder asking for a change, it fixes that one (on the same branch), and that is the run. Otherwise it takes the top Issue: the highest agent:engineer card in the Ready for AI column of the Mission control board, or, if it cannot read the board, the oldest open agent:engineer Issue with no open pull request. No Issue: it stops at once.
 
 ## What it reads
 
 - PROJECT_STATE.md first, then CLAUDE.md, this brief, and its Issue with all comments.
-- prototype/README.md, prototype/SPEC.md once it exists, and the code, tests and prompts in prototype/.
+- prototype/README.md, prototype/SPEC.md once it exists, the code, tests and prompts in prototype/, and site/demo/ with its README.md.
 - data/fake-claims/claims.json and that folder's README.md, read only, for test input.
 - agents/README.md, section "GitHub from a Claude session" (the commands that work in a Claude session).
 - COMPANY_BRIEF.md, for what the demo must show.
 
 ## Folders it may change
 
-- prototype/ only, including prototype/prompts/ and the saved results. Nothing else.
+- prototype/ (including prototype/prompts/ and the saved results) and site/demo/ (the demo page). Nothing else.
 
 ## What it produces
 
 - Code and tests in prototype/, in the layout prototype/SPEC.md sets. The test comes first, then the code that passes it.
 - prototype/prompts/<step>.md: the drafting and checking instructions, one file per step, for example prototype/prompts/appeal-checker.md.
 - prototype/results/<fake-claim-id>-<step>.md (or .json): results saved from running the prompts on fake claims during its own run. Each one starts with the word FAKE.
+- site/demo/index.html: the static demo page that Cloudflare serves, showing the saved results from prototype/results/. Everything on it is FAKE and says so.
 - Code files follow their language's own naming rules (for example review_screen.py). Every other file follows README.md: lower case with hyphens.
 
 ## Never
@@ -44,11 +46,11 @@ Adam. He writes or approves agent:engineer Issues, checks every engineer pull re
 - Put passwords, keys or tokens in code, tests or settings.
 - Connect to payer systems, the Zone 1 claims system, or any outside service that receives data.
 - Skip, weaken or delete a failing test to make it pass.
-- Deploy or publish anything, or change files outside prototype/.
+- Deploy or publish anything, or change files outside prototype/ and site/demo/.
 
 ## How it reports
 
-- Branch: engineer/<issue-number>-<topic>, for example engineer/12-deadline-calculator.
+- Branch: claude/engineer-<issue-number>-<topic>, for example claude/engineer-12-deadline-calculator.
 - Title: "[engineer] what", for example "[engineer] Add the appeal deadline calculator with tests".
 - It opens the pull request with the REST command in agents/README.md; gh pr create does not work in a Claude session.
 - Body:

@@ -4,15 +4,17 @@ This repository is the filing cabinet of The $15-an-Hour Expert. We appeal denie
 
 ## Rules
 
-1. Read PROJECT_STATE.md first. Then read your brief in agents/, your Issue, and the README.md of each folder you will change.
-2. If a file named PAUSE exists at the top level of this repository, stop at once and wait for a human. Check for it before you start and between steps. Only a human removes it.
-3. No patient data, ever. Use made-up data only, and mark it FAKE (see data/fake-claims/README.md).
-4. Never send messages, emails or posts outside the company. Write drafts in this repository or on your Issue. A human sends.
-5. Never merge your own pull request.
-6. Work only on the standing jobs in your brief and on Issues with your agent label: agent:chief-of-staff, agent:design, agent:engineer, agent:reviewer, agent:research or agent:sales (see ops/setup-labels.md). Leave every other Issue alone. One exception: the chief of staff also files every Issue titled "File: ..." (see agents/chief-of-staff.md).
-7. Every pull request has a title in the form "[agent] what", for example "[design] Draft the practice flyer", and a body with three sections: Done, Evidence, Needs a human. Use the template below.
-8. Label estimates "our estimate".
-9. Never use the long dash character. Use a comma, a colon or a full stop instead.
+1. Never push to main; always work on a claude/ branch and open a pull request.
+2. Read PROJECT_STATE.md first. Then read your brief in agents/, your Issue, and the README.md of each folder you will change.
+3. If a file named PAUSE exists at the top level of this repository, post one heartbeat with state=paused on your Status Issue (agents/README.md, section "Heartbeat"), then stop at once and wait for a human. Check for it before you start and between steps. Only a human removes it.
+4. No patient data, ever. Use made-up data only, and mark it FAKE (see data/fake-claims/README.md).
+5. Never write a private person's name, phone or email in an Issue, comment, pull request or file. Write their role and practice type instead. This means people outside the company, such as a practice's office manager; the founders' names are fine.
+6. Never send messages, emails or posts outside the company. Write drafts in this repository or on your Issue. A human sends.
+7. Never merge your own pull request.
+8. Work only on the standing jobs in your brief and on Issues with your agent label: agent:chief-of-staff, agent:design, agent:engineer, agent:reviewer, agent:research or agent:sales (see ops/setup-labels.md). Leave every other Issue alone. One exception: the chief of staff also files every Issue titled "File: ..." (see agents/chief-of-staff.md).
+9. Every pull request has a title in the form "[agent] what", for example "[design] Draft the practice flyer", and a body with three sections: Done, Evidence, Needs a human. Use the template below.
+10. Label estimates "our estimate".
+11. Never use the long dash character. Use a comma, a colon or a full stop instead.
 
 ## Also
 
@@ -29,7 +31,7 @@ Title: [agent] what
 What you did, in one to three lines, and the Issue (for example: Closes #12).
 
 ## Evidence
-Test results, links, screenshots or file paths, and the time used (for example: Time used: 22 of 30 minutes).
+Test results, links, screenshots or file paths, then the start and finish time in Sydney, the minutes used of 30, and this run's session link (for example: Started 01:04, finished 01:26 Sydney, 22 of 30 minutes).
 
 ## Needs a human
 The exact decision or action, and who: human:adam or human:melvin. Write "Nothing" if nothing.
