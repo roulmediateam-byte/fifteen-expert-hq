@@ -22,10 +22,11 @@
   Colours, type, spacing and sizes are copied from brand/design-tokens.css (the design
   system's tokens.json, version 1). Type sizes are written in rem (16px = 1rem), so text
   follows the visitor's browser text size.
-  Placeholders to replace before launch:
-    [Company name], in the title, the header and the footer;
-    https://example.com/book-a-20-minute-call, the booking link, on both call buttons;
-    the robots line above.
+  The company name, the logo, the tab icon and the booking link come from the host's
+  settings when Cloudflare Pages builds the site (site/scripts/hosted_settings.mjs and
+  site/README.md). Without them the page shows its placeholders: the name in square
+  brackets in the title, the header and the footer, and an example.com booking link on
+  both call buttons. Before launch, also remove the robots line above.
 -->
 <style>
 /* Layout: one calm column of sections on paper. On wide screens the numbers, the steps
@@ -155,8 +156,16 @@ a:hover { color: var(--evergreen-dark); text-decoration-thickness: 2px; }
 /* Header */
 .site-header { border-bottom: 1px solid var(--line); }
 .header-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); min-height: 64px; padding-block: var(--space-3); }
-.brand { font-family: var(--font-serif); font-size: 1.5rem; line-height: 2rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+.brand { display: inline-block; font-family: var(--font-serif); font-size: 1.5rem; line-height: 2rem; font-weight: 600; color: var(--ink); text-decoration: none; }
 .brand:hover { color: var(--evergreen-dark); }
+/* The logo, when the host's settings supply it: 32px tall in the header (at least 24px, as
+   the brand rules say), all white on the dark footer. Its clear space comes from the
+   header's padding. */
+.brand .logo, .footer-name .logo { display: block; }
+@media (forced-colors: active) {
+  .logo path:not([fill="none"]) { fill: CanvasText; }
+  .logo [stroke] { stroke: CanvasText; }
+}
 .nav { display: none; }
 .nav ul { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); }
 .nav a { color: var(--ink-soft); font-size: 1rem; line-height: 1.5rem; font-weight: 600; text-decoration: none; }
@@ -429,7 +438,7 @@ Full texts: assets/lucide-icons-license.txt -->
           <span class="feature-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-lock"/></svg></span>
           <div class="feature-body">
             <h3>Patient data stays in our claims system</h3>
-            <p>Claims and records are kept in our secure claims system. The only vendors who handle them, such as the AI service that drafts appeals, have signed a BAA with us. We never put them in email, messaging apps or our sales tools.</p>
+            <p>Claims and records are kept in our secure claims system. Any vendor that handles them, such as the AI service that drafts appeals, signs a BAA with us first. We never put them in email, messaging apps or our sales tools.</p>
           </div>
         </li>
         <li class="feature">
@@ -461,7 +470,7 @@ Full texts: assets/lucide-icons-license.txt -->
           <span class="initials" aria-hidden="true">AL</span>
           <h3>Adam Lam</h3>
           <p class="role">Co-founder and CEO</p>
-          <p>Runs sales, builds our software and signs every practice agreement and BAA. Founder of ROUL Media and former HSBC banker.</p>
+          <p>Runs sales, builds our software and is our HIPAA security official. Signs every practice agreement and BAA. Founder of ROUL Media and former HSBC banker.</p>
         </li>
         <li class="person">
           <span class="initials" aria-hidden="true">MT</span>
