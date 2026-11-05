@@ -1,0 +1,129 @@
+{
+  "updated": "Thu 5 Nov 2026 11:26 Sydney",
+  "updated_utc": "2026-11-05T00:26:19Z",
+  "paused": false,
+  "pause_files": [],
+  "direct_commits": [],
+  "outside_folders": [
+    {
+      "pr": 12,
+      "agent": "design",
+      "files": [
+        "PROJECT_STATE.md",
+        "ops/links.md"
+      ]
+    }
+  ],
+  "pause_commits": [],
+  "notices": [],
+  "agents": [
+    {
+      "name": "chief-of-staff",
+      "owner": "Adam",
+      "state": "overdue",
+      "reason": "no heartbeat since the Thu 5 Nov 06:30 run",
+      "dot": "🔴",
+      "task": "none",
+      "last_start": "",
+      "minutes": "",
+      "next_run": "Fri 6 Nov 06:30",
+      "open_prs": []
+    },
+    {
+      "name": "design",
+      "owner": "Adam",
+      "state": "overdue",
+      "reason": "no heartbeat since the Thu 5 Nov 01:00 run",
+      "dot": "🔴",
+      "task": "none",
+      "last_start": "",
+      "minutes": "",
+      "next_run": "Fri 6 Nov 01:00",
+      "open_prs": [
+        12
+      ]
+    },
+    {
+      "name": "engineer",
+      "owner": "Adam",
+      "state": "overdue",
+      "reason": "no heartbeat since the Thu 5 Nov 02:00 run",
+      "dot": "🔴",
+      "task": "none",
+      "last_start": "",
+      "minutes": "",
+      "next_run": "Fri 6 Nov 02:00",
+      "open_prs": []
+    },
+    {
+      "name": "reviewer",
+      "owner": "Adam",
+      "state": "overdue",
+      "reason": "no heartbeat since the Thu 5 Nov 05:00 run",
+      "dot": "🔴",
+      "task": "none",
+      "last_start": "",
+      "minutes": "",
+      "next_run": "Fri 6 Nov 05:00 sweep, and on every pull request",
+      "open_prs": []
+    },
+    {
+      "name": "research",
+      "owner": "Adam",
+      "state": "overdue",
+      "reason": "no heartbeat since the Mon 2 Nov 03:00 run",
+      "dot": "🔴",
+      "task": "none",
+      "last_start": "",
+      "minutes": "",
+      "next_run": "Mon 9 Nov 03:00",
+      "open_prs": []
+    },
+    {
+      "name": "sales",
+      "owner": "Melvin",
+      "state": "off",
+      "reason": "off until phase 5",
+      "dot": "⚪",
+      "task": "none",
+      "last_start": "",
+      "minutes": "",
+      "next_run": "off (off until phase 5)",
+      "open_prs": []
+    }
+  ],
+  "waiting": {
+    "Adam": [],
+    "Melvin": [
+      {
+        "number": 12,
+        "title": "[design] Build the one-page website",
+        "kind": "pull request",
+        "hours": 16
+      }
+    ]
+  },
+  "timeline": [
+    "No runs in the last 3 days."
+  ],
+  "board": {
+    "agent:chief-of-staff": 0,
+    "agent:design": 0,
+    "agent:engineer": 0,
+    "agent:reviewer": 0,
+    "agent:research": 0,
+    "agent:sales": 0,
+    "human:adam": 0,
+    "human:melvin": 0
+  },
+  "closed_last_7_days": 0,
+  "alerts": [
+    "chief-of-staff is overdue: no heartbeat since the Thu 5 Nov 06:30 run",
+    "design is overdue: no heartbeat since the Thu 5 Nov 01:00 run",
+    "engineer is overdue: no heartbeat since the Thu 5 Nov 02:00 run",
+    "reviewer is overdue: no heartbeat since the Thu 5 Nov 05:00 run",
+    "research is overdue: no heartbeat since the Mon 2 Nov 03:00 run",
+    "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"
+  ],
+  "sydney_date": "2026-11-05"
+}
