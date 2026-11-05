@@ -11,6 +11,9 @@
 export const COMPANY_NAME = '[Company name]';
 export const PRODUCT_NAME = 'Appeals worker console';
 export const LOGO_SVG = '';
+// The view the demo opens in: 'worker', 'reviewer' or 'presenter' (the guided tour).
+// A copy hosted for outside viewers, such as investors, opens on 'presenter'.
+export const START_ROLE = 'worker';
 
 export function displayName(search) {
   try {
