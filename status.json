@@ -1,6 +1,6 @@
 {
-  "updated": "Thu 5 Nov 2026 11:37 Sydney",
-  "updated_utc": "2026-11-05T00:37:20Z",
+  "updated": "Thu 5 Nov 2026 11:39 Sydney",
+  "updated_utc": "2026-11-05T00:39:59Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -63,12 +63,12 @@
     {
       "name": "reviewer",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
+      "state": "done",
+      "reason": "Reviewed 4: #12 changes needed; #18 #19 #20 pass",
       "dot": "🟢",
       "task": "sweep",
       "last_start": "Thu 5 Nov 11:37",
-      "minutes": "0 so far",
+      "minutes": "4",
       "next_run": "Fri 6 Nov 05:00 sweep, and on every pull request",
       "open_prs": []
     },
@@ -104,7 +104,7 @@
         "number": 12,
         "title": "[design] Build the one-page website",
         "kind": "pull request",
-        "hours": 16
+        "hours": 17
       },
       {
         "number": 20,
@@ -142,7 +142,7 @@
     "    done task 17 :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    idle pick-work :done, 2026-11-05 11:32, 2026-11-05 11:32",
     "    section reviewer",
-    "    working sweep :active, 2026-11-05 11:37, 2026-11-05 11:37",
+    "    done sweep :done, 2026-11-05 11:37, 2026-11-05 11:39",
     "```"
   ],
   "board": {
