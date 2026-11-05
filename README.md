@@ -18,7 +18,24 @@ Then open http://127.0.0.1:8080/ in a browser. (Opening index.html straight from
 
 - The demo date is fixed at Thursday, Nov 5, 2026, so the made-up deadlines stay the same.
 - State lives in memory. A reload starts again, unless "Save my progress in this browser" is ticked (off by default).
-- For a live presentation, `?name=YourName` in the address shows a company name without saving it anywhere. The repository keeps the placeholder "[Company name]" until the domain is bought.
+- Address options, for a live presentation or a hosted copy:
+  - `?name=YourName` shows a company name, without saving it anywhere. The repository keeps the placeholder "[Company name]" until the domain is bought.
+  - `?role=presenter` opens on the guided tour, and `?role=reviewer` opens Melvin's view. Without it, the demo opens as Jordan (START_ROLE in js/brand.js).
+  - They combine: `?name=YourName&role=presenter`.
+
+## Hosted copy (GitHub Pages)
+
+GitHub Pages can serve this folder as a public page, with no server of ours. The branch claude/worker-demo-pages holds only this folder's files, at its top level. The empty .nojekyll file tells GitHub to serve the files as they are.
+
+Once, by hand, the repository owner turns it on: Settings, Pages, Build and deployment, Source "Deploy from a branch", branch claude/worker-demo-pages, folder / (root), Save. A minute or two later the demo is at https://roulmediateam-byte.github.io/fifteen-expert-hq/ (add `?role=presenter` to open on the guided tour).
+
+After any change to this folder, refresh that branch from the top of the repository:
+
+```
+git push --force origin "$(git subtree split -P site/demo/worker HEAD)":refs/heads/claude/worker-demo-pages
+```
+
+It replaces only that branch, and GitHub republishes within a few minutes. The page is public: everything in it is made up (FAKE), and it shows no company name unless the address has `?name=`.
 
 ## Roles and screens
 
@@ -89,3 +106,4 @@ Each script exits with code 1 when a target or a check fails.
 | tests/ | Logic tests, browser tests and the walkthrough |
 | screenshots/ | Every screen at 390 and 1280 px, from the last browser test run |
 | assets/ | Cut-down fonts and their licences, and the icon licence |
+| .nojekyll | Empty. Tells GitHub Pages to serve the files as they are |
