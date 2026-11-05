@@ -1,6 +1,6 @@
 {
-  "updated": "Thu 5 Nov 2026 11:32 Sydney",
-  "updated_utc": "2026-11-05T00:32:58Z",
+  "updated": "Thu 5 Nov 2026 11:33 Sydney",
+  "updated_utc": "2026-11-05T00:33:27Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -20,12 +20,12 @@
     {
       "name": "chief-of-staff",
       "owner": "Adam",
-      "state": "waiting on human",
-      "reason": "open pull request with no human review",
-      "dot": "🟡",
+      "state": "working",
+      "reason": "",
+      "dot": "🟢",
       "task": "daily-digest",
-      "last_start": "Thu 5 Nov 11:31",
-      "minutes": "2",
+      "last_start": "Thu 5 Nov 11:33",
+      "minutes": "0 so far",
       "next_run": "Fri 6 Nov 06:30",
       "open_prs": [
         20
@@ -38,8 +38,8 @@
       "reason": "open pull request with no human review",
       "dot": "🟡",
       "task": "picking",
-      "last_start": "Thu 5 Nov 11:31",
-      "minutes": "3",
+      "last_start": "Thu 5 Nov 11:33",
+      "minutes": "1",
       "next_run": "Fri 6 Nov 01:00",
       "open_prs": [
         19,
@@ -134,8 +134,10 @@
     "    axisFormat %a %H:%M",
     "    section chief-of-staff",
     "    done daily-digest :done, 2026-11-05 11:31, 2026-11-05 11:32",
+    "    working daily-digest :active, 2026-11-05 11:33, 2026-11-05 11:33",
     "    section design",
     "    done picking :done, 2026-11-05 11:31, 2026-11-05 11:32",
+    "    idle picking :done, 2026-11-05 11:33, 2026-11-05 11:33",
     "    section engineer",
     "    done task 17 :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    idle pick-work :done, 2026-11-05 11:32, 2026-11-05 11:32",
