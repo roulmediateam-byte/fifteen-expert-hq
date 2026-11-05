@@ -1,6 +1,6 @@
 {
-  "updated": "Thu 5 Nov 2026 22:57 Sydney",
-  "updated_utc": "2026-11-05T11:57:04Z",
+  "updated": "Fri 6 Nov 2026 00:07 Sydney",
+  "updated_utc": "2026-11-05T13:07:01Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -113,37 +113,37 @@
         "number": 12,
         "title": "[design] Build the one-page website",
         "kind": "pull request",
-        "hours": 28
+        "hours": 29
       },
       {
         "number": 20,
         "title": "[chief-of-staff] Digest 2026-11-05",
         "kind": "pull request",
-        "hours": 11
+        "hours": 12
       },
       {
         "number": 19,
         "title": "[design] Add the page checklist",
         "kind": "pull request",
-        "hours": 11
+        "hours": 12
       },
       {
         "number": 18,
         "title": "[engineer] Add a first passing smoke test in prototype/",
         "kind": "pull request",
-        "hours": 11
+        "hours": 12
       },
       {
         "number": 21,
         "title": "[engineer] Worker console demo (made-up claims)",
         "kind": "pull request",
-        "hours": 10
+        "hours": 11
       },
       {
         "number": 22,
         "title": "[engineer] Client portal demo (made-up claims)",
         "kind": "pull request",
-        "hours": 9
+        "hours": 10
       }
     ]
   },
@@ -185,5 +185,5 @@
     "[#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) from engineer changes files outside its folders: agents/engineer.md",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"
   ],
-  "sydney_date": "2026-11-05"
+  "sydney_date": "2026-11-06"
 }
