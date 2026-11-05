@@ -1,0 +1,923 @@
+{
+  "version": 1,
+  "generated_at": "2026-11-04T23:00:00.000Z",
+  "repo": {
+    "full_name": "roulmediateam-byte/fifteen-expert-hq",
+    "private": false,
+    "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq",
+    "default_branch": "main"
+  },
+  "paused": {
+    "all": false,
+    "agents": []
+  },
+  "founders": [
+    "Adam",
+    "Melvin"
+  ],
+  "agents": [
+    {
+      "name": "chief-of-staff",
+      "label": "agent:chief-of-staff",
+      "owner": "Adam",
+      "enabled": true,
+      "enabled_note": "",
+      "state": "waiting on human",
+      "colour": "yellow",
+      "reason": "open pull request with no human review",
+      "paused": false,
+      "paused_alone": false,
+      "status_issue": {
+        "number": 4,
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/4",
+        "found": true
+      },
+      "task": {
+        "text": "digest",
+        "number": null,
+        "url": "",
+        "title": ""
+      },
+      "last_run": {
+        "start": "2026-11-04T19:32:00.000Z",
+        "end": "2026-11-04T19:45:00.000Z",
+        "outcome": "done",
+        "minutes": 13,
+        "so_far": false,
+        "session": "https://claude.ai/code/session_FAKE01"
+      },
+      "next_run": "2026-11-05T19:30:00.000Z",
+      "next_run_note": "",
+      "schedule": {
+        "days": "daily",
+        "time": "06:30"
+      },
+      "open_prs": [
+        {
+          "number": 20,
+          "title": "[chief-of-staff] Digest 2026-11-05",
+          "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/20",
+          "draft": false
+        }
+      ],
+      "run_now": true
+    },
+    {
+      "name": "design",
+      "label": "agent:design",
+      "owner": "Adam",
+      "enabled": true,
+      "enabled_note": "",
+      "state": "failed",
+      "colour": "red",
+      "reason": "could not read the tokens",
+      "paused": false,
+      "paused_alone": false,
+      "status_issue": {
+        "number": 5,
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/5",
+        "found": true
+      },
+      "task": {
+        "text": "#14",
+        "number": 14,
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/14",
+        "title": "Hero section"
+      },
+      "last_run": {
+        "start": "2026-11-04T14:05:00.000Z",
+        "end": "2026-11-04T14:20:00.000Z",
+        "outcome": "failed",
+        "minutes": 15,
+        "so_far": false,
+        "session": ""
+      },
+      "next_run": "2026-11-05T14:00:00.000Z",
+      "next_run_note": "",
+      "schedule": {
+        "days": "daily",
+        "time": "01:00"
+      },
+      "open_prs": [
+        {
+          "number": 21,
+          "title": "[design] Hero section",
+          "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/21",
+          "draft": false
+        }
+      ],
+      "run_now": false
+    },
+    {
+      "name": "engineer",
+      "label": "agent:engineer",
+      "owner": "Adam",
+      "enabled": true,
+      "enabled_note": "",
+      "state": "working",
+      "colour": "green",
+      "reason": "",
+      "paused": false,
+      "paused_alone": false,
+      "status_issue": {
+        "number": 6,
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/6",
+        "found": true
+      },
+      "task": {
+        "text": "#15",
+        "number": 15,
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/15",
+        "title": "Appeal deadline calculator"
+      },
+      "last_run": {
+        "start": "2026-11-04T22:30:00.000Z",
+        "end": null,
+        "outcome": null,
+        "minutes": 30,
+        "so_far": true,
+        "session": ""
+      },
+      "next_run": "2026-11-05T15:00:00.000Z",
+      "next_run_note": "",
+      "schedule": {
+        "days": "daily",
+        "time": "02:00"
+      },
+      "open_prs": [],
+      "run_now": false
+    },
+    {
+      "name": "reviewer",
+      "label": "agent:reviewer",
+      "owner": "Adam",
+      "enabled": true,
+      "enabled_note": "",
+      "state": "done",
+      "colour": "green",
+      "reason": "pass",
+      "paused": false,
+      "paused_alone": false,
+      "status_issue": {
+        "number": 7,
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/7",
+        "found": true
+      },
+      "task": {
+        "text": "#20",
+        "number": 20,
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20",
+        "title": "[chief-of-staff] Digest 2026-11-05"
+      },
+      "last_run": {
+        "start": "2026-11-04T19:52:00.000Z",
+        "end": "2026-11-04T19:58:00.000Z",
+        "outcome": "done",
+        "minutes": 6,
+        "so_far": false,
+        "session": ""
+      },
+      "next_run": "2026-11-05T18:00:00.000Z",
+      "next_run_note": "daily sweep; also runs on every new pull request",
+      "schedule": {
+        "days": "daily",
+        "time": "05:00",
+        "on_pull_request": true
+      },
+      "open_prs": [],
+      "run_now": false
+    },
+    {
+      "name": "research",
+      "label": "agent:research",
+      "owner": "Adam",
+      "enabled": true,
+      "enabled_note": "",
+      "state": "done",
+      "colour": "green",
+      "reason": "two payer bulletins changed",
+      "paused": false,
+      "paused_alone": false,
+      "status_issue": {
+        "number": 8,
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/8",
+        "found": true
+      },
+      "task": {
+        "text": "weekly-watch",
+        "number": null,
+        "url": "",
+        "title": ""
+      },
+      "last_run": {
+        "start": "2026-11-01T16:06:00.000Z",
+        "end": "2026-11-01T16:30:00.000Z",
+        "outcome": "done",
+        "minutes": 24,
+        "so_far": false,
+        "session": ""
+      },
+      "next_run": "2026-11-08T16:00:00.000Z",
+      "next_run_note": "",
+      "schedule": {
+        "days": [
+          "mon"
+        ],
+        "time": "03:00"
+      },
+      "open_prs": [],
+      "run_now": false
+    },
+    {
+      "name": "sales",
+      "label": "agent:sales",
+      "owner": "Melvin",
+      "enabled": false,
+      "enabled_note": "off until phase 5",
+      "state": "off",
+      "colour": "grey",
+      "reason": "off until phase 5",
+      "paused": false,
+      "paused_alone": false,
+      "status_issue": {
+        "number": 9,
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/9",
+        "found": true
+      },
+      "task": null,
+      "last_run": null,
+      "next_run": null,
+      "next_run_note": "",
+      "schedule": {
+        "days": "weekdays",
+        "time": "04:00"
+      },
+      "open_prs": [],
+      "run_now": false
+    }
+  ],
+  "waiting": {
+    "Adam": [
+      {
+        "kind": "Issue",
+        "number": 30,
+        "title": "Check the lawyer quote",
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30",
+        "created_at": "2026-11-03T22:00:00.000Z",
+        "hours": 25
+      }
+    ],
+    "Melvin": [
+      {
+        "kind": "pull request",
+        "number": 22,
+        "title": "Founder notes",
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/22",
+        "created_at": "2026-11-01T22:00:00.000Z",
+        "hours": 73
+      },
+      {
+        "kind": "pull request",
+        "number": 21,
+        "title": "[design] Hero section",
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/21",
+        "created_at": "2026-11-03T14:30:00.000Z",
+        "hours": 32
+      },
+      {
+        "kind": "pull request",
+        "number": 20,
+        "title": "[chief-of-staff] Digest 2026-11-05",
+        "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/20",
+        "created_at": "2026-11-04T19:45:00.000Z",
+        "hours": 3
+      }
+    ]
+  },
+  "alerts": [
+    {
+      "level": "red",
+      "text": "design is failed: could not read the tokens",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/5"
+    },
+    {
+      "level": "red",
+      "text": "#22 has been open 73 hours: Founder notes",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/22"
+    },
+    {
+      "level": "red",
+      "text": "Change to main without a pull request: commit abc1234, \"Edit README on main\"",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/commit/abc1234def5678"
+    },
+    {
+      "level": "info",
+      "text": "Stop switch used on main: \"[hq] Pause the design agent, by Adam\" (commit 0aa0aa0)",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/commit/0aa0aa0aa0"
+    },
+    {
+      "level": "red",
+      "text": "#21 from design changes files outside its folders: site/demo/index.html",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/21"
+    }
+  ],
+  "mission_control_note": "Changes to main and agent folders were last checked by Mission control on Thu 5 Nov, 9:07 am.",
+  "next_runs": [
+    {
+      "agent": "design",
+      "owner": "Adam",
+      "at": "2026-11-05T14:00:00.000Z",
+      "note": "",
+      "paused": false
+    },
+    {
+      "agent": "engineer",
+      "owner": "Adam",
+      "at": "2026-11-05T15:00:00.000Z",
+      "note": "",
+      "paused": false
+    },
+    {
+      "agent": "reviewer",
+      "owner": "Adam",
+      "at": "2026-11-05T18:00:00.000Z",
+      "note": "daily sweep",
+      "paused": false
+    },
+    {
+      "agent": "chief-of-staff",
+      "owner": "Adam",
+      "at": "2026-11-05T19:30:00.000Z",
+      "note": "",
+      "paused": false
+    },
+    {
+      "agent": "design",
+      "owner": "Adam",
+      "at": "2026-11-06T14:00:00.000Z",
+      "note": "",
+      "paused": false
+    }
+  ],
+  "timeline": [
+    {
+      "agent": "chief-of-staff",
+      "start": "2026-11-02T19:31:00.000Z",
+      "end": "2026-11-02T19:43:00.000Z",
+      "outcome": "done",
+      "task": "digest",
+      "minutes": 12
+    },
+    {
+      "agent": "chief-of-staff",
+      "start": "2026-11-03T19:34:00.000Z",
+      "end": "2026-11-03T19:45:00.000Z",
+      "outcome": "done",
+      "task": "digest",
+      "minutes": 11
+    },
+    {
+      "agent": "chief-of-staff",
+      "start": "2026-11-04T19:32:00.000Z",
+      "end": "2026-11-04T19:45:00.000Z",
+      "outcome": "done",
+      "task": "digest",
+      "minutes": 13
+    },
+    {
+      "agent": "design",
+      "start": "2026-11-02T14:04:00.000Z",
+      "end": "2026-11-02T14:25:00.000Z",
+      "outcome": "done",
+      "task": "#12",
+      "minutes": 21
+    },
+    {
+      "agent": "design",
+      "start": "2026-11-03T14:03:00.000Z",
+      "end": "2026-11-03T14:30:00.000Z",
+      "outcome": "done",
+      "task": "#14",
+      "minutes": 27
+    },
+    {
+      "agent": "design",
+      "start": "2026-11-04T14:05:00.000Z",
+      "end": "2026-11-04T14:20:00.000Z",
+      "outcome": "failed",
+      "task": "#14",
+      "minutes": 15
+    },
+    {
+      "agent": "engineer",
+      "start": "2026-11-02T15:03:00.000Z",
+      "end": "2026-11-02T15:29:00.000Z",
+      "outcome": "done",
+      "task": "#16",
+      "minutes": 26
+    },
+    {
+      "agent": "engineer",
+      "start": "2026-11-03T15:04:00.000Z",
+      "end": "2026-11-03T15:16:00.000Z",
+      "outcome": "blocked",
+      "task": "#15",
+      "minutes": 12
+    },
+    {
+      "agent": "engineer",
+      "start": "2026-11-04T22:30:00.000Z",
+      "end": null,
+      "outcome": "working",
+      "task": "#15",
+      "minutes": null
+    },
+    {
+      "agent": "reviewer",
+      "start": "2026-11-04T18:02:00.000Z",
+      "end": "2026-11-04T18:05:00.000Z",
+      "outcome": "idle",
+      "task": "sweep",
+      "minutes": 3
+    },
+    {
+      "agent": "reviewer",
+      "start": "2026-11-04T19:52:00.000Z",
+      "end": "2026-11-04T19:58:00.000Z",
+      "outcome": "done",
+      "task": "#20",
+      "minutes": 6
+    }
+  ],
+  "columns": [
+    "Inbox",
+    "Ready for AI",
+    "AI working",
+    "Needs human",
+    "Done"
+  ],
+  "board": [
+    {
+      "number": 32,
+      "title": "Idea: a FAQ page for practices",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/32",
+      "labels": [],
+      "column": "Inbox",
+      "priority": "",
+      "agent": "",
+      "created_at": "2026-11-04T01:00:00.000Z",
+      "updated_at": "2026-11-04T01:00:00.000Z",
+      "closed_at": null,
+      "prs": []
+    },
+    {
+      "number": 33,
+      "title": "Export the logo at 16 px",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/33",
+      "labels": [
+        "agent:design",
+        "priority:high"
+      ],
+      "column": "Ready for AI",
+      "priority": "high",
+      "agent": "design",
+      "created_at": "2026-11-04T02:00:00.000Z",
+      "updated_at": "2026-11-04T02:00:00.000Z",
+      "closed_at": null,
+      "prs": []
+    },
+    {
+      "number": 34,
+      "title": "Draft the call guide",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/34",
+      "labels": [
+        "agent:sales",
+        "priority:normal"
+      ],
+      "column": "Ready for AI",
+      "priority": "normal",
+      "agent": "sales",
+      "created_at": "2026-11-04T03:00:00.000Z",
+      "updated_at": "2026-11-04T03:00:00.000Z",
+      "closed_at": null,
+      "prs": []
+    },
+    {
+      "number": 15,
+      "title": "Appeal deadline calculator",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/15",
+      "labels": [
+        "agent:engineer"
+      ],
+      "column": "AI working",
+      "priority": "",
+      "agent": "engineer",
+      "created_at": "2026-11-03T22:00:00.000Z",
+      "updated_at": "2026-11-03T22:00:00.000Z",
+      "closed_at": null,
+      "prs": []
+    },
+    {
+      "number": 14,
+      "title": "Hero section",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/14",
+      "labels": [
+        "agent:design"
+      ],
+      "column": "Needs human",
+      "priority": "",
+      "agent": "design",
+      "created_at": "2026-11-02T22:00:00.000Z",
+      "updated_at": "2026-11-02T22:00:00.000Z",
+      "closed_at": null,
+      "prs": [
+        {
+          "number": 21,
+          "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/21",
+          "draft": false
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "title": "Check the lawyer quote",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30",
+      "labels": [
+        "human:adam"
+      ],
+      "column": "Needs human",
+      "priority": "",
+      "agent": "",
+      "created_at": "2026-11-03T22:00:00.000Z",
+      "updated_at": "2026-11-03T22:00:00.000Z",
+      "closed_at": null,
+      "prs": []
+    },
+    {
+      "number": 12,
+      "title": "Placeholder homepage",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12",
+      "labels": [
+        "agent:design"
+      ],
+      "column": "Done",
+      "priority": "",
+      "agent": "design",
+      "created_at": "2026-10-31T22:00:00.000Z",
+      "updated_at": "2026-10-31T22:00:00.000Z",
+      "closed_at": "2026-11-03T01:00:00.000Z",
+      "prs": []
+    }
+  ],
+  "links": [
+    {
+      "name": "YC Winter 2027 Late Application: The $15-an-Hour Expert",
+      "type": "Claude doc: YC draft answers, video script, blanks checklist, weak spots",
+      "link": "https://claude.ai/artifact/Q35wTuAQ1QWufX6NfEYCXJ",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "YC",
+      "status": "draft",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Prompt Playbook: $15-an-Hour Expert",
+      "type": "Claude doc: the numbered prompts and steps in 7 phases, worked through one at a time",
+      "link": "https://claude.ai/artifact/XTtj6UgGR8K8z3Lc4JPVFW",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Company and strategy",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "AI-Native Company Setup: $15-an-Hour Expert",
+      "type": "Claude doc: full company design and setup runbook",
+      "link": "https://claude.ai/artifact/TQAWm7wprrHy7nYyPuSDQR",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Company and strategy",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "fifteen-expert-hq",
+      "type": "GitHub repository: this repository, the company filing cabinet",
+      "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Ops",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Mission control",
+      "type": "GitHub Issue #10: the dashboard of every agent, rewritten by GitHub Actions",
+      "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/10",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Ops",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Status Issues #4 to #9",
+      "type": "GitHub Issues: one heartbeat log per agent",
+      "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues?q=label%3Astatus-board",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Ops",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "HQ",
+      "type": "Web app: the founders' private dashboard of everything and every agent (hq/, set up with hq/SETUP.md)",
+      "link": "https://fifteen-expert-hq.pages.dev/",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Ops",
+      "status": "planned",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "PROJECT_STATE.md",
+      "type": "File: where things stand, the one source of truth",
+      "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq/blob/main/PROJECT_STATE.md",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Company and strategy",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "COMPANY_BRIEF.md",
+      "type": "File: what the company does, the market and the plan",
+      "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq/blob/main/COMPANY_BRIEF.md",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Company and strategy",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "TEAM.md",
+      "type": "File: the founders, their roles and the first 4 weeks",
+      "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq/blob/main/TEAM.md",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Company and strategy",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "BRAND_BRIEF.md",
+      "type": "File: who we design for, what they must feel, and the main message",
+      "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq/blob/main/BRAND_BRIEF.md",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Brand and design",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "CLAUDE.md",
+      "type": "File: the rules every agent follows",
+      "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq/blob/main/CLAUDE.md",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Product and engineering",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Agent briefs and schedule",
+      "type": "Folder: one brief per agent, and agents/schedule.json",
+      "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/agents",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Product and engineering",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Scheduled tasks",
+      "type": "Claude Code page: each agent's scheduled task, its Run now button and its API trigger",
+      "link": "https://claude.ai/code/routines",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Product and engineering",
+      "status": "planned",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Claude usage",
+      "type": "Claude settings page: the Max plan's usage, checked every Monday",
+      "link": "https://claude.ai/settings/usage",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Ops",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Mission control board",
+      "type": "GitHub Project: Inbox, Ready for AI, AI working, Needs human, Done (may not exist yet)",
+      "link": "https://github.com/roulmediateam-byte?tab=projects",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Ops",
+      "status": "planned",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Design system",
+      "type": "Claude Design System artifact: colours, type, spacing, components, icons and the logo; the theme both founders confirmed on 4 Nov 2026",
+      "link": "https://claude.ai/artifact/WY7ikfEYykLdkh5TqMa2No",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Brand and design",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Practice flyer and LinkedIn banners",
+      "type": "Claude Design canvas: the practice flyer, the LinkedIn company cover and a banner per founder",
+      "link": "https://claude.ai/artifact/NZteBtMPJnVEoSXgSKQgCS",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Brand and design",
+      "status": "draft",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Logo directions in use",
+      "type": "Claude Design canvas: logo directions A, B and C tested on real uses; both founders chose B, Tick dot, on 4 Nov 2026",
+      "link": "https://claude.ai/artifact/VVqoGgRxoPUBJ6SbVFurv2",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Brand and design",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Pitch deck, 7 slides",
+      "type": "Claude Slides deck with speaker notes",
+      "link": "https://claude.ai/artifact/4QHoJkMd2944bbRtHkyuqE",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Brand and design",
+      "status": "draft",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "One-page website",
+      "type": "GitHub pull request #12: site/index.html, its fonts and brand/design-tokens.css; not merged, and merging publishes the site",
+      "link": "https://github.com/roulmediateam-byte/fifteen-expert-hq/pull/12",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Brand and design",
+      "status": "draft",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "One-page website preview",
+      "type": "Claude artifact: a private copy of site/index.html, for review until Cloudflare Pages gives preview links",
+      "link": "https://claude.ai/artifact/21BXp6BpPjsWs17MBf3bse",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Brand and design",
+      "status": "draft",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "YC application (live form)",
+      "type": "YC form: only Adam, who created it, can open it",
+      "link": "https://apply.ycombinator.com/apps/163b0f7b-532e-44ba-ae72-a9f60a06f28e/edit",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "YC",
+      "status": "draft",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "YC Requests for Startups",
+      "type": "Web page: YC's requests, including The $15-an-Hour Expert",
+      "link": "https://www.ycombinator.com/rfs",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "YC",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Claude Project \"claims-expert\"",
+      "type": "Claude Project: the private copies of PROJECT_STATE.md and brand/names.md, and the starter kit",
+      "link": "",
+      "link_text": "In Claude, no shared link",
+      "owner": "Adam",
+      "area": "Company and strategy",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Logo B files and design tokens",
+      "type": "Files in the Claude Project's brand/ folder: logo B (logo, white logo, icon, small-size icon, as SVG) and design-tokens.json; kept out of this public repository until the domain is bought",
+      "link": "",
+      "link_text": "In the Claude Project \"claims-expert\"",
+      "owner": "Adam",
+      "area": "Brand and design",
+      "status": "active",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Starter kit claims-expert-ai-env.zip",
+      "type": "File in the Claude Project: the 12-agent kit and the Zone 1 claims design; waits for revenue",
+      "link": "",
+      "link_text": "In the Claude Project \"claims-expert\"",
+      "owner": "Adam",
+      "area": "Product and engineering",
+      "status": "planned",
+      "added": "2026-11-04"
+    },
+    {
+      "name": "Cloudflare dashboard",
+      "type": "Web page: hosting for HQ and the website, and the Zero Trust login",
+      "link": "https://dash.cloudflare.com/",
+      "link_text": "",
+      "owner": "Adam",
+      "area": "Product and engineering",
+      "status": "planned",
+      "added": "2026-11-04"
+    }
+  ],
+  "decisions": [
+    {
+      "date": "2026-11-04",
+      "decision": "HQ: one private web app for the founders (hq/), on Cloudflare Pages with Cloudflare Access in front, both on free plans; ops/links.md becomes the single list of everything; a PAUSE-<name> file stops one agent.",
+      "why": "Playbook Prompt 8c: one place to see everything and every agent and to give an agent work, at no cost.",
+      "by": "Adam"
+    },
+    {
+      "date": "2026-11-04",
+      "decision": "Marvin's duties move to Adam: building the software, HIPAA security official (45 CFR 164.308(a)(2)) and owner of the engineer and reviewer agents. Melvin reviews and merges the pull requests that Adam's Claude sessions and agents open, because nobody merges their own pull request.",
+      "why": "Adam already writes all the code.",
+      "by": "Adam"
+    },
+    {
+      "date": "2026-11-04",
+      "decision": "Marvin Seng is no longer a founder and has no role in the company. The founders are Adam Lam and Melvin To.",
+      "why": "Not recorded.",
+      "by": "Adam"
+    },
+    {
+      "date": "2026-11-04",
+      "decision": "Cloudflare serves site/; design owns site/, engineer owns site/demo/.",
+      "why": "One folder for the whole website, with the demo inside it; settles the demo hosting question from pull request #3.",
+      "by": "Adam"
+    },
+    {
+      "date": "2026-11-04",
+      "decision": "Agent owners: chief of staff, design and research: Adam; engineer and reviewer: Marvin; sales: Melvin. The sales agent stays off until phase 5.",
+      "why": "Set in playbook Prompt 6 (no reason recorded).",
+      "by": "Adam"
+    },
+    {
+      "date": "2026-11-04",
+      "decision": "Keep the repository roulmediateam-byte/fifteen-expert-hq public and push everything, including TEAM.md and PROJECT_STATE.md.",
+      "why": "Not recorded (chosen when Claude asked before the first push).",
+      "by": "Adam"
+    },
+    {
+      "date": "2026-11-03",
+      "decision": "Melvin stays Head of Claims Operations and trains on US appeal rules first (Option A). Option B, Melvin to sales with Adam on claims quality, rejected.",
+      "why": "Clear roles, Adam stays on proven sales, appeal review stays off the CEO's desk, and Melvin is the live test of the product.",
+      "by": "The founders"
+    }
+  ],
+  "merged_prs": [
+    {
+      "number": 16,
+      "title": "[engineer] Add the fake claims loader",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/16",
+      "merged_at": "2026-11-03T21:00:00.000Z"
+    },
+    {
+      "number": 17,
+      "title": "Set up the filing cabinet",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/17",
+      "merged_at": "2026-11-02T20:00:00.000Z"
+    }
+  ],
+  "help": {
+    "playbook": "https://claude.ai/artifact/XTtj6UgGR8K8z3Lc4JPVFW",
+    "routines": "https://claude.ai/code/routines",
+    "usage": "https://claude.ai/settings/usage",
+    "mission_control": "https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/10"
+  },
+  "viewer": {
+    "email": "adam@example.com",
+    "name": "Adam"
+  },
+  "sample": true
+}

@@ -1,0 +1,10 @@
+{
+  "_note": "Numbers only a founder knows, as counts (whole numbers, or null until filed). A founder opens an Issue titled \"File: ops/kpis.json\" with lines such as \"calls_booked: 3\"; the chief of staff updates only those keys, sets updated to the Sydney date, and keeps this file valid JSON. No money amounts, no patient data, no names. The Company view (company/) shows them; agents/departments.json says which department each belongs to.",
+  "updated": "2026-11-05",
+  "fake_claims_score": null,
+  "calls_booked": null,
+  "pilots_signed": null,
+  "appeals_sent": null,
+  "appeals_won": null,
+  "lawyer_questions_open": null
+}

@@ -1,0 +1,75 @@
+# Mission control: rewrites Issue #10, "Mission control", from the agents'
+# heartbeats, pull requests and Issues. GitHub Actions only, no Claude usage.
+# The code is ops/dashboard/build.py (Python standard library only).
+name: Mission control
+
+on:
+  schedule:
+    - cron: "7 * * * *"   # every hour at minute 7
+  issue_comment:
+    types: [created]      # only Status Issues get through the job's if
+  pull_request:
+    types: [opened, closed]
+  push:
+    branches: [main]
+    paths: ["PAUSE", "PAUSE-*"]   # HQ's stop switch: show the pause at once
+  workflow_dispatch:
+
+permissions:
+  contents: write         # used only to push the dashboard branch
+  issues: write           # rewrite and pin the Mission control Issue
+  pull-requests: read
+
+concurrency:
+  group: mission-control
+  cancel-in-progress: false
+
+jobs:
+  dashboard:
+    # Skip every comment that is not on a Status Issue (label status-board)
+    # or not from the owner or a collaborator, and pull requests from forks.
+    if: >-
+      (github.event_name != 'issue_comment' ||
+        (contains(github.event.issue.labels.*.name, 'status-board') &&
+         contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association))) &&
+      (github.event_name != 'pull_request' ||
+        github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      MAIN: ${{ github.event.repository.default_branch || 'main' }}
+    steps:
+      - name: Get main
+        run: git clone --quiet --depth 1 --branch "$MAIN" "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git" repo
+
+      - name: Build the dashboard and update the Issue
+        run: |
+          if [ ! -f repo/ops/dashboard/build.py ]; then
+            echo "Mission control is not on $MAIN yet, so there is nothing to build."
+            exit 0
+          fi
+          python3 repo/ops/dashboard/build.py --schedule repo/agents/schedule.json --out "$RUNNER_TEMP/dashboard"
+
+      - name: Save a copy on the dashboard branch
+        run: |
+          [ -f "$RUNNER_TEMP/dashboard/status.json" ] || exit 0
+          mkdir -p "$RUNNER_TEMP/branch" && cd "$RUNNER_TEMP/branch"
+          git init --quiet
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPO}.git"
+          if git fetch --quiet --depth 1 origin dashboard; then
+            git checkout --quiet -b dashboard FETCH_HEAD
+          else
+            git symbolic-ref HEAD refs/heads/dashboard
+          fi
+          cp "$RUNNER_TEMP/dashboard/dashboard.md" "$RUNNER_TEMP/dashboard/status.json" .
+          git add dashboard.md status.json
+          if git diff --cached --quiet; then
+            echo "No change to save."
+          else
+            git commit --quiet -m "Mission control $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push --quiet origin dashboard
+          fi

@@ -1,7 +1,7 @@
 # sales
 
-Owner: Adam. The sales agent (label agent:sales) works here.
+Owner: Melvin. The sales agent (label agent:sales, human owner Melvin) works here. It is switched off until phase 5 of the playbook.
 
-What goes here: target lists of small US practices and billing companies from public sources, outreach drafts, call notes, objections heard, and the pilot offer.
+What goes here: the prospect list (prospects.csv) of small US practices and billing companies from public sources, the call guide (call-guide.md), messages (messages.md), call notes (calls/), the call log (call-log.csv), and the pilot offer.
 
-Rules: drafts only; Adam sends. Never promise recovery amounts, win rates or prices Adam has not approved. Business contact details only, never patient information.
+Rules: drafts only; a human sends and calls. Never promise recovery amounts, win rates or prices Adam has not approved. Business details only, never patient information. No private person's name, phone or email (CLAUDE.md rule 5): write their role and practice type instead. A practice's own published phone or email is fine.
