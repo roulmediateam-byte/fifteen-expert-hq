@@ -16,14 +16,20 @@ How to run and test: [README.md](README.md).
 | 4 | Presenter tour, practice switcher, Reset demo | Done |
 | 5 | Hosted build step, README, this file | Done |
 | 6 | Logic tests, browser tests, screenshots | Done |
-| 7 | Link the worker demo's last tour step to the portal | See pull request |
-| 8 | Pull request, pages branch, Cloudflare project | See pull request |
+| 7 | Link the worker demo's last tour step to the portal | Done: DEMO_PORTAL_URL on the worker demo's host, DEMO_WORKER_URL on the portal's |
+| 8 | Pull request, pages branch, Cloudflare project | Done: pull request #22; the public copy is live (5 Nov 2026, 13:41 Sydney) |
 
 ## Last results (5 Nov 2026)
 
 - Logic tests (`node --test site/demo/portal/tests/logic.test.mjs`): 13 of 13 pass.
 - Browser tests (`node site/demo/portal/tests/browser.test.mjs`), Chromium, 15 screens at each of 390, 320 and 1280 px: 0 console errors, no sideways scroll, nothing spilling out of the main column, no text under 4.5 to 1 contrast, a visible focus ring on every control reached with Tab (a self test proves both checks catch planted problems), and every screen reached by keyboard alone.
 - Flows in the browser: a sample file read and added (3 appeals, 1 new record request), the record sent, a letter signed (C-1045), another practice's claim refused, 10 of 10 tour steps opened, Reset demo.
+
+## Hosted copy (5 Nov 2026)
+
+- The public portal is live since 5 Nov 2026, 13:41 Sydney: a Cloudflare Pages project in Adam's Cloudflare account serves branch claude/client-portal-pages, with the settings in README.md. Its first build ran the build step ("Hosted settings: company name ...; opens as presenter; links the worker console demo.") and uploaded 67 files. Preview branches are off. Its address shows the company name, so it is in the private project notes, not here.
+- Checked live: the name shows, the guided tour opens, the last tour step links to the worker console demo, and claim C-1045 opens with its Sign button.
+- The worker console demo's host got the setting DEMO_PORTAL_URL, and its pages branch was refreshed from this branch, so its last tour step links here (checked live). Until pull requests #21 and #22 are merged, refresh claude/worker-demo-pages from claude/client-portal-demo, or the link goes away.
 
 ## Decisions
 
@@ -43,5 +49,5 @@ How to run and test: [README.md](README.md).
 ## Next three actions
 
 1. Melvin reviews the portal with the checklist in the pull request.
-2. Adam opens the public portal link (in the private project notes) in a private window.
+2. Adam opens the public portal link (in the private project notes) once in a private window.
 3. After Melvin's notes: fix them, regenerate the data if the worker demo changed, rerun both test files, and refresh the pages branch.
