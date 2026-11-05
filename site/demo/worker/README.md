@@ -30,7 +30,7 @@ The public copy runs on a Cloudflare Pages project of its own. Its name and addr
 Cloudflare Pages settings (the repository owner sets them once; hq/SETUP.md, section 3, walks through the same screens):
 
 - Production branch: claude/worker-demo-pages. Framework preset: None. Build command: `node scripts/hosted_settings.mjs`. Build output directory: `/` (or `.` if the box refuses `/`). Root directory: blank.
-- Settings, Variables and Secrets, for Production: `COMPANY_NAME` (Text: the name to show) and `DEMO_START_ROLE` (Text: `presenter` opens the guided tour). The build writes them into js/brand.js in the host's own copy only, so this repository keeps "[Company name]".
+- Settings, Variables and Secrets, for Production: `COMPANY_NAME` (Text: the name to show), `DEMO_START_ROLE` (Text: `presenter` opens the guided tour) and `DEMO_PORTAL_URL` (Text: the client portal demo's address, for the last tour step). The build writes them into js/brand.js in the host's own copy only, so this repository keeps "[Company name]" and no address.
 - Builds, Branch control: Preview branches None, so no other branch builds.
 
 The live copy changes only when someone refreshes that branch, never by itself, so a nightly change reaches it only after a person has checked it. Then refresh the branch from the top of the repository, and the host redeploys within a few minutes:

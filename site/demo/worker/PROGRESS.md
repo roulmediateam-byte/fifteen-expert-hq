@@ -87,6 +87,7 @@ A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.jso
 
 - A private Claude artifact: one self-contained page (code, data and fonts inside it, so the host loads nothing else) that opens on the guided tour. Its link is in the private project notes, not in this public repository. Rebuild and republish it after any change to the demo.
 - The public link (live since 5 Nov 2026, 12:52 Sydney): a Cloudflare Pages project, created in Adam's Cloudflare account with the settings in README.md, serves branch claude/worker-demo-pages. Its first build ran the build step ("Hosted settings: company name ...; opens as presenter."), and the live page was checked: the name shows, it opens on the guided tour, and tour claim 1 opens. Preview branches are off. Its address shows the company name, so it is in the private project notes, not here. At build time scripts/hosted_settings.mjs fills the name and the starting view from the project's settings (with a logic test), and _headers asks search engines not to index the copy. Checked locally the way Cloudflare builds and serves it (the build step with both settings, then the files at the top of an address), at 1280 and 390 px. README.md, section "Hosted copy", has the settings and the refresh command. The live copy changes only when someone refreshes that branch; the nightly engineer works on claude/worker-console-demo and does not touch it.
+- The last tour step links to the client portal demo's public copy (5 Nov 2026): the host's setting DEMO_PORTAL_URL, with this branch's pages refreshed from claude/client-portal-demo (pull request #22), where that change lives until it is merged.
 - Both open on the tour without a second copy of the code: the host's DEMO_START_ROLE setting does it, or ?role=presenter in the address (START_ROLE in js/brand.js stays 'worker').
 - A Claude session cannot create the host itself: the Cloudflare project needs Adam's own account, and the GitHub API path for Pages is blocked through the session's proxy (checked 5 Nov 2026).
 
@@ -99,7 +100,7 @@ A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.jso
 
 - The "View as" menu cuts off the long role names on narrow phones; the full name shows when the menu opens.
 - The checker cannot judge how strong an argument is. Melvin does (tour claim 3 shows this).
-- The practice-side demo does not exist yet.
+- The practice-side demo is the client portal demo (site/demo/portal/, in its own pull request, on top of this one). The last tour step links to it when the host sets DEMO_PORTAL_URL.
 - Logo B and the company name are not shown (placeholder), until the domain is bought.
 
 ## Next three actions
