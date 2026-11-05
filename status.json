@@ -1,6 +1,6 @@
 {
-  "updated": "Fri 6 Nov 2026 01:15 Sydney",
-  "updated_utc": "2026-11-05T14:15:29Z",
+  "updated": "Fri 6 Nov 2026 01:25 Sydney",
+  "updated_utc": "2026-11-05T14:25:26Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -116,6 +116,12 @@
         "hours": 30
       },
       {
+        "number": 21,
+        "title": "[engineer] Worker console demo (made-up claims)",
+        "kind": "pull request",
+        "hours": 13
+      },
+      {
         "number": 20,
         "title": "[chief-of-staff] Digest 2026-11-05",
         "kind": "pull request",
@@ -132,12 +138,6 @@
         "title": "[engineer] Add a first passing smoke test in prototype/",
         "kind": "pull request",
         "hours": 13
-      },
-      {
-        "number": 21,
-        "title": "[engineer] Worker console demo (made-up claims)",
-        "kind": "pull request",
-        "hours": 12
       },
       {
         "number": 22,
