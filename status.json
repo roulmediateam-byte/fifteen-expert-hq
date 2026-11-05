@@ -1,6 +1,6 @@
 {
-  "updated": "Fri 6 Nov 2026 04:13 Sydney",
-  "updated_utc": "2026-11-05T17:13:00Z",
+  "updated": "Fri 6 Nov 2026 05:05 Sydney",
+  "updated_utc": "2026-11-05T18:05:32Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -72,13 +72,13 @@
     {
       "name": "reviewer",
       "owner": "Adam",
-      "state": "overdue",
-      "reason": "no review yet of #22, #21",
-      "dot": "🔴",
+      "state": "working",
+      "reason": "",
+      "dot": "🟢",
       "task": "sweep",
-      "last_start": "Thu 5 Nov 11:37",
-      "minutes": "4",
-      "next_run": "Fri 6 Nov 05:00 sweep, and on every pull request",
+      "last_start": "Fri 6 Nov 05:05",
+      "minutes": "0 so far",
+      "next_run": "Sat 7 Nov 05:00 sweep, and on every pull request",
       "open_prs": []
     },
     {
@@ -113,37 +113,37 @@
         "number": 12,
         "title": "[design] Build the one-page website",
         "kind": "pull request",
-        "hours": 33
+        "hours": 34
       },
       {
         "number": 20,
         "title": "[chief-of-staff] Digest 2026-11-05",
         "kind": "pull request",
-        "hours": 16
+        "hours": 17
       },
       {
         "number": 19,
         "title": "[design] Add the page checklist",
         "kind": "pull request",
-        "hours": 16
+        "hours": 17
       },
       {
         "number": 18,
         "title": "[engineer] Add a first passing smoke test in prototype/",
         "kind": "pull request",
-        "hours": 16
+        "hours": 17
       },
       {
         "number": 21,
         "title": "[engineer] Worker console demo (made-up claims)",
         "kind": "pull request",
-        "hours": 15
+        "hours": 16
       },
       {
         "number": 22,
         "title": "[engineer] Client portal demo (made-up claims)",
         "kind": "pull request",
-        "hours": 14
+        "hours": 15
       }
     ]
   },
@@ -168,6 +168,7 @@
     "    idle check-own-prs :done, 2026-11-06 02:14, 2026-11-06 02:14",
     "    section reviewer",
     "    done sweep :done, 2026-11-05 11:37, 2026-11-05 11:39",
+    "    working sweep :active, 2026-11-06 05:05, 2026-11-06 05:05",
     "```"
   ],
   "board": {
@@ -182,7 +183,6 @@
   },
   "closed_last_7_days": 0,
   "alerts": [
-    "reviewer is overdue: no review yet of #22, #21",
     "research is overdue: no heartbeat since the Mon 2 Nov 03:00 run",
     "[#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) from engineer changes files outside its folders: agents/engineer.md",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"

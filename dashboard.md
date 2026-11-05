@@ -1,4 +1,4 @@
-Updated Fri 6 Nov 2026 04:13 Sydney
+Updated Fri 6 Nov 2026 05:05 Sydney
 
 # RUNNING
 
@@ -9,7 +9,7 @@ Updated Fri 6 Nov 2026 04:13 Sydney
 | 🟡 | chief-of-staff | Adam | waiting on human | daily-digest | Thu 5 Nov 11:33 | 2 | Fri 6 Nov 06:30 | [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
 | 🟡 | design | Adam | waiting on human | [#16](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/16) | Fri 6 Nov 01:14 | 3 | Sat 7 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🟡 | engineer | Adam | waiting on human | check-own-prs | Fri 6 Nov 02:14 | 1 | Sat 7 Nov 02:00 | [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22), [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21), [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
-| 🔴 | reviewer | Adam | overdue | sweep | Thu 5 Nov 11:37 | 4 | Fri 6 Nov 05:00 sweep, and on every pull request | none |
+| 🟢 | reviewer | Adam | working | sweep | Fri 6 Nov 05:05 | 0 so far | Sat 7 Nov 05:00 sweep, and on every pull request | none |
 | 🔴 | research | Adam | overdue | none | never |  | Mon 9 Nov 03:00 | none |
 | ⚪ | sales | Melvin | off | none | never |  | off (off until phase 5) | none |
 
@@ -21,12 +21,12 @@ Updated Fri 6 Nov 2026 04:13 Sydney
 
 **Melvin**
 
-- [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) [design] Build the one-page website (pull request, 33 hours)
-- [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) [chief-of-staff] Digest 2026-11-05 (pull request, 16 hours)
-- [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19) [design] Add the page checklist (pull request, 16 hours)
-- [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) [engineer] Add a first passing smoke test in prototype/ (pull request, 16 hours)
-- [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) [engineer] Worker console demo (made-up claims) (pull request, 15 hours)
-- [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22) [engineer] Client portal demo (made-up claims) (pull request, 14 hours)
+- [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) [design] Build the one-page website (pull request, 34 hours)
+- [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) [chief-of-staff] Digest 2026-11-05 (pull request, 17 hours)
+- [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19) [design] Add the page checklist (pull request, 17 hours)
+- [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) [engineer] Add a first passing smoke test in prototype/ (pull request, 17 hours)
+- [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) [engineer] Worker console demo (made-up claims) (pull request, 16 hours)
+- [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22) [engineer] Client portal demo (made-up claims) (pull request, 15 hours)
 
 ## Timeline
 
@@ -50,6 +50,7 @@ gantt
     idle check-own-prs :done, 2026-11-06 02:14, 2026-11-06 02:14
     section reviewer
     done sweep :done, 2026-11-05 11:37, 2026-11-05 11:39
+    working sweep :active, 2026-11-06 05:05, 2026-11-06 05:05
 ```
 
 ## Board
@@ -69,7 +70,6 @@ Issues closed in the last 7 days: 0.
 
 ## Alerts
 
-- 🔴 reviewer is overdue: no review yet of #22, #21
 - 🔴 research is overdue: no heartbeat since the Mon 2 Nov 03:00 run
 - 🔴 [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) from engineer changes files outside its folders: agents/engineer.md
 - 🔴 [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md
