@@ -23,19 +23,25 @@ Then open http://127.0.0.1:8080/ in a browser. (Opening index.html straight from
   - `?role=presenter` opens on the guided tour, and `?role=reviewer` opens Melvin's view. Without it, the demo opens as Jordan (START_ROLE in js/brand.js).
   - They combine: `?name=YourName&role=presenter`.
 
-## Hosted copy (GitHub Pages)
+## Hosted copy
 
-GitHub Pages can serve this folder as a public page, with no server of ours. The branch claude/worker-demo-pages holds only this folder's files, at its top level. The empty .nojekyll file tells GitHub to serve the files as they are.
+The public copy runs on a Cloudflare Pages project of its own. Its name and address show the company name, so they are kept out of this repository, in the founders' private notes. The branch claude/worker-demo-pages holds only this folder's files, at its top level, so the host needs no build tool.
 
-Once, by hand, the repository owner turns it on: Settings, Pages, Build and deployment, Source "Deploy from a branch", branch claude/worker-demo-pages, folder / (root), Save. A minute or two later the demo is at https://roulmediateam-byte.github.io/fifteen-expert-hq/ (add `?role=presenter` to open on the guided tour).
+Cloudflare Pages settings (the repository owner sets them once; hq/SETUP.md, section 3, walks through the same screens):
 
-After any change to this folder, refresh that branch from the top of the repository:
+- Production branch: claude/worker-demo-pages. Framework preset: None. Build command: `node scripts/hosted_settings.mjs`. Build output directory: `/` (or `.` if the box refuses `/`). Root directory: blank.
+- Settings, Variables and Secrets, for Production: `COMPANY_NAME` (Text: the name to show) and `DEMO_START_ROLE` (Text: `presenter` opens the guided tour). The build writes them into js/brand.js in the host's own copy only, so this repository keeps "[Company name]".
+- Builds, Branch control: Preview branches None, so no other branch builds.
+
+The live copy changes only when someone refreshes that branch, never by itself, so a nightly change reaches it only after a person has checked it. Then refresh the branch from the top of the repository, and the host redeploys within a few minutes:
 
 ```
 git push --force origin "$(git subtree split -P site/demo/worker HEAD)":refs/heads/claude/worker-demo-pages
 ```
 
-It replaces only that branch, and GitHub republishes within a few minutes. The page is public: everything in it is made up (FAKE), and it shows no company name unless the address has `?name=`.
+It replaces only that branch. The same branch also works on GitHub Pages (Settings, Pages, Deploy from a branch, claude/worker-demo-pages, / (root)); the empty .nojekyll file tells GitHub to serve the files as they are. GitHub Pages has no build step, so there the address needs `?name=YourName&role=presenter`.
+
+The page is public, and everything in it is made up (FAKE). The page and _headers ask search engines not to index it.
 
 ## Roles and screens
 
@@ -102,8 +108,9 @@ Each script exits with code 1 when a target or a check fails.
 | js/lib/ | Shared logic, also run by the scripts: dates, rules, evidence, letter, checker, coach |
 | js/views/ | One file per screen |
 | data/ | claims.json (50 FAKE claims) and planted_errors.json (the answer key) |
-| scripts/ | make_demo_claims.mjs (writes data/, same output every run), score_demo.mjs, serve.mjs |
+| scripts/ | make_demo_claims.mjs (writes data/, same output every run), score_demo.mjs, serve.mjs, hosted_settings.mjs (fills the name and start view on a host's build) |
 | tests/ | Logic tests, browser tests and the walkthrough |
 | screenshots/ | Every screen at 390 and 1280 px, from the last browser test run |
 | assets/ | Cut-down fonts and their licences, and the icon licence |
 | .nojekyll | Empty. Tells GitHub Pages to serve the files as they are |
+| _headers | Asks search engines not to index the hosted copy (Cloudflare Pages reads it) |
