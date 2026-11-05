@@ -1,0 +1,9 @@
+{
+  "name": "fifteen-expert-hq-hq",
+  "private": true,
+  "type": "module",
+  "description": "HQ: the founders' dashboard. Plain HTML, CSS and JavaScript, plus Cloudflare Pages Functions. No dependencies and no build step.",
+  "scripts": {
+    "test": "node --test tests/status.test.js tests/functions.test.js"
+  }
+}

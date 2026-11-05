@@ -1,0 +1,101 @@
+{
+  "_note": "The company's departments and roles, shown by the Company view (company/) and summed up in agents/README.md. A role whose id is an agent in agents/schedule.json takes its on or off from there, so it has no status here. Every other role has status planned and switch_on_when. kind is agent, product or people; owner and lead are founders. KPIs are counts only, each with a label, a source and how it is counted: files dated in a folder, open Issues with a human: label, merged pull requests tagged with an agent, or a key in ops/kpis.json. No money amounts, no patient data, no private person's name. Change it through a reviewed pull request; company/tests/departments.test.js checks it.",
+  "departments": [
+    {
+      "id": "operations",
+      "name": "Operations",
+      "lead": "Adam",
+      "mission": "Keep the company running and both founders informed.",
+      "kpis": [
+        {"id": "digests_7d", "label": "Digests in the last 7 days", "source": "Files added in ops/digest/", "count": {"files_in": "ops/digest/", "days": 7}},
+        {"id": "issues_waiting_on_founder", "label": "Issues waiting on a founder", "source": "Open Issues with a human: label", "count": {"open_issues_with_label": "human:"}}
+      ],
+      "roles": [
+        {"id": "chief-of-staff", "title": "Chief of staff", "kind": "agent", "owner": "Adam", "job": "Daily digest, filing and the work board."}
+      ]
+    },
+    {
+      "id": "engineering",
+      "name": "Engineering",
+      "lead": "Adam",
+      "mission": "Build the claims software and keep every change safe.",
+      "kpis": [
+        {"id": "fake_claims_score", "label": "Score on the 50 made-up claims", "source": "ops/kpis.json key fake_claims_score, from the engineer's test report", "count": {"kpis_key": "fake_claims_score"}, "out_of": 50},
+        {"id": "engineer_merged_7d", "label": "Pull requests merged in the last 7 days by the engineer", "source": "Pull requests tagged [engineer], merged on GitHub", "count": {"merged_pull_requests_by": "engineer", "days": 7}}
+      ],
+      "roles": [
+        {"id": "engineer", "title": "Engineer", "kind": "agent", "owner": "Adam", "job": "Builds and tests the demo on made-up claims."},
+        {"id": "reviewer", "title": "Reviewer", "kind": "agent", "owner": "Adam", "job": "Checks every pull request against CLAUDE.md and never merges."}
+      ]
+    },
+    {
+      "id": "brand",
+      "name": "Brand and Marketing",
+      "lead": "Adam",
+      "mission": "Make the company look trustworthy to small US practices.",
+      "kpis": [
+        {"id": "design_merged_7d", "label": "Design pieces merged in the last 7 days", "source": "Pull requests tagged [design], merged on GitHub", "count": {"merged_pull_requests_by": "design", "days": 7}}
+      ],
+      "roles": [
+        {"id": "design", "title": "Design", "kind": "agent", "owner": "Adam", "job": "Pages and design pieces from the design system."},
+        {"id": "marketing", "title": "Marketing", "kind": "agent", "owner": "Adam", "job": "Drafts LinkedIn posts and pages on common denial codes for a founder to publish.", "status": "planned", "switch_on_when": "When the domain is bought and the website is live."}
+      ]
+    },
+    {
+      "id": "sales",
+      "name": "Sales and Customers",
+      "lead": "Adam",
+      "mission": "Find practices, win pilots and keep them happy.",
+      "kpis": [
+        {"id": "calls_booked", "label": "Calls booked", "source": "ops/kpis.json key calls_booked, filed by a founder", "count": {"kpis_key": "calls_booked"}},
+        {"id": "pilots_signed", "label": "Pilot practices signed", "source": "ops/kpis.json key pilots_signed, filed by a founder", "count": {"kpis_key": "pilots_signed"}}
+      ],
+      "roles": [
+        {"id": "sales", "title": "Sales", "kind": "agent", "owner": "Melvin", "job": "Prospect lists, call scripts and email drafts."},
+        {"id": "customer-success", "title": "Customer success", "kind": "agent", "owner": "Melvin", "job": "Each practice's onboarding checklist and monthly report from totals.", "status": "planned", "switch_on_when": "When the first pilot practice signs."}
+      ]
+    },
+    {
+      "id": "claims",
+      "name": "Claims Operations",
+      "lead": "Melvin",
+      "mission": "Turn denials into won appeals, each checked by a trained person.",
+      "kpis": [
+        {"id": "appeals_sent", "label": "Appeals sent", "source": "ops/kpis.json key appeals_sent, filed by a founder (from phase 7)", "count": {"kpis_key": "appeals_sent"}},
+        {"id": "appeals_won", "label": "Appeals won", "source": "ops/kpis.json key appeals_won, filed by a founder (from phase 7)", "count": {"kpis_key": "appeals_won"}}
+      ],
+      "roles": [
+        {"id": "appeal-drafter", "title": "Appeal drafter", "kind": "product", "owner": "Melvin", "job": "Drafts each appeal inside the claims system under BAAs, never in this repository.", "status": "planned", "switch_on_when": "Phase 7, after the security check."},
+        {"id": "trained-reviewers", "title": "Trained reviewers", "kind": "people", "owner": "Melvin", "job": "Check and send every appeal.", "status": "planned", "switch_on_when": "When the pilot proves the process."}
+      ]
+    },
+    {
+      "id": "research",
+      "name": "Research and Insights",
+      "lead": "Adam",
+      "mission": "Know the rules, the insurers and the market.",
+      "kpis": [
+        {"id": "research_notes_30d", "label": "Research notes in the last 30 days", "source": "Files added in research/", "count": {"files_in": "research/", "days": 30}}
+      ],
+      "roles": [
+        {"id": "research", "title": "Research", "kind": "agent", "owner": "Adam", "job": "Weekly watch on rules, insurers, the market and competitors."},
+        {"id": "data-analyst", "title": "Data analyst", "kind": "agent", "owner": "Adam", "job": "Weekly numbers, as counts only.", "status": "planned", "switch_on_when": "When the first 10 appeal decisions are back."}
+      ]
+    },
+    {
+      "id": "finance-legal",
+      "name": "Finance and Legal",
+      "lead": "Adam",
+      "lead_note": "Melvin for privacy",
+      "mission": "Keep the money, the contracts and HIPAA in order.",
+      "kpis": [
+        {"id": "lawyer_questions_open", "label": "Open questions for the lawyer", "source": "ops/kpis.json key lawyer_questions_open, filed by a founder", "count": {"kpis_key": "lawyer_questions_open"}}
+      ],
+      "roles": [
+        {"id": "finance", "title": "Finance", "kind": "agent", "owner": "Adam", "job": "Invoice drafts and a 13-week cash forecast, never moves money.", "status": "planned", "switch_on_when": "When the US company and its bank account exist."},
+        {"id": "legal-contracts", "title": "Legal and contracts", "kind": "agent", "owner": "Adam", "job": "Fills practice agreements and BAAs and tracks renewal dates, never signs or sends.", "status": "planned", "switch_on_when": "When the lawyer approves the templates."},
+        {"id": "compliance-monitor", "title": "Compliance monitor", "kind": "agent", "owner": "Melvin", "job": "The BAA register, training reminders and a monthly report, never opens claims data.", "status": "planned", "switch_on_when": "Before the first real claim."}
+      ]
+    }
+  ]
+}

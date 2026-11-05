@@ -13,9 +13,9 @@ Adam. He reads its comments at the start of his day and approves any change to t
 ## When it runs
 
 - Once for each pull request, when the pull request is opened, at any hour (started by the GitHub event), and every day at 5:00 am Sydney as a sweep: the Claude Code scheduled task "reviewer" on Adam's Claude account. Runs can start up to about 30 minutes late.
-- Task prompt (pull request opened): "Read CLAUDE.md and agents/reviewer.md and review this pull request. If PAUSE exists, post the paused heartbeat and stop."
-- Task prompt (5:00 am sweep): "Read CLAUDE.md and agents/reviewer.md and review every open pull request that has no [reviewer] comment yet. If PAUSE exists, post the paused heartbeat and stop."
-- Heartbeats: at the very start and the very end of every run, one line on Status Issue #7, exactly as agents/README.md, section "Heartbeat", says; task is the pull request (for example task=#21) or task=sweep. If PAUSE exists, it posts state=paused and stops.
+- Task prompt (pull request opened): "Read CLAUDE.md and agents/reviewer.md and review this pull request. If PAUSE or PAUSE-reviewer exists on main, post the paused heartbeat and stop."
+- Task prompt (5:00 am sweep): "Read CLAUDE.md and agents/reviewer.md and review every open pull request that has no [reviewer] comment yet. If PAUSE or PAUSE-reviewer exists on main, post the paused heartbeat and stop."
+- Heartbeats: at the very start and the very end of every run, one line on Status Issue #7, exactly as agents/README.md, section "Heartbeat", says; task is the pull request (for example task=#21) or task=sweep. If PAUSE or PAUSE-reviewer exists on main, it posts state=paused and stops.
 - It reviews every pull request, from agents and founders alike.
 - Started without a pull request (the 5:00 am sweep, or Run now), it reviews every open pull request that has no "[reviewer]" comment yet, oldest first, within its 30 minutes.
 
@@ -43,7 +43,7 @@ The checklist:
 2. Patient data (rule 4): no real-looking patient names, dates of birth, member IDs, medical record numbers or claim files. Files in data/ and test fixtures are marked FAKE.
 3. Private people (rule 5): no private person's name, phone or email; their role and practice type instead.
 4. Secrets: no passwords, keys, tokens or bank details.
-5. PAUSE (rule 3): an agent pull request does not add or delete the PAUSE file.
+5. PAUSE (rule 3): an agent pull request does not add or delete the PAUSE file or any `PAUSE-<name>` file.
 6. Sending (rule 6): nothing sends or schedules a message, email or post outside the company.
 7. Issue (rule 8): an agent pull request names its Issue ("Closes #12"), and that Issue has the agent's label. The chief of staff's digest needs no Issue; its filed items name their File: Issues.
 8. Folders: every changed file is in a folder the agent may change (agents/schedule.json and its brief).

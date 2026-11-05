@@ -1,0 +1,16 @@
+{
+  "name": "fifteen-expert-hq-company-view",
+  "private": true,
+  "type": "module",
+  "description": "The Company view: a read-only page of the company by department, behind a passcode. Plain HTML, CSS and JavaScript plus Cloudflare Pages Functions; no build step. wrangler is only for running it on a computer.",
+  "scripts": {
+    "test": "node --test tests/gate.test.js tests/view.test.js tests/departments.test.js tests/copies.test.js",
+    "copy-hq": "node tests/copy-hq.mjs",
+    "sample": "node tests/make-sample.mjs",
+    "check-local": "node tests/local-check.mjs",
+    "screenshots": "node tests/screenshots.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.151.3"
+  }
+}

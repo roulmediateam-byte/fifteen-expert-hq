@@ -1,0 +1,109 @@
+{
+  "folders": [
+    {
+      "path": "agents/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/agents",
+      "owner": "Adam",
+      "what": "One brief per agent, named after its label without \"agent:\""
+    },
+    {
+      "path": "brand/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/brand",
+      "owner": "Adam",
+      "what": "The brand"
+    },
+    {
+      "path": "data/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/data",
+      "owner": "Adam",
+      "what": "Made-up data only, in one subfolder per kind"
+    },
+    {
+      "path": "data/fake-claims/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/data/fake-claims",
+      "owner": "Melvin, with Adam (file format and tests)",
+      "what": "Made-up claims for testing the appeal pipeline and the review screen, including the 50-claim week 3 test set with planted errors (wrong code, missing record, unsupported clinical statement, missed deadline), and its a..."
+    },
+    {
+      "path": "design/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/design",
+      "owner": "Adam",
+      "what": "Designs other than the website, as self-contained HTML pages, one file per piece, built from brand/design-tokens.css and the design system notes in brand/: a 5-slide pitch deck, a one-page practice flyer, an email sig..."
+    },
+    {
+      "path": "finance/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/finance",
+      "owner": "Adam",
+      "what": "The budget (including the pre-pilot budget), the spend log, pricing notes, invoices and the cash forecast"
+    },
+    {
+      "path": "hq/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/hq",
+      "owner": "Adam",
+      "what": "HQ, the founders' private web page that shows everything the company has and what every AI agent is doing, and lets a founder give an agent work"
+    },
+    {
+      "path": "legal/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/legal",
+      "owner": "Adam",
+      "what": "Questions for the lawyer and the answers, practice agreement and BAA templates and drafts, and HIPAA policies"
+    },
+    {
+      "path": "ops/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/ops",
+      "owner": "Adam",
+      "what": "How the company runs: decisions, links, labels and the daily digest"
+    },
+    {
+      "path": "ops/dashboard/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/ops/dashboard",
+      "owner": "Adam",
+      "what": "build.py, which rewrites Issue #10, \"Mission control\", and selftest.py, its offline checks with made-up data"
+    },
+    {
+      "path": "ops/digest/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/ops/digest",
+      "owner": "Adam",
+      "what": "The daily digest, one file per day, named YYYY-MM-DD-digest.md (for example 2026-11-09-digest.md)"
+    },
+    {
+      "path": "prototype/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/prototype",
+      "owner": "Adam",
+      "what": "The demo and its tests, laid out as prototype/SPEC.md says once it exists: the code, the drafting and checking instructions in prompts/, and the results saved from runs on fake claims"
+    },
+    {
+      "path": "research/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/research",
+      "owner": "Melvin",
+      "what": "Notes on the market, competitors, US appeal rules (Medicare, Medicaid managed care, commercial payers), CARC and RARC codes and payer policy changes"
+    },
+    {
+      "path": "sales/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/sales",
+      "owner": "Melvin",
+      "what": "The prospect list (prospects.csv) of small US practices and billing companies from public sources, the call guide (call-guide.md), messages (messages.md), call notes (calls/), the call log (call-log.csv), and the pilo..."
+    },
+    {
+      "path": "site/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/site",
+      "owner": "Adam",
+      "what": "The website"
+    },
+    {
+      "path": "site/demo/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/site/demo",
+      "owner": "Adam",
+      "what": "The static demo page, site/demo/index.html, showing results saved in prototype/results/ from runs on made-up claims"
+    },
+    {
+      "path": "yc/",
+      "url": "https://github.com/roulmediateam-byte/fifteen-expert-hq/tree/main/yc",
+      "owner": "Adam",
+      "what": "Y Combinator work"
+    }
+  ],
+  "note": "",
+  "generated_at": "2026-11-04T23:00:00.000Z",
+  "sample": true
+}

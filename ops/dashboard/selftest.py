@@ -34,7 +34,7 @@ def pull(number, title, created, branch, labels=(), comments=()):
             "_reviews": [], "_comments": list(comments)}
 
 
-def data_with(paused=False, engineer_start=at(5, 9, 30)):
+def data_with(paused=False, engineer_start=at(5, 9, 30), pause_files=None):
     comments = {
         "chief-of-staff": [beat("chief-of-staff", f"state=working task=digest start={at(5, 6, 32)} session=none", at(5, 6, 32)),
                            beat("chief-of-staff", "state=done task=digest pr=#20 minutes=13 note=digest and one filed item", at(5, 6, 45))],
@@ -48,6 +48,7 @@ def data_with(paused=False, engineer_start=at(5, 9, 30)):
     }
     return {
         "paused": paused,
+        "pause_files": pause_files if pause_files is not None else (["PAUSE"] if paused else []),
         "status_issues": {agent["name"]: {"number": agent["status_issue"]} for agent in SCHEDULE["agents"]},
         "heartbeats": {name: build.heartbeats_from(items, name) for name, items in comments.items()},
         "open_prs": [
@@ -64,7 +65,11 @@ def data_with(paused=False, engineer_start=at(5, 9, 30)):
             {"number": 4, "title": "Status: chief-of-staff", "created_at": at(4, 3, 0), "labels": [{"name": "status-board"}]},
         ],
         "closed_issues": [{"number": 31, "labels": [], "closed_at": at(4, 12, 0)}],
-        "main_commits": [{"sha": "abc1234def", "message": "Edit README on main", "url": "", "from_pr": False}],
+        "main_commits": [{"sha": "abc1234def", "message": "Edit README on main", "url": "", "from_pr": False, "hq_pause": False},
+                         {"sha": "0aa0aa0aa0", "message": "[hq] Pause the design agent, by Adam", "url": "",
+                          "from_pr": False, "hq_pause": True},
+                         {"sha": "0bb0bb0bb0", "message": "[hq] Resume every agent, by Adam", "url": "",
+                          "from_pr": False, "hq_pause": False}],
         "notes": [],
     }
 
@@ -106,6 +111,13 @@ check("done digest :done, 2026-11-05 06:32, 2026-11-05 06:45" in body, "done run
 alerts = "\n".join(model["alerts"])
 check("site/demo/index.html" in alerts and "#21" in alerts, "out-of-folder alert")
 check("abc1234" in alerts, "commit on main alert")
+check("0aa0aa0" not in alerts, "an HQ pause commit raises no alert")
+check(any("0aa0aa0" in notice for notice in model["notices"]) and "Stop switch on main" in body, "an HQ pause commit is still listed")
+check("0bb0bb0" in alerts, "a commit that only copies HQ's message, without being a pause commit, is an alert")
+check([commit["sha"] for commit in model["direct_commits"]] == ["abc1234def", "0bb0bb0bb0"], f"direct commits: {model['direct_commits']}")
+check([commit["sha"] for commit in model["pause_commits"]] == ["0aa0aa0aa0"], f"pause commits: {model['pause_commits']}")
+check(model["outside_folders"] == [{"pr": 21, "agent": "design", "files": ["site/demo/index.html"]}],
+      f"outside folders: {model['outside_folders']}")
 check("open 73 hours" in alerts and "#22" in alerts, "old pull request alert")
 check("research is overdue" in alerts and "reviewer is overdue" in alerts and "design is failed" in alerts, "agent alerts")
 check("no review yet of #20, #22" in alerts, "reviewer misses #20 and #22, not #21")
@@ -123,6 +135,12 @@ paused_model = build.build_model(SCHEDULE, data_with(paused=True), NOW)
 paused = states(paused_model)
 check(all(paused[name] == "paused" for name in paused if name != "sales") and paused["sales"] == "off", f"paused: {paused}")
 check("# PAUSED" in build.render(paused_model), "paused status line")
+one_model = build.build_model(SCHEDULE, data_with(pause_files=["PAUSE-design"]), NOW)
+one = states(one_model)
+check(one["design"] == "paused" and one["engineer"] == "working", f"PAUSE-design: {one}")
+check(next(row for row in one_model["agents"] if row["name"] == "design")["reason"] == "PAUSE-design file on main", "PAUSE-design reason")
+check("# RUNNING" in build.render(one_model) and "Paused one by one: PAUSE-design" in build.render(one_model), "one-by-one pause line")
+check(build.PAUSE_FILE.fullmatch("PAUSE-chief-of-staff") and not build.PAUSE_FILE.fullmatch("PAUSE-x/../README.md"), "PAUSE file names")
 
 fields = build.parse_heartbeat("[heartbeat] agent=design state=done task=#14 pr=#21 minutes=22 note=hero section drafted, needs a photo")
 check(fields and fields["note"] == "hero section drafted, needs a photo" and fields["pr"] == "#21", f"parse: {fields}")

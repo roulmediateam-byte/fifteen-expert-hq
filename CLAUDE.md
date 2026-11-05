@@ -6,7 +6,7 @@ This repository is the filing cabinet of The $15-an-Hour Expert. We appeal denie
 
 1. Never push to main; always work on a claude/ branch and open a pull request.
 2. Read PROJECT_STATE.md first. Then read your brief in agents/, your Issue, and the README.md of each folder you will change.
-3. If a file named PAUSE exists at the top level of this repository, post one heartbeat with state=paused on your Status Issue (agents/README.md, section "Heartbeat"), then stop at once and wait for a human. Check for it before you start and between steps. Only a human removes it.
+3. If a file named PAUSE, or `PAUSE-<your agent name>` (for example PAUSE-design), exists at the top level of main, post one heartbeat with state=paused on your Status Issue (agents/README.md, section "Heartbeat"), then stop at once and wait for a human. PAUSE stops every agent; PAUSE-<name> stops one. Check for both before you start and between steps (agents/README.md has the command). Only a human creates or removes them, by hand or with HQ's stop switch.
 4. No patient data, ever. Use made-up data only, and mark it FAKE (see data/fake-claims/README.md).
 5. Never write a private person's name, phone or email in an Issue, comment, pull request or file. Write their role and practice type instead. This means people outside the company, such as a practice's office manager; the founders' names are fine.
 6. Never send messages, emails or posts outside the company. Write drafts in this repository or on your Issue. A human sends.
@@ -21,6 +21,7 @@ This repository is the filing cabinet of The $15-an-Hour Expert. We appeal denie
 - If you see patient data anywhere (a patient name, date of birth, member ID, medical record or real claim file): stop, do not copy it, and open an Issue labelled human:adam and human:melvin that says where it is, without the data.
 - Label legal points "general information, not legal advice".
 - Never commit passwords, API keys, tokens or bank details.
+- Never write the company name, logo or domain in this repository until the founders say the domain is bought. Pages read the name from the Cloudflare setting COMPANY_NAME.
 
 ## Pull request template
 
