@@ -1,4 +1,4 @@
-Updated Thu 5 Nov 2026 11:33 Sydney
+Updated Thu 5 Nov 2026 11:34 Sydney
 
 # RUNNING
 
@@ -6,7 +6,7 @@ Updated Thu 5 Nov 2026 11:33 Sydney
 
 | | Agent | Owner | State | Current or last task | Last run start (Sydney) | Minutes | Next run (Sydney) | Open pull requests |
 |---|---|---|---|---|---|---|---|---|
-| 🟢 | chief-of-staff | Adam | working | daily-digest | Thu 5 Nov 11:33 | 0 so far | Fri 6 Nov 06:30 | [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
+| 🟡 | chief-of-staff | Adam | waiting on human | daily-digest | Thu 5 Nov 11:33 | 2 | Fri 6 Nov 06:30 | [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
 | 🟡 | design | Adam | waiting on human | picking | Thu 5 Nov 11:33 | 1 | Fri 6 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🟡 | engineer | Adam | waiting on human | pick-work | Thu 5 Nov 11:32 | 1 | Fri 6 Nov 02:00 | [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
 | 🔴 | reviewer | Adam | overdue | none | never |  | Fri 6 Nov 05:00 sweep, and on every pull request | none |
@@ -35,7 +35,7 @@ gantt
     axisFormat %a %H:%M
     section chief-of-staff
     done daily-digest :done, 2026-11-05 11:31, 2026-11-05 11:32
-    working daily-digest :active, 2026-11-05 11:33, 2026-11-05 11:33
+    done daily-digest :done, 2026-11-05 11:33, 2026-11-05 11:34
     section design
     done picking :done, 2026-11-05 11:31, 2026-11-05 11:32
     idle picking :done, 2026-11-05 11:33, 2026-11-05 11:33

@@ -1,6 +1,6 @@
 {
-  "updated": "Thu 5 Nov 2026 11:33 Sydney",
-  "updated_utc": "2026-11-05T00:33:57Z",
+  "updated": "Thu 5 Nov 2026 11:34 Sydney",
+  "updated_utc": "2026-11-05T00:34:27Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -20,12 +20,12 @@
     {
       "name": "chief-of-staff",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
-      "dot": "🟢",
+      "state": "waiting on human",
+      "reason": "open pull request with no human review",
+      "dot": "🟡",
       "task": "daily-digest",
       "last_start": "Thu 5 Nov 11:33",
-      "minutes": "0 so far",
+      "minutes": "2",
       "next_run": "Fri 6 Nov 06:30",
       "open_prs": [
         20
@@ -134,7 +134,7 @@
     "    axisFormat %a %H:%M",
     "    section chief-of-staff",
     "    done daily-digest :done, 2026-11-05 11:31, 2026-11-05 11:32",
-    "    working daily-digest :active, 2026-11-05 11:33, 2026-11-05 11:33",
+    "    done daily-digest :done, 2026-11-05 11:33, 2026-11-05 11:34",
     "    section design",
     "    done picking :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    idle picking :done, 2026-11-05 11:33, 2026-11-05 11:33",
