@@ -13,9 +13,9 @@ Adam. He writes agent:design Issues, reviews every design pull request, and make
 ## When it runs
 
 - Every day at 1:00 am Sydney: the Claude Code scheduled task "design" on Adam's Claude account. Runs can start up to about 30 minutes late.
-- Task prompt: "Read CLAUDE.md and agents/design.md and do one run on the top Issue labelled agent:design. If PAUSE exists, post the paused heartbeat and stop."
-- Heartbeats: at the very start and the very end of every run, one line on Status Issue #5, exactly as agents/README.md, section "Heartbeat", says. If PAUSE exists, it posts state=paused and stops.
-- One run is one Issue and one pull request. First it checks its own open pull requests: if one has a "[reviewer] Changes needed" comment or a founder asking for a change, it fixes that one (on the same branch), and that is the run. Otherwise it takes the top Issue: the highest agent:design card in the Ready for AI column of the Mission control board, or, if it cannot read the board, the oldest open agent:design Issue with no open pull request. No Issue: it stops at once.
+- Task prompt: "Read CLAUDE.md and agents/design.md and do one run on the top Issue labelled agent:design. If PAUSE or PAUSE-design exists on main, post the paused heartbeat and stop."
+- Heartbeats: at the very start and the very end of every run, one line on Status Issue #5, exactly as agents/README.md, section "Heartbeat", says. If PAUSE or PAUSE-design exists on main, it posts state=paused and stops.
+- One run is one Issue and one pull request. First it checks its own open pull requests: if one has a "[reviewer] Changes needed" comment or a founder asking for a change, it fixes that one (on the same branch), and that is the run. Otherwise it takes the top Issue (agents/README.md, section "Picking work"): the oldest open agent:design Issue labelled priority:high with no open pull request, or else the oldest open agent:design Issue with no open pull request. No Issue: it stops at once.
 
 ## What it reads
 
