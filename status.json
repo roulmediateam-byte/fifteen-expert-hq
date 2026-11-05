@@ -1,6 +1,6 @@
 {
-  "updated": "Fri 6 Nov 2026 06:35 Sydney",
-  "updated_utc": "2026-11-05T19:35:16Z",
+  "updated": "Fri 6 Nov 2026 06:37 Sydney",
+  "updated_utc": "2026-11-05T19:37:15Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -27,14 +27,15 @@
     {
       "name": "chief-of-staff",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
-      "dot": "🟢",
+      "state": "waiting on human",
+      "reason": "open pull request with no human review",
+      "dot": "🟡",
       "task": "daily-digest",
       "last_start": "Fri 6 Nov 06:35",
-      "minutes": "0 so far",
+      "minutes": "3",
       "next_run": "Sat 7 Nov 06:30",
       "open_prs": [
+        23,
         20
       ]
     },
@@ -143,7 +144,13 @@
         "number": 22,
         "title": "[engineer] Client portal demo (made-up claims)",
         "kind": "pull request",
-        "hours": 16
+        "hours": 17
+      },
+      {
+        "number": 23,
+        "title": "[chief-of-staff] Digest 2026-11-06",
+        "kind": "pull request",
+        "hours": 0
       }
     ]
   },
@@ -156,7 +163,7 @@
     "    section chief-of-staff",
     "    done daily-digest :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    done daily-digest :done, 2026-11-05 11:33, 2026-11-05 11:34",
-    "    working daily-digest :active, 2026-11-06 06:35, 2026-11-06 06:35",
+    "    done daily-digest :done, 2026-11-06 06:35, 2026-11-06 06:37",
     "    section design",
     "    done picking :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    idle picking :done, 2026-11-05 11:33, 2026-11-05 11:33",
