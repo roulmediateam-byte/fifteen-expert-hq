@@ -99,7 +99,7 @@ A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.jso
 
 - The "View as" menu cuts off the long role names on narrow phones; the full name shows when the menu opens.
 - The checker cannot judge how strong an argument is. Melvin does (tour claim 3 shows this).
-- The practice-side demo does not exist yet.
+- The practice-side demo is the client portal demo (site/demo/portal/, in its own pull request, on top of this one). The last tour step links to it when the host sets DEMO_PORTAL_URL.
 - Logo B and the company name are not shown (placeholder), until the domain is bought.
 
 ## Next three actions

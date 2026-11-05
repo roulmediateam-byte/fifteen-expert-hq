@@ -5,6 +5,7 @@
 // Settings it reads (both optional):
 //   COMPANY_NAME     the name to show: letters, digits, spaces and . & ' - only, 40 characters at most
 //   DEMO_START_ROLE  the view to open in: worker, reviewer or presenter (the guided tour)
+//   DEMO_PORTAL_URL  the client portal demo's address, for the last tour step: https only
 //
 // Host build command: node scripts/hosted_settings.mjs
 // It rewrites js/brand.js in the host's own copy. Run by hand, it rewrites yours: do not
@@ -18,6 +19,8 @@ const ROLES = ['worker', 'reviewer', 'presenter'];
 const NAME_RULE = /^[\p{L}\p{N} .&'-]+$/u;
 const NAME_LINE = /export const COMPANY_NAME = (?:'[^'\n]*'|"[^"\n]*");/;
 const ROLE_LINE = /export const START_ROLE = (?:'[a-z]+'|"[a-z]+");/;
+const URL_RULE = /^https:\/\/[a-z0-9.-]+(?::\d+)?(?:\/[A-Za-z0-9._~/-]*)?$/;
+const URL_LINE = /export const PORTAL_URL = (?:'[^'\n]*'|"[^"\n]*");/;
 
 export function applySettings(source, env) {
   let out = source;
@@ -43,6 +46,14 @@ export function applySettings(source, env) {
     notes.push(`opens as ${role}`);
   } else {
     notes.push('DEMO_START_ROLE is not set, so the demo opens as Jordan (worker)');
+  }
+
+  const url = String(env.DEMO_PORTAL_URL || '').trim();
+  if (url) {
+    if (url.length > 200 || !URL_RULE.test(url)) throw new Error('DEMO_PORTAL_URL must be a plain https address, such as https://example.pages.dev');
+    if (!URL_LINE.test(out)) throw new Error('js/brand.js has no PORTAL_URL line to fill.');
+    out = out.replace(URL_LINE, `export const PORTAL_URL = ${JSON.stringify(url)};`);
+    notes.push('links the client portal demo');
   }
 
   return { out, notes };

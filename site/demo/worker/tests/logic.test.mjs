@@ -263,5 +263,9 @@ test('a host build fills the name and start view from its own settings, and refu
   assert.throws(() => applySettings(source, { COMPANY_NAME: '<b>Demo</b>' }), /COMPANY_NAME/);
   assert.throws(() => applySettings(source, { COMPANY_NAME: 'x'.repeat(41) }), /COMPANY_NAME/);
   assert.throws(() => applySettings(source, { DEMO_START_ROLE: 'admin' }), /DEMO_START_ROLE/);
+  // The client portal's address for the last tour step: plain https only.
+  const linked = applySettings(source, { DEMO_PORTAL_URL: 'https://portal.example.dev' }).out;
+  assert.match(linked, /export const PORTAL_URL = "https:\/\/portal\.example\.dev";/);
+  for (const bad of ['http://portal.example.dev', 'javascript:alert(1)', "https://x.dev/'+alert(1)+'"]) assert.throws(() => applySettings(source, { DEMO_PORTAL_URL: bad }), /DEMO_PORTAL_URL/, bad);
   assert.equal(readFileSync(join(root, 'js/brand.js'), 'utf8'), source, "the repository's own brand.js is untouched");
 });

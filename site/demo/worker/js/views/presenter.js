@@ -4,10 +4,12 @@
 import { esc, when, list } from '../ui/dom.js';
 import { icon } from '../ui/icons.js';
 import { store } from '../state.js';
+import { PORTAL_URL, safeUrl } from '../brand.js';
 
 export function tourSteps() {
   const t = (n) => (store.data.claims.find((c) => c.tour === n) || {}).id;
   const t1 = t(1); const t2 = t(2); const t3 = t(3);
+  const portal = safeUrl(PORTAL_URL);
   return [
     { title: 'The problem', go: '#/today', as: 'worker', talk: 'Small practices write off denied claims because an appeal takes an expert. This console turns a trained, ordinary worker into that expert: every step says what to do, why, and what good looks like, and nothing leaves without a check and Melvin\'s approval.' },
     { title: 'Today: the queue sorts itself', go: '#/today', as: 'worker', talk: 'Claims are ordered by days left to the appeal deadline, then by dollars. Red is under 14 days, amber under 30. The strip shows what is due this week, drafts waiting for checks, send-backs and this month\'s wins.' },
@@ -23,7 +25,9 @@ export function tourSteps() {
     { title: 'Outcomes and the fee', go: '#/submit', as: 'worker', talk: 'A win records the amount and our fee, 20% of what is recovered (our estimate). A loss offers the next appeal level as a new task with its own deadline.' },
     { title: 'My progress', go: '#/progress', as: 'worker', talk: 'Minutes per appeal falling week by week (made-up history), checker catches, send-backs, win rate and training cards.' },
     { title: 'The audit log', go: '#/audit', as: 'worker', talk: 'Every action: who, what, which claim, when. Read-only.' },
-    { title: 'The practice side', go: null, as: 'worker', talk: 'The practice-side demo is not in the repository yet (checked Nov 5, 2026). Link it here when it exists.' },
+    { title: 'The practice side', go: null, as: 'worker', link: portal, talk: portal
+      ? 'The practice sees the same claims in its client portal: what we won back, what is in progress, the records we need, and invoices only for wins.'
+      : 'The practice sees the same claims in the client portal demo, site/demo/portal/ in the repository. It runs the same way.' },
   ];
 }
 
@@ -50,6 +54,7 @@ export function presenterPanel() {
           <p class="tour-title"><span class="tour-num">${i + 1}</span>${esc(s.title)}</p>
           <p class="tour-talk">${esc(s.talk)}</p>
           ${when(s.go, `<button type="button" class="btn btn-secondary btn-small" data-action="tour-go" data-index="${i}">${icon('play')}<span>Show this</span></button>`)}
+          ${when(s.link, `<a class="btn btn-secondary btn-small" href="${esc(s.link)}" target="_blank" rel="noopener noreferrer">${icon('external-link')}<span>Open the client portal demo</span><span class="sr-only"> (opens in a new tab)</span></a>`)}
         </li>`)}
       </ol>
       <button type="button" class="btn btn-danger" data-action="reset-demo">${icon('rotate-ccw')}<span>Reset demo</span></button>
