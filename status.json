@@ -1,6 +1,6 @@
 {
-  "updated": "Thu 5 Nov 2026 13:44 Sydney",
-  "updated_utc": "2026-11-05T02:44:46Z",
+  "updated": "Thu 5 Nov 2026 14:55 Sydney",
+  "updated_utc": "2026-11-05T03:55:52Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -72,9 +72,9 @@
     {
       "name": "reviewer",
       "owner": "Adam",
-      "state": "done",
-      "reason": "Reviewed 4: #12 changes needed; #18 #19 #20 pass",
-      "dot": "🟢",
+      "state": "overdue",
+      "reason": "no review yet of #21",
+      "dot": "🔴",
       "task": "sweep",
       "last_start": "Thu 5 Nov 11:37",
       "minutes": "4",
@@ -113,37 +113,37 @@
         "number": 12,
         "title": "[design] Build the one-page website",
         "kind": "pull request",
-        "hours": 19
+        "hours": 20
       },
       {
         "number": 20,
         "title": "[chief-of-staff] Digest 2026-11-05",
         "kind": "pull request",
-        "hours": 2
+        "hours": 3
       },
       {
         "number": 19,
         "title": "[design] Add the page checklist",
         "kind": "pull request",
-        "hours": 2
+        "hours": 3
       },
       {
         "number": 18,
         "title": "[engineer] Add a first passing smoke test in prototype/",
         "kind": "pull request",
-        "hours": 2
+        "hours": 3
       },
       {
         "number": 21,
         "title": "[engineer] Worker console demo (made-up claims)",
         "kind": "pull request",
-        "hours": 1
+        "hours": 2
       },
       {
         "number": 22,
         "title": "[engineer] Client portal demo (made-up claims)",
         "kind": "pull request",
-        "hours": 0
+        "hours": 1
       }
     ]
   },
@@ -180,6 +180,7 @@
   },
   "closed_last_7_days": 0,
   "alerts": [
+    "reviewer is overdue: no review yet of #21",
     "research is overdue: no heartbeat since the Mon 2 Nov 03:00 run",
     "[#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) from engineer changes files outside its folders: agents/engineer.md",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"
