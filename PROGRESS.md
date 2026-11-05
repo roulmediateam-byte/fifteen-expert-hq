@@ -2,7 +2,7 @@
 
 FAKE: everything in this folder uses made-up claims. No real patient data.
 
-Last updated: 5 Nov 2026, 12:25 Sydney, by a Claude session working for Adam.
+Last updated: 5 Nov 2026, 12:26 Sydney, by a Claude session working for Adam.
 Branch: claude/worker-console-demo. It started on pull request #11's branch; on 5 Nov 2026 it was moved onto main, which now holds #11.
 How to run and test: [README.md](README.md).
 
@@ -48,7 +48,7 @@ Claims with a complete deadline calculation: 50 of 50 (target 50 of 50)
 Other failed checks on planted claims: 0
 ```
 
-Logic tests (`node --test site/demo/worker/tests/logic.test.mjs`): 13 of 13 pass.
+Logic tests (`node --test site/demo/worker/tests/logic.test.mjs`): 14 of 14 pass.
 
 Browser tests (`node site/demo/worker/tests/browser.test.mjs`), Chromium, 14 screens at each of 390, 320 and 1280 px:
 
@@ -86,14 +86,14 @@ A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.jso
 ## Hosted copies (5 Nov 2026)
 
 - A private Claude artifact: one self-contained page (code, data and fonts inside it, so the host loads nothing else) that opens on the guided tour. Its link is in the private project notes, not in this public repository. Rebuild and republish it after any change to the demo.
-- A plain public link (planned, not live yet): branch claude/worker-demo-pages, on GitHub since 5 Nov 2026, holds only this folder, so a static host can serve it. GitHub Pages would serve it at https://roulmediateam-byte.github.io/fifteen-expert-hq/. Adam is choosing the address; an address that shows the company name stays out of this repository. It was checked locally under that /fifteen-expert-hq/ path. README.md, section "Hosted copy (GitHub Pages)", has the steps and the refresh command.
-- Both open on the tour without a second copy of the code: ?role=presenter in the address does it (START_ROLE in js/brand.js stays 'worker').
-- A Claude session cannot turn Pages on itself: the GitHub API path for Pages is blocked through the session's proxy (checked 5 Nov 2026). The repository owner does it once in Settings.
+- The public link (5 Nov 2026; live once Adam creates the project): Adam chose a Cloudflare Pages project that serves branch claude/worker-demo-pages. Its address shows the company name, so it is in the private project notes, not here. At build time scripts/hosted_settings.mjs fills the name and the starting view from the project's settings (with a logic test), and _headers asks search engines not to index the copy. Checked locally the way Cloudflare builds and serves it (the build step with both settings, then the files at the top of an address), at 1280 and 390 px. README.md, section "Hosted copy", has the settings and the refresh command. The live copy changes only when someone refreshes that branch; the nightly engineer works on claude/worker-console-demo and does not touch it.
+- Both open on the tour without a second copy of the code: the host's DEMO_START_ROLE setting does it, or ?role=presenter in the address (START_ROLE in js/brand.js stays 'worker').
+- A Claude session cannot create the host itself: the Cloudflare project needs Adam's own account, and the GitHub API path for Pages is blocked through the session's proxy (checked 5 Nov 2026).
 
 ## Half finished
 
-- The public copy: both branches are on GitHub (pushed 5 Nov 2026, after Adam approved it in the chat). It waits for Adam to choose the address and switch the host on. No Issues were filed: no step is unfinished.
-- agents/engineer.md: the paragraph for the nightly engineer run is added on this branch (end of the file). The engineer's scheduled task itself is created in Prompt 5.
+- The public copy: both branches are on GitHub (pushed 5 Nov 2026, after Adam approved it in the chat). It waits for Adam to create the Cloudflare Pages project (README.md, section "Hosted copy"). No Issues were filed: no step is unfinished.
+- agents/engineer.md: the paragraph for the nightly engineer run is added on this branch (end of the file). The engineer's scheduled task exists since 5 Nov 2026 (daily, 2:11 am Sydney), but it reads its brief from main, so the paragraph takes effect only once this pull request is merged.
 
 ## Known limits
 
@@ -104,6 +104,6 @@ A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.jso
 
 ## Next three actions
 
-1. Adam chooses the public address and switches the host on. The public demo link then works.
+1. Adam creates the Cloudflare Pages project (README.md, section "Hosted copy"). The public demo link then works.
 2. Melvin reviews the coach panel advice, the ten checks and what he would send back (checklist in the pull request).
 3. After Melvin's notes: fix what he sends back, rerun score_demo.mjs and the browser tests, and refresh the Pages branch.

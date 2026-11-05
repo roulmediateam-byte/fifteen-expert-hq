@@ -8,9 +8,10 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { mkdtempSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join, dirname, extname, relative } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import * as S from '../js/state.js';
 import { computeDeadline, getPayer } from '../js/lib/rules.js';
@@ -230,4 +231,37 @@ test('house rules: no long dash and no former founder in any demo file', () => {
   };
   walk(root);
   assert.deepEqual(bad, []);
+});
+
+test('a host build fills the name and start view from its own settings, and refuses bad values', async () => {
+  const { applySettings } = await import('../scripts/hosted_settings.mjs');
+  const source = readFileSync(join(root, 'js/brand.js'), 'utf8');
+  assert.equal(applySettings(source, {}).out, source, 'no settings: brand.js stays as it is');
+  const settings = { COMPANY_NAME: 'Demo Co', DEMO_START_ROLE: 'presenter' };
+  const { out } = applySettings(source, settings);
+  assert.equal(applySettings(out, settings).out, out, 'a second run changes nothing');
+  const dir = mkdtempSync(join(tmpdir(), 'hosted-'));
+  try {
+    writeFileSync(join(dir, 'brand.js'), out);
+    const hosted = await import(pathToFileURL(join(dir, 'brand.js')).href);
+    assert.equal(hosted.COMPANY_NAME, 'Demo Co');
+    assert.equal(hosted.displayName(''), 'Demo Co');
+    assert.equal(hosted.startRole(''), 'presenter');
+    assert.equal(hosted.startRole('?role=worker'), 'worker', 'the address still wins');
+    // The script as a host runs it, on a copy of the repository's brand.js.
+    writeFileSync(join(dir, 'brand.js'), source);
+    const script = join(root, 'scripts/hosted_settings.mjs');
+    const env = { ...process.env, COMPANY_NAME: 'Demo Co', DEMO_START_ROLE: 'reviewer' };
+    const run = spawnSync(process.execPath, [script, join(dir, 'brand.js')], { env, encoding: 'utf8' });
+    assert.equal(run.status, 0, run.stderr);
+    assert.match(readFileSync(join(dir, 'brand.js'), 'utf8'), /START_ROLE = 'reviewer'/);
+    const bad = spawnSync(process.execPath, [script, join(dir, 'brand.js')], { env: { ...env, DEMO_START_ROLE: 'admin' }, encoding: 'utf8' });
+    assert.equal(bad.status, 1, 'a bad setting fails the build');
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+  assert.throws(() => applySettings(source, { COMPANY_NAME: '<b>Demo</b>' }), /COMPANY_NAME/);
+  assert.throws(() => applySettings(source, { COMPANY_NAME: 'x'.repeat(41) }), /COMPANY_NAME/);
+  assert.throws(() => applySettings(source, { DEMO_START_ROLE: 'admin' }), /DEMO_START_ROLE/);
+  assert.equal(readFileSync(join(root, 'js/brand.js'), 'utf8'), source, "the repository's own brand.js is untouched");
 });
