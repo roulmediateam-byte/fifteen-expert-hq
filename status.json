@@ -1,6 +1,6 @@
 {
-  "updated": "Fri 6 Nov 2026 00:07 Sydney",
-  "updated_utc": "2026-11-05T13:07:01Z",
+  "updated": "Fri 6 Nov 2026 01:14 Sydney",
+  "updated_utc": "2026-11-05T14:14:52Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -41,13 +41,13 @@
     {
       "name": "design",
       "owner": "Adam",
-      "state": "waiting on human",
-      "reason": "open pull request with no human review",
-      "dot": "🟡",
-      "task": "picking",
-      "last_start": "Thu 5 Nov 11:33",
-      "minutes": "1",
-      "next_run": "Fri 6 Nov 01:00",
+      "state": "working",
+      "reason": "",
+      "dot": "🟢",
+      "task": "[#16](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/16)",
+      "last_start": "Fri 6 Nov 01:14",
+      "minutes": "0 so far",
+      "next_run": "Sat 7 Nov 01:00",
       "open_prs": [
         19,
         12
@@ -113,37 +113,37 @@
         "number": 12,
         "title": "[design] Build the one-page website",
         "kind": "pull request",
-        "hours": 29
+        "hours": 30
       },
       {
         "number": 20,
         "title": "[chief-of-staff] Digest 2026-11-05",
         "kind": "pull request",
-        "hours": 12
+        "hours": 13
       },
       {
         "number": 19,
         "title": "[design] Add the page checklist",
         "kind": "pull request",
-        "hours": 12
+        "hours": 13
       },
       {
         "number": 18,
         "title": "[engineer] Add a first passing smoke test in prototype/",
         "kind": "pull request",
-        "hours": 12
+        "hours": 13
       },
       {
         "number": 21,
         "title": "[engineer] Worker console demo (made-up claims)",
         "kind": "pull request",
-        "hours": 11
+        "hours": 12
       },
       {
         "number": 22,
         "title": "[engineer] Client portal demo (made-up claims)",
         "kind": "pull request",
-        "hours": 10
+        "hours": 11
       }
     ]
   },
@@ -159,6 +159,7 @@
     "    section design",
     "    done picking :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    idle picking :done, 2026-11-05 11:33, 2026-11-05 11:33",
+    "    working task 16 :active, 2026-11-06 01:14, 2026-11-06 01:14",
     "    section engineer",
     "    done task 17 :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    idle pick-work :done, 2026-11-05 11:32, 2026-11-05 11:32",
