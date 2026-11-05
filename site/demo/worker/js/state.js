@@ -7,7 +7,7 @@ import { runChecks, summarize, workFingerprint } from './lib/checker.js';
 import { dueLevel, nextLevel, getPayer, getLevel, suggestCategory } from './lib/rules.js';
 import { addDays, round2, fmtDate, fmtMoney } from './lib/dates.js';
 import { evidenceLabel } from './lib/evidence.js';
-import { displayName, START_ROLE } from './brand.js';
+import { displayName, startRole } from './brand.js';
 
 const SAVE_KEY = 'worker-console-demo-v1';
 const SAVE_FLAG = 'worker-console-demo-save';
@@ -21,7 +21,7 @@ export const store = {
   base: new Map(),
   runtime: {},
   audit: [],
-  role: ['worker', 'reviewer', 'presenter'].includes(START_ROLE) ? START_ROLE : 'worker',
+  role: startRole(typeof location !== 'undefined' ? location.search : ''),
   acting: 'worker',
   training: new Set(),
   stats: { finished: 0, minutes: [], caught: 0, sendBacks: 0, decided: 0, won: 0 },

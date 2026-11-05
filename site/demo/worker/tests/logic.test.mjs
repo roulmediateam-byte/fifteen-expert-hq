@@ -18,6 +18,7 @@ import { addDays, addYears, daysBetween, fmtDate, round2 } from '../js/lib/dates
 import { runChecks, summarize } from '../js/lib/checker.js';
 import { defaultWork, initialWork, lowConfidenceFields } from '../js/lib/work.js';
 import { buildLetter, getBlock, splitSentences } from '../js/lib/letter.js';
+import { startRole, displayName } from '../js/brand.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
@@ -189,6 +190,15 @@ test('a lost appeal opens the next level as a new task; reset puts every claim b
   assert.equal(S.stage(medicare), 'submitted');
   assert.equal(S.stage(sample), 'submitted');
   assert.equal(S.stage('C-1012'), 'new');
+});
+
+test('the address can set the start role and a display name, and nothing else', () => {
+  assert.equal(startRole('?role=presenter'), 'presenter');
+  assert.equal(startRole('?role=reviewer'), 'reviewer');
+  assert.equal(startRole('?role=admin'), 'worker');
+  assert.equal(startRole(''), 'worker');
+  assert.equal(displayName('?name=Demo Co'), 'Demo Co');
+  assert.equal(displayName('?name=<b>x</b>'), '[Company name]');
 });
 
 test('made-up data only: every claim is FAKE, with test names and test member IDs', () => {
