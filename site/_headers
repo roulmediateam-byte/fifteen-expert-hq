@@ -1,0 +1,6 @@
+# Cloudflare Pages response headers for every file in site/.
+# Remove the X-Robots-Tag line at launch, together with the robots line in index.html.
+/*
+  X-Robots-Tag: noindex
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
