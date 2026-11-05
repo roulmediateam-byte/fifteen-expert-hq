@@ -1,6 +1,6 @@
 {
-  "updated": "Thu 5 Nov 2026 11:27 Sydney",
-  "updated_utc": "2026-11-05T00:27:05Z",
+  "updated": "Thu 5 Nov 2026 11:31 Sydney",
+  "updated_utc": "2026-11-05T00:31:35Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -20,24 +20,24 @@
     {
       "name": "chief-of-staff",
       "owner": "Adam",
-      "state": "overdue",
-      "reason": "no heartbeat since the Thu 5 Nov 06:30 run",
-      "dot": "🔴",
-      "task": "none",
-      "last_start": "",
-      "minutes": "",
+      "state": "working",
+      "reason": "",
+      "dot": "🟢",
+      "task": "daily-digest",
+      "last_start": "Thu 5 Nov 11:31",
+      "minutes": "0 so far",
       "next_run": "Fri 6 Nov 06:30",
       "open_prs": []
     },
     {
       "name": "design",
       "owner": "Adam",
-      "state": "overdue",
-      "reason": "no heartbeat since the Thu 5 Nov 01:00 run",
-      "dot": "🔴",
-      "task": "none",
-      "last_start": "",
-      "minutes": "",
+      "state": "working",
+      "reason": "",
+      "dot": "🟢",
+      "task": "picking",
+      "last_start": "Thu 5 Nov 11:31",
+      "minutes": "0 so far",
       "next_run": "Fri 6 Nov 01:00",
       "open_prs": [
         12
@@ -46,12 +46,12 @@
     {
       "name": "engineer",
       "owner": "Adam",
-      "state": "overdue",
-      "reason": "no heartbeat since the Thu 5 Nov 02:00 run",
-      "dot": "🔴",
-      "task": "none",
-      "last_start": "",
-      "minutes": "",
+      "state": "working",
+      "reason": "",
+      "dot": "🟢",
+      "task": "[#17](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/17)",
+      "last_start": "Thu 5 Nov 11:31",
+      "minutes": "0 so far",
       "next_run": "Fri 6 Nov 02:00",
       "open_prs": []
     },
@@ -104,12 +104,23 @@
     ]
   },
   "timeline": [
-    "No runs in the last 3 days."
+    "```mermaid",
+    "gantt",
+    "    title Agent runs, last 3 days (Sydney time)",
+    "    dateFormat YYYY-MM-DD HH:mm",
+    "    axisFormat %a %H:%M",
+    "    section chief-of-staff",
+    "    working daily-digest :active, 2026-11-05 11:31, 2026-11-05 11:31",
+    "    section design",
+    "    working picking :active, 2026-11-05 11:31, 2026-11-05 11:31",
+    "    section engineer",
+    "    working task 17 :active, 2026-11-05 11:31, 2026-11-05 11:31",
+    "```"
   ],
   "board": {
     "agent:chief-of-staff": 0,
-    "agent:design": 0,
-    "agent:engineer": 0,
+    "agent:design": 1,
+    "agent:engineer": 1,
     "agent:reviewer": 0,
     "agent:research": 0,
     "agent:sales": 0,
@@ -118,9 +129,6 @@
   },
   "closed_last_7_days": 0,
   "alerts": [
-    "chief-of-staff is overdue: no heartbeat since the Thu 5 Nov 06:30 run",
-    "design is overdue: no heartbeat since the Thu 5 Nov 01:00 run",
-    "engineer is overdue: no heartbeat since the Thu 5 Nov 02:00 run",
     "reviewer is overdue: no heartbeat since the Thu 5 Nov 05:00 run",
     "research is overdue: no heartbeat since the Mon 2 Nov 03:00 run",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"

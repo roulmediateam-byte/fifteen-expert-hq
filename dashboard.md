@@ -1,4 +1,4 @@
-Updated Thu 5 Nov 2026 11:27 Sydney
+Updated Thu 5 Nov 2026 11:31 Sydney
 
 # RUNNING
 
@@ -6,9 +6,9 @@ Updated Thu 5 Nov 2026 11:27 Sydney
 
 | | Agent | Owner | State | Current or last task | Last run start (Sydney) | Minutes | Next run (Sydney) | Open pull requests |
 |---|---|---|---|---|---|---|---|---|
-| 🔴 | chief-of-staff | Adam | overdue | none | never |  | Fri 6 Nov 06:30 | none |
-| 🔴 | design | Adam | overdue | none | never |  | Fri 6 Nov 01:00 | [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
-| 🔴 | engineer | Adam | overdue | none | never |  | Fri 6 Nov 02:00 | none |
+| 🟢 | chief-of-staff | Adam | working | daily-digest | Thu 5 Nov 11:31 | 0 so far | Fri 6 Nov 06:30 | none |
+| 🟢 | design | Adam | working | picking | Thu 5 Nov 11:31 | 0 so far | Fri 6 Nov 01:00 | [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
+| 🟢 | engineer | Adam | working | [#17](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/17) | Thu 5 Nov 11:31 | 0 so far | Fri 6 Nov 02:00 | none |
 | 🔴 | reviewer | Adam | overdue | none | never |  | Fri 6 Nov 05:00 sweep, and on every pull request | none |
 | 🔴 | research | Adam | overdue | none | never |  | Mon 9 Nov 03:00 | none |
 | ⚪ | sales | Melvin | off | none | never |  | off (off until phase 5) | none |
@@ -25,15 +25,26 @@ Updated Thu 5 Nov 2026 11:27 Sydney
 
 ## Timeline
 
-No runs in the last 3 days.
+```mermaid
+gantt
+    title Agent runs, last 3 days (Sydney time)
+    dateFormat YYYY-MM-DD HH:mm
+    axisFormat %a %H:%M
+    section chief-of-staff
+    working daily-digest :active, 2026-11-05 11:31, 2026-11-05 11:31
+    section design
+    working picking :active, 2026-11-05 11:31, 2026-11-05 11:31
+    section engineer
+    working task 17 :active, 2026-11-05 11:31, 2026-11-05 11:31
+```
 
 ## Board
 
 | Label | Open Issues |
 |---|---|
 | agent:chief-of-staff | 0 |
-| agent:design | 0 |
-| agent:engineer | 0 |
+| agent:design | 1 |
+| agent:engineer | 1 |
 | agent:reviewer | 0 |
 | agent:research | 0 |
 | agent:sales | 0 |
@@ -44,9 +55,6 @@ Issues closed in the last 7 days: 0.
 
 ## Alerts
 
-- 🔴 chief-of-staff is overdue: no heartbeat since the Thu 5 Nov 06:30 run
-- 🔴 design is overdue: no heartbeat since the Thu 5 Nov 01:00 run
-- 🔴 engineer is overdue: no heartbeat since the Thu 5 Nov 02:00 run
 - 🔴 reviewer is overdue: no heartbeat since the Thu 5 Nov 05:00 run
 - 🔴 research is overdue: no heartbeat since the Mon 2 Nov 03:00 run
 - 🔴 [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md
