@@ -2,8 +2,8 @@
 
 FAKE: everything in this folder uses made-up claims. No real patient data.
 
-Last updated: 5 Nov 2026, 03:10 Sydney, by a Claude session working for Adam.
-Branch: claude/worker-console-demo (stacked on claude/mission-control-dashboard, pull request #11).
+Last updated: 5 Nov 2026, 12:15 Sydney, by a Claude session working for Adam.
+Branch: claude/worker-console-demo. It started on pull request #11's branch; on 5 Nov 2026 it was moved onto main, which now holds #11.
 How to run and test: [README.md](README.md).
 
 ## Steps (from the worker console demo request of 5 Nov 2026)
@@ -37,7 +37,7 @@ How to run and test: [README.md](README.md).
 | Practice-side demo | Not found on any branch | No | Everything | The presenter panel says it is not in the repository yet |
 | Logo B and the company name | Kept out of the public repository on purpose until the domain is bought (BRAND_BRIEF.md) | n/a | n/a | js/brand.js holds a placeholder; one file to change later |
 
-## Last results (5 Nov 2026, 03:05 Sydney)
+## Last results (5 Nov 2026, 12:05 Sydney, after the move onto main)
 
 Score (`node site/demo/worker/scripts/score_demo.mjs`):
 
@@ -48,7 +48,7 @@ Claims with a complete deadline calculation: 50 of 50 (target 50 of 50)
 Other failed checks on planted claims: 0
 ```
 
-Logic tests (`node --test site/demo/worker/tests/logic.test.mjs`): 12 of 12 pass.
+Logic tests (`node --test site/demo/worker/tests/logic.test.mjs`): 13 of 13 pass.
 
 Browser tests (`node site/demo/worker/tests/browser.test.mjs`), Chromium, 14 screens at each of 390, 320 and 1280 px:
 
@@ -83,13 +83,17 @@ A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.jso
 - The 2027 amounts in controversy are noted: $200 for the ALJ hearing (unchanged) and $2,000 for court (up from $1,960). The demo date stays in 2026.
 - CARC 96 is marked shortened and RARC MA04 has its full text.
 
-## Hosted copy (5 Nov 2026)
+## Hosted copies (5 Nov 2026)
 
-A copy for outside viewers was published as one self-contained page (code, data and fonts inside it, so the host loads nothing else). It opens on the guided tour: js/brand.js now has START_ROLE ('worker' here; 'presenter' in that copy). Its link is kept in the private project notes, not in this public repository. Rebuild and republish it after any change to the demo.
+- A private Claude artifact: one self-contained page (code, data and fonts inside it, so the host loads nothing else) that opens on the guided tour. Its link is in the private project notes, not in this public repository. Rebuild and republish it after any change to the demo.
+- GitHub Pages, for a plain public link (planned, not live yet): branch claude/worker-demo-pages holds only this folder, so GitHub can serve it at https://roulmediateam-byte.github.io/fifteen-expert-hq/. It was checked locally under that /fifteen-expert-hq/ path. README.md, section "Hosted copy (GitHub Pages)", has the steps and the refresh command.
+- Both open on the tour without a second copy of the code: ?role=presenter in the address does it (START_ROLE in js/brand.js stays 'worker').
+- A Claude session cannot turn Pages on itself: the GitHub API path for Pages is blocked through the session's proxy (checked 5 Nov 2026). The repository owner does it once in Settings.
 
 ## Half finished
 
-- Step 12: the branch is committed locally but not pushed. The session's safety check refused push access, so Adam must approve it. After that: push, open the pull request "Worker console demo (made-up claims)" for Melvin, and file Issues for anything unfinished.
+- Step 12: the branch is committed locally, on top of main, but not pushed. The session's safety check refused push access twice, so Adam must approve it in the chat or push the branches himself. After that: push, open the pull request "[engineer] Worker console demo (made-up claims)" for Melvin, and file Issues for anything unfinished.
+- GitHub Pages: branch claude/worker-demo-pages is made locally (git subtree split). It waits on the same push, then on Adam turning Pages on.
 - agents/engineer.md: the paragraph for the nightly engineer run is added on this branch (end of the file). The engineer's scheduled task itself is created in Prompt 5.
 
 ## Known limits
@@ -101,6 +105,6 @@ A copy for outside viewers was published as one self-contained page (code, data 
 
 ## Next three actions
 
-1. Adam approves push access; the session pushes this branch and opens the pull request for Melvin.
+1. Adam approves push access (or pushes both branches himself), then turns GitHub Pages on. The public demo link then works.
 2. Melvin reviews the coach panel advice, the ten checks and what he would send back (checklist in the pull request).
-3. After Melvin's notes: fix what he sends back, then rerun score_demo.mjs and the browser tests.
+3. After Melvin's notes: fix what he sends back, rerun score_demo.mjs and the browser tests, and refresh the Pages branch.
