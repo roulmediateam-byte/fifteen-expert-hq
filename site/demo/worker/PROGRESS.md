@@ -83,6 +83,10 @@ A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.jso
 - The 2027 amounts in controversy are noted: $200 for the ALJ hearing (unchanged) and $2,000 for court (up from $1,960). The demo date stays in 2026.
 - CARC 96 is marked shortened and RARC MA04 has its full text.
 
+## Hosted copy (5 Nov 2026)
+
+A copy for outside viewers was published as one self-contained page (code, data and fonts inside it, so the host loads nothing else). It opens on the guided tour: js/brand.js now has START_ROLE ('worker' here; 'presenter' in that copy). Its link is kept in the private project notes, not in this public repository. Rebuild and republish it after any change to the demo.
+
 ## Half finished
 
 - Step 12: the branch is committed locally but not pushed. The session's safety check refused push access, so Adam must approve it. After that: push, open the pull request "Worker console demo (made-up claims)" for Melvin, and file Issues for anything unfinished.
