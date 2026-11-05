@@ -1,4 +1,4 @@
-Updated Thu 5 Nov 2026 11:31 Sydney
+Updated Thu 5 Nov 2026 11:32 Sydney
 
 # RUNNING
 
@@ -31,11 +31,11 @@ gantt
     dateFormat YYYY-MM-DD HH:mm
     axisFormat %a %H:%M
     section chief-of-staff
-    working daily-digest :active, 2026-11-05 11:31, 2026-11-05 11:31
+    working daily-digest :active, 2026-11-05 11:31, 2026-11-05 11:32
     section design
-    working picking :active, 2026-11-05 11:31, 2026-11-05 11:31
+    working picking :active, 2026-11-05 11:31, 2026-11-05 11:32
     section engineer
-    working task 17 :active, 2026-11-05 11:31, 2026-11-05 11:31
+    working task 17 :active, 2026-11-05 11:31, 2026-11-05 11:32
 ```
 
 ## Board
