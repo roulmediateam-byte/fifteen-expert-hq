@@ -1,6 +1,6 @@
 {
-  "updated": "Thu 5 Nov 2026 21:00 Sydney",
-  "updated_utc": "2026-11-05T10:00:29Z",
+  "updated": "Thu 5 Nov 2026 22:02 Sydney",
+  "updated_utc": "2026-11-05T11:02:52Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -113,37 +113,37 @@
         "number": 12,
         "title": "[design] Build the one-page website",
         "kind": "pull request",
-        "hours": 26
+        "hours": 27
       },
       {
         "number": 20,
         "title": "[chief-of-staff] Digest 2026-11-05",
         "kind": "pull request",
-        "hours": 9
+        "hours": 10
       },
       {
         "number": 19,
         "title": "[design] Add the page checklist",
         "kind": "pull request",
-        "hours": 9
+        "hours": 10
       },
       {
         "number": 18,
         "title": "[engineer] Add a first passing smoke test in prototype/",
         "kind": "pull request",
-        "hours": 9
+        "hours": 10
       },
       {
         "number": 21,
         "title": "[engineer] Worker console demo (made-up claims)",
         "kind": "pull request",
-        "hours": 8
+        "hours": 9
       },
       {
         "number": 22,
         "title": "[engineer] Client portal demo (made-up claims)",
         "kind": "pull request",
-        "hours": 7
+        "hours": 8
       }
     ]
   },
