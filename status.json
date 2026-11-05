@@ -1,6 +1,6 @@
 {
-  "updated": "Thu 5 Nov 2026 13:36 Sydney",
-  "updated_utc": "2026-11-05T02:36:50Z",
+  "updated": "Thu 5 Nov 2026 13:44 Sydney",
+  "updated_utc": "2026-11-05T02:44:46Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -10,6 +10,14 @@
       "agent": "engineer",
       "files": [
         "agents/engineer.md"
+      ]
+    },
+    {
+      "pr": 12,
+      "agent": "design",
+      "files": [
+        "PROJECT_STATE.md",
+        "ops/links.md"
       ]
     }
   ],
@@ -51,9 +59,9 @@
       "state": "waiting on human",
       "reason": "open pull request with no human review",
       "dot": "🟡",
-      "task": "worker-console-demo",
-      "last_start": "Thu 5 Nov 02:03",
-      "minutes": "616",
+      "task": "client-portal-demo",
+      "last_start": "Thu 5 Nov 12:59",
+      "minutes": "45",
       "next_run": "Fri 6 Nov 02:00",
       "open_prs": [
         22,
@@ -105,7 +113,7 @@
         "number": 12,
         "title": "[design] Build the one-page website",
         "kind": "pull request",
-        "hours": 18
+        "hours": 19
       },
       {
         "number": 20,
@@ -155,6 +163,7 @@
     "    done task 17 :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    idle pick-work :done, 2026-11-05 11:32, 2026-11-05 11:32",
     "    done worker-console-demo :done, 2026-11-05 02:03, 2026-11-05 12:19",
+    "    done client-portal-demo :done, 2026-11-05 12:59, 2026-11-05 13:44",
     "    section reviewer",
     "    done sweep :done, 2026-11-05 11:37, 2026-11-05 11:39",
     "```"
@@ -172,7 +181,8 @@
   "closed_last_7_days": 0,
   "alerts": [
     "research is overdue: no heartbeat since the Mon 2 Nov 03:00 run",
-    "[#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) from engineer changes files outside its folders: agents/engineer.md"
+    "[#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) from engineer changes files outside its folders: agents/engineer.md",
+    "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"
   ],
   "sydney_date": "2026-11-05"
 }
