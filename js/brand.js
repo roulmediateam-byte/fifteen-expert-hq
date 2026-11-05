@@ -6,7 +6,7 @@
 // (the wordmark file that BRAND_BRIEF.md names, in the Claude Project) into LOGO_SVG.
 //
 // For a live presentation, ?name=YourName in the address shows a name without
-// saving it anywhere.
+// saving it anywhere, and ?role=presenter opens the demo on the guided tour.
 
 export const COMPANY_NAME = '[Company name]';
 export const PRODUCT_NAME = 'Appeals worker console';
@@ -14,6 +14,19 @@ export const LOGO_SVG = '';
 // The view the demo opens in: 'worker', 'reviewer' or 'presenter' (the guided tour).
 // A copy hosted for outside viewers, such as investors, opens on 'presenter'.
 export const START_ROLE = 'worker';
+
+const ROLES = ['worker', 'reviewer', 'presenter'];
+
+// The role to open in: ?role= in the address if it names one, else START_ROLE.
+export function startRole(search) {
+  try {
+    const fromUrl = new URLSearchParams(search || '').get('role');
+    if (ROLES.includes(fromUrl)) return fromUrl;
+  } catch (err) {
+    // Ignore a malformed address.
+  }
+  return ROLES.includes(START_ROLE) ? START_ROLE : 'worker';
+}
 
 export function displayName(search) {
   try {
