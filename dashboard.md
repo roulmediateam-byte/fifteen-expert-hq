@@ -1,4 +1,4 @@
-Updated Fri 6 Nov 2026 05:05 Sydney
+Updated Fri 6 Nov 2026 05:10 Sydney
 
 # RUNNING
 
@@ -9,7 +9,7 @@ Updated Fri 6 Nov 2026 05:05 Sydney
 | 🟡 | chief-of-staff | Adam | waiting on human | daily-digest | Thu 5 Nov 11:33 | 2 | Fri 6 Nov 06:30 | [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
 | 🟡 | design | Adam | waiting on human | [#16](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/16) | Fri 6 Nov 01:14 | 3 | Sat 7 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🟡 | engineer | Adam | waiting on human | check-own-prs | Fri 6 Nov 02:14 | 1 | Sat 7 Nov 02:00 | [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22), [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21), [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
-| 🟢 | reviewer | Adam | working | sweep | Fri 6 Nov 05:05 | 0 so far | Sat 7 Nov 05:00 sweep, and on every pull request | none |
+| 🟢 | reviewer | Adam | done | sweep | Fri 6 Nov 05:05 | 6 | Sat 7 Nov 05:00 sweep, and on every pull request | none |
 | 🔴 | research | Adam | overdue | none | never |  | Mon 9 Nov 03:00 | none |
 | ⚪ | sales | Melvin | off | none | never |  | off (off until phase 5) | none |
 
@@ -50,7 +50,7 @@ gantt
     idle check-own-prs :done, 2026-11-06 02:14, 2026-11-06 02:14
     section reviewer
     done sweep :done, 2026-11-05 11:37, 2026-11-05 11:39
-    working sweep :active, 2026-11-06 05:05, 2026-11-06 05:05
+    done sweep :done, 2026-11-06 05:05, 2026-11-06 05:10
 ```
 
 ## Board
