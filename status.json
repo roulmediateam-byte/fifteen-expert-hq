@@ -1,6 +1,6 @@
 {
-  "updated": "Thu 5 Nov 2026 11:34 Sydney",
-  "updated_utc": "2026-11-05T00:34:27Z",
+  "updated": "Thu 5 Nov 2026 11:37 Sydney",
+  "updated_utc": "2026-11-05T00:37:20Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -63,12 +63,12 @@
     {
       "name": "reviewer",
       "owner": "Adam",
-      "state": "overdue",
-      "reason": "no heartbeat since the Thu 5 Nov 05:00 run",
-      "dot": "🔴",
-      "task": "none",
-      "last_start": "",
-      "minutes": "",
+      "state": "working",
+      "reason": "",
+      "dot": "🟢",
+      "task": "sweep",
+      "last_start": "Thu 5 Nov 11:37",
+      "minutes": "0 so far",
       "next_run": "Fri 6 Nov 05:00 sweep, and on every pull request",
       "open_prs": []
     },
@@ -141,6 +141,8 @@
     "    section engineer",
     "    done task 17 :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    idle pick-work :done, 2026-11-05 11:32, 2026-11-05 11:32",
+    "    section reviewer",
+    "    working sweep :active, 2026-11-05 11:37, 2026-11-05 11:37",
     "```"
   ],
   "board": {
@@ -155,7 +157,6 @@
   },
   "closed_last_7_days": 0,
   "alerts": [
-    "reviewer is overdue: no heartbeat since the Thu 5 Nov 05:00 run",
     "research is overdue: no heartbeat since the Mon 2 Nov 03:00 run",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"
   ],

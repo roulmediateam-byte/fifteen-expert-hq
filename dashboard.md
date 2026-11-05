@@ -1,4 +1,4 @@
-Updated Thu 5 Nov 2026 11:34 Sydney
+Updated Thu 5 Nov 2026 11:37 Sydney
 
 # RUNNING
 
@@ -9,7 +9,7 @@ Updated Thu 5 Nov 2026 11:34 Sydney
 | 🟡 | chief-of-staff | Adam | waiting on human | daily-digest | Thu 5 Nov 11:33 | 2 | Fri 6 Nov 06:30 | [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
 | 🟡 | design | Adam | waiting on human | picking | Thu 5 Nov 11:33 | 1 | Fri 6 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🟡 | engineer | Adam | waiting on human | pick-work | Thu 5 Nov 11:32 | 1 | Fri 6 Nov 02:00 | [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
-| 🔴 | reviewer | Adam | overdue | none | never |  | Fri 6 Nov 05:00 sweep, and on every pull request | none |
+| 🟢 | reviewer | Adam | working | sweep | Thu 5 Nov 11:37 | 0 so far | Fri 6 Nov 05:00 sweep, and on every pull request | none |
 | 🔴 | research | Adam | overdue | none | never |  | Mon 9 Nov 03:00 | none |
 | ⚪ | sales | Melvin | off | none | never |  | off (off until phase 5) | none |
 
@@ -42,6 +42,8 @@ gantt
     section engineer
     done task 17 :done, 2026-11-05 11:31, 2026-11-05 11:32
     idle pick-work :done, 2026-11-05 11:32, 2026-11-05 11:32
+    section reviewer
+    working sweep :active, 2026-11-05 11:37, 2026-11-05 11:37
 ```
 
 ## Board
@@ -61,7 +63,6 @@ Issues closed in the last 7 days: 0.
 
 ## Alerts
 
-- 🔴 reviewer is overdue: no heartbeat since the Thu 5 Nov 05:00 run
 - 🔴 research is overdue: no heartbeat since the Mon 2 Nov 03:00 run
 - 🔴 [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md
 
