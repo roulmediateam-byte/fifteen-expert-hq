@@ -1,6 +1,6 @@
 {
-  "updated": "Thu 5 Nov 2026 12:18 Sydney",
-  "updated_utc": "2026-11-05T01:18:11Z",
+  "updated": "Thu 5 Nov 2026 12:19 Sydney",
+  "updated_utc": "2026-11-05T01:19:17Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -59,9 +59,9 @@
       "state": "waiting on human",
       "reason": "open pull request with no human review",
       "dot": "🟡",
-      "task": "pick-work",
-      "last_start": "Thu 5 Nov 11:32",
-      "minutes": "1",
+      "task": "worker-console-demo",
+      "last_start": "Thu 5 Nov 02:03",
+      "minutes": "616",
       "next_run": "Fri 6 Nov 02:00",
       "open_prs": [
         21,
@@ -155,6 +155,7 @@
     "    section engineer",
     "    done task 17 :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    idle pick-work :done, 2026-11-05 11:32, 2026-11-05 11:32",
+    "    done worker-console-demo :done, 2026-11-05 02:03, 2026-11-05 12:19",
     "    section reviewer",
     "    done sweep :done, 2026-11-05 11:37, 2026-11-05 11:39",
     "```"
