@@ -14,6 +14,9 @@ export const LOGO_SVG = '';
 // The view the demo opens in: 'worker', 'reviewer' or 'presenter' (the guided tour).
 // A copy hosted for outside viewers, such as investors, opens on 'presenter'.
 export const START_ROLE = 'worker';
+// The address of the client portal demo (the practice's side), for the last tour step.
+// Empty: no link. A host fills it from its setting DEMO_PORTAL_URL (scripts/hosted_settings.mjs).
+export const PORTAL_URL = '';
 
 const ROLES = ['worker', 'reviewer', 'presenter'];
 
@@ -26,6 +29,11 @@ export function startRole(search) {
     // Ignore a malformed address.
   }
   return ROLES.includes(START_ROLE) ? START_ROLE : 'worker';
+}
+
+// Only a plain https address is used as a link.
+export function safeUrl(url) {
+  return /^https:\/\/[a-z0-9.-]+(?::\d+)?(?:\/[A-Za-z0-9._~\/-]*)?$/.test(String(url || '')) ? url : '';
 }
 
 export function displayName(search) {
