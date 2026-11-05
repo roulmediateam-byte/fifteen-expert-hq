@@ -4,6 +4,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 import path from 'node:path';
 
 import { GitHub } from '../lib/github.js';
@@ -261,6 +262,14 @@ test('HQ\'s own copy of the schedule matches agents/schedule.json', () => {
   const file = JSON.parse(repoFile('agents/schedule.json'));
   delete file._note;
   assert.deepEqual(DEFAULT_SCHEDULE, file);
+});
+
+test('the Company view\'s copies of HQ\'s code and fonts are the same as HQ\'s (company/tests/copy-hq.mjs)', async () => {
+  const { SHARED_FILES } = await import('../../company/tests/shared-files.js');
+  for (const [copy, original] of Object.entries(SHARED_FILES)) {
+    const same = readFileSync(path.join(ROOT, 'company', copy)).equals(readFileSync(path.join(ROOT, original)));
+    assert.ok(same, `company/${copy} differs from ${original}: run node tests/copy-hq.mjs in company/`);
+  }
 });
 
 test('heartbeat lines are read as agents/README.md writes them', () => {

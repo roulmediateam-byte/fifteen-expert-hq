@@ -30,6 +30,7 @@ HQ is served from main. Melvin merges pull requests #1, #2, #3, #11 and the HQ p
 8. Root directory (under Advanced): `hq`.
 9. Save and Deploy. The first page will say HQ is locked. That is right until step 6.
 10. In the project, open Settings and its build settings (called Builds, or Builds & deployments), then Branch control (Configure Preview deployments). Set Preview branches to None, and save. Agents push branches all day; with previews off, no branch ever runs its own copy of HQ.
+11. In the same build settings, find Build watch paths. Include paths: `hq/*` and nothing else. Exclude paths: none. Save. Then a merge that changes only other folders skips HQ's build, so the free plan's 500 builds a month last (the Company view's project does the same with `company/*`, company/SETUP.md). After the next such merge, check that Deployments shows HQ's build was skipped.
 
 ## 4. Add the secrets
 
