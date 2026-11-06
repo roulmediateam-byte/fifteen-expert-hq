@@ -1,6 +1,6 @@
 {
-  "updated": "Sat 7 Nov 2026 05:51 Sydney",
-  "updated_utc": "2026-11-06T18:51:24Z",
+  "updated": "Sat 7 Nov 2026 06:35 Sydney",
+  "updated_utc": "2026-11-06T19:35:34Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -20,13 +20,13 @@
     {
       "name": "chief-of-staff",
       "owner": "Adam",
-      "state": "waiting on human",
-      "reason": "open pull request with no human review",
-      "dot": "🟡",
+      "state": "working",
+      "reason": "",
+      "dot": "🟢",
       "task": "daily-digest",
-      "last_start": "Fri 6 Nov 06:35",
-      "minutes": "3",
-      "next_run": "Sat 7 Nov 06:30",
+      "last_start": "Sat 7 Nov 06:35",
+      "minutes": "0 so far",
+      "next_run": "Sun 8 Nov 06:30",
       "open_prs": [
         23,
         20
@@ -113,25 +113,25 @@
         "number": 20,
         "title": "[chief-of-staff] Digest 2026-11-05",
         "kind": "pull request",
-        "hours": 42
+        "hours": 43
       },
       {
         "number": 19,
         "title": "[design] Add the page checklist",
         "kind": "pull request",
-        "hours": 42
+        "hours": 43
       },
       {
         "number": 18,
         "title": "[engineer] Add a first passing smoke test in prototype/",
         "kind": "pull request",
-        "hours": 42
+        "hours": 43
       },
       {
         "number": 21,
         "title": "[engineer] Worker console demo (made-up claims)",
         "kind": "pull request",
-        "hours": 41
+        "hours": 42
       },
       {
         "number": 22,
@@ -149,7 +149,7 @@
         "number": 24,
         "title": "[setup] Adopt a reviewed part of ECC for the agents",
         "kind": "pull request",
-        "hours": 5
+        "hours": 6
       }
     ]
   },
@@ -163,6 +163,7 @@
     "    done daily-digest :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    done daily-digest :done, 2026-11-05 11:33, 2026-11-05 11:34",
     "    done daily-digest :done, 2026-11-06 06:35, 2026-11-06 06:37",
+    "    working daily-digest :active, 2026-11-07 06:35, 2026-11-07 06:35",
     "    section design",
     "    done picking :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    idle picking :done, 2026-11-05 11:33, 2026-11-05 11:33",
