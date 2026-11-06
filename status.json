@@ -1,6 +1,6 @@
 {
-  "updated": "Sat 7 Nov 2026 05:08 Sydney",
-  "updated_utc": "2026-11-06T18:08:33Z",
+  "updated": "Sat 7 Nov 2026 05:51 Sydney",
+  "updated_utc": "2026-11-06T18:51:24Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -107,43 +107,43 @@
         "number": 12,
         "title": "[design] Build the one-page website",
         "kind": "pull request",
-        "hours": 58
+        "hours": 59
       },
       {
         "number": 20,
         "title": "[chief-of-staff] Digest 2026-11-05",
         "kind": "pull request",
-        "hours": 41
+        "hours": 42
       },
       {
         "number": 19,
         "title": "[design] Add the page checklist",
         "kind": "pull request",
-        "hours": 41
+        "hours": 42
       },
       {
         "number": 18,
         "title": "[engineer] Add a first passing smoke test in prototype/",
         "kind": "pull request",
-        "hours": 41
+        "hours": 42
       },
       {
         "number": 21,
         "title": "[engineer] Worker console demo (made-up claims)",
         "kind": "pull request",
-        "hours": 40
+        "hours": 41
       },
       {
         "number": 22,
         "title": "[engineer] Client portal demo (made-up claims)",
         "kind": "pull request",
-        "hours": 39
+        "hours": 40
       },
       {
         "number": 23,
         "title": "[chief-of-staff] Digest 2026-11-06",
         "kind": "pull request",
-        "hours": 22
+        "hours": 23
       },
       {
         "number": 24,
@@ -194,7 +194,7 @@
   "closed_last_7_days": 0,
   "alerts": [
     "research is overdue: no heartbeat since the Mon 2 Nov 03:00 run",
-    "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 58 hours: [design] Build the one-page website",
+    "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 59 hours: [design] Build the one-page website",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"
   ],
   "sydney_date": "2026-11-07"
