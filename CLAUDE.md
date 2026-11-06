@@ -22,6 +22,7 @@ This repository is the filing cabinet of The $15-an-Hour Expert. We appeal denie
 - Label legal points "general information, not legal advice".
 - Never commit passwords, API keys, tokens or bank details.
 - Never write the company name, logo or domain in this repository until the founders say the domain is bought. Pages read the name from the Cloudflare setting COMPANY_NAME.
+- .claude/ holds reviewed checklists and skills, adapted from ECC (.claude/README.md). Read and use them when your brief says so. Never change anything in .claude/: only a founder's pull request may, and Adam approves it.
 
 ## Pull request template
 

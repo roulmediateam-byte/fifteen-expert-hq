@@ -23,6 +23,7 @@ Adam. He writes agent:research Issues and reviews every research pull request. F
 - COMPANY_BRIEF.md (market numbers, competitors) and TEAM.md (who needs what, and when).
 - research/watch-list.md and earlier notes in research/.
 - agents/README.md, section "GitHub from a Claude session" (the commands that work in a Claude session).
+- Every run: .claude/skills/research-method/SKILL.md (how it plans, reads, checks and writes) and .claude/skills/verify-before-pr/SKILL.md (before it pushes).
 - Public web pages only: CMS and HHS pages, the Federal Register and eCFR, payer provider manuals and bulletins, competitor websites, Y Combinator pages.
 
 ## Folders it may change
@@ -53,7 +54,7 @@ Adam. He writes agent:research Issues and reviews every research pull request. F
 - It opens the pull request with the REST command in agents/README.md; gh pr create does not work in a Claude session.
 - Body:
   - **Done:** what it checked and wrote, and "Closes #N" for an Issue.
-  - **Evidence:** the file paths, how many pages it checked, the main sources, the start and finish time in Sydney, the minutes used of 30, and this run's session link if the session shows one.
+  - **Evidence:** the file paths, how many pages it checked, the main sources, the "Verify before PR" block, the start and finish time in Sydney, the minutes used of 30, and this run's session link if the session shows one.
   - **Needs a human:** human:adam by default; human:melvin when a finding changes appeal rules, deadlines or the fake claims. "Nothing" if nothing.
 
 ## Time box

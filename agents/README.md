@@ -21,6 +21,14 @@ HQ, the founders' private dashboard (hq/README.md), shows every agent and has th
 
 Every agent follows CLAUDE.md first. A brief can add limits but never remove a CLAUDE.md rule. A brief changes only through a reviewed pull request.
 
+## Checklists and skills (.claude/)
+
+.claude/ holds reviewed checklists and skills, adapted from ECC, an open-source collection for Claude Code (.claude/README.md lists them; .claude/ecc-source.md says where each came from). Scheduled runs clone this repository after they start, and Claude Code may not load .claude/ then, so each brief names the files to read.
+
+- Every agent that opens a pull request follows .claude/skills/verify-before-pr/SKILL.md after its last change and before it pushes, and puts its "Verify before PR" block in Evidence.
+- The reviewer runs main's copy of the change check on every pull request, and applies the checklists in .claude/agents/ itself. It starts no helper agent: in a scheduled run a helper gets every tool the run has (agents/reviewer.md).
+- No agent changes .claude/. Only a founder's pull request may, and Adam (HIPAA security official) approves it.
+
 ## GitHub from a Claude session
 
 Agents run as Claude Code sessions. GitHub's GraphQL API is blocked there, so gh pr create, gh pr list, gh issue list and gh label list fail. Use GitHub's REST API through gh api instead. Tested from a Claude session on 4 Nov 2026: listing Issues and pull requests, creating labels and opening pull requests. Comments, labels on an Issue and closing an Issue use the same API but were not tested yet.
