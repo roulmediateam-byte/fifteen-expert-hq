@@ -1,6 +1,6 @@
 {
-  "updated": "Sat 7 Nov 2026 03:52 Sydney",
-  "updated_utc": "2026-11-06T16:52:17Z",
+  "updated": "Sat 7 Nov 2026 04:48 Sydney",
+  "updated_utc": "2026-11-06T17:48:46Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -107,49 +107,49 @@
         "number": 12,
         "title": "[design] Build the one-page website",
         "kind": "pull request",
-        "hours": 57
+        "hours": 58
       },
       {
         "number": 20,
         "title": "[chief-of-staff] Digest 2026-11-05",
         "kind": "pull request",
-        "hours": 40
+        "hours": 41
       },
       {
         "number": 19,
         "title": "[design] Add the page checklist",
         "kind": "pull request",
-        "hours": 40
+        "hours": 41
       },
       {
         "number": 18,
         "title": "[engineer] Add a first passing smoke test in prototype/",
         "kind": "pull request",
-        "hours": 40
+        "hours": 41
       },
       {
         "number": 21,
         "title": "[engineer] Worker console demo (made-up claims)",
         "kind": "pull request",
-        "hours": 39
+        "hours": 40
       },
       {
         "number": 22,
         "title": "[engineer] Client portal demo (made-up claims)",
         "kind": "pull request",
-        "hours": 38
+        "hours": 39
       },
       {
         "number": 23,
         "title": "[chief-of-staff] Digest 2026-11-06",
         "kind": "pull request",
-        "hours": 21
+        "hours": 22
       },
       {
         "number": 24,
         "title": "[setup] Adopt a reviewed part of ECC for the agents",
         "kind": "pull request",
-        "hours": 3
+        "hours": 4
       }
     ]
   },
@@ -194,7 +194,7 @@
   "alerts": [
     "reviewer is overdue: no review yet of #24, #23",
     "research is overdue: no heartbeat since the Mon 2 Nov 03:00 run",
-    "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 57 hours: [design] Build the one-page website",
+    "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 58 hours: [design] Build the one-page website",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"
   ],
   "sydney_date": "2026-11-07"
