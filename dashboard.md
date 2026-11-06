@@ -1,4 +1,4 @@
-Updated Sat 7 Nov 2026 04:48 Sydney
+Updated Sat 7 Nov 2026 05:05 Sydney
 
 # RUNNING
 
@@ -9,7 +9,7 @@ Updated Sat 7 Nov 2026 04:48 Sydney
 | 🟡 | chief-of-staff | Adam | waiting on human | daily-digest | Fri 6 Nov 06:35 | 3 | Sat 7 Nov 06:30 | [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23), [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
 | 🟡 | design | Adam | waiting on human | pick-work | Sat 7 Nov 01:08 | 2 | Sun 8 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🟡 | engineer | Adam | waiting on human | pick-work | Sat 7 Nov 02:15 | 4 | Sun 8 Nov 02:00 | [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22), [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21), [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
-| 🔴 | reviewer | Adam | overdue | sweep | Fri 6 Nov 05:05 | 6 | Sat 7 Nov 05:00 sweep, and on every pull request | none |
+| 🟢 | reviewer | Adam | working | sweep | Sat 7 Nov 05:05 | 0 so far | Sun 8 Nov 05:00 sweep, and on every pull request | none |
 | 🔴 | research | Adam | overdue | none | never |  | Mon 9 Nov 03:00 | none |
 | ⚪ | sales | Melvin | off | none | never |  | off (off until phase 5) | none |
 
@@ -28,7 +28,7 @@ Updated Sat 7 Nov 2026 04:48 Sydney
 - [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) [engineer] Worker console demo (made-up claims) (pull request, 40 hours)
 - [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22) [engineer] Client portal demo (made-up claims) (pull request, 39 hours)
 - [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23) [chief-of-staff] Digest 2026-11-06 (pull request, 22 hours)
-- [#24](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/24) [setup] Adopt a reviewed part of ECC for the agents (pull request, 4 hours)
+- [#24](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/24) [setup] Adopt a reviewed part of ECC for the agents (pull request, 5 hours)
 
 ## Timeline
 
@@ -56,6 +56,7 @@ gantt
     section reviewer
     done sweep :done, 2026-11-05 11:37, 2026-11-05 11:39
     done sweep :done, 2026-11-06 05:05, 2026-11-06 05:10
+    working sweep :active, 2026-11-07 05:05, 2026-11-07 05:05
 ```
 
 ## Board
@@ -75,7 +76,6 @@ Issues closed in the last 7 days: 0.
 
 ## Alerts
 
-- 🔴 reviewer is overdue: no review yet of #24, #23
 - 🔴 research is overdue: no heartbeat since the Mon 2 Nov 03:00 run
 - 🔴 [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 58 hours: [design] Build the one-page website
 - 🔴 [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md

@@ -1,6 +1,6 @@
 {
-  "updated": "Sat 7 Nov 2026 04:48 Sydney",
-  "updated_utc": "2026-11-06T17:48:46Z",
+  "updated": "Sat 7 Nov 2026 05:05 Sydney",
+  "updated_utc": "2026-11-06T18:05:51Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -66,13 +66,13 @@
     {
       "name": "reviewer",
       "owner": "Adam",
-      "state": "overdue",
-      "reason": "no review yet of #24, #23",
-      "dot": "🔴",
+      "state": "working",
+      "reason": "",
+      "dot": "🟢",
       "task": "sweep",
-      "last_start": "Fri 6 Nov 05:05",
-      "minutes": "6",
-      "next_run": "Sat 7 Nov 05:00 sweep, and on every pull request",
+      "last_start": "Sat 7 Nov 05:05",
+      "minutes": "0 so far",
+      "next_run": "Sun 8 Nov 05:00 sweep, and on every pull request",
       "open_prs": []
     },
     {
@@ -149,7 +149,7 @@
         "number": 24,
         "title": "[setup] Adopt a reviewed part of ECC for the agents",
         "kind": "pull request",
-        "hours": 4
+        "hours": 5
       }
     ]
   },
@@ -178,6 +178,7 @@
     "    section reviewer",
     "    done sweep :done, 2026-11-05 11:37, 2026-11-05 11:39",
     "    done sweep :done, 2026-11-06 05:05, 2026-11-06 05:10",
+    "    working sweep :active, 2026-11-07 05:05, 2026-11-07 05:05",
     "```"
   ],
   "board": {
@@ -192,7 +193,6 @@
   },
   "closed_last_7_days": 0,
   "alerts": [
-    "reviewer is overdue: no review yet of #24, #23",
     "research is overdue: no heartbeat since the Mon 2 Nov 03:00 run",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 58 hours: [design] Build the one-page website",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"
