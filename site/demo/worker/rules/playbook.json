@@ -1,0 +1,143 @@
+{
+  "FAKE": "Our playbook for the worker console demo, used with made-up claims only.",
+  "kind": "our rule",
+  "note": "These are our own working rules, not official ones: the evidence each denial type needs, the words the checker looks for, tone and length limits, and the fee. Melvin reviews them before any real use. Official rules are in appeal-rules.json.",
+  "fee_rate": 0.2,
+  "fee_note": "Our estimate: a fee of 20% of the amount recovered. The real fee waits for finance/pricing.md and the lawyer (42 CFR 424.73 and 424.80; general information, not legal advice).",
+  "low_confidence_below": 0.85,
+  "letter": {
+    "min_words": 120,
+    "max_words": 650,
+    "why": "Our rule: under 120 words a letter rarely explains the denial and the evidence; over 650 words the reviewer at the payer may miss the point."
+  },
+  "tone": {
+    "blocked_words": ["ridiculous", "absurd", "outrageous", "incompetent", "stupid", "unacceptable", "disgraceful", "lawsuit", "sue", "attorney general", "fraud", "you people", "demand"],
+    "max_exclamation_marks": 0,
+    "caps_allowlist": ["HIPAA", "MEDICARE", "FAKE", "REDETERMINATION", "RECONSIDERATION"],
+    "why": "Our rule: appeals are read by clinical and claims reviewers. Calm, factual letters get read; angry ones do not help and can hurt the practice's relationship with the payer."
+  },
+  "follow_up": {
+    "kind": "our estimate",
+    "transit_days": { "portal": 0, "fax": 0, "mail": 5 },
+    "extra_days": 1,
+    "why": "Follow up the day after the payer's decision time ends. Mail is counted as taking 5 days to arrive (our estimate)."
+  },
+  "categories": {
+    "missing_info": {
+      "label": "Missing information",
+      "plain": "The payer says something was missing, usually a record it asked for.",
+      "reason_keywords": ["medical record", "visit note", "documentation"],
+      "required": ["visit_note", "denial_notice"],
+      "optional": []
+    },
+    "medical_necessity": {
+      "label": "Medical necessity",
+      "plain": "The payer says the service was not needed, or not covered for this diagnosis or this often.",
+      "reason_keywords": ["medically necessary", "medical necessity"],
+      "required": ["visit_note", "lmn", "denial_notice"],
+      "optional": ["prior_treatment"]
+    },
+    "coding": {
+      "label": "Coding",
+      "plain": "The payer says a code, modifier or diagnosis does not fit the service.",
+      "reason_keywords": ["modifier", "diagnosis code", "coded correctly"],
+      "required": ["visit_note", "original_claim", "denial_notice"],
+      "optional": []
+    },
+    "timely_filing": {
+      "label": "Timely filing",
+      "plain": "The payer says the claim arrived after its filing limit.",
+      "reason_keywords": ["filed on time", "within the filing limit"],
+      "required": ["timely_proof", "original_claim", "denial_notice"],
+      "optional": []
+    },
+    "authorization": {
+      "label": "Authorization",
+      "plain": "The payer says it had no prior authorization for the service.",
+      "reason_keywords": ["authorization", "authorized"],
+      "required": ["auth_approval", "visit_note", "denial_notice"],
+      "optional": []
+    },
+    "duplicate": {
+      "label": "Duplicate",
+      "plain": "The payer thinks the service was billed twice.",
+      "reason_keywords": ["not a duplicate", "separate service", "two distinct services"],
+      "required": ["second_note", "original_claim", "denial_notice"],
+      "optional": []
+    },
+    "eligibility": {
+      "label": "Eligibility",
+      "plain": "The payer says the patient was not covered on the date of service, or could not be found.",
+      "reason_keywords": ["coverage was active", "eligible"],
+      "required": ["eligibility_proof", "id_card", "denial_notice"],
+      "optional": []
+    }
+  },
+  "category_by_carc": {
+    "16": "missing_info",
+    "252": "missing_info",
+    "50": "medical_necessity",
+    "151": "medical_necessity",
+    "167": "medical_necessity",
+    "4": "coding",
+    "11": "coding",
+    "97": "coding",
+    "236": "coding",
+    "29": "timely_filing",
+    "197": "authorization",
+    "15": "authorization",
+    "18": "duplicate",
+    "26": "eligibility",
+    "27": "eligibility",
+    "31": "eligibility",
+    "22": "eligibility"
+  },
+  "plain_by_code": {
+    "16": "Claim missing information",
+    "252": "Documents needed to decide",
+    "50": "Not medically necessary (payer's view)",
+    "151": "More visits than the payer allows",
+    "167": "Diagnosis not covered",
+    "4": "Modifier does not fit the code",
+    "11": "Diagnosis does not fit the procedure",
+    "97": "Paid as part of another service",
+    "236": "Codes not allowed together (NCCI)",
+    "29": "Filed after the time limit",
+    "197": "No prior authorization",
+    "15": "Authorization number problem (retired code)",
+    "18": "Exact duplicate",
+    "26": "Coverage had not started",
+    "27": "Coverage had ended",
+    "31": "Patient not found as a member",
+    "22": "Another payer may be primary",
+    "M127": "missing medical record",
+    "M80": "same session as another service",
+    "M86": "already paid in the time frame",
+    "N115": "based on a Local Coverage Determination",
+    "N54": "does not match the authorization",
+    "N30": "patient ineligible"
+  },
+  "evidence": {
+    "visit_note": { "label": "Signed visit note for the date of service", "short": "Signed visit note for the date of service" },
+    "lmn": { "label": "Letter of medical necessity, signed by the treating doctor", "short": "Letter of medical necessity, signed by the treating doctor" },
+    "prior_treatment": { "label": "Records of earlier treatment (for example physical therapy notes)", "short": "Records of earlier treatment" },
+    "auth_approval": { "label": "Prior authorization approval letter", "short": "Prior authorization approval letter, authorization number {auth}" },
+    "original_claim": { "label": "Copy of the original claim", "short": "Copy of the original claim" },
+    "corrected_claim": { "label": "Corrected claim with the right code", "short": "Corrected claim" },
+    "timely_proof": { "label": "Proof of on-time filing (clearinghouse acceptance report)", "short": "Clearinghouse acceptance report showing the claim was sent on time" },
+    "eligibility_proof": { "label": "Eligibility check from the date of service", "short": "Eligibility check showing active coverage on the date of service" },
+    "id_card": { "label": "Member ID card, front and back", "short": "Copy of the member ID card" },
+    "second_note": { "label": "Visit notes for both services (shows they were separate)", "short": "Visit notes for both services" },
+    "denial_notice": { "label": "Copy of the denial notice (remittance or EOB page)", "short": "Copy of the denial notice" },
+    "prior_decision": { "label": "Copy of the first appeal decision", "short": "Copy of the first appeal decision" },
+    "cms1696": { "label": "Appointment of Representative, signed (CMS-1696)", "short": "Signed Appointment of Representative (CMS-1696)" }
+  },
+  "send_back_reasons": [
+    "Weak or wrong argument",
+    "Missing or wrong evidence",
+    "A fact does not match the documents",
+    "Tone or wording",
+    "Wrong level, address or deadline",
+    "Other"
+  ]
+}

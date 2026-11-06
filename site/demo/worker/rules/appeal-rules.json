@@ -1,0 +1,464 @@
+{
+  "FAKE": "Rules file for the worker console demo, which uses made-up claims only. Official rules are quoted from the page named in each entry. Contractor and payer addresses, and every rule marked kind sample, are made up for the demo.",
+  "version": 1,
+  "opened_on": "2026-11-05",
+  "opened_note": "Every official page below was opened in a Claude session on 5 Nov 2026 (Sydney date; 4 Nov 2026 in the US). Quotes are the page's own words as read that day. General information, not legal advice: check the live page before relying on a rule.",
+  "sources": {
+    "cms_level1": {
+      "publisher": "CMS",
+      "title": "First Level of Appeal: Redetermination by a Medicare Contractor",
+      "url": "https://www.cms.gov/medicare/appeals-grievances/fee-for-service/first-level-appeal-redetermination-medicare-contractor",
+      "opened": "2026-11-05",
+      "page_last_modified": "03/10/2026 08:33 PM"
+    },
+    "cms_level2": {
+      "publisher": "CMS",
+      "title": "Second Level of Appeal: Reconsideration by a Qualified Independent Contractor",
+      "url": "https://www.cms.gov/medicare/appeals-grievances/fee-for-service/second-level-appeal",
+      "opened": "2026-11-05",
+      "page_last_modified": "09/30/2026 02:19 PM"
+    },
+    "cms_level3": {
+      "publisher": "CMS",
+      "title": "Third Level of Appeal: Decision by Office of Medicare Hearings and Appeals (OMHA)",
+      "url": "https://www.cms.gov/medicare/appeals-grievances/fee-for-service/third-level-appeal",
+      "opened": "2026-11-05",
+      "page_last_modified": "10/27/2026 04:18 PM"
+    },
+    "cms_level4": {
+      "publisher": "CMS",
+      "title": "Fourth Level of Appeal: Review by the Medicare Appeals Council",
+      "url": "https://www.cms.gov/medicare/appeals-grievances/fee-for-service/fourth-level-appeal",
+      "opened": "2026-11-05",
+      "page_last_modified": "09/10/2024 06:21 PM"
+    },
+    "cms_level5": {
+      "publisher": "CMS",
+      "title": "Fifth Level of Appeal: Judicial Review in Federal District Court",
+      "url": "https://www.cms.gov/medicare/appeals-grievances/fee-for-service/fifth-level-appeal",
+      "opened": "2026-11-05",
+      "page_last_modified": "10/27/2026 04:18 PM"
+    },
+    "cms_1696": {
+      "publisher": "CMS",
+      "title": "Appointment of Representative (form CMS-1696)",
+      "url": "https://cms.gov/cms1696-appointment-representative",
+      "opened": "2026-11-05",
+      "page_last_modified": null,
+      "note": "The page shows no last modified date. It shows OMB No. 0938-0950 and a form expiration date of 12/31/2028."
+    },
+    "cms_good_cause": {
+      "publisher": "CMS",
+      "title": "Medicare Appeals Good Cause for Late Filing",
+      "url": "https://www.cms.gov/appeals-late-filing",
+      "opened": "2026-11-05",
+      "page_last_modified": "12/18/2024 10:20 AM"
+    },
+    "cms_reopenings_faq": {
+      "publisher": "CMS",
+      "title": "FAQ for CMS IOM 100-04 Chapter 34 Reopenings (CR 4147)",
+      "url": "https://www.cms.gov/files/document/cr4147qaspdf",
+      "opened": "2026-11-05",
+      "page_last_modified": "Updated December 22, 2006",
+      "note": "An old CMS document. The lawyer or Melvin should check the current Medicare Claims Processing Manual, chapter 34, before the demo's reopening advice is used on a real claim."
+    },
+    "x12_carc": {
+      "publisher": "X12",
+      "title": "Claim Adjustment Reason Codes",
+      "url": "https://x12.org/codes/claim-adjustment-reason-codes",
+      "opened": "2026-11-05",
+      "page_last_modified": null,
+      "note": "The page shows a start date per code, and a stop date where a code was retired. It showed \"Status Last Reviewed: 11/1/2026\" for its maintenance request section."
+    },
+    "x12_rarc": {
+      "publisher": "X12",
+      "title": "Remittance Advice Remark Codes",
+      "url": "https://x12.org/codes/remittance-advice-remark-codes",
+      "opened": "2026-11-05",
+      "page_last_modified": null
+    }
+  },
+  "payers": {
+    "medicare_sample": {
+      "name": "Medicare (sample)",
+      "kind": "medicare",
+      "note": "Appeal levels, deadlines and decision times are official CMS rules (each level names its page). The contractor names, addresses and fax numbers are made up for the demo; a real appeal goes to the address on the real notice.",
+      "claims_address": {
+        "kind": "sample",
+        "lines": ["Sample MAC, Jurisdiction ZZ (demo)", "Claims Processing", "PO Box 1000", "Sampletown, ZZ 00002"]
+      },
+      "levels": [
+        {
+          "id": "medicare_redetermination",
+          "order": 1,
+          "name": "Redetermination",
+          "letter_title": "Request for Redetermination",
+          "decided_by": "Medicare Administrative Contractor (MAC)",
+          "deadline": { "days": 120, "counted_from": "receipt of the initial determination", "presumed_receipt_days": 5 },
+          "decision_days": 60,
+          "minimum_amount_usd": null,
+          "how_to_file": "In writing: form CMS-20027, or a written request that gives the beneficiary name, the Medicare number, the specific services or items, the specific dates of service, the name of the party or the party's representative, and why the appellant disagrees.",
+          "rule": {
+            "kind": "official",
+            "text": "File within 120 days of receiving the initial determination. Medicare presumes the notice was received 5 calendar days after the date on it. The MAC generally decides within 60 days of receiving the request. No minimum amount is needed.",
+            "quotes": [
+              "has 120 days from the date of receipt of the initial claim determination to file a redetermination request",
+              "is presumed to be received 5 calendar days after the date of the notice",
+              "within 60 days of receipt of the request for redetermination",
+              "A minimum monetary threshold on the claim is not required to request a redetermination."
+            ],
+            "source": "cms_level1",
+            "source_url": "https://www.cms.gov/medicare/appeals-grievances/fee-for-service/first-level-appeal-redetermination-medicare-contractor",
+            "opened": "2026-11-05"
+          },
+          "address": {
+            "kind": "sample",
+            "lines": ["Sample MAC, Jurisdiction ZZ (demo)", "Redeterminations", "PO Box 1001", "Sampletown, ZZ 00002"]
+          },
+          "fax": "(000) 555-0102",
+          "portal": "Sample MAC provider portal (simulated)"
+        },
+        {
+          "id": "medicare_reconsideration",
+          "order": 2,
+          "name": "Reconsideration",
+          "letter_title": "Request for Reconsideration",
+          "decided_by": "Qualified Independent Contractor (QIC)",
+          "deadline": { "days": 180, "counted_from": "receipt of the redetermination decision", "presumed_receipt_days": 5 },
+          "decision_days": 60,
+          "minimum_amount_usd": null,
+          "how_to_file": "Form CMS-20033 or a written request, sent with a copy of the redetermination notice to the QIC. The redetermination notice gives the instructions.",
+          "rule": {
+            "kind": "official",
+            "text": "File within 180 days of receiving the redetermination decision, presumed received 5 days after the date on the notice. The QIC generally decides within 60 days. Send all evidence now: documents not sent at this level may be excluded at later levels unless there is good cause.",
+            "quotes": [
+              "has 180 days from the date of receipt of the redetermination decision to file a reconsideration request.",
+              "is presumed to be received 5 days after the date on the notice",
+              "Generally, the QIC will send this decision to all parties within 60 days of receipt of the request for reconsideration.",
+              "Any documentation not submitted at the reconsideration level may be excluded from consideration",
+              "A minimum monetary threshold is not required to request a reconsideration."
+            ],
+            "source": "cms_level2",
+            "source_url": "https://www.cms.gov/medicare/appeals-grievances/fee-for-service/second-level-appeal",
+            "opened": "2026-11-05"
+          },
+          "address": {
+            "kind": "sample",
+            "lines": ["Sample QIC (demo)", "Part B Reconsiderations", "PO Box 2002", "Sampleford, ZZ 00003"]
+          },
+          "fax": "(000) 555-0103",
+          "portal": "Sample QIC appeals portal (simulated)"
+        },
+        {
+          "id": "medicare_alj_hearing",
+          "order": 3,
+          "name": "Hearing by an Administrative Law Judge (OMHA)",
+          "letter_title": "Request for an Administrative Law Judge Hearing",
+          "decided_by": "Office of Medicare Hearings and Appeals (OMHA)",
+          "deadline": { "days": 60, "counted_from": "receipt of the reconsideration decision", "presumed_receipt_days": 5 },
+          "decision_days": 90,
+          "minimum_amount_usd": 200,
+          "minimum_amount_year": 2026,
+          "minimum_next_year": { "year": 2027, "usd": 200, "quote": "For calendar year 2027 the amount in controversy will remain at $200." },
+          "how_to_file": "By mail or through the OMHA e-Appeal Portal. The QIC's reconsideration decision letter gives full details.",
+          "rule": {
+            "kind": "official",
+            "text": "File with OMHA within 60 days of receiving the reconsideration decision, presumed received 5 days after the date of the notice. For 2026 the amount in controversy must be at least $200. OMHA must generally decide within 90 days of receiving the request.",
+            "quotes": [
+              "A request for an ALJ hearing must be filed with OMHA within 60 days of receipt of the reconsideration decision.",
+              "The date of receipt of the reconsideration decision is presumed to be 5 days after the date of the decision notice, unless there is evidence to the contrary.",
+              "For calendar year 2026 the amount in controversy is $200."
+            ],
+            "source": "cms_level3",
+            "source_url": "https://www.cms.gov/medicare/appeals-grievances/fee-for-service/third-level-appeal",
+            "opened": "2026-11-05"
+          },
+          "address": {
+            "kind": "official",
+            "lines": ["Office of Medicare Hearings and Appeals (OMHA)", "Use the mailing address or e-Appeal Portal named in the QIC decision letter"]
+          },
+          "fax": null,
+          "portal": "OMHA e-Appeal Portal"
+        },
+        {
+          "id": "medicare_council_review",
+          "order": 4,
+          "name": "Review by the Medicare Appeals Council",
+          "letter_title": "Request for Review by the Medicare Appeals Council",
+          "decided_by": "Medicare Appeals Council",
+          "deadline": { "days": 60, "counted_from": "receipt of the OMHA decision or dismissal", "presumed_receipt_days": 5 },
+          "decision_days": 90,
+          "minimum_amount_usd": null,
+          "how_to_file": "As the OMHA decision explains.",
+          "rule": {
+            "kind": "official",
+            "text": "File within 60 days of receiving OMHA's decision or dismissal, presumed received 5 days after its date. There is no minimum amount. The Council generally has 90 days.",
+            "quotes": [
+              "within 60 days of receipt of the notice of OMHA's decision or dismissal.",
+              "no requirement regarding the amount of money in controversy"
+            ],
+            "source": "cms_level4",
+            "source_url": "https://www.cms.gov/medicare/appeals-grievances/fee-for-service/fourth-level-appeal",
+            "opened": "2026-11-05"
+          },
+          "address": { "kind": "official", "lines": ["Medicare Appeals Council", "Use the address named in the OMHA decision"] },
+          "fax": null,
+          "portal": null
+        },
+        {
+          "id": "medicare_federal_court",
+          "order": 5,
+          "name": "Judicial review in federal district court",
+          "letter_title": "Complaint for judicial review (lawyer files)",
+          "decided_by": "Federal district court",
+          "deadline": { "days": 60, "counted_from": "receipt of the Council's decision", "presumed_receipt_days": 5 },
+          "decision_days": null,
+          "minimum_amount_usd": 1960,
+          "minimum_amount_year": 2026,
+          "minimum_next_year": { "year": 2027, "usd": 2000, "quote": "For calendar year 2027, the amount in controversy threshold is $2,000." },
+          "how_to_file": "Our policy in the demo: a lawyer files in court, never a worker (general information, not legal advice).",
+          "rule": {
+            "kind": "official",
+            "text": "File within 60 days after receiving the Council's decision, presumed received 5 days after its date. For 2026 the amount in controversy must be at least $1,960.",
+            "quotes": [
+              "within 60 calendar days after the date it receives notice of the Council's decision.",
+              "For calendar year 2026, the amount in controversy threshold is $1,960."
+            ],
+            "source": "cms_level5",
+            "source_url": "https://www.cms.gov/medicare/appeals-grievances/fee-for-service/fifth-level-appeal",
+            "opened": "2026-11-05"
+          },
+          "address": { "kind": "official", "lines": ["Federal district court (a lawyer files)"] },
+          "fax": null,
+          "portal": null
+        }
+      ]
+    },
+    "demo_health_plan": {
+      "name": "Demo Health Plan",
+      "kind": "private",
+      "note": "A made-up private payer. Every rule here is a sample payer rule, not a real plan's rule.",
+      "timely_filing": { "kind": "sample", "days": 90, "counted_from": "the date of service", "text": "Sample payer rule: claims must reach Demo Health Plan within 90 days of the date of service." },
+      "prior_authorization": { "kind": "sample", "text": "Sample payer rule: advanced imaging (such as MRI) and planned surgery need prior authorization. The approval letter gives an authorization number that must be on the claim and on any appeal." },
+      "claims_address": {
+        "kind": "sample",
+        "lines": ["Demo Health Plan", "Claims (not for appeals)", "PO Box 0003", "Sampletown, ZZ 00001"]
+      },
+      "levels": [
+        {
+          "id": "dhp_level1",
+          "order": 1,
+          "name": "Provider appeal",
+          "letter_title": "Provider Appeal",
+          "decided_by": "Demo Health Plan Provider Appeals Unit",
+          "deadline": { "days": 180, "counted_from": "the date on the denial notice", "presumed_receipt_days": 0 },
+          "decision_days": 30,
+          "minimum_amount_usd": null,
+          "how_to_file": "Sample payer rule: a written appeal by mail, fax or the provider portal, with a copy of the remittance or EOB.",
+          "rule": {
+            "kind": "sample",
+            "text": "Sample payer rule: send a provider appeal within 180 days of the date on the denial notice. The plan decides within 30 days of receiving it.",
+            "source": "sample",
+            "source_url": null,
+            "opened": null
+          },
+          "address": {
+            "kind": "sample",
+            "lines": ["Demo Health Plan", "Provider Appeals Unit", "PO Box 0001", "Sampletown, ZZ 00001"]
+          },
+          "fax": "(000) 555-0111",
+          "portal": "Demo Health Plan provider portal (simulated)"
+        },
+        {
+          "id": "dhp_level2",
+          "order": 2,
+          "name": "Second level provider appeal",
+          "letter_title": "Second Level Provider Appeal",
+          "decided_by": "Demo Health Plan Second Level Appeals",
+          "deadline": { "days": 60, "counted_from": "the date on the first appeal decision", "presumed_receipt_days": 0 },
+          "decision_days": 30,
+          "minimum_amount_usd": null,
+          "how_to_file": "Sample payer rule: a written appeal with a copy of the first appeal decision.",
+          "rule": {
+            "kind": "sample",
+            "text": "Sample payer rule: send a second level appeal within 60 days of the date on the first appeal decision. The plan decides within 30 days.",
+            "source": "sample",
+            "source_url": null,
+            "opened": null
+          },
+          "address": {
+            "kind": "sample",
+            "lines": ["Demo Health Plan", "Second Level Appeals", "PO Box 0002", "Sampletown, ZZ 00001"]
+          },
+          "fax": "(000) 555-0112",
+          "portal": "Demo Health Plan provider portal (simulated)"
+        }
+      ]
+    },
+    "demo_mutual_plan": {
+      "name": "Demo Mutual Plan",
+      "kind": "private",
+      "note": "A made-up private payer. Every rule here is a sample payer rule, not a real plan's rule.",
+      "timely_filing": { "kind": "sample", "days": 120, "counted_from": "the date of service", "text": "Sample payer rule: claims must reach Demo Mutual Plan within 120 days of the date of service." },
+      "prior_authorization": { "kind": "sample", "text": "Sample payer rule: MRI, CT and planned procedures need prior authorization. Quote the authorization number on the appeal." },
+      "corrected_claims": { "kind": "sample", "text": "Sample payer rule: a corrected claim may be sent with an appeal when a diagnosis or modifier on the original claim was wrong." },
+      "claims_address": {
+        "kind": "sample",
+        "lines": ["Demo Mutual Plan", "Claims (not for appeals)", "PO Box 0013", "Exampleville, ZZ 00011"]
+      },
+      "levels": [
+        {
+          "id": "dmp_level1",
+          "order": 1,
+          "name": "Appeal",
+          "letter_title": "Provider Appeal",
+          "decided_by": "Demo Mutual Plan Appeals",
+          "deadline": { "days": 90, "counted_from": "the date on the denial notice", "presumed_receipt_days": 0 },
+          "decision_days": 45,
+          "minimum_amount_usd": null,
+          "how_to_file": "Sample payer rule: a written appeal by mail, fax or portal.",
+          "rule": {
+            "kind": "sample",
+            "text": "Sample payer rule: send an appeal within 90 days of the date on the denial notice. The plan decides within 45 days.",
+            "source": "sample",
+            "source_url": null,
+            "opened": null
+          },
+          "address": {
+            "kind": "sample",
+            "lines": ["Demo Mutual Plan", "Appeals", "PO Box 0011", "Exampleville, ZZ 00011"]
+          },
+          "fax": "(000) 555-0121",
+          "portal": "Demo Mutual Plan portal (simulated)"
+        },
+        {
+          "id": "dmp_level2",
+          "order": 2,
+          "name": "Final internal appeal",
+          "letter_title": "Final Internal Appeal",
+          "decided_by": "Demo Mutual Plan Final Internal Appeals",
+          "deadline": { "days": 45, "counted_from": "the date on the first appeal decision", "presumed_receipt_days": 0 },
+          "decision_days": 45,
+          "minimum_amount_usd": null,
+          "how_to_file": "Sample payer rule: a written appeal with a copy of the first appeal decision.",
+          "rule": {
+            "kind": "sample",
+            "text": "Sample payer rule: send a final internal appeal within 45 days of the date on the first appeal decision. The plan decides within 45 days.",
+            "source": "sample",
+            "source_url": null,
+            "opened": null
+          },
+          "address": {
+            "kind": "sample",
+            "lines": ["Demo Mutual Plan", "Final Internal Appeals", "PO Box 0012", "Exampleville, ZZ 00011"]
+          },
+          "fax": "(000) 555-0122",
+          "portal": "Demo Mutual Plan portal (simulated)"
+        }
+      ]
+    }
+  },
+  "medicare_rules": [
+    {
+      "id": "medicare_written_request",
+      "kind": "official",
+      "title": "What a written redetermination request must include",
+      "text": "A redetermination must be requested in writing, on form CMS-20027 or in a letter that gives: the beneficiary name; the Medicare number; the specific services or items; the specific dates of service; the name of the party or the party's representative; and why the appellant disagrees with the decision.",
+      "quotes": [
+        "Beneficiary name",
+        "Medicare number",
+        "Specific service(s) and/or item(s) for which a redetermination is being requested",
+        "Specific date(s) of service",
+        "Name of the party, or the representative of the party",
+        "An explanation of why the appellant disagrees with the contractor's determination"
+      ],
+      "source": "cms_level1",
+      "source_url": "https://www.cms.gov/medicare/appeals-grievances/fee-for-service/first-level-appeal-redetermination-medicare-contractor",
+      "opened": "2026-11-05"
+    },
+    {
+      "id": "medicare_representative",
+      "kind": "official",
+      "title": "Appointing a representative (CMS-1696)",
+      "text": "Form CMS-1696 appoints a representative to act for a party on a claim or appeal. It is valid for one year from the date both the party and the representative sign it, and, unless revoked, for the duration of the claim or appeal it was filed with. Fee approval is not required when the party being represented is a provider or supplier. A MAC may dismiss a redetermination request when the representative is not appointed properly.",
+      "quotes": [
+        "Use this form to appoint a representative to act on your behalf for your claim, appeal, grievance or request.",
+        "considered valid for one year from the date this form is signed by both.",
+        "Unless revoked, the representation is valid for the duration of the claim, appeal, grievance, or request for which it was filed.",
+        "the appellant being represented is a provider or supplier.",
+        "The representative is not appointed properly"
+      ],
+      "demo_use": "Our policy in the demo: when we file an appeal for a practice as its appointed representative, the letter says so and a signed CMS-1696 goes with it. When the practice signs and files the appeal itself, no form is needed. Melvin confirms this policy with the lawyer before real use.",
+      "source": "cms_1696",
+      "source_url": "https://cms.gov/cms1696-appointment-representative",
+      "also_source_url": "https://www.cms.gov/medicare/appeals-grievances/fee-for-service/first-level-appeal-redetermination-medicare-contractor",
+      "opened": "2026-11-05"
+    },
+    {
+      "id": "medicare_good_cause",
+      "kind": "official",
+      "title": "Good cause for late filing",
+      "text": "A late appeal can be dismissed unless there is good cause for filing late, and CMS looks at each request to decide whether there is. Examples of good cause: a serious illness, a death or serious illness in the immediate family, records destroyed by a fire or other disaster, wrong or incomplete information from the contractor about when and how to appeal, or never receiving the notice. To ask, explain why the appeal is late, send that explanation with the appeal, and include any evidence.",
+      "quotes": [
+        "Important records were destroyed or damaged by fire or other event, like a hurricane, earthquake or flood",
+        "The contractor or appeals reviewer gave you incorrect or incomplete information about when and how to file an appeal",
+        "You didn't get notice of the determination or decision"
+      ],
+      "source": "cms_good_cause",
+      "source_url": "https://www.cms.gov/appeals-late-filing",
+      "opened": "2026-11-05"
+    },
+    {
+      "id": "medicare_reopening",
+      "kind": "official",
+      "title": "Clerical errors go to a reopening, not an appeal",
+      "text": "Clerical errors, including minor errors and omissions, are handled as reopenings. A reopening can be asked for within 1 year of the initial determination for any reason. If a redetermination request turns out to be only a minor error or omission, the contractor processes it as a reopening.",
+      "quotes": [
+        "Clerical errors (which include minor errors and omissions) shall be treated as reopenings",
+        "within 1 year from the date of the initial determination or redetermination for any reason"
+      ],
+      "source": "cms_reopenings_faq",
+      "source_url": "https://www.cms.gov/files/document/cr4147qaspdf",
+      "opened": "2026-11-05"
+    }
+  ],
+  "carc": {
+    "4": { "text": "The procedure code is inconsistent with the modifier used.", "stop": null },
+    "11": { "text": "The diagnosis is inconsistent with the procedure.", "stop": null },
+    "15": { "text": "The authorization number is missing, invalid, or does not apply to the billed services or provider.", "stop": "2018-05-01", "note": "Retired: X12 shows a stop date of 05/01/2018. Authorization denials now use 197." },
+    "16": { "text": "Claim/service lacks information or has submission/billing error(s).", "usage": "Do not use this code for claims attachment(s)/other documentation. At least one Remark Code must be provided...", "usage_shortened": true, "stop": null },
+    "18": { "text": "Exact duplicate claim/service (Use only with Group Code OA except where state workers' compensation regulations requires CO)", "stop": null },
+    "22": { "text": "This care may be covered by another payer per coordination of benefits.", "stop": null },
+    "26": { "text": "Expenses incurred prior to coverage.", "stop": null },
+    "27": { "text": "Expenses incurred after coverage terminated.", "stop": null },
+    "29": { "text": "The time limit for filing has expired.", "stop": null },
+    "31": { "text": "Patient cannot be identified as our insured.", "stop": null },
+    "50": { "text": "These are non-covered services because this is not deemed a 'medical necessity' by the payer.", "stop": null },
+    "96": { "text": "Non-covered charge(s).", "shortened": true, "rest": "The X12 text goes on: at least one remark code must be given, and the payer's policy may be named in the remittance.", "stop": null },
+    "97": { "text": "The benefit for this service is included in the payment/allowance for another service/procedure that has already been adjudicated.", "stop": null },
+    "151": { "text": "Payment adjusted because the payer deems the information submitted does not support this many/frequency of services.", "stop": null },
+    "167": { "text": "This (these) diagnosis(es) is (are) not covered.", "stop": null },
+    "197": { "text": "Precertification/authorization/notification/pre-treatment absent.", "stop": null },
+    "204": { "text": "This service/equipment/drug is not covered under the patient's current benefit plan", "stop": null },
+    "236": { "text": "This procedure or procedure/modifier combination is not compatible with another procedure or procedure/modifier combination provided on the same day according to the National Correct Coding Initiative or workers compensation state regulations/ fee schedule requirements.", "stop": null },
+    "252": { "text": "An attachment/other documentation is required to adjudicate this claim/service.", "usage": "At least one Remark Code must be provided...", "usage_shortened": true, "stop": null }
+  },
+  "carc_source": "x12_carc",
+  "carc_source_url": "https://x12.org/codes/claim-adjustment-reason-codes",
+  "carc_opened": "2026-11-05",
+  "rarc": {
+    "M127": { "text": "Missing patient medical record for this service." },
+    "M51": { "text": "Missing/incomplete/invalid procedure code(s)." },
+    "M80": { "text": "Not covered when performed during the same session/date as a previously processed service for the patient." },
+    "M86": { "text": "Service denied because payment already made for same/similar procedure within set time frame." },
+    "MA04": { "text": "Secondary payment cannot be considered without the identity of or payment information from the primary payer. The information was either not reported or was illegible." },
+    "MA130": { "text": "Your claim contains incomplete and/or invalid information, and no appeal rights are afforded...", "shortened": true, "plain": "The claim could not be processed, so there are no appeal rights: send a new claim with complete and correct information." },
+    "N4": { "text": "Missing/Incomplete/Invalid prior Insurance Carrier(s) EOB." },
+    "N30": { "text": "Patient ineligible for this service." },
+    "N54": { "text": "Claim information is inconsistent with pre-certified/authorized services." },
+    "N115": { "text": "This decision was based on a Local Coverage Determination (LCD).", "shortened": true, "plain": "The rest of the remark says an LCD is a guide to whether a service is covered, and tells the provider where to get a copy (the CMS website or the contractor)." }
+  },
+  "rarc_source": "x12_rarc",
+  "rarc_source_url": "https://x12.org/codes/remittance-advice-remark-codes",
+  "rarc_opened": "2026-11-05"
+}
