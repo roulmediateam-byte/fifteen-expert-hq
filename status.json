@@ -1,17 +1,10 @@
 {
-  "updated": "Sat 7 Nov 2026 02:15 Sydney",
-  "updated_utc": "2026-11-06T15:15:40Z",
+  "updated": "Sat 7 Nov 2026 02:18 Sydney",
+  "updated_utc": "2026-11-06T15:18:19Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
   "outside_folders": [
-    {
-      "pr": 21,
-      "agent": "engineer",
-      "files": [
-        "agents/engineer.md"
-      ]
-    },
     {
       "pr": 12,
       "agent": "design",
@@ -57,12 +50,12 @@
     {
       "name": "engineer",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
-      "dot": "🟢",
+      "state": "waiting on human",
+      "reason": "open pull request with no human review",
+      "dot": "🟡",
       "task": "pick-work",
       "last_start": "Sat 7 Nov 02:15",
-      "minutes": "0 so far",
+      "minutes": "4",
       "next_run": "Sun 8 Nov 02:00",
       "open_prs": [
         22,
@@ -117,6 +110,12 @@
         "hours": 55
       },
       {
+        "number": 21,
+        "title": "[engineer] Worker console demo (made-up claims)",
+        "kind": "pull request",
+        "hours": 38
+      },
+      {
         "number": 20,
         "title": "[chief-of-staff] Digest 2026-11-05",
         "kind": "pull request",
@@ -133,12 +132,6 @@
         "title": "[engineer] Add a first passing smoke test in prototype/",
         "kind": "pull request",
         "hours": 38
-      },
-      {
-        "number": 21,
-        "title": "[engineer] Worker console demo (made-up claims)",
-        "kind": "pull request",
-        "hours": 37
       },
       {
         "number": 22,
@@ -181,7 +174,7 @@
     "    done worker-console-demo :done, 2026-11-05 02:03, 2026-11-05 12:19",
     "    done client-portal-demo :done, 2026-11-05 12:59, 2026-11-05 13:44",
     "    idle check-own-prs :done, 2026-11-06 02:14, 2026-11-06 02:14",
-    "    working pick-work :active, 2026-11-07 02:15, 2026-11-07 02:15",
+    "    done pick-work :done, 2026-11-07 02:15, 2026-11-07 02:18",
     "    section reviewer",
     "    done sweep :done, 2026-11-05 11:37, 2026-11-05 11:39",
     "    done sweep :done, 2026-11-06 05:05, 2026-11-06 05:10",
@@ -202,7 +195,6 @@
     "reviewer is overdue: no review yet of #24, #23",
     "research is overdue: no heartbeat since the Mon 2 Nov 03:00 run",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 55 hours: [design] Build the one-page website",
-    "[#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) from engineer changes files outside its folders: agents/engineer.md",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"
   ],
   "sydney_date": "2026-11-07"
