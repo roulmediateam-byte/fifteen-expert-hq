@@ -6,36 +6,45 @@
 import { HttpError } from './http.js';
 import { MAX_FIELD } from './config.js';
 
+// HIDDEN, PATIENT_DATA, CONTACT and SECRETS are exported for the agents'
+// change check (.claude/skills/verify-before-pr/check-changes.mjs), so the
+// two use the same patterns.
+
 // Invisible characters that can hide text (including instructions for an AI
 // agent): every "default ignorable" code point (zero-width characters, soft
 // hyphens, direction marks, variation selectors, tag characters) and the
 // control characters except tab and new line.
-const HIDDEN = /[\p{Default_Ignorable_Code_Point}]|(?![\t\n])\p{Cc}/gu;
+export const HIDDEN = /[\p{Default_Ignorable_Code_Point}]|(?![\t\n])\p{Cc}/gu;
 
 // Signs of patient data: a label followed by a value. A label alone is fine
 // ("add a date of birth field to the FAKE claim form"); so are values that
-// start with FAKE, the marker for made-up data.
-const VALUE = String.raw`\s*(?:[:#=.-]|is|of|no\.?|number)?\s*(?!FAKE)`;
+// start with FAKE, the marker for made-up data. A label may be words,
+// snake_case or camelCase, and quoted as in JSON and YAML ("dob": "...",
+// member_id: ...). Every repeat has a limit, so a very long line cannot
+// stall a check.
+const START = String.raw`(?<![A-Za-z0-9])`; // also after an underscore: patient_dob
+const SEP = String.raw`[\s_-]{0,3}`;
+const VALUE = String.raw`["']?\s{0,10}(?:[:#=.-]|is|of|no\.?|number)?\s{0,10}["']?(?!FAKE)`;
 const DATE = String.raw`\d{1,4}[/.-]\d{1,2}[/.-]\d{1,4}`;
-const PATIENT_DATA = [
-  new RegExp(String.raw`\b(?:d\.?o\.?b\.?|date\s+of\s+birth|birth\s?date|born(?:\s+on)?)${VALUE}${DATE}`, 'i'),
-  new RegExp(String.raw`\b(?:d\.?o\.?s\.?|date\s+of\s+service)${VALUE}${DATE}`, 'i'),
-  new RegExp(String.raw`\b(?:member|subscriber|policy|patient|account|insurance|medicare|medicaid|claim)\s*(?:id|number|no\.?|#)${VALUE}[A-Z0-9-]*\d[A-Z0-9-]{3,}`, 'i'),
-  new RegExp(String.raw`\b(?:mrn|medical\s+record(?:\s+(?:number|no\.?|#))?)${VALUE}[A-Z0-9-]*\d[A-Z0-9-]{2,}`, 'i'),
+export const PATIENT_DATA = [
+  new RegExp(String.raw`${START}(?:d\.?o\.?b\.?|date${SEP}of${SEP}birth|birth${SEP}date|born(?:\s{1,3}on)?)${VALUE}${DATE}`, 'i'),
+  new RegExp(String.raw`${START}(?:d\.?o\.?s\.?|date${SEP}of${SEP}service|service${SEP}date)${VALUE}${DATE}`, 'i'),
+  new RegExp(String.raw`${START}(?:member|subscriber|policy|patient|account|insurance|medicare|medicaid|claim)${SEP}(?:id|number|no\.?|#)${VALUE}[A-Z0-9-]*\d[A-Z0-9-]{3,}`, 'i'),
+  new RegExp(String.raw`${START}(?:mrn|medical${SEP}record(?:${SEP}(?:number|no\.?|#))?)${VALUE}[A-Z0-9-]*\d[A-Z0-9-]{2,}`, 'i'),
   /\b\d{3}-\d{2}-\d{4}\b/, // a US social security number
-  /\b(?:ssn|social\s+security(?:\s+number)?)\s*[:#]?\s*\d/i,
-  /\bpatient(?:'s)?\s+(?:name|address|phone)\s*[:=]/i,
+  new RegExp(String.raw`${START}(?:ssn|social${SEP}security(?:${SEP}number)?)["']?\s{0,10}[:#=]?\s{0,10}["']?\d`, 'i'),
+  new RegExp(String.raw`${START}patient(?:'s)?[\s_-]{1,3}(?:name|address|phone)["']?\s{0,10}[:=]`, 'i'),
 ];
 
 // A private person's phone or email (CLAUDE.md rule 5: write their role).
-const CONTACT = [
-  /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i,
+export const CONTACT = [
+  /[A-Z0-9._%+-]{1,64}@[A-Z0-9.-]{1,255}\.[A-Z]{2,63}/i,
   /(?:\+?1[\s.-]?)?\(?\b\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}\b/,
   /\+\d{1,3}[\s.-]?\d{2,4}[\s.-]?\d{3,4}[\s.-]?\d{3,4}\b/,
 ];
 
 // Signs of a secret pasted by mistake.
-const SECRETS = [
+export const SECRETS = [
   /\b(?:ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{20,}/,
   /\bgithub_pat_[A-Za-z0-9_]{20,}/,
   /\bsk-ant-[A-Za-z0-9_-]{10,}/,
@@ -45,7 +54,8 @@ const SECRETS = [
   /\bAKIA[0-9A-Z]{16}\b/,
   /\beyJ[A-Za-z0-9_-]{10,}\.eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}/,
   /-----BEGIN [A-Z ]*PRIVATE KEY-----/,
-  /\b(?:password|passwd|pwd|passcode|api[\s_-]?key|secret)\s*[:=]\s*\S+/i,
+  // A key and its value, also with the key in quotes, as JSON and YAML write it.
+  /\b(?:password|passwd|pwd|passcode|api[\s_-]?key|secret|secret[\s_-]?key|client[\s_-]?secret|private[\s_-]?key|access[\s_-]?key)["']?\s{0,10}[:=]\s{0,10}["']?[^\s"']+/i,
 ];
 
 // The text as the checks see it: compatibility characters folded (a

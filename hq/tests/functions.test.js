@@ -207,6 +207,10 @@ test('the forms are checked on the server', async () => {
     [{ ...good, why: 'Call the office manager on 415-555-0134' }, /email address or phone number/],
     [{ ...good, why: 'Ask jo@clinic.example for the file' }, /email address or phone number/],
     [{ ...good, why: 'password: hunter2' }, /password, key or token/],
+    // JSON and YAML keys, built from pieces so the change check does not flag this file.
+    [{ ...good, why: ['{"d', 'ob": "1/2/1960"}'].join('') }, /looks like it has patient data/],
+    [{ ...good, why: ['member', '_id: W123456789'].join('') }, /looks like it has patient data/],
+    [{ ...good, why: ['{"api', '_key": "made-up-value-123"}'].join('') }, /password, key or token/],
     [{ kind: 'file', name: 'A link', link: 'https://user:pw@example.com', area: 'Ops', owner: 'Adam' }, /must not have a user name or password/],
     [{ ...good, why: 'token ghp_abcdefghijklmnopqrstuvwxyz0123' }, /password, key or token/],
     [{ ...good, what: 42 }, /What to do: please send text/],

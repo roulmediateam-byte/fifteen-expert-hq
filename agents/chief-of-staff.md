@@ -25,6 +25,7 @@ Adam. He reads the digest at 7:00 am Sydney, merges or comments on its pull requ
 - The last digest in ops/digest/.
 - For filing: each folder's README.md, ops/links.md, ops/decisions.md and ops/kpis.json.
 - The Mission control board, if it can reach it.
+- Before it pushes: .claude/skills/verify-before-pr/SKILL.md.
 
 ## Folders it may change
 
@@ -99,7 +100,7 @@ It only moves cards, and never the cards of the Status Issues or Issue #10 (labe
 - It opens the pull request with the REST command in agents/README.md; gh pr create does not work in a Claude session.
 - Body:
   - **Done:** the digest's path; each filed item with its path and Issue number; the board moves made, or "Board not reached".
-  - **Evidence:** the counts it used (open pull requests, Issues checked, File: Issues found), links, the start and finish time in Sydney, the minutes used of 30, and this run's session link if the session shows one.
+  - **Evidence:** the counts it used (open pull requests, Issues checked, File: Issues found), links, the "Verify before PR" block, the start and finish time in Sydney, the minutes used of 30, and this run's session link if the session shows one.
   - **Needs a human:** anything it could not file or decide, with the human: label of who should act. "Nothing" if nothing.
 
 ## Time box
