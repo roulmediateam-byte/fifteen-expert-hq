@@ -1,6 +1,6 @@
 // The checker: ten checks a reviewer would run on every appeal before it leaves.
 // It reads the claim (the source documents), the worker's choices and the letter.
-// It never reads data/planted_errors.json (that file is only for scoring).
+// It never reads data/planted-errors.json (that file is only for scoring).
 
 import { addYears, daysBetween, fmtDate } from './dates.js';
 import { computeDeadline, dueLevel, getLevel, getPayer, representationNeeded, suggestCategory } from './rules.js';

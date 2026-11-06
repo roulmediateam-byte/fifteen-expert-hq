@@ -11,12 +11,12 @@ How to run and test: [README.md](README.md).
 | Step | What | State |
 |---|---|---|
 | 0 | Look first: what demo code exists | Done (table below) |
-| 1 | rules/appeal_rules.json from official pages | Done |
+| 1 | rules/appeal-rules.json from official pages | Done |
 | 2 | Data script and planted errors | Done |
 | 3 | Today screen | Done |
 | 4 | Claim workspace with guided steps and coach panel | Done |
 | 5 | Letter editor | Done |
-| 6 | Checker screen plus score_demo.mjs (15 of 15) | Done |
+| 6 | Checker screen plus score-demo.mjs (15 of 15) | Done |
 | 7 | Review screen | Done |
 | 8 | Submit and track | Done |
 | 9 | My progress and audit log | Done |
@@ -39,7 +39,7 @@ How to run and test: [README.md](README.md).
 
 ## Last results (5 Nov 2026, 12:05 Sydney, after the move onto main)
 
-Score (`node site/demo/worker/scripts/score_demo.mjs`):
+Score (`node site/demo/worker/scripts/score-demo.mjs`):
 
 ```
 Planted errors caught: 15 of 15 (target 15 of 15)
@@ -76,7 +76,7 @@ Walkthrough (`node site/demo/worker/tests/walkthrough.mjs`), tour claim 1 (C-101
 
 ## Rules fact check (5 Nov 2026)
 
-A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.json and confirmed 90 items (level numbers, quotes, rule texts, code texts, CARC 15's stop date) with no mismatch. It found four things to add, all done:
+A separate agent reopened every CMS and X12 page cited in rules/appeal-rules.json and confirmed 90 items (level numbers, quotes, rule texts, code texts, CARC 15's stop date) with no mismatch. It found four things to add, all done:
 
 - The CMS-1696 page also says the representation is valid, unless revoked, for the duration of the claim or appeal it was filed with. The representation check now accepts a form older than a year on a later level of the same appeal.
 - The good cause text no longer says a late appeal is accepted "only" with good cause; CMS says it evaluates each request.
@@ -86,14 +86,15 @@ A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.jso
 ## Hosted copies (5 Nov 2026)
 
 - A private Claude artifact: one self-contained page (code, data and fonts inside it, so the host loads nothing else) that opens on the guided tour. Its link is in the private project notes, not in this public repository. Rebuild and republish it after any change to the demo.
-- The public link (live since 5 Nov 2026, 12:52 Sydney): a Cloudflare Pages project, created in Adam's Cloudflare account with the settings in README.md, serves branch claude/worker-demo-pages. Its first build ran the build step ("Hosted settings: company name ...; opens as presenter."), and the live page was checked: the name shows, it opens on the guided tour, and tour claim 1 opens. Preview branches are off. Its address shows the company name, so it is in the private project notes, not here. At build time scripts/hosted_settings.mjs fills the name and the starting view from the project's settings (with a logic test), and _headers asks search engines not to index the copy. Checked locally the way Cloudflare builds and serves it (the build step with both settings, then the files at the top of an address), at 1280 and 390 px. README.md, section "Hosted copy", has the settings and the refresh command. The live copy changes only when someone refreshes that branch; the nightly engineer works on claude/worker-console-demo and does not touch it.
+- The public link (live since 5 Nov 2026, 12:52 Sydney): a Cloudflare Pages project, created in Adam's Cloudflare account with the settings in README.md, serves branch claude/worker-demo-pages. Its first build ran the build step ("Hosted settings: company name ...; opens as presenter."), and the live page was checked: the name shows, it opens on the guided tour, and tour claim 1 opens. Preview branches are off. Its address shows the company name, so it is in the private project notes, not here. At build time scripts/hosted-settings.mjs fills the name and the starting view from the project's settings (with a logic test), and _headers asks search engines not to index the copy. Checked locally the way Cloudflare builds and serves it (the build step with both settings, then the files at the top of an address), at 1280 and 390 px. README.md, section "Hosted copy", has the settings and the refresh command. The live copy changes only when someone refreshes that branch; the nightly engineer works on claude/worker-console-demo and does not touch it.
 - Both open on the tour without a second copy of the code: the host's DEMO_START_ROLE setting does it, or ?role=presenter in the address (START_ROLE in js/brand.js stays 'worker').
 - A Claude session cannot create the host itself: the Cloudflare project needs Adam's own account, and the GitHub API path for Pages is blocked through the session's proxy (checked 5 Nov 2026).
 
 ## Half finished
 
 - The public copy: both branches are on GitHub (pushed 5 Nov 2026, after Adam approved it in the chat). The Cloudflare Pages project serves it (live since 5 Nov 2026). No Issues were filed: no step is unfinished.
-- agents/engineer.md: the paragraph for the nightly engineer run is added on this branch (end of the file). The engineer's scheduled task exists since 5 Nov 2026 (daily, 2:11 am Sydney), but it reads its brief from main, so the paragraph takes effect only once this pull request is merged.
+- agents/engineer.md: the paragraph for the nightly engineer run was taken out of this pull request on 7 Nov 2026, after the reviewer's "Changes needed" (a brief changes only through its own reviewed pull request). Adam can open that pull request if he still wants it.
+- Names (7 Nov 2026): progress.md, data/planted-errors.json, rules/appeal-rules.json and the three scripts now use lower case with hyphens. _headers keeps its name, because Cloudflare reads only that name. The Cloudflare build command must now be `node scripts/hosted-settings.mjs` (README.md, section "Hosted copy").
 
 ## Known limits
 
@@ -106,4 +107,4 @@ A separate agent reopened every CMS and X12 page cited in rules/appeal_rules.jso
 
 1. Adam pastes the public demo link (in the private project notes) into the YC form, after opening it once in a private window.
 2. Melvin reviews the coach panel advice, the ten checks and what he would send back (checklist in the pull request).
-3. After Melvin's notes: fix what he sends back, rerun score_demo.mjs and the browser tests, and refresh the Pages branch.
+3. After Melvin's notes: fix what he sends back, rerun score-demo.mjs and the browser tests, and refresh the Pages branch.

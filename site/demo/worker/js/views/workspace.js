@@ -241,7 +241,7 @@ function letterEditor(c, w, locked) {
     const at = blocks.length - 1;
     blocks.splice(at, 0, `<div class="lb lb-missing" id="lb-representation" tabindex="-1">
       <div class="lb-head"><p class="lb-part">${esc(PART_LABELS.representation)}: missing</p></div>
-      <p class="small">We file this Medicare appeal as the practice's appointed representative, so the letter must say so and the signed CMS-1696 must go with it.</p>
+      <p class="small">We file this Medicare appeal as the practice's appointed representative, so the letter must say so and the signed CMS-1696 must go with it. General information, not legal advice.</p>
       <div class="row-actions"><button type="button" class="btn btn-secondary btn-small" data-action="reset-block" data-id="${esc(c.id)}" data-block="representation" data-why="Added the representation note (CMS-1696)">${icon('file-check')}<span>Add the representation note</span></button></div>
     </div>`);
   }

@@ -4,7 +4,7 @@ FAKE: every claim, patient, practice, payer address and number here is made up. 
 
 A clickable demo of the appeals worker console. It shows how software plus a short training lets an ordinary trained worker write an expert appeal: the Simulated AI drafts, the worker checks each step with a coach beside them, a checker runs ten checks, and Melvin (Head of Claims Operations) approves before anything is sent.
 
-Owner: Adam. Reviewer: Melvin. Progress and open items: [PROGRESS.md](PROGRESS.md).
+Owner: Adam. Reviewer: Melvin. Progress and open items: [progress.md](progress.md).
 
 ## Run it
 
@@ -29,7 +29,7 @@ The public copy runs on a Cloudflare Pages project of its own. Its name and addr
 
 Cloudflare Pages settings (the repository owner sets them once; hq/SETUP.md, section 3, walks through the same screens):
 
-- Production branch: claude/worker-demo-pages. Framework preset: None. Build command: `node scripts/hosted_settings.mjs`. Build output directory: `/` (or `.` if the box refuses `/`). Root directory: blank.
+- Production branch: claude/worker-demo-pages. Framework preset: None. Build command: `node scripts/hosted-settings.mjs`. Until 7 Nov 2026 this script was named scripts/hosted_settings.mjs, and the Cloudflare project may still hold that name: change its build command to the one here before the next refresh of the branch, or the build fails. Build output directory: `/` (or `.` if the box refuses `/`). Root directory: blank.
 - Settings, Variables and Secrets, for Production: `COMPANY_NAME` (Text: the name to show) and `DEMO_START_ROLE` (Text: `presenter` opens the guided tour). The build writes them into js/brand.js in the host's own copy only, so this repository keeps "[Company name]".
 - Builds, Branch control: Preview branches None, so no other branch builds.
 
@@ -67,14 +67,14 @@ Tour claims: C-1012 (a clean, easy win), C-1027 (a planted misread member ID) an
 ## Check it
 
 ```
-node site/demo/worker/scripts/score_demo.mjs            # the checker against the 15 planted errors
+node site/demo/worker/scripts/score-demo.mjs            # the checker against the 15 planted errors
 node --test site/demo/worker/tests/logic.test.mjs       # logic tests, no browser needed
 node site/demo/worker/tests/browser.test.mjs            # Chromium at 390, 320 and 1280 px
 node site/demo/worker/tests/browser.test.mjs --shots    # the same, plus screenshots in screenshots/
 node site/demo/worker/tests/walkthrough.mjs             # tour claim 1 from Today to Approved, clicks counted
 ```
 
-The score targets are 15 of 15 planted errors caught, 0 false alarms and 50 of 50 complete deadline calculations. The checker never reads data/planted_errors.json; only the score script does.
+The score targets are 15 of 15 planted errors caught, 0 false alarms and 50 of 50 complete deadline calculations. The checker never reads data/planted-errors.json; only the score script does.
 
 The browser tests need Playwright and its Chromium, once, for example:
 
@@ -93,7 +93,7 @@ Each script exits with code 1 when a target or a check fails.
 
 ## Where the rules come from
 
-- rules/appeal_rules.json: Medicare appeal levels, deadlines and amounts from CMS pages, and denial code texts from the X12 lists, each with its source address and the date it was opened (Nov 5, 2026). Private payer rules (Demo Health Plan, Demo Mutual Plan) are made up and labelled "sample payer rule".
+- rules/appeal-rules.json: Medicare appeal levels, deadlines and amounts from CMS pages, and denial code texts from the X12 lists, each with its source address and the date it was opened (Nov 5, 2026). Private payer rules (Demo Health Plan, Demo Mutual Plan) are made up and labelled "sample payer rule".
 - rules/playbook.json: our own rules (categories, required evidence, tone, follow-up timing), labelled as ours.
 - Anything about the law is general information, not legal advice.
 
@@ -107,8 +107,8 @@ Each script exits with code 1 when a target or a check fails.
 | js/main.js, js/state.js | Routing, actions and the in-memory state |
 | js/lib/ | Shared logic, also run by the scripts: dates, rules, evidence, letter, checker, coach |
 | js/views/ | One file per screen |
-| data/ | claims.json (50 FAKE claims) and planted_errors.json (the answer key) |
-| scripts/ | make_demo_claims.mjs (writes data/, same output every run), score_demo.mjs, serve.mjs, hosted_settings.mjs (fills the name and start view on a host's build) |
+| data/ | claims.json (50 FAKE claims) and planted-errors.json (the answer key) |
+| scripts/ | make-demo-claims.mjs (writes data/, same output every run), score-demo.mjs, serve.mjs, hosted-settings.mjs (fills the name and start view on a host's build) |
 | tests/ | Logic tests, browser tests and the walkthrough |
 | screenshots/ | Every screen at 390 and 1280 px, from the last browser test run |
 | assets/ | Cut-down fonts and their licences, and the icon licence |

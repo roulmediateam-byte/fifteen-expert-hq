@@ -6,9 +6,9 @@
 //   COMPANY_NAME     the name to show: letters, digits, spaces and . & ' - only, 40 characters at most
 //   DEMO_START_ROLE  the view to open in: worker, reviewer or presenter (the guided tour)
 //
-// Host build command: node scripts/hosted_settings.mjs
+// Host build command: node scripts/hosted-settings.mjs
 // It rewrites js/brand.js in the host's own copy. Run by hand, it rewrites yours: do not
-// commit the result. Tests pass a path: node scripts/hosted_settings.mjs <path to brand.js>
+// commit the result. Tests pass a path: node scripts/hosted-settings.mjs <path to brand.js>
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';

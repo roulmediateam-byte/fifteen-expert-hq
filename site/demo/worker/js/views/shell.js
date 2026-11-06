@@ -55,7 +55,7 @@ export function footer() {
   return `<footer class="footer">
     <div class="footer-inner">
       <p><strong>Demo date:</strong> ${esc(weekdayName(today))}, ${esc(fmtDate(today))}, fixed so the made-up deadlines stay the same.</p>
-      <p><strong>Rules:</strong> Medicare appeal levels and deadlines from CMS pages, and denial codes from the X12 lists, opened on Nov 5, 2026 (rules/appeal_rules.json). Private payer rules are made up and labelled "sample payer rule".</p>
+      <p><strong>Rules:</strong> Medicare appeal levels and deadlines from CMS pages, and denial codes from the X12 lists, opened on Nov 5, 2026 (rules/appeal-rules.json). Private payer rules are made up and labelled "sample payer rule".</p>
       <p><strong>Simulated AI:</strong> every "AI" result here is template text or a fixed rule. No AI service, backend or login is used.</p>
       <div class="footer-save">
         <input type="checkbox" id="save-toggle" data-change="save"${store.save ? ' checked' : ''}>

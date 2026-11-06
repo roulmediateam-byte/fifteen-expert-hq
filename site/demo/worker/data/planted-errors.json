@@ -1,5 +1,5 @@
 {
-  "FAKE": "FAKE: the answer key for the demo. Only scripts/score_demo.mjs reads it; the checker never does.",
+  "FAKE": "FAKE: the answer key for the demo. Only scripts/score-demo.mjs reads it; the checker never does.",
   "count": 15,
   "tour_claims": [
     {

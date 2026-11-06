@@ -1,11 +1,11 @@
 {
-  "FAKE": "FAKE: made-up claims for the worker console demo. Not real patients, practices, payers or claims. Made by scripts/make_demo_claims.mjs.",
+  "FAKE": "FAKE: made-up claims for the worker console demo. Not real patients, practices, payers or claims. Made by scripts/make-demo-claims.mjs.",
   "meta": {
     "demo_today": "2026-11-05",
     "count": 50,
     "seed": 20261105,
     "brand_placeholder": "[Company name]",
-    "made_by": "site/demo/worker/scripts/make_demo_claims.mjs"
+    "made_by": "site/demo/worker/scripts/make-demo-claims.mjs"
   },
   "people": {
     "worker": {

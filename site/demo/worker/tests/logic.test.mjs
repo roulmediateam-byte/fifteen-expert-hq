@@ -24,7 +24,7 @@ import { startRole, displayName } from '../js/brand.js';
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
 const readJson = (p) => JSON.parse(readFileSync(join(root, p), 'utf8'));
-const planted = readJson('data/planted_errors.json');
+const planted = readJson('data/planted-errors.json');
 const plantedIds = new Set(planted.errors.map((e) => e.claim_id));
 
 await S.load(async (p) => readJson(p));
@@ -79,7 +79,7 @@ test('every Medicare rule cites a CMS page and its opened date; every private pa
 });
 
 test('the score script meets all three targets', () => {
-  const run = spawnSync(process.execPath, [join(root, 'scripts', 'score_demo.mjs'), '--json'], { encoding: 'utf8' });
+  const run = spawnSync(process.execPath, [join(root, 'scripts', 'score-demo.mjs'), '--json'], { encoding: 'utf8' });
   assert.equal(run.status, 0, run.stdout + run.stderr);
   const { ok, summary } = JSON.parse(run.stdout);
   assert.equal(ok, true);
@@ -234,7 +234,7 @@ test('house rules: no long dash and no former founder in any demo file', () => {
 });
 
 test('a host build fills the name and start view from its own settings, and refuses bad values', async () => {
-  const { applySettings } = await import('../scripts/hosted_settings.mjs');
+  const { applySettings } = await import('../scripts/hosted-settings.mjs');
   const source = readFileSync(join(root, 'js/brand.js'), 'utf8');
   assert.equal(applySettings(source, {}).out, source, 'no settings: brand.js stays as it is');
   const settings = { COMPANY_NAME: 'Demo Co', DEMO_START_ROLE: 'presenter' };
@@ -250,7 +250,7 @@ test('a host build fills the name and start view from its own settings, and refu
     assert.equal(hosted.startRole('?role=worker'), 'worker', 'the address still wins');
     // The script as a host runs it, on a copy of the repository's brand.js.
     writeFileSync(join(dir, 'brand.js'), source);
-    const script = join(root, 'scripts/hosted_settings.mjs');
+    const script = join(root, 'scripts/hosted-settings.mjs');
     const env = { ...process.env, COMPANY_NAME: 'Demo Co', DEMO_START_ROLE: 'reviewer' };
     const run = spawnSync(process.execPath, [script, join(dir, 'brand.js')], { env, encoding: 'utf8' });
     assert.equal(run.status, 0, run.stderr);

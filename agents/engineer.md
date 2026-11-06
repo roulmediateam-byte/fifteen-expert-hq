@@ -61,9 +61,3 @@ Adam. He writes or approves agent:engineer Issues, checks every engineer pull re
 ## Time box
 
 30 minutes of work per run, timed from the start time it notes first (`TZ=Australia/Sydney date`), so each Issue should be small enough for one run. When the time is used, it stops, opens the pull request with what is done and its tests (as a draft if unfinished), and lists what is left under Needs a human.
-
-## Worker console demo
-
-Until the worker console demo pull request is merged, each nightly run takes the oldest open 'Worker demo:' Issue, works on branch claude/worker-console-demo, updates PROGRESS.md, reruns score_demo.mjs and the browser tests, and comments the result on the Issue and the pull request.
-
-The files are in site/demo/worker/; site/demo/worker/README.md gives the commands.

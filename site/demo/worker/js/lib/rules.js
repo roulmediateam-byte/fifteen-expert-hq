@@ -1,4 +1,4 @@
-// Appeal levels, deadlines and denial codes, read from rules/appeal_rules.json
+// Appeal levels, deadlines and denial codes, read from rules/appeal-rules.json
 // (official CMS and X12 rules, plus sample payer rules) and rules/playbook.json (ours).
 // Pure functions: the browser and the Node scripts both use them.
 

@@ -54,7 +54,7 @@ function emit() { persist(); for (const fn of store.listeners) fn(); }
 
 export async function load(fetchJson) {
   const [rules, playbook, data] = await Promise.all([
-    fetchJson('rules/appeal_rules.json'),
+    fetchJson('rules/appeal-rules.json'),
     fetchJson('rules/playbook.json'),
     fetchJson('data/claims.json'),
   ]);

@@ -1,7 +1,7 @@
 // The coach panel: what to do, why it matters, what good looks like and common mistakes,
 // for every step, plus a playbook card for every denial code in the demo.
 // Our own guidance, written for a trained non-specialist. Melvin reviews it before real use.
-// Code meanings are quoted from the X12 lists in rules/appeal_rules.json; Medicare rules
+// Code meanings are quoted from the X12 lists in rules/appeal-rules.json; Medicare rules
 // come from the CMS pages named there.
 
 export const STEP_COACH = {

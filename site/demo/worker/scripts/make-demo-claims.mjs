@@ -1,11 +1,11 @@
 // Makes the worker console demo's made-up claims.
 //
-//   node site/demo/worker/scripts/make_demo_claims.mjs
+//   node site/demo/worker/scripts/make-demo-claims.mjs
 //
 // Writes site/demo/worker/data/claims.json (50 FAKE denied claims, 3 made-up practices,
 // Medicare (sample) and 2 sample private payers, 7 denial types, 3 tour claims) and
-// site/demo/worker/data/planted_errors.json (the 15 planted errors: the answer key that
-// only scripts/score_demo.mjs reads). The output is the same every time it runs.
+// site/demo/worker/data/planted-errors.json (the 15 planted errors: the answer key that
+// only scripts/score-demo.mjs reads). The output is the same every time it runs.
 
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -18,7 +18,7 @@ import { runChecks, workFingerprint } from '../js/lib/checker.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
-const rules = JSON.parse(readFileSync(join(root, 'rules/appeal_rules.json'), 'utf8'));
+const rules = JSON.parse(readFileSync(join(root, 'rules/appeal-rules.json'), 'utf8'));
 const playbook = JSON.parse(readFileSync(join(root, 'rules/playbook.json'), 'utf8'));
 
 const TODAY = '2026-11-05';
@@ -571,8 +571,8 @@ claims.forEach((c, i) => {
 audit.sort((a, b) => (a.at < b.at ? 1 : -1));
 
 const out = {
-  FAKE: 'FAKE: made-up claims for the worker console demo. Not real patients, practices, payers or claims. Made by scripts/make_demo_claims.mjs.',
-  meta: { demo_today: TODAY, count: claims.length, seed: 20261105, brand_placeholder: BRAND, made_by: 'site/demo/worker/scripts/make_demo_claims.mjs' },
+  FAKE: 'FAKE: made-up claims for the worker console demo. Not real patients, practices, payers or claims. Made by scripts/make-demo-claims.mjs.',
+  meta: { demo_today: TODAY, count: claims.length, seed: 20261105, brand_placeholder: BRAND, made_by: 'site/demo/worker/scripts/make-demo-claims.mjs' },
   people: {
     worker: { name: 'Jordan', label: 'Jordan (trained claims worker, demo)' },
     reviewer: { name: 'Melvin', label: 'Melvin (Head of Claims Operations)' },
@@ -584,7 +584,7 @@ const out = {
 };
 
 const answerKey = {
-  FAKE: 'FAKE: the answer key for the demo. Only scripts/score_demo.mjs reads it; the checker never does.',
+  FAKE: 'FAKE: the answer key for the demo. Only scripts/score-demo.mjs reads it; the checker never does.',
   count: planted.length,
   tour_claims: claims.filter((c) => c.tour).map((c) => ({ tour: c.tour, claim_id: c.id, what: c.tour === 1 ? 'Clean, easy win (Medicare, missing record)' : c.tour === 2 ? 'Planted error the checker catches (member ID misread)' : 'Sent back by the reviewer (quote the visit note)' })),
   errors: planted,
@@ -592,7 +592,7 @@ const answerKey = {
 
 mkdirSync(join(root, 'data'), { recursive: true });
 writeFileSync(join(root, 'data/claims.json'), `${JSON.stringify(out, null, 2)}\n`);
-writeFileSync(join(root, 'data/planted_errors.json'), `${JSON.stringify(answerKey, null, 2)}\n`);
+writeFileSync(join(root, 'data/planted-errors.json'), `${JSON.stringify(answerKey, null, 2)}\n`);
 
 const byCat = {};
 for (const c of claims) {

@@ -1,11 +1,11 @@
 // Scores the checker against the planted errors, headless.
 //
-//   node site/demo/worker/scripts/score_demo.mjs          (prints the score)
-//   node site/demo/worker/scripts/score_demo.mjs --json   (prints it as JSON)
+//   node site/demo/worker/scripts/score-demo.mjs          (prints the score)
+//   node site/demo/worker/scripts/score-demo.mjs --json   (prints it as JSON)
 //
 // For every one of the 50 FAKE claims it takes the saved work (or, for a claim nobody
 // has started, the draft the Simulated AI makes from what is on file), runs the same
-// checker the browser runs, and compares the result with data/planted_errors.json.
+// checker the browser runs, and compares the result with data/planted-errors.json.
 // Targets: 15 of 15 planted errors caught, 0 false alarms on clean claims,
 // 50 of 50 claims with a complete deadline calculation. Exit code 1 if a target is missed.
 
@@ -21,10 +21,10 @@ import { fmtDate } from '../js/lib/dates.js';
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, '..');
 const read = (p) => JSON.parse(readFileSync(join(root, p), 'utf8'));
-const rules = read('rules/appeal_rules.json');
+const rules = read('rules/appeal-rules.json');
 const playbook = read('rules/playbook.json');
 const data = read('data/claims.json');
-const key = read('data/planted_errors.json');
+const key = read('data/planted-errors.json');
 
 const ctx = {
   rules, playbook, practices: data.practices, today: data.meta.demo_today,

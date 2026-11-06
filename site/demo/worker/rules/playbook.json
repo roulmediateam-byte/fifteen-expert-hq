@@ -1,7 +1,7 @@
 {
   "FAKE": "Our playbook for the worker console demo, used with made-up claims only.",
   "kind": "our rule",
-  "note": "These are our own working rules, not official ones: the evidence each denial type needs, the words the checker looks for, tone and length limits, and the fee. Melvin reviews them before any real use. Official rules are in appeal_rules.json.",
+  "note": "These are our own working rules, not official ones: the evidence each denial type needs, the words the checker looks for, tone and length limits, and the fee. Melvin reviews them before any real use. Official rules are in appeal-rules.json.",
   "fee_rate": 0.2,
   "fee_note": "Our estimate: a fee of 20% of the amount recovered. The real fee waits for finance/pricing.md and the lawyer (42 CFR 424.73 and 424.80; general information, not legal advice).",
   "low_confidence_below": 0.85,
