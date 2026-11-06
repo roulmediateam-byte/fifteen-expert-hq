@@ -1,6 +1,6 @@
 {
-  "updated": "Sat 7 Nov 2026 06:35 Sydney",
-  "updated_utc": "2026-11-06T19:35:34Z",
+  "updated": "Sat 7 Nov 2026 06:37 Sydney",
+  "updated_utc": "2026-11-06T19:37:29Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -20,14 +20,15 @@
     {
       "name": "chief-of-staff",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
-      "dot": "🟢",
+      "state": "waiting on human",
+      "reason": "open pull request with no human review",
+      "dot": "🟡",
       "task": "daily-digest",
       "last_start": "Sat 7 Nov 06:35",
-      "minutes": "0 so far",
+      "minutes": "3",
       "next_run": "Sun 8 Nov 06:30",
       "open_prs": [
+        25,
         23,
         20
       ]
@@ -107,7 +108,7 @@
         "number": 12,
         "title": "[design] Build the one-page website",
         "kind": "pull request",
-        "hours": 59
+        "hours": 60
       },
       {
         "number": 20,
@@ -137,19 +138,25 @@
         "number": 22,
         "title": "[engineer] Client portal demo (made-up claims)",
         "kind": "pull request",
-        "hours": 40
+        "hours": 41
       },
       {
         "number": 23,
         "title": "[chief-of-staff] Digest 2026-11-06",
         "kind": "pull request",
-        "hours": 23
+        "hours": 24
       },
       {
         "number": 24,
         "title": "[setup] Adopt a reviewed part of ECC for the agents",
         "kind": "pull request",
         "hours": 6
+      },
+      {
+        "number": 25,
+        "title": "[chief-of-staff] Digest 2026-11-07",
+        "kind": "pull request",
+        "hours": 0
       }
     ]
   },
@@ -163,7 +170,7 @@
     "    done daily-digest :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    done daily-digest :done, 2026-11-05 11:33, 2026-11-05 11:34",
     "    done daily-digest :done, 2026-11-06 06:35, 2026-11-06 06:37",
-    "    working daily-digest :active, 2026-11-07 06:35, 2026-11-07 06:35",
+    "    done daily-digest :done, 2026-11-07 06:35, 2026-11-07 06:37",
     "    section design",
     "    done picking :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    idle picking :done, 2026-11-05 11:33, 2026-11-05 11:33",
@@ -195,7 +202,7 @@
   "closed_last_7_days": 0,
   "alerts": [
     "research is overdue: no heartbeat since the Mon 2 Nov 03:00 run",
-    "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 59 hours: [design] Build the one-page website",
+    "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 60 hours: [design] Build the one-page website",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"
   ],
   "sydney_date": "2026-11-07"
