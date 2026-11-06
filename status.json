@@ -1,6 +1,6 @@
 {
-  "updated": "Sat 7 Nov 2026 00:00 Sydney",
-  "updated_utc": "2026-11-06T13:00:11Z",
+  "updated": "Sat 7 Nov 2026 01:09 Sydney",
+  "updated_utc": "2026-11-06T14:09:00Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -45,10 +45,10 @@
       "state": "waiting on human",
       "reason": "open pull request with no human review",
       "dot": "🟡",
-      "task": "[#16](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/16)",
-      "last_start": "Fri 6 Nov 01:14",
-      "minutes": "3",
-      "next_run": "Sat 7 Nov 01:00",
+      "task": "pick-work",
+      "last_start": "Sat 7 Nov 01:08",
+      "minutes": "2",
+      "next_run": "Sun 8 Nov 01:00",
       "open_prs": [
         19,
         12
@@ -114,49 +114,49 @@
         "number": 12,
         "title": "[design] Build the one-page website",
         "kind": "pull request",
-        "hours": 53
+        "hours": 54
       },
       {
         "number": 20,
         "title": "[chief-of-staff] Digest 2026-11-05",
         "kind": "pull request",
-        "hours": 36
+        "hours": 37
       },
       {
         "number": 19,
         "title": "[design] Add the page checklist",
         "kind": "pull request",
-        "hours": 36
+        "hours": 37
       },
       {
         "number": 18,
         "title": "[engineer] Add a first passing smoke test in prototype/",
         "kind": "pull request",
-        "hours": 36
+        "hours": 37
       },
       {
         "number": 21,
         "title": "[engineer] Worker console demo (made-up claims)",
         "kind": "pull request",
-        "hours": 35
+        "hours": 36
       },
       {
         "number": 22,
         "title": "[engineer] Client portal demo (made-up claims)",
         "kind": "pull request",
-        "hours": 34
+        "hours": 35
       },
       {
         "number": 23,
         "title": "[chief-of-staff] Digest 2026-11-06",
         "kind": "pull request",
-        "hours": 17
+        "hours": 18
       },
       {
         "number": 24,
         "title": "[setup] Adopt a reviewed part of ECC for the agents",
         "kind": "pull request",
-        "hours": 0
+        "hours": 1
       }
     ]
   },
@@ -174,6 +174,7 @@
     "    done picking :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    idle picking :done, 2026-11-05 11:33, 2026-11-05 11:33",
     "    idle task 16 :done, 2026-11-06 01:14, 2026-11-06 01:15",
+    "    idle pick-work :done, 2026-11-07 01:08, 2026-11-07 01:08",
     "    section engineer",
     "    done task 17 :done, 2026-11-05 11:31, 2026-11-05 11:32",
     "    idle pick-work :done, 2026-11-05 11:32, 2026-11-05 11:32",
@@ -199,7 +200,7 @@
   "alerts": [
     "reviewer is overdue: no review yet of #23",
     "research is overdue: no heartbeat since the Mon 2 Nov 03:00 run",
-    "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 53 hours: [design] Build the one-page website",
+    "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 54 hours: [design] Build the one-page website",
     "[#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) from engineer changes files outside its folders: agents/engineer.md",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"
   ],
