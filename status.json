@@ -1,6 +1,6 @@
 {
-  "updated": "Tue 10 Nov 2026 05:05 Sydney",
-  "updated_utc": "2026-11-09T18:05:17Z",
+  "updated": "Tue 10 Nov 2026 05:06 Sydney",
+  "updated_utc": "2026-11-09T18:06:10Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -67,12 +67,12 @@
     {
       "name": "reviewer",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
+      "state": "done",
+      "reason": "Reviewed #25 Pass; chief of staff silent since 7 Nov",
       "dot": "🟢",
       "task": "sweep",
       "last_start": "Tue 10 Nov 05:04",
-      "minutes": "0 so far",
+      "minutes": "3",
       "next_run": "Wed 11 Nov 05:00 sweep, and on every pull request",
       "open_prs": []
     },
@@ -170,7 +170,7 @@
     "    done daily-digest :done, 2026-11-07 06:35, 2026-11-07 06:37",
     "    section reviewer",
     "    done sweep :done, 2026-11-07 05:05, 2026-11-07 05:08",
-    "    working sweep :active, 2026-11-10 05:04, 2026-11-10 05:05",
+    "    done sweep :done, 2026-11-10 05:04, 2026-11-10 05:05",
     "```"
   ],
   "board": {
