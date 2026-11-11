@@ -1,4 +1,4 @@
-Updated Thu 12 Nov 2026 01:11 Sydney
+Updated Thu 12 Nov 2026 01:12 Sydney
 
 # RUNNING
 
@@ -7,7 +7,7 @@ Updated Thu 12 Nov 2026 01:11 Sydney
 | | Agent | Owner | State | Current or last task | Last run start (Sydney) | Minutes | Next run (Sydney) | Open pull requests |
 |---|---|---|---|---|---|---|---|---|
 | 🔴 | chief-of-staff | Adam | overdue | daily-digest | Tue 10 Nov 06:35 | 3 | Thu 12 Nov 06:30 | [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26), [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25), [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23), [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
-| 🟢 | design | Adam | working | checking-open-prs | Thu 12 Nov 01:11 | 0 so far | Fri 13 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
+| 🟡 | design | Adam | waiting on human | checking-open-prs | Thu 12 Nov 01:11 | 1 | Fri 13 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🔴 | engineer | Adam | overdue | pick-work | Sat 7 Nov 02:15 | 4 | Thu 12 Nov 02:00 | [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22), [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21), [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
 | 🔴 | reviewer | Adam | overdue | sweep | Tue 10 Nov 05:04 | 3 | Thu 12 Nov 05:00 sweep, and on every pull request | none |
 | 🔴 | research | Adam | overdue | none | never |  | Mon 16 Nov 03:00 | none |
@@ -43,7 +43,7 @@ gantt
     done daily-digest :done, 2026-11-10 06:35, 2026-11-10 06:37
     section design
     idle pick-work :done, 2026-11-11 01:12, 2026-11-11 01:12
-    working checking-open-prs :active, 2026-11-12 01:11, 2026-11-12 01:11
+    idle checking-open-prs :done, 2026-11-12 01:11, 2026-11-12 01:12
     section reviewer
     done sweep :done, 2026-11-10 05:04, 2026-11-10 05:05
 ```
