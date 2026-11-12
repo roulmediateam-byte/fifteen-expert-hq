@@ -1,4 +1,4 @@
-Updated Fri 13 Nov 2026 05:05 Sydney
+Updated Fri 13 Nov 2026 05:06 Sydney
 
 # RUNNING
 
@@ -9,7 +9,7 @@ Updated Fri 13 Nov 2026 05:05 Sydney
 | 🟡 | chief-of-staff | Adam | waiting on human | daily-digest | Thu 12 Nov 06:35 | 2 | Fri 13 Nov 06:30 | [#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27), [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26), [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25), [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23), [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
 | 🟡 | design | Adam | waiting on human | check-open-prs | Fri 13 Nov 01:11 | 3 | Sat 14 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🔴 | engineer | Adam | overdue | pick-work | Sat 7 Nov 02:15 | 4 | Sat 14 Nov 02:00 | [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22), [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21), [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
-| 🟢 | reviewer | Adam | working | sweep | Fri 13 Nov 05:05 | 0 so far | Sat 14 Nov 05:00 sweep, and on every pull request | none |
+| 🟢 | reviewer | Adam | done | sweep | Fri 13 Nov 05:05 | 2 | Sat 14 Nov 05:00 sweep, and on every pull request | none |
 | 🔴 | research | Adam | overdue | none | never |  | Mon 16 Nov 03:00 | none |
 | ⚪ | sales | Melvin | off | none | never |  | off (off until phase 5) | none |
 
@@ -48,9 +48,8 @@ gantt
     idle checking-open-prs :done, 2026-11-12 01:11, 2026-11-12 01:12
     idle check-open-prs :done, 2026-11-13 01:11, 2026-11-13 01:11
     section reviewer
-    done sweep :done, 2026-11-10 05:04, 2026-11-10 05:05
     done sweep :done, 2026-11-12 05:05, 2026-11-12 05:06
-    working sweep :active, 2026-11-13 05:05, 2026-11-13 05:05
+    done sweep :done, 2026-11-13 05:05, 2026-11-13 05:05
 ```
 
 ## Board
