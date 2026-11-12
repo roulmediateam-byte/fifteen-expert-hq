@@ -1,6 +1,6 @@
 {
   "updated": "Fri 13 Nov 2026 01:11 Sydney",
-  "updated_utc": "2026-11-12T14:11:12Z",
+  "updated_utc": "2026-11-12T14:11:40Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -38,12 +38,12 @@
     {
       "name": "design",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
-      "dot": "🟢",
+      "state": "waiting on human",
+      "reason": "open pull request with no human review",
+      "dot": "🟡",
       "task": "check-open-prs",
       "last_start": "Fri 13 Nov 01:11",
-      "minutes": "0 so far",
+      "minutes": "3",
       "next_run": "Sat 14 Nov 01:00",
       "open_prs": [
         19,
@@ -186,7 +186,7 @@
     "    section design",
     "    idle pick-work :done, 2026-11-11 01:12, 2026-11-11 01:12",
     "    idle checking-open-prs :done, 2026-11-12 01:11, 2026-11-12 01:12",
-    "    working check-open-prs :active, 2026-11-13 01:11, 2026-11-13 01:11",
+    "    idle check-open-prs :done, 2026-11-13 01:11, 2026-11-13 01:11",
     "    section reviewer",
     "    done sweep :done, 2026-11-10 05:04, 2026-11-10 05:05",
     "    done sweep :done, 2026-11-12 05:05, 2026-11-12 05:06",
