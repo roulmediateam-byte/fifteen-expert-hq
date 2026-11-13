@@ -1,4 +1,4 @@
-Updated Sat 14 Nov 2026 02:01 Sydney
+Updated Sat 14 Nov 2026 02:02 Sydney
 
 # RUNNING
 
@@ -7,7 +7,7 @@ Updated Sat 14 Nov 2026 02:01 Sydney
 | | Agent | Owner | State | Current or last task | Last run start (Sydney) | Minutes | Next run (Sydney) | Open pull requests |
 |---|---|---|---|---|---|---|---|---|
 | 🟡 | chief-of-staff | Adam | waiting on human | daily-digest | Fri 13 Nov 06:34 | 3 | Sat 14 Nov 06:30 | [#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28), [#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27), [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26), [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25), [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23), [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
-| 🟢 | design | Adam | working | check-open-prs | Sat 14 Nov 02:01 | 0 so far | Sun 15 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
+| 🟡 | design | Adam | waiting on human | check-open-prs | Sat 14 Nov 02:01 | 2 | Sun 15 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🔴 | engineer | Adam | overdue | pick-work | Sat 7 Nov 02:15 | 4 | Sun 15 Nov 02:00 | [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22), [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21), [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
 | 🔴 | reviewer | Adam | overdue | sweep | Fri 13 Nov 05:05 | 2 | Sat 14 Nov 05:00 sweep, and on every pull request | none |
 | 🔴 | research | Adam | overdue | none | never |  | Mon 16 Nov 03:00 | none |
@@ -47,7 +47,7 @@ gantt
     section design
     idle checking-open-prs :done, 2026-11-12 01:11, 2026-11-12 01:12
     idle check-open-prs :done, 2026-11-13 01:11, 2026-11-13 01:11
-    working check-open-prs :active, 2026-11-14 02:01, 2026-11-14 02:01
+    idle check-open-prs :done, 2026-11-14 02:01, 2026-11-14 02:02
     section reviewer
     done sweep :done, 2026-11-12 05:05, 2026-11-12 05:06
     done sweep :done, 2026-11-13 05:05, 2026-11-13 05:05
