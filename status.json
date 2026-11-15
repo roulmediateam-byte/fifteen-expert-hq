@@ -1,6 +1,6 @@
 {
-  "updated": "Mon 16 Nov 2026 03:10 Sydney",
-  "updated_utc": "2026-11-15T16:10:56Z",
+  "updated": "Mon 16 Nov 2026 03:17 Sydney",
+  "updated_utc": "2026-11-15T16:17:46Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -84,14 +84,16 @@
     {
       "name": "research",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
-      "dot": "🟢",
+      "state": "waiting on human",
+      "reason": "open pull request with no human review",
+      "dot": "🟡",
       "task": "weekly-watch",
       "last_start": "Mon 16 Nov 03:10",
-      "minutes": "0 so far",
+      "minutes": "8",
       "next_run": "Mon 23 Nov 03:00",
-      "open_prs": []
+      "open_prs": [
+        31
+      ]
     },
     {
       "name": "sales",
@@ -107,7 +109,14 @@
     }
   ],
   "waiting": {
-    "Adam": [],
+    "Adam": [
+      {
+        "number": 31,
+        "title": "[research] Weekly watch 2026-11-16 and first watch list",
+        "kind": "pull request",
+        "hours": 0
+      }
+    ],
     "Melvin": [
       {
         "number": 12,
@@ -192,6 +201,12 @@
         "title": "[chief-of-staff] Digest 2026-11-15",
         "kind": "pull request",
         "hours": 20
+      },
+      {
+        "number": 31,
+        "title": "[research] Weekly watch 2026-11-16 and first watch list",
+        "kind": "pull request",
+        "hours": 0
       }
     ]
   },
@@ -214,7 +229,7 @@
     "    done sweep :done, 2026-11-14 05:05, 2026-11-14 05:06",
     "    done sweep :done, 2026-11-15 05:07, 2026-11-15 05:08",
     "    section research",
-    "    working weekly-watch :active, 2026-11-16 03:10, 2026-11-16 03:10",
+    "    done weekly-watch :done, 2026-11-16 03:10, 2026-11-16 03:17",
     "```"
   ],
   "board": {
