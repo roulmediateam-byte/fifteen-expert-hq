@@ -1,4 +1,4 @@
-Updated Mon 16 Nov 2026 06:35 Sydney
+Updated Mon 16 Nov 2026 06:36 Sydney
 
 # RUNNING
 
@@ -6,7 +6,7 @@ Updated Mon 16 Nov 2026 06:35 Sydney
 
 | | Agent | Owner | State | Current or last task | Last run start (Sydney) | Minutes | Next run (Sydney) | Open pull requests |
 |---|---|---|---|---|---|---|---|---|
-| 🟢 | chief-of-staff | Adam | working | daily-digest | Mon 16 Nov 06:35 | 0 so far | Tue 17 Nov 06:30 | [#30](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30), [#29](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/29), [#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28), [#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27), [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26), [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25), [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23), [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
+| 🟡 | chief-of-staff | Adam | waiting on human | daily-digest | Mon 16 Nov 06:35 | 2 | Tue 17 Nov 06:30 | [#32](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/32), [#30](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30), [#29](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/29), [#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28), [#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27), [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26), [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25), [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23), [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
 | 🟡 | design | Adam | waiting on human | none | Mon 16 Nov 01:08 | 2 | Tue 17 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🔴 | engineer | Adam | overdue | pick-work | Sat 7 Nov 02:15 | 4 | Tue 17 Nov 02:00 | [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22), [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21), [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
 | 🟢 | reviewer | Adam | done | sweep | Mon 16 Nov 05:05 | 6 | Tue 17 Nov 05:00 sweep, and on every pull request | none |
@@ -31,11 +31,12 @@ Updated Mon 16 Nov 2026 06:35 Sydney
 - [#24](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/24) [setup] Adopt a reviewed part of ECC for the agents (pull request, 222 hours)
 - [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25) [chief-of-staff] Digest 2026-11-07 (pull request, 215 hours)
 - [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26) [chief-of-staff] Digest 2026-11-10 (pull request, 143 hours)
-- [#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27) [chief-of-staff] Digest 2026-11-12 (pull request, 95 hours)
-- [#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28) [chief-of-staff] Digest 2026-11-13 (pull request, 71 hours)
-- [#29](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/29) [chief-of-staff] Digest 2026-11-14 (pull request, 47 hours)
-- [#30](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30) [chief-of-staff] Digest 2026-11-15 (pull request, 23 hours)
+- [#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27) [chief-of-staff] Digest 2026-11-12 (pull request, 96 hours)
+- [#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28) [chief-of-staff] Digest 2026-11-13 (pull request, 72 hours)
+- [#29](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/29) [chief-of-staff] Digest 2026-11-14 (pull request, 48 hours)
+- [#30](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30) [chief-of-staff] Digest 2026-11-15 (pull request, 24 hours)
 - [#31](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/31) [research] Weekly watch 2026-11-16 and first watch list (pull request, 3 hours)
+- [#32](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/32) [chief-of-staff] Digest 2026-11-16 (pull request, 0 hours)
 
 ## Timeline
 
@@ -45,10 +46,9 @@ gantt
     dateFormat YYYY-MM-DD HH:mm
     axisFormat %a %H:%M
     section chief-of-staff
-    done daily-digest :done, 2026-11-13 06:34, 2026-11-13 06:36
     done daily-digest :done, 2026-11-14 06:35, 2026-11-14 06:36
     done daily-digest :done, 2026-11-15 06:35, 2026-11-15 06:36
-    working daily-digest :active, 2026-11-16 06:35, 2026-11-16 06:35
+    done daily-digest :done, 2026-11-16 06:35, 2026-11-16 06:36
     section design
     idle check-open-prs :done, 2026-11-14 02:01, 2026-11-14 02:02
     idle check-open-prs :done, 2026-11-15 01:08, 2026-11-15 01:09
@@ -79,8 +79,9 @@ Issues closed in the last 7 days: 0.
 ## Alerts
 
 - 🔴 engineer is overdue: no heartbeat since the Mon 16 Nov 02:00 run
-- 🔴 [#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28) has been open 71 hours: [chief-of-staff] Digest 2026-11-13
-- 🔴 [#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27) has been open 95 hours: [chief-of-staff] Digest 2026-11-12
+- 🔴 [#29](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/29) has been open 48 hours: [chief-of-staff] Digest 2026-11-14
+- 🔴 [#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28) has been open 72 hours: [chief-of-staff] Digest 2026-11-13
+- 🔴 [#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27) has been open 96 hours: [chief-of-staff] Digest 2026-11-12
 - 🔴 [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26) has been open 143 hours: [chief-of-staff] Digest 2026-11-10
 - 🔴 [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25) has been open 215 hours: [chief-of-staff] Digest 2026-11-07
 - 🔴 [#24](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/24) has been open 222 hours: [setup] Adopt a reviewed part of ECC for the agents
