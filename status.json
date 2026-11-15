@@ -1,6 +1,6 @@
 {
   "updated": "Mon 16 Nov 2026 06:36 Sydney",
-  "updated_utc": "2026-11-15T19:36:29Z",
+  "updated_utc": "2026-11-15T19:36:53Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -153,7 +153,7 @@
         "number": 22,
         "title": "[engineer] Client portal demo (made-up claims)",
         "kind": "pull request",
-        "hours": 256
+        "hours": 257
       },
       {
         "number": 23,
@@ -177,7 +177,7 @@
         "number": 26,
         "title": "[chief-of-staff] Digest 2026-11-10",
         "kind": "pull request",
-        "hours": 143
+        "hours": 144
       },
       {
         "number": 27,
@@ -255,11 +255,11 @@
     "[#29](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/29) has been open 48 hours: [chief-of-staff] Digest 2026-11-14",
     "[#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28) has been open 72 hours: [chief-of-staff] Digest 2026-11-13",
     "[#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27) has been open 96 hours: [chief-of-staff] Digest 2026-11-12",
-    "[#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26) has been open 143 hours: [chief-of-staff] Digest 2026-11-10",
+    "[#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26) has been open 144 hours: [chief-of-staff] Digest 2026-11-10",
     "[#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25) has been open 215 hours: [chief-of-staff] Digest 2026-11-07",
     "[#24](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/24) has been open 222 hours: [setup] Adopt a reviewed part of ECC for the agents",
     "[#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23) has been open 239 hours: [chief-of-staff] Digest 2026-11-06",
-    "[#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22) has been open 256 hours: [engineer] Client portal demo (made-up claims)",
+    "[#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22) has been open 257 hours: [engineer] Client portal demo (made-up claims)",
     "[#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) has been open 258 hours: [engineer] Worker console demo (made-up claims)",
     "[#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) has been open 259 hours: [chief-of-staff] Digest 2026-11-05",
     "[#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19) has been open 259 hours: [design] Add the page checklist",
