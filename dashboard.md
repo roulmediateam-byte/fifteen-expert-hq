@@ -1,4 +1,4 @@
-Updated Tue 17 Nov 2026 01:12 Sydney
+Updated Tue 17 Nov 2026 01:13 Sydney
 
 # RUNNING
 
@@ -7,7 +7,7 @@ Updated Tue 17 Nov 2026 01:12 Sydney
 | | Agent | Owner | State | Current or last task | Last run start (Sydney) | Minutes | Next run (Sydney) | Open pull requests |
 |---|---|---|---|---|---|---|---|---|
 | 🟡 | chief-of-staff | Adam | waiting on human | daily-digest | Mon 16 Nov 06:35 | 2 | Tue 17 Nov 06:30 | [#32](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/32), [#30](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30), [#29](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/29), [#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28), [#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27), [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26), [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25), [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23), [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
-| 🟢 | design | Adam | working | checking-own-prs | Tue 17 Nov 01:12 | 0 so far | Wed 18 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
+| 🟡 | design | Adam | waiting on human | checking-own-prs | Tue 17 Nov 01:12 | 3 | Wed 18 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🔴 | engineer | Adam | overdue | pick-work | Sat 7 Nov 02:15 | 4 | Tue 17 Nov 02:00 | [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22), [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21), [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
 | 🔴 | reviewer | Adam | overdue | sweep | Mon 16 Nov 05:05 | 6 | Tue 17 Nov 05:00 sweep, and on every pull request | none |
 | 🟡 | research | Adam | waiting on human | weekly-watch | Mon 16 Nov 03:10 | 8 | Mon 23 Nov 03:00 | [#31](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/31) |
@@ -53,7 +53,7 @@ gantt
     idle check-open-prs :done, 2026-11-14 02:01, 2026-11-14 02:02
     idle check-open-prs :done, 2026-11-15 01:08, 2026-11-15 01:09
     idle none :done, 2026-11-16 01:08, 2026-11-16 01:08
-    working checking-own-prs :active, 2026-11-17 01:12, 2026-11-17 01:12
+    idle checking-own-prs :done, 2026-11-17 01:12, 2026-11-17 01:12
     section reviewer
     done sweep :done, 2026-11-14 05:05, 2026-11-14 05:06
     done sweep :done, 2026-11-15 05:07, 2026-11-15 05:08
