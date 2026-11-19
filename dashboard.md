@@ -7,7 +7,7 @@ Updated Fri 20 Nov 2026 01:11 Sydney
 | | Agent | Owner | State | Current or last task | Last run start (Sydney) | Minutes | Next run (Sydney) | Open pull requests |
 |---|---|---|---|---|---|---|---|---|
 | 🟡 | chief-of-staff | Adam | waiting on human | daily-digest | Thu 19 Nov 06:35 | 2 | Fri 20 Nov 06:30 | [#35](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/35), [#34](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/34), [#33](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/33), [#32](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/32), [#30](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30), [#29](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/29), [#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28), [#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27), [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26), [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25), [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23), [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
-| 🟢 | design | Adam | working | open-pr-check | Fri 20 Nov 01:10 | 0 so far | Sat 21 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
+| 🟡 | design | Adam | waiting on human | open-pr-check | Fri 20 Nov 01:10 | 2 | Sat 21 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🔴 | engineer | Adam | overdue | pick-work | Sat 7 Nov 02:15 | 4 | Fri 20 Nov 02:00 | [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22), [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21), [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
 | 🔴 | reviewer | Adam | overdue | sweep | Thu 19 Nov 05:04 | 3 | Fri 20 Nov 05:00 sweep, and on every pull request | none |
 | 🟡 | research | Adam | waiting on human | weekly-watch | Mon 16 Nov 03:10 | 8 | Mon 23 Nov 03:00 | [#31](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/31) |
@@ -56,7 +56,7 @@ gantt
     idle checking-own-prs :done, 2026-11-17 01:12, 2026-11-17 01:12
     idle pick-work :done, 2026-11-18 01:11, 2026-11-18 01:11
     idle check-own-prs :done, 2026-11-19 01:10, 2026-11-19 01:11
-    working open-pr-check :active, 2026-11-20 01:10, 2026-11-20 01:11
+    idle open-pr-check :done, 2026-11-20 01:10, 2026-11-20 01:11
     section reviewer
     done sweep :done, 2026-11-17 05:05, 2026-11-17 05:05
     done sweep :done, 2026-11-18 05:04, 2026-11-18 05:05
