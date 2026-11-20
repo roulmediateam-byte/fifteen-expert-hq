@@ -1,6 +1,6 @@
 {
-  "updated": "Fri 20 Nov 2026 06:37 Sydney",
-  "updated_utc": "2026-11-19T19:37:42Z",
+  "updated": "Sat 21 Nov 2026 01:10 Sydney",
+  "updated_utc": "2026-11-20T14:10:55Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -49,10 +49,10 @@
       "state": "waiting on human",
       "reason": "open pull request with no human review",
       "dot": "🟡",
-      "task": "open-pr-check",
-      "last_start": "Fri 20 Nov 01:10",
+      "task": "check-open-prs",
+      "last_start": "Sat 21 Nov 01:10",
       "minutes": "2",
-      "next_run": "Sat 21 Nov 01:00",
+      "next_run": "Sun 22 Nov 01:00",
       "open_prs": [
         19,
         12
@@ -77,9 +77,9 @@
     {
       "name": "reviewer",
       "owner": "Adam",
-      "state": "done",
-      "reason": "Reviewed #35: Pass. No other open pull request lacked a reviewer comment.",
-      "dot": "🟢",
+      "state": "overdue",
+      "reason": "no review yet of #36",
+      "dot": "🔴",
       "task": "sweep",
       "last_start": "Fri 20 Nov 05:05",
       "minutes": "4",
@@ -119,7 +119,7 @@
         "number": 31,
         "title": "[research] Weekly watch 2026-11-16 and first watch list",
         "kind": "pull request",
-        "hours": 99
+        "hours": 117
       }
     ],
     "Melvin": [
@@ -127,121 +127,121 @@
         "number": 12,
         "title": "[design] Build the one-page website",
         "kind": "pull request",
-        "hours": 372
+        "hours": 390
       },
       {
         "number": 20,
         "title": "[chief-of-staff] Digest 2026-11-05",
         "kind": "pull request",
-        "hours": 355
+        "hours": 373
       },
       {
         "number": 19,
         "title": "[design] Add the page checklist",
         "kind": "pull request",
-        "hours": 355
+        "hours": 373
       },
       {
         "number": 18,
         "title": "[engineer] Add a first passing smoke test in prototype/",
         "kind": "pull request",
-        "hours": 355
+        "hours": 373
       },
       {
         "number": 21,
         "title": "[engineer] Worker console demo (made-up claims)",
         "kind": "pull request",
-        "hours": 354
+        "hours": 372
       },
       {
         "number": 22,
         "title": "[engineer] Client portal demo (made-up claims)",
         "kind": "pull request",
-        "hours": 353
+        "hours": 371
       },
       {
         "number": 23,
         "title": "[chief-of-staff] Digest 2026-11-06",
         "kind": "pull request",
-        "hours": 336
+        "hours": 354
       },
       {
         "number": 24,
         "title": "[setup] Adopt a reviewed part of ECC for the agents",
         "kind": "pull request",
-        "hours": 318
+        "hours": 337
       },
       {
         "number": 25,
         "title": "[chief-of-staff] Digest 2026-11-07",
         "kind": "pull request",
-        "hours": 312
+        "hours": 330
       },
       {
         "number": 26,
         "title": "[chief-of-staff] Digest 2026-11-10",
         "kind": "pull request",
-        "hours": 240
+        "hours": 258
       },
       {
         "number": 27,
         "title": "[chief-of-staff] Digest 2026-11-12",
         "kind": "pull request",
-        "hours": 192
+        "hours": 210
       },
       {
         "number": 28,
         "title": "[chief-of-staff] Digest 2026-11-13",
         "kind": "pull request",
-        "hours": 168
+        "hours": 186
       },
       {
         "number": 29,
         "title": "[chief-of-staff] Digest 2026-11-14",
         "kind": "pull request",
-        "hours": 144
+        "hours": 162
       },
       {
         "number": 30,
         "title": "[chief-of-staff] Digest 2026-11-15",
         "kind": "pull request",
-        "hours": 120
+        "hours": 138
       },
       {
         "number": 31,
         "title": "[research] Weekly watch 2026-11-16 and first watch list",
         "kind": "pull request",
-        "hours": 99
+        "hours": 117
       },
       {
         "number": 32,
         "title": "[chief-of-staff] Digest 2026-11-16",
         "kind": "pull request",
-        "hours": 96
+        "hours": 114
       },
       {
         "number": 33,
         "title": "[chief-of-staff] Digest 2026-11-17",
         "kind": "pull request",
-        "hours": 72
+        "hours": 90
       },
       {
         "number": 34,
         "title": "[chief-of-staff] Digest 2026-11-18",
         "kind": "pull request",
-        "hours": 48
+        "hours": 66
       },
       {
         "number": 35,
         "title": "[chief-of-staff] Digest 2026-11-19",
         "kind": "pull request",
-        "hours": 24
+        "hours": 42
       },
       {
         "number": 36,
         "title": "[chief-of-staff] Digest 2026-11-20",
         "kind": "pull request",
-        "hours": 0
+        "hours": 18
       }
     ]
   },
@@ -259,6 +259,7 @@
     "    idle pick-work :done, 2026-11-18 01:11, 2026-11-18 01:11",
     "    idle check-own-prs :done, 2026-11-19 01:10, 2026-11-19 01:11",
     "    idle open-pr-check :done, 2026-11-20 01:10, 2026-11-20 01:11",
+    "    idle check-open-prs :done, 2026-11-21 01:10, 2026-11-21 01:11",
     "    section reviewer",
     "    done sweep :done, 2026-11-18 05:04, 2026-11-18 05:05",
     "    done sweep :done, 2026-11-19 05:04, 2026-11-19 05:05",
@@ -278,25 +279,26 @@
   "closed_last_7_days": 0,
   "alerts": [
     "engineer is overdue: no heartbeat since the Fri 20 Nov 02:00 run",
-    "[#34](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/34) has been open 48 hours: [chief-of-staff] Digest 2026-11-18",
-    "[#33](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/33) has been open 72 hours: [chief-of-staff] Digest 2026-11-17",
-    "[#32](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/32) has been open 96 hours: [chief-of-staff] Digest 2026-11-16",
-    "[#31](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/31) has been open 99 hours: [research] Weekly watch 2026-11-16 and first watch list",
-    "[#30](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30) has been open 120 hours: [chief-of-staff] Digest 2026-11-15",
-    "[#29](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/29) has been open 144 hours: [chief-of-staff] Digest 2026-11-14",
-    "[#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28) has been open 168 hours: [chief-of-staff] Digest 2026-11-13",
-    "[#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27) has been open 192 hours: [chief-of-staff] Digest 2026-11-12",
-    "[#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26) has been open 240 hours: [chief-of-staff] Digest 2026-11-10",
-    "[#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25) has been open 312 hours: [chief-of-staff] Digest 2026-11-07",
-    "[#24](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/24) has been open 318 hours: [setup] Adopt a reviewed part of ECC for the agents",
-    "[#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23) has been open 336 hours: [chief-of-staff] Digest 2026-11-06",
-    "[#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22) has been open 353 hours: [engineer] Client portal demo (made-up claims)",
-    "[#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) has been open 354 hours: [engineer] Worker console demo (made-up claims)",
-    "[#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) has been open 355 hours: [chief-of-staff] Digest 2026-11-05",
-    "[#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19) has been open 355 hours: [design] Add the page checklist",
-    "[#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) has been open 355 hours: [engineer] Add a first passing smoke test in prototype/",
-    "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 372 hours: [design] Build the one-page website",
+    "reviewer is overdue: no review yet of #36",
+    "[#34](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/34) has been open 66 hours: [chief-of-staff] Digest 2026-11-18",
+    "[#33](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/33) has been open 90 hours: [chief-of-staff] Digest 2026-11-17",
+    "[#32](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/32) has been open 114 hours: [chief-of-staff] Digest 2026-11-16",
+    "[#31](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/31) has been open 117 hours: [research] Weekly watch 2026-11-16 and first watch list",
+    "[#30](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30) has been open 138 hours: [chief-of-staff] Digest 2026-11-15",
+    "[#29](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/29) has been open 162 hours: [chief-of-staff] Digest 2026-11-14",
+    "[#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28) has been open 186 hours: [chief-of-staff] Digest 2026-11-13",
+    "[#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27) has been open 210 hours: [chief-of-staff] Digest 2026-11-12",
+    "[#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26) has been open 258 hours: [chief-of-staff] Digest 2026-11-10",
+    "[#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25) has been open 330 hours: [chief-of-staff] Digest 2026-11-07",
+    "[#24](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/24) has been open 337 hours: [setup] Adopt a reviewed part of ECC for the agents",
+    "[#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23) has been open 354 hours: [chief-of-staff] Digest 2026-11-06",
+    "[#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22) has been open 371 hours: [engineer] Client portal demo (made-up claims)",
+    "[#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) has been open 372 hours: [engineer] Worker console demo (made-up claims)",
+    "[#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) has been open 373 hours: [chief-of-staff] Digest 2026-11-05",
+    "[#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19) has been open 373 hours: [design] Add the page checklist",
+    "[#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) has been open 373 hours: [engineer] Add a first passing smoke test in prototype/",
+    "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 390 hours: [design] Build the one-page website",
     "[#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md"
   ],
-  "sydney_date": "2026-11-20"
+  "sydney_date": "2026-11-21"
 }
