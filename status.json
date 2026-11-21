@@ -1,6 +1,6 @@
 {
-  "updated": "Sun 22 Nov 2026 05:05 Sydney",
-  "updated_utc": "2026-11-21T18:05:44Z",
+  "updated": "Sun 22 Nov 2026 05:06 Sydney",
+  "updated_utc": "2026-11-21T18:06:22Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -78,12 +78,12 @@
     {
       "name": "reviewer",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
+      "state": "done",
+      "reason": "Reviewed 37: Pass; all other open pull requests already reviewed",
       "dot": "🟢",
       "task": "sweep",
       "last_start": "Sun 22 Nov 05:05",
-      "minutes": "0 so far",
+      "minutes": "4",
       "next_run": "Mon 23 Nov 05:00 sweep, and on every pull request",
       "open_prs": []
     },
@@ -269,7 +269,7 @@
     "    section reviewer",
     "    done sweep :done, 2026-11-20 05:05, 2026-11-20 05:05",
     "    done sweep :done, 2026-11-21 05:05, 2026-11-21 05:06",
-    "    working sweep :active, 2026-11-22 05:05, 2026-11-22 05:05",
+    "    done sweep :done, 2026-11-22 05:05, 2026-11-22 05:06",
     "```"
   ],
   "board": {
