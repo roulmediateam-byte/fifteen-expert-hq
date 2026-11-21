@@ -1,4 +1,4 @@
-Updated Sun 22 Nov 2026 06:36 Sydney
+Updated Sun 22 Nov 2026 06:38 Sydney
 
 # RUNNING
 
@@ -21,16 +21,16 @@ Updated Sun 22 Nov 2026 06:36 Sydney
 
 **Melvin**
 
-- [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) [design] Build the one-page website (pull request, 419 hours)
+- [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) [design] Build the one-page website (pull request, 420 hours)
 - [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) [chief-of-staff] Digest 2026-11-05 (pull request, 403 hours)
 - [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19) [design] Add the page checklist (pull request, 403 hours)
 - [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) [engineer] Add a first passing smoke test in prototype/ (pull request, 403 hours)
 - [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) [engineer] Worker console demo (made-up claims) (pull request, 402 hours)
-- [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22) [engineer] Client portal demo (made-up claims) (pull request, 400 hours)
-- [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23) [chief-of-staff] Digest 2026-11-06 (pull request, 383 hours)
+- [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22) [engineer] Client portal demo (made-up claims) (pull request, 401 hours)
+- [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23) [chief-of-staff] Digest 2026-11-06 (pull request, 384 hours)
 - [#24](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/24) [setup] Adopt a reviewed part of ECC for the agents (pull request, 366 hours)
-- [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25) [chief-of-staff] Digest 2026-11-07 (pull request, 359 hours)
-- [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26) [chief-of-staff] Digest 2026-11-10 (pull request, 287 hours)
+- [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25) [chief-of-staff] Digest 2026-11-07 (pull request, 360 hours)
+- [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26) [chief-of-staff] Digest 2026-11-10 (pull request, 288 hours)
 - [#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27) [chief-of-staff] Digest 2026-11-12 (pull request, 240 hours)
 - [#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28) [chief-of-staff] Digest 2026-11-13 (pull request, 216 hours)
 - [#29](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/29) [chief-of-staff] Digest 2026-11-14 (pull request, 192 hours)
@@ -40,7 +40,7 @@ Updated Sun 22 Nov 2026 06:36 Sydney
 - [#33](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/33) [chief-of-staff] Digest 2026-11-17 (pull request, 120 hours)
 - [#34](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/34) [chief-of-staff] Digest 2026-11-18 (pull request, 96 hours)
 - [#35](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/35) [chief-of-staff] Digest 2026-11-19 (pull request, 72 hours)
-- [#36](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/36) [chief-of-staff] Digest 2026-11-20 (pull request, 47 hours)
+- [#36](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/36) [chief-of-staff] Digest 2026-11-20 (pull request, 48 hours)
 - [#37](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/37) [chief-of-staff] Digest 2026-11-21 (pull request, 24 hours)
 - [#38](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/38) [chief-of-staff] Digest 2026-11-22 (pull request, 0 hours)
 
@@ -83,6 +83,7 @@ Issues closed in the last 7 days: 0.
 ## Alerts
 
 - 🔴 engineer is overdue: no heartbeat since the Sun 22 Nov 02:00 run
+- 🔴 [#36](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/36) has been open 48 hours: [chief-of-staff] Digest 2026-11-20
 - 🔴 [#35](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/35) has been open 72 hours: [chief-of-staff] Digest 2026-11-19
 - 🔴 [#34](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/34) has been open 96 hours: [chief-of-staff] Digest 2026-11-18
 - 🔴 [#33](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/33) has been open 120 hours: [chief-of-staff] Digest 2026-11-17
@@ -92,16 +93,16 @@ Issues closed in the last 7 days: 0.
 - 🔴 [#29](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/29) has been open 192 hours: [chief-of-staff] Digest 2026-11-14
 - 🔴 [#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28) has been open 216 hours: [chief-of-staff] Digest 2026-11-13
 - 🔴 [#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27) has been open 240 hours: [chief-of-staff] Digest 2026-11-12
-- 🔴 [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26) has been open 287 hours: [chief-of-staff] Digest 2026-11-10
-- 🔴 [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25) has been open 359 hours: [chief-of-staff] Digest 2026-11-07
+- 🔴 [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26) has been open 288 hours: [chief-of-staff] Digest 2026-11-10
+- 🔴 [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25) has been open 360 hours: [chief-of-staff] Digest 2026-11-07
 - 🔴 [#24](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/24) has been open 366 hours: [setup] Adopt a reviewed part of ECC for the agents
-- 🔴 [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23) has been open 383 hours: [chief-of-staff] Digest 2026-11-06
-- 🔴 [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22) has been open 400 hours: [engineer] Client portal demo (made-up claims)
+- 🔴 [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23) has been open 384 hours: [chief-of-staff] Digest 2026-11-06
+- 🔴 [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22) has been open 401 hours: [engineer] Client portal demo (made-up claims)
 - 🔴 [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21) has been open 402 hours: [engineer] Worker console demo (made-up claims)
 - 🔴 [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) has been open 403 hours: [chief-of-staff] Digest 2026-11-05
 - 🔴 [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19) has been open 403 hours: [design] Add the page checklist
 - 🔴 [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) has been open 403 hours: [engineer] Add a first passing smoke test in prototype/
-- 🔴 [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 419 hours: [design] Build the one-page website
+- 🔴 [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) has been open 420 hours: [design] Build the one-page website
 - 🔴 [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) from design changes files outside its folders: PROJECT_STATE.md, ops/links.md
 
 ---
