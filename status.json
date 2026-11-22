@@ -1,6 +1,6 @@
 {
-  "updated": "Mon 23 Nov 2026 05:05 Sydney",
-  "updated_utc": "2026-11-22T18:05:01Z",
+  "updated": "Mon 23 Nov 2026 05:06 Sydney",
+  "updated_utc": "2026-11-22T18:06:32Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -79,12 +79,12 @@
     {
       "name": "reviewer",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
+      "state": "done",
+      "reason": "Reviewed #38 and #39, both Pass",
       "dot": "🟢",
       "task": "sweep",
       "last_start": "Mon 23 Nov 05:04",
-      "minutes": "0 so far",
+      "minutes": "8",
       "next_run": "Tue 24 Nov 05:00 sweep, and on every pull request",
       "open_prs": []
     },
@@ -281,10 +281,9 @@
     "    idle pick-work :done, 2026-11-22 01:08, 2026-11-22 01:08",
     "    idle pick-work :done, 2026-11-23 01:08, 2026-11-23 01:09",
     "    section reviewer",
-    "    done sweep :done, 2026-11-20 05:05, 2026-11-20 05:05",
     "    done sweep :done, 2026-11-21 05:05, 2026-11-21 05:06",
     "    done sweep :done, 2026-11-22 05:05, 2026-11-22 05:06",
-    "    working sweep :active, 2026-11-23 05:04, 2026-11-23 05:05",
+    "    done sweep :done, 2026-11-23 05:04, 2026-11-23 05:06",
     "    section research",
     "    done weekly-watch :done, 2026-11-23 03:10, 2026-11-23 03:17",
     "```"
