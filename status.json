@@ -1,6 +1,6 @@
 {
-  "updated": "Mon 23 Nov 2026 03:10 Sydney",
-  "updated_utc": "2026-11-22T16:10:55Z",
+  "updated": "Mon 23 Nov 2026 03:17 Sydney",
+  "updated_utc": "2026-11-22T16:17:24Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -91,14 +91,15 @@
     {
       "name": "research",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
-      "dot": "🟢",
+      "state": "waiting on human",
+      "reason": "open pull request with no human review",
+      "dot": "🟡",
       "task": "weekly-watch",
       "last_start": "Mon 23 Nov 03:10",
-      "minutes": "0 so far",
+      "minutes": "8",
       "next_run": "Mon 30 Nov 03:00",
       "open_prs": [
+        39,
         31
       ]
     },
@@ -256,6 +257,12 @@
         "title": "[chief-of-staff] Digest 2026-11-22",
         "kind": "pull request",
         "hours": 20
+      },
+      {
+        "number": 39,
+        "title": "[research] Weekly watch 2026-11-23",
+        "kind": "pull request",
+        "hours": 0
       }
     ]
   },
@@ -278,7 +285,7 @@
     "    done sweep :done, 2026-11-21 05:05, 2026-11-21 05:06",
     "    done sweep :done, 2026-11-22 05:05, 2026-11-22 05:06",
     "    section research",
-    "    working weekly-watch :active, 2026-11-23 03:10, 2026-11-23 03:10",
+    "    done weekly-watch :done, 2026-11-23 03:10, 2026-11-23 03:17",
     "```"
   ],
   "board": {

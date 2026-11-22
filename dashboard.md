@@ -1,4 +1,4 @@
-Updated Mon 23 Nov 2026 03:10 Sydney
+Updated Mon 23 Nov 2026 03:17 Sydney
 
 # RUNNING
 
@@ -10,7 +10,7 @@ Updated Mon 23 Nov 2026 03:10 Sydney
 | 🟡 | design | Adam | waiting on human | pick-work | Mon 23 Nov 01:08 | 3 | Tue 24 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🔴 | engineer | Adam | overdue | pick-work | Sat 7 Nov 02:15 | 4 | Tue 24 Nov 02:00 | [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22), [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21), [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
 | 🔴 | reviewer | Adam | overdue | sweep | Sun 22 Nov 05:05 | 4 | Mon 23 Nov 05:00 sweep, and on every pull request | none |
-| 🟢 | research | Adam | working | weekly-watch | Mon 23 Nov 03:10 | 0 so far | Mon 30 Nov 03:00 | [#31](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/31) |
+| 🟡 | research | Adam | waiting on human | weekly-watch | Mon 23 Nov 03:10 | 8 | Mon 30 Nov 03:00 | [#39](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/39), [#31](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/31) |
 | ⚪ | sales | Melvin | off | none | never |  | off (off until phase 5) | none |
 
 ## Waiting on you
@@ -43,6 +43,7 @@ Updated Mon 23 Nov 2026 03:10 Sydney
 - [#36](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/36) [chief-of-staff] Digest 2026-11-20 (pull request, 68 hours)
 - [#37](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/37) [chief-of-staff] Digest 2026-11-21 (pull request, 44 hours)
 - [#38](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/38) [chief-of-staff] Digest 2026-11-22 (pull request, 20 hours)
+- [#39](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/39) [research] Weekly watch 2026-11-23 (pull request, 0 hours)
 
 ## Timeline
 
@@ -64,7 +65,7 @@ gantt
     done sweep :done, 2026-11-21 05:05, 2026-11-21 05:06
     done sweep :done, 2026-11-22 05:05, 2026-11-22 05:06
     section research
-    working weekly-watch :active, 2026-11-23 03:10, 2026-11-23 03:10
+    done weekly-watch :done, 2026-11-23 03:10, 2026-11-23 03:17
 ```
 
 ## Board
