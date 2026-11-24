@@ -1,6 +1,6 @@
 {
-  "updated": "Wed 25 Nov 2026 06:35 Sydney",
-  "updated_utc": "2026-11-24T19:35:05Z",
+  "updated": "Wed 25 Nov 2026 06:36 Sydney",
+  "updated_utc": "2026-11-24T19:36:00Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -20,14 +20,15 @@
     {
       "name": "chief-of-staff",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
-      "dot": "🟢",
+      "state": "waiting on human",
+      "reason": "open pull request with no human review",
+      "dot": "🟡",
       "task": "daily-digest",
       "last_start": "Wed 25 Nov 06:34",
-      "minutes": "0 so far",
+      "minutes": "2",
       "next_run": "Thu 26 Nov 06:30",
       "open_prs": [
+        42,
         41,
         40,
         38,
@@ -277,6 +278,12 @@
         "title": "[chief-of-staff] Digest 2026-11-24",
         "kind": "pull request",
         "hours": 23
+      },
+      {
+        "number": 42,
+        "title": "[chief-of-staff] Digest 2026-11-25",
+        "kind": "pull request",
+        "hours": 0
       }
     ]
   },
@@ -290,7 +297,7 @@
     "    done daily-digest :done, 2026-11-22 06:34, 2026-11-22 06:36",
     "    done daily-digest :done, 2026-11-23 06:35, 2026-11-23 06:36",
     "    done daily-digest :done, 2026-11-24 06:35, 2026-11-24 06:37",
-    "    working daily-digest :active, 2026-11-25 06:34, 2026-11-25 06:35",
+    "    done daily-digest :done, 2026-11-25 06:34, 2026-11-25 06:35",
     "    section design",
     "    idle pick-work :done, 2026-11-23 01:08, 2026-11-23 01:09",
     "    idle pick-work :done, 2026-11-24 01:09, 2026-11-24 01:09",
