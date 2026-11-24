@@ -9,7 +9,7 @@ Updated Wed 25 Nov 2026 05:05 Sydney
 | 🟡 | chief-of-staff | Adam | waiting on human | daily-digest | Tue 24 Nov 06:35 | 4 | Wed 25 Nov 06:30 | [#41](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/41), [#40](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/40), [#38](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/38), [#37](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/37), [#36](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/36), [#35](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/35), [#34](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/34), [#33](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/33), [#32](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/32), [#30](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/30), [#29](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/29), [#28](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/28), [#27](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/27), [#26](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/26), [#25](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/25), [#23](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/23), [#20](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/20) |
 | 🟡 | design | Adam | waiting on human | pick-work | Wed 25 Nov 01:09 | 3 | Thu 26 Nov 01:00 | [#19](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/19), [#12](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/12) |
 | 🔴 | engineer | Adam | overdue | pick-work | Sat 7 Nov 02:15 | 4 | Thu 26 Nov 02:00 | [#22](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/22), [#21](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/21), [#18](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/18) |
-| 🟢 | reviewer | Adam | working | sweep | Wed 25 Nov 05:04 | 0 so far | Thu 26 Nov 05:00 sweep, and on every pull request | none |
+| 🟢 | reviewer | Adam | done | sweep | Wed 25 Nov 05:04 | 4 | Thu 26 Nov 05:00 sweep, and on every pull request | none |
 | 🟡 | research | Adam | waiting on human | weekly-watch | Mon 23 Nov 03:10 | 8 | Mon 30 Nov 03:00 | [#39](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/39), [#31](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/31) |
 | ⚪ | sales | Melvin | off | none | never |  | off (off until phase 5) | none |
 
@@ -66,7 +66,7 @@ gantt
     done sweep :done, 2026-11-22 05:05, 2026-11-22 05:06
     done sweep :done, 2026-11-23 05:04, 2026-11-23 05:06
     done sweep :done, 2026-11-24 05:05, 2026-11-24 05:06
-    working sweep :active, 2026-11-25 05:04, 2026-11-25 05:05
+    done sweep :done, 2026-11-25 05:04, 2026-11-25 05:05
     section research
     done weekly-watch :done, 2026-11-23 03:10, 2026-11-23 03:17
 ```
