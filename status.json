@@ -1,6 +1,6 @@
 {
-  "updated": "Fri 27 Nov 2026 01:09 Sydney",
-  "updated_utc": "2026-11-26T14:09:28Z",
+  "updated": "Fri 27 Nov 2026 01:10 Sydney",
+  "updated_utc": "2026-11-26T14:10:17Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -305,7 +305,6 @@
     "    done daily-digest :done, 2026-11-25 06:34, 2026-11-25 06:35",
     "    done daily-digest :done, 2026-11-26 06:35, 2026-11-26 06:36",
     "    section design",
-    "    idle pick-work :done, 2026-11-24 01:09, 2026-11-24 01:09",
     "    idle pick-work :done, 2026-11-25 01:09, 2026-11-25 01:09",
     "    idle check-own-prs :done, 2026-11-26 01:09, 2026-11-26 01:09",
     "    idle none :done, 2026-11-27 01:08, 2026-11-27 01:09",
