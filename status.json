@@ -1,6 +1,6 @@
 {
-  "updated": "Sat 28 Nov 2026 06:35 Sydney",
-  "updated_utc": "2026-11-27T19:35:14Z",
+  "updated": "Sat 28 Nov 2026 06:36 Sydney",
+  "updated_utc": "2026-11-27T19:36:07Z",
   "paused": false,
   "pause_files": [],
   "direct_commits": [],
@@ -20,14 +20,15 @@
     {
       "name": "chief-of-staff",
       "owner": "Adam",
-      "state": "working",
-      "reason": "",
-      "dot": "🟢",
+      "state": "waiting on human",
+      "reason": "open pull request with no human review",
+      "dot": "🟡",
       "task": "daily-digest",
       "last_start": "Sat 28 Nov 06:34",
-      "minutes": "0 so far",
+      "minutes": "5",
       "next_run": "Sun 29 Nov 06:30",
       "open_prs": [
+        45,
         44,
         43,
         42,
@@ -255,7 +256,7 @@
         "number": 37,
         "title": "[chief-of-staff] Digest 2026-11-21",
         "kind": "pull request",
-        "hours": 167
+        "hours": 168
       },
       {
         "number": 38,
@@ -285,7 +286,7 @@
         "number": 42,
         "title": "[chief-of-staff] Digest 2026-11-25",
         "kind": "pull request",
-        "hours": 71
+        "hours": 72
       },
       {
         "number": 43,
@@ -298,6 +299,12 @@
         "title": "[chief-of-staff] Digest 2026-11-27",
         "kind": "pull request",
         "hours": 23
+      },
+      {
+        "number": 45,
+        "title": "[chief-of-staff] Digest 2026-11-28",
+        "kind": "pull request",
+        "hours": 0
       }
     ]
   },
@@ -308,10 +315,9 @@
     "    dateFormat YYYY-MM-DD HH:mm",
     "    axisFormat %a %H:%M",
     "    section chief-of-staff",
-    "    done daily-digest :done, 2026-11-25 06:34, 2026-11-25 06:35",
     "    done daily-digest :done, 2026-11-26 06:35, 2026-11-26 06:36",
     "    done daily-digest :done, 2026-11-27 06:35, 2026-11-27 06:36",
-    "    working daily-digest :active, 2026-11-28 06:34, 2026-11-28 06:35",
+    "    done daily-digest :done, 2026-11-28 06:34, 2026-11-28 06:36",
     "    section design",
     "    idle check-own-prs :done, 2026-11-26 01:09, 2026-11-26 01:09",
     "    idle none :done, 2026-11-27 01:08, 2026-11-27 01:09",
@@ -335,12 +341,12 @@
   "closed_last_7_days": 0,
   "alerts": [
     "engineer is overdue: no heartbeat since the Sat 28 Nov 02:00 run",
-    "[#42](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/42) has been open 71 hours: [chief-of-staff] Digest 2026-11-25",
+    "[#42](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/42) has been open 72 hours: [chief-of-staff] Digest 2026-11-25",
     "[#41](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/41) has been open 95 hours: [chief-of-staff] Digest 2026-11-24",
     "[#40](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/40) has been open 119 hours: [chief-of-staff] Digest 2026-11-23",
     "[#39](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/39) has been open 123 hours: [research] Weekly watch 2026-11-23",
     "[#38](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/38) has been open 143 hours: [chief-of-staff] Digest 2026-11-22",
-    "[#37](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/37) has been open 167 hours: [chief-of-staff] Digest 2026-11-21",
+    "[#37](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/37) has been open 168 hours: [chief-of-staff] Digest 2026-11-21",
     "[#36](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/36) has been open 191 hours: [chief-of-staff] Digest 2026-11-20",
     "[#35](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/35) has been open 215 hours: [chief-of-staff] Digest 2026-11-19",
     "[#34](https://github.com/roulmediateam-byte/fifteen-expert-hq/issues/34) has been open 239 hours: [chief-of-staff] Digest 2026-11-18",
