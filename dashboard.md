@@ -1,4 +1,4 @@
-Updated Sat 28 Nov 2026 01:09 Sydney
+Updated Sat 28 Nov 2026 01:10 Sydney
 
 # RUNNING
 
@@ -62,7 +62,6 @@ gantt
     done daily-digest :done, 2026-11-26 06:35, 2026-11-26 06:36
     done daily-digest :done, 2026-11-27 06:35, 2026-11-27 06:36
     section design
-    idle pick-work :done, 2026-11-25 01:09, 2026-11-25 01:09
     idle check-own-prs :done, 2026-11-26 01:09, 2026-11-26 01:09
     idle none :done, 2026-11-27 01:08, 2026-11-27 01:09
     idle pick-work :done, 2026-11-28 01:09, 2026-11-28 01:09
